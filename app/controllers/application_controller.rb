@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def splash_page
-  	render text: "Splash Page"
+  	render text: "splash page"
   end
 
 end
