@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'home#show'
 
+  resources :posts, :users, :comments, :books, :parts
+
 
 
 
