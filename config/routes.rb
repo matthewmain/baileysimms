@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
   root 'home#show'
-
+  
   resources :posts, :users, :comments, :books, :parts
+
+  get '/ebooks_display', to: 'ebooks_display#show'
+  get '/contact', to: 'contact#show'
+  get '/about', to: 'about#show'
 
 
 
