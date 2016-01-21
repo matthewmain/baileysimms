@@ -1,9 +1,34 @@
-<h1>HOME</h1>
+<!DOCTYPE html>
+<html>
 
-<ul>
-	<li><%= link_to 'BLOG', posts_path %></li>
-	<li><%= link_to 'BOOKS', ebooks_display_path %></li>
-	<li><%= link_to 'ABOUT', about_path %></li>
-	<li><%= link_to 'CONTACT', contact_path %></li>
-	<li>SIGNUP / LOGIN / PROFILE / ADMIN</li>
-</ul>
+  <head>
+    <title>Bailey Simms</title>  
+
+    <link rel="stylesheet" href="css/normalize.css" type="text/css" media="screen">  
+    <link rel="stylesheet" href="css/style_index.css" type="text/css" media="screen">
+    <link rel="shortcut icon" href="http://www.baileysimms.com/favicon.ico">
+        
+  </head>
+
+  <body id="home_body">
+    <div id="home_wrapper">
+
+      <div id="home_feature_image">
+        <%= image_tag("author-name-with-feather.png", alt: "Baily Simms", id: "home_name_with_feather_image") %>
+      </div>
+
+      <div id="home_index_nav">
+        <ul>
+          <li><%= link_to 'BLOG', posts_path %></li>
+          <li><%= link_to 'BOOKS', ebooks_display_path %></li>
+          <li><%= link_to 'ABOUT', about_path %></li>
+          <li><%= link_to 'CONTACT', contact_path %></li>
+          <li><%= link_to 'LOGIN', root_path %></li>
+        </ul>
+      </div>  
+
+    </div>
+  </body>
+
+</html>
+
