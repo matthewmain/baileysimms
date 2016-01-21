@@ -1,3 +1,51 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#home_body {
+	font-family: 'Avenir', Helvetica, sans-serif;
+	background: #040d12;
+}
+
+#home_wrapper {
+	max-width: 940px;
+	margin: 0 auto;
+	padding: 0 5%;
+}
+
+#home_feature_image {
+}
+
+#home_name_with_feather_image {
+	display: block;
+	width: 70%;
+	max-width: 420px;
+	margin: 3% auto 3%;
+}
+
+#home_index_nav {
+	font-size: 80%;
+	letter-spacing: 3px;
+}
+
+#home_index_nav ul {
+	list-style-type: none;
+	text-align: center;
+	padding: 0;
+}
+
+#home_index_nav ul li {
+	display: inline;
+	margin: 3% 3%;
+	line-height: 300%;
+}
+
+#home_index_nav ul li a {
+	color: #b4cfd0;
+	text-decoration: none;	
+}
+
+#home_index_nav ul li a:hover {
+	color: #ffffff;
+	text-shadow: 0 0 15px #ffffff;
+}
