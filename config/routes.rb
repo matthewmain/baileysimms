@@ -4,9 +4,15 @@ Rails.application.routes.draw do
   
   resources :posts, :users, :comments, :books, :parts
 
-  get '/ebooks_display', to: 'ebooks_display#show'
-  get '/contact', to: 'contact#show'
-  get '/about', to: 'about#show'
+  get 'ebooks_display' => 'ebooks_display#show'
+
+  get 'about' => 'about#show'
+  
+  get 'contact' => 'contact#show'
+
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
 
 
 
