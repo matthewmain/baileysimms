@@ -1,24 +1,25 @@
 <h1>Users#new</h1>
 <p>Find me in app/views/users/new.html.erb</p>
-<br>
 
-	<div id="signup_form">
-		<%= form_for(@user) do |f| %>
-			<%= render 'shared/error_messages' %>
+<div id="signup-form">
+	<%= form_for(@user) do |f| %>
+
+		<%= render 'shared/error_messages' %>
+		
+		<%= f.label :user_name, "User Name: " %>
+		<%= f.text_field :user_name, autofocus: true %> 
+		
+		<%= f.label :email, "Email: " %> 
+		<%= f.email_field :email %>
 			
-			<%= f.label :user_name, "User Name: " %>
-			<%= f.text_field :user_name, autofocus: true %> 
+		<%= f.label :password, "Password: " %>
+		<%= f.password_field :password %>
 			
-			<%= f.label :email, "Email: " %> 
-			<%= f.email_field :email %>
-				
-			<%= f.label :password, "Password: " %>
-			<%= f.password_field :password %>
-				
-			<%= f.label :password_confirmation, "Confirm Password: " %> 
-			<%= f.password_field :password_confirmation %>
-			
-			<%= f.submit "JOIN", id: "join_button" %>
-		<% end %>
-	</div>
+		<%= f.label :password_confirmation, "Confirm Password: " %> 
+		<%= f.password_field :password_confirmation %>
+		
+		<%= f.submit "JOIN", id: "join-button" %>
+		
+	<% end %>
+</div>
 
