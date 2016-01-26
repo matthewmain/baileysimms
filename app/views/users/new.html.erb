@@ -2,7 +2,6 @@
 <p>Find me in app/views/users/new.html.erb</p>
 <br>
 
-<div id="signup_form_wrapper">
 	<div id="signup_form">
 		<%= form_for(@user) do |f| %>
 			<%= render 'shared/error_messages' %>
@@ -22,4 +21,4 @@
 			<%= f.submit "JOIN", id: "join_button" %>
 		<% end %>
 	</div>
-</div>	
+
