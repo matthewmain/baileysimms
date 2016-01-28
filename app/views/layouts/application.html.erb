@@ -13,9 +13,11 @@
 			<%= link_to "Bailey Simms", '#', id: "logo" %>
 			<nav>
 				<ul class="nav navbar-nav navbar-right">
-					<li><%= link_to "Home", '#' %></li>
-					<li><%= link_to "Help", '#' %></li>
-					<li><%= link_to "Log in", '#' %></li>
+          <li><%= link_to 'BLOG', posts_path %></li>
+          <li><%= link_to 'BOOKS', ebooks_display_path %></li>
+          <li><%= link_to 'ABOUT', about_path %></li>
+          <li><%= link_to 'CONTACT', contact_path %></li>
+          <li><%= link_to 'SIGN UP', new_user_path %></li>
 				</ul>
 			</nav>
 		</div>
