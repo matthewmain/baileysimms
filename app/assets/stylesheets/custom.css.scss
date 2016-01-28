@@ -17,6 +17,7 @@ textarea {
 }
 
 
+
 /* header */
 
 #logo {
@@ -26,3 +27,26 @@ textarea {
 #logo:hover {
 	
 }
+
+
+
+/* footer */
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid blue;
+	color: blue;
+}
+
+footer ul {
+	float: right;
+	list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+
