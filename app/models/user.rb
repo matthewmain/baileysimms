@@ -9,6 +9,7 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string
+#  remember_digest :string
 #
 # Indexes
 #
@@ -28,4 +29,17 @@ class User < ActiveRecord::Base
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 3 }
 	
+	
+	#Returns the hash digest of the given string
+	def User.digest(string)
+		cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+																									BCrypt::Engine.cost
+		BCrypt::Password.create(string, cost: cost)
+	end
+
+	#Returns a random token of 22 characters (A-Z, a-z, 0-9, -, _)
+	def User.new_token
+		SecureRandom.urlsafe_base64
+	end
+
 end
