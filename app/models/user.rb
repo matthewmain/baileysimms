@@ -35,7 +35,7 @@ class User < ActiveRecord::Base
 	
 
 
-	### Cookies ### 
+	### COOKIES ### 
 
 	#returns the hash digest of the given string
 	def User.digest(string)
@@ -66,4 +66,14 @@ class User < ActiveRecord::Base
 		update_attribute(:remember_digest, nil)
 	end
 
+
+
+	### QUERIES ###
+
+	def self.all_user_names
+		User.all.map { |user| user[:user_name] }
+	end
+
+
 end
+
