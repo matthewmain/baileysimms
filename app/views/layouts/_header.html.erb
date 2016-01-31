@@ -1,7 +1,9 @@
 	<header class="navbar navbar-fixed-top">
-		<div class="container">
-			<%= link_to "BAILEY SIMMS", root_path, id: "logo" %>
-			<nav>
+
+      <nav>
+        <ul class="nav navbar-nav navbar-left">
+          <li><%= link_to "BAILEY SIMMS", root_path, id: "logo" %></li>
+        </ul>  
 				<ul class="nav navbar-nav navbar-right">
           <li><%= link_to 'BLOG', posts_path %></li>
           <li><%= link_to 'BOOKS', ebooks_display_path %></li>
@@ -23,6 +25,6 @@
 
           <li><%= link_to 'SIGN UP', new_user_path %></li>
 				</ul>
-			</nav>
+
 		</div>
 	</header>	

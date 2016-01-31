@@ -14,12 +14,10 @@
  *= require_self
  */
 
-.gravatar {
-	color: black;
-	border-style: solid;
-	border-width: 2px;
-	box-shadow: 1px 1px 3px;
-}
+
+
+
+/*** FLASH ALERT ***/
 
 .flash-alert-success {
 	color: green;
@@ -32,3 +30,46 @@
 	text-align: center;
 	margin: 2em auto;
 }
+ 
+
+/*** NAVBAR ***/
+
+.nav {
+	padding: 0 2em;
+	margin: none;
+}
+
+#logo {
+	font-weight: bold;
+}
+
+
+
+/*** FOOTER ***/
+
+.footer {
+	margin: 0 2em;
+}
+
+.footer ul {
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.footer ul li {
+	margin: 0;
+}
+
+.footer-left {
+	float: left;
+	padding-right: 1em;
+}
+
+.footer-right {
+ float: right;
+ padding-left: 1em;
+}
+
+
+
