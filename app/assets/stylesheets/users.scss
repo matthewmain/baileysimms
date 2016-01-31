@@ -84,4 +84,20 @@ h1 {
 	}
 }
 
+/// INDEX ///
+
+#users-index {
+	display: block;
+	width: 33%;
+	margin: 4em auto 6em;
+	li {
+		list-style: none;
+		margin-bottom: 1em;
+		a {
+			margin-left: .5em;
+			font-size: 1.5em;
+			color: blue;
+		}
+	}
+}
 
