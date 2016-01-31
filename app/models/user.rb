@@ -31,7 +31,7 @@ class User < ActiveRecord::Base
 										uniqueness: { case_sensitive: false }
 
 	has_secure_password
-	validates :password, presence: true, length: { minimum: 3 }
+	validates :password, presence: true, length: { minimum: 3 }, allow_nil: true
 	
 
 

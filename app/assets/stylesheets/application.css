@@ -25,7 +25,7 @@
 	margin: 2em auto;
 }
 
-.flash-alert-failure {
+.flash-alert-danger {
 	color: red;
 	text-align: center;
 	margin: 2em auto;
