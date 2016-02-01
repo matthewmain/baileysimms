@@ -3,7 +3,11 @@
 @import "bootstrap";
 
 
-/* universal */
+/*** UNIVERSAL ***/
+
+h1 {
+	margin-top: 50px;
+}
 
 body {
 	padding-top: 60px;
@@ -19,35 +23,56 @@ textarea {
 
 
 
-/* header */
+/*** HEADER ***/
+
+.nav {
+	background: black;
+	padding: 0 2em;
+	margin: none;
+}
 
 #logo {
-	float: left
+	float: left;
+	font-weight: bold;
+	&:hover {
+		color: white;
+		background: black;
+	}
 }
 
-#logo:hover {
-	
-}
 
 
-
-/* footer */
+/*** FOOTER ***/
 
 footer {
-	margin-top: 45px;
+	margin: 2em 2em 0;
 	padding-top: 5px;
-	border-top: 1px solid blue;
-	color: blue;
+	border-top: 1px solid darkgray;
+	font-size: .75em;
+	ul {
+		float: right;
+		list-style: none;
+		color: gray;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		li {
+  		float: left;
+  		margin-left: 15px;
+  		margin: 0;
+  		a {
+  			color: gray;
+  		}
+		}
+	}
 }
 
-footer ul {
-	float: right;
-	list-style: none;
+.footer-left {
+	float: left;
+	padding-right: 1em;
 }
 
-footer ul li {
-  float: left;
-  margin-left: 15px;
+.footer-right {
+ float: right;
+ padding-left: 1em;
 }
-
-
