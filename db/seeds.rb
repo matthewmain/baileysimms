@@ -9,12 +9,12 @@
 
 User.create(user_name: 'Bailey_Simms', email: 'baileysimms96@yahoo.com', password: 'temp', admin: true)
 
-### TEST USERS ###
-100.times do |n|
-  user_name  = "Test_#{n+1}"
-  email = "test#{n+1}@test.com"
-  password = "test"
-  User.create( user_name: user_name, email: email, password: password)
-end
+# ### TEST USERS ###
+# 100.times do |n|
+#   user_name  = "Test_#{n+1}"
+#   email = "test#{n+1}@test.com"
+#   password = "test"
+#   User.create( user_name: user_name, email: email, password: password)
+# end
 
-User.create(user_name: 'Adrian_Birch', email: 'adrianbirchdib@yahoo.com', password: 'temp', admin: true)
+# User.create(user_name: 'Adrian_Birch', email: 'adrianbirchdib@yahoo.com', password: 'temp', admin: true)
