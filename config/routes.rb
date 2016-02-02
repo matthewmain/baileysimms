@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'home#show'
   
   resources :posts, :users, :comments, :books, :parts
+  resources :account_activations, only: [:edit]
 
   get 'ebooks_display' => 'ebooks_display#show'
 

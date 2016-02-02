@@ -55,7 +55,7 @@ class UsersController < ApplicationController
     end
 
 
-    ### BEFORE FILTERS ###
+    ### BEFORE-FILTERS ###
 
     #confirms that a user is logged in
     def logged_in_user
