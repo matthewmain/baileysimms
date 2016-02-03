@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  # binding.pry
-
   root 'home#show'
   
   resources :posts, :users, :comments, :books, :parts
