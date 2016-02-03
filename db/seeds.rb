@@ -7,14 +7,29 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-User.create(user_name: 'Bailey_Simms', email: 'baileysimms96@yahoo.com', password: 'temp', admin: true)
+User.create(	user_name: 'Bailey_Simms', 
+							email: 'baileysimms96@yahoo.com', 
+							password: 'temp', 
+							admin: true,
+							activated: true,
+							activated_at: Time.zone.now	)
 
 ### TEST USERS ###
 100.times do |n|
   user_name  = "Test_#{n+1}"
   email = "test#{n+1}@test.com"
   password = "test"
-  User.create( user_name: user_name, email: email, password: password)
+  User.create( 	user_name: user_name, 
+  							email: email, 
+  							password: password,
+  							activated: true,
+								activated_at: Time.zone.now	)
 end
 
-User.create(user_name: 'Adrian_Birch', email: 'adrianbirchdib@yahoo.com', password: 'temp', admin: true)
+User.create(	user_name: 'Adrian_Birch', 
+							email: 'adrianbirchdib@yahoo.com', 
+							password: 'temp', 
+							admin: true,
+							activated: true,
+							activated_at: Time.zone.now	)
+
