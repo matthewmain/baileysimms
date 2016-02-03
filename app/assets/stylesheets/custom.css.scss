@@ -62,6 +62,10 @@ footer {
   		margin: 0;
   		a {
   			color: gray;
+  				&:hover {
+					color: white;
+					text-decoration: none;
+	}
   		}
 		}
 	}
