@@ -2,15 +2,18 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  user_name       :string
-#  email           :string
-#  password        :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  password_digest :string
-#  remember_digest :string
-#  admin           :boolean          default(FALSE)
+#  id                :integer          not null, primary key
+#  user_name         :string
+#  email             :string
+#  password          :string
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  password_digest   :string
+#  remember_digest   :string
+#  admin             :boolean          default(FALSE)
+#  activation_digest :string
+#  activated         :boolean          default(FALSE)
+#  activated_at      :datetime
 #
 # Indexes
 #
@@ -20,11 +23,12 @@
 class User < ActiveRecord::Base
 	has_many :comments
 
-	attr_accessor :remember_token
+	attr_accessor :remember_token, :activation_token
 
 	validates :user_name, presence: true, length: { maximum: 20 }
 
-	before_save { self.email = email.downcase }
+	before_save :downcase_email
+	before_create :create_activation_digest
 	validates :email, presence: true, 
 										length: { maximum: 255 },
 										format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i, 
@@ -75,6 +79,17 @@ class User < ActiveRecord::Base
 		User.all.map { |user| user[:user_name] }
 	end
 
+
+	private
+
+		def downcase_email
+			self.email = email.downcase_email
+		end
+
+		def create_activation_digest
+			self.activation_token = User.new_token
+			self.activation_digest = User.digest(activation_token)
+		end
 
 end
 
