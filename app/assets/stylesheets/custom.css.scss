@@ -27,8 +27,15 @@ textarea {
 
 .nav {
 	background: black;
-	padding: 0 2em;
 	margin: none;
+	img.gravatar {
+		height: 3em;
+		width: 3em;
+		margin-top: .25em;
+	}
+	.navbar-nav.navbar-right:last-child {
+			margin-right: 1em;
+	}
 }
 
 #logo {
