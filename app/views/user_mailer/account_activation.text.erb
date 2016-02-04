@@ -1,7 +1,9 @@
-<h1>baileysimms.com</h1>
+baileysimms.com
 
-<p>Hi <%= @user.name %>,</p>
+Hi <%= @user.user_name %>,
 
-<p>Welcome to baileysimms.com! Click on the link below to activate your account:</p>
+Welcome to baileysimms.com! Click on the link below to activate your account:
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+Thanks!

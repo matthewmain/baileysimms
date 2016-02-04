@@ -1,5 +1,9 @@
-Hi <%= @user.name %>,
+<h1>baileysimms.com</h1>
 
-Thanks for verifying your email! Just click on the link below to activate your baileysimms.com account:
+<p>Hi <%= @user.user_name %>,</p>
 
-<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>
+<p>Welcome to baileysimms.com! Click on the link below to activate your account: </p>
+
+<%= link_to "Activate", edit_account_activation_url(@user.activation_token, email: @user.email) %>
+
+<p>Thanks!</p>
