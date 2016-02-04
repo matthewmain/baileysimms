@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'password_resets/new'
+
+  get 'password_resets/edit'
+
   root 'home#show'
   
   resources :posts, :users, :comments, :books, :parts
   resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   get 'ebooks_display' => 'ebooks_display#show'
 
