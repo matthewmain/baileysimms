@@ -5,7 +5,7 @@
   <a href="http://gravatar.com/emails" target="_blank">change image</a>
 </div>
 
-<div id="user-edit-form">
+<div class="form">
 	<%= form_for(@user) do |f| %>
 
 	  <%= render 'shared/error_messages' %>
@@ -22,7 +22,7 @@
 		<%= f.label :password_confirmation, "Confirm New Password: " %> 
 		<%= f.password_field :password_confirmation %>
 
-	  <%= f.submit "SAVE CHANGES", id: "user-edit-save-button" %>
+	  <%= f.submit "SAVE CHANGES", class: "form-button" %>
 
 	<% end %>	
 </div>

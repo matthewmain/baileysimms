@@ -16,6 +16,38 @@
 
 
 
+h1 {
+	text-align: center;
+	margin: 1.5em auto;
+}
+
+
+/*** FORMS ***/
+
+.form { 
+	margin: auto;
+	width: 30%;
+	font-weight: bold;
+}
+
+.form	input {
+	margin: 5px auto 10px;
+	width: 100%;
+	height: 20px;
+	padding: 0 4px;
+}
+
+input.form-button {
+	display: block;
+	margin: 2em auto 0;
+	min-width: 33%;
+	width: auto;
+	height: 27px;
+	border-radius: 7px;
+	font-weight: bold;
+}
+
+
 
 /*** FLASH ALERT ***/
 

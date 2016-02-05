@@ -1,6 +1,6 @@
 <h1>Sign Up</h1>
 
-<div id="signup-form">
+<div class="form">
 	<%= form_for(@user) do |f| %>
 
 		<%= render 'shared/error_messages' %>
@@ -17,7 +17,7 @@
 		<%= f.label :password_confirmation, "Confirm Password: " %> 
 		<%= f.password_field :password_confirmation %>
 		
-		<%= f.submit "JOIN", id: "signup-join-button" %>
+		<%= f.submit "JOIN", class: "form-button" %>
 		
 	<% end %>
 </div>
