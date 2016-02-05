@@ -1,13 +1,14 @@
-<h1>Forget your password?</h1>
+<h1>Forgot your password?</h1>
 
-<div id="password-reset-form">
+<div class="form">
 
     <%= form_for(:password_reset, url: password_resets_path) do |f| %>
 
       <%= f.label :email, "Enter your email:" %>
       <%= f.email_field :email %>
 
-      <%= f.submit "Submit", id: "password-reset-button" %>
+      <%= f.submit "Submit", class: "form-button" %>
 
     <% end %>
+    
 </div>
