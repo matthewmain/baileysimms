@@ -91,11 +91,32 @@ class User < ActiveRecord::Base
 
 
 
+  ### PASSWORD RESET ###
+
+  #sets the password reset attributes
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_attribute(:reset_digest,  User.digest(reset_token))
+    update_attribute(:reset_sent_at, Time.zone.now)
+  end
+
+  #sends password reset email
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  #returns true if a password reset has expired.
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
+
 	### QUERIES ###
 
 	def self.all_user_names
 		User.all.map { |user| user[:user_name] }
 	end
+
 
 
 	private
