@@ -69,6 +69,13 @@ input.form-button {
 	margin: 2em auto;
 }
 
+.flash-alert-warning {
+	color: orange;
+	text-align: center;
+	margin: 2em auto;
+}
+
+
 
 
 
