@@ -6,7 +6,12 @@ Rails.application.routes.draw do
 
   root 'home#show'
   
-  resources :posts, :users, :comments, :books, :parts
+  resources :posts
+  resources :users
+  resources :comments
+  resources :books do
+    resources :parts
+  end
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
