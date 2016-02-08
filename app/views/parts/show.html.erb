@@ -1,2 +1,31 @@
-<h1>Parts#show</h1>
-<p>Find me in app/views/parts/show.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title><%="Bailey Simms | DEAD IN BED | Part #{@part.part_number}: #{@part.title}"%></title> 
+  </head>
+
+  <body>
+    <div class="container_12 clearfix">
+    
+      <div class="part_text grid_text">
+      	<%= raw @part.content %>
+      </div>
+
+      <div class="grid_5">
+        <%= image_tag("DiB#{@part.part_number} cover.jpg", class: "part_cover") %>
+      </div>  
+
+      <div class="grid_6 fill_right part_<%=@part.part_number%>">
+      </div>
+
+      <div class="grid_text end_links">
+        <p><em>You've reached the end of DEAD IN BED, Part <%=@part.part_number%>...</em></p>
+        <p class="amazon_link"><a href="http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=" class="btn"><%= image_tag("amazon icon.png", width: "19px", class: "amazon_icon") %> <u>Purchase the complete novel at Amazon</u></a></p>
+        <p class="goodreads_link"><a href="https://www.goodreads.com/book/show/<%= @part.goodreads_id %>" class="btn"><%= image_tag("goodreads icon.png", width: "19px", class: "goodreads_icon") %> <u>Add to Goodreads</u></a></p>
+      </div>
+
+    </div>
+  </body>
+
+</html>

@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+### USERS ###
 User.create(	user_name: 'Bailey_Simms', 
 							email: 'baileysimms96@yahoo.com', 
 							password: 'temp', 
@@ -14,7 +15,7 @@ User.create(	user_name: 'Bailey_Simms',
 							activated: true,
 							activated_at: Time.zone.now	)
 
-### TEST USERS ###
+# Test Users #
 100.times do |n|
   user_name  = "Test_#{n+1}"
   email = "test#{n+1}@test.com"
@@ -32,4 +33,23 @@ User.create(	user_name: 'Adrian_Birch',
 							admin: true,
 							activated: true,
 							activated_at: Time.zone.now	)
+
+
+
+### BOOKS ###
+
+Book.create(title: 'Dead in Bed: The Complete First Book')
+Book.create(title: 'Dead in Bed: The Complete Second Book')
+
+
+### PARTS ###
+
+Part.create(book_id: 1, part_number: 1, title: 'Fifty Shades of Gangrene')
+Part.create(book_id: 1, part_number: 2, title: 'Stiff')
+Part.create(book_id: 1, part_number: 3, title: 'Going Down Six Feet Under')
+Part.create(book_id: 1, part_number: 4, title: 'Milk and Honey')
+Part.create(book_id: 1, part_number: 5, title: 'Don\'t Catch the Plague')
+Part.create(book_id: 1, part_number: 6, title: 'Whetted Appetites')
+Part.create(book_id: 1, part_number: 7, title: 'Sick')
+
 

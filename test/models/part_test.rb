@@ -2,12 +2,14 @@
 #
 # Table name: parts
 #
-#  id          :integer          not null, primary key
-#  book_id     :integer
-#  part_number :integer
-#  title       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
+#  id           :integer          not null, primary key
+#  part_number  :integer
+#  title        :string
+#  content      :text
+#  book_id      :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  goodreads_id :string
 #
 
 require 'test_helper'
