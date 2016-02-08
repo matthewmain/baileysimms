@@ -1,2 +1,68 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Bailey Simms | Books</title>  
+  </head>
+
+  <body>
+    <div>
+      <div id="complete_novel_image_container">
+      	<%= image_tag("DiBC cover.jpg", alt: "Complete Novel", class: "complete_novel_image") %>
+      </div> 
+
+      <div id="complete_novel_text_container">
+        <p class="complete_novel_text_container_heading"><i>DEAD IN BED, The Complete Novel</i><br>is now available.</p>
+        <ul class="complete_novel_text_container_links"> 
+          <li class="complete_novel_text_container_links_amazon"><a href="http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=" class="btn">Buy at Amazon</a></li>
+          <li class="complete_novel_text_container_links_goodreads"><a href="https://www.goodreads.com/book/show/26024978-dead-in-bed" class="btn">Add to Goodreads</a></li>
+        </ul>
+      </div> 
+
+
+      <div class="line">
+      </div>
+
+
+      <div class="parts p1">
+      	<%= link_to image_tag("DiB1 cover.jpg", alt: "Part 1", class: "part_image1"), "/books/1/parts/1" %>
+        <p class="read_now read_now1"><i>READ NOW</i></p>
+      </div>
+
+      <div class="parts p2">
+        <%= link_to image_tag("DiB2 cover.jpg", alt: "Part 2", class: "part_image"), "/books/1/parts/2" %>
+        <p class="read_now"><i>SAMPLE</i></p>
+      </div>
+
+      <div class="parts p3">
+        <%= link_to image_tag("DiB3 cover.jpg", alt: "Part 3", class: "part_image"), "/books/1/parts/3" %>
+        <p class="read_now"><i>SAMPLE</i></p>
+      </div>
+
+      <div class="parts p4">
+        <%= link_to image_tag("DiB4 cover.jpg", alt: "Part 4", class: "part_image"), "/books/1/parts/4" %>
+        <p class="read_now"><i>SAMPLE</i></p>
+      </div>
+
+      <div class="parts p5">
+        <%= link_to image_tag("DiB5 cover.jpg", alt: "Part 5", class: "part_image"), "/books/1/parts/5" %>
+        <p class="read_now"><i>SAMPLE</i></p>
+      </div>
+
+      <div class="parts p6">
+        <%= link_to image_tag("DiB6 cover.jpg", alt: "Part 6", class: "part_image"), "/books/1/parts/6" %>
+        <p class="read_now"><i>SAMPLE</i></p>
+      </div>
+
+      <div class="parts p7">
+        <%= link_to image_tag("DiB7 cover.jpg", alt: "Part 7", class: "part_image"), "/books/1/parts/7" %>
+        <p class="read_now"><i>SAMPLE</i></p>
+      </div>
+
+
+    </div>
+  </body>
+
+</html>
+
+

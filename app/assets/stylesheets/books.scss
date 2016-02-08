@@ -1,3 +1,110 @@
-// Place all the styles related to the Books controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	font-family: Avenir, Helvetica, sans-serif;
+	background: #FBFDFC;
+	color: #040D12;
+}
+
+
+#complete_novel_image_container {
+	margin: 95px 0 0 20px;
+}
+
+	.complete_novel_image {
+		height: 300px;
+		box-shadow: 0 0 30px 0px #000000;
+	}
+
+#complete_novel_text_container {
+	height: 270px;
+	margin: 80px 0 50px;
+	padding-top: 25px;
+	text-align: center;
+}
+	p.complete_novel_text_container_heading {
+		margin: 35px 0 25px 0;
+		font-size: 1.45em;
+	}
+	ul.complete_novel_text_container_links {
+		list-style-type: none; 
+		padding: 0;
+	}
+		a.btn {
+			display: inline-block;
+			width: 150px;
+			margin: 8px;
+			padding: 8px 0;	
+			border-radius: 15px;
+			background-color: #42a3ac;
+			font-size: 14px;
+			color: white;
+			text-decoration: none;
+			border: none;
+
+		}
+		.btn:hover {
+			margin: 6px 0 5px;
+			padding: 10px 2px;
+			border-radius: 17px;
+			font-size: 15px;
+		}
+
+.line {
+	text-align: center;
+	border-top: 1px solid;
+	border-top-color: #040D12;
+	margin-bottom: 30px;
+}
+
+
+
+.parts {
+	text-align: center;
+	margin-bottom: 50px;
+	color: #FBFDFC;
+	font-size: .9em;
+}
+.p1 {
+  color: #AD0000;
+}
+  .part_image1 {
+  height: 156px;
+  box-shadow: 0 0 10px 0px gray;
+  margin-top: 2px;
+  }
+  .part_image1:hover {
+	height: 160px;
+	margin-top: 0;
+	}
+  .part_image {
+  	height: 150px;
+    box-shadow: 0 0 10px 0px gray;
+    margin-top: 5px;
+  }
+  	.parts:hover {
+  	  color: #42a3ac;
+  	}
+  	  .p1:hover {
+  	    font-weight: 600;
+  	    color: #AD0000;
+    }
+  	.part_image:hover {
+	  height: 160px;
+	  margin-top: 0;
+	}
+  .read_now {
+	margin: 0;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
