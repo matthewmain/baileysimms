@@ -1,5 +1,6 @@
 #books_body {
 	font-family: Avenir, Helvetica, sans-serif;
+	margin-top: -60px;
 	background: #FBFDFC;
 	color: #040D12;
 }
@@ -8,47 +9,49 @@
 #complete_novel_image_container {
 	margin: 95px 0 0 20px;
 }
-
 	.complete_novel_image {
 		height: 300px;
 		box-shadow: 0 0 30px 0px #000000;
+		float: right;
 	}
 
 #complete_novel_text_container {
 	height: 270px;
-	margin: 80px 0 50px;
+	margin: 80px 0 95px;
 	padding-top: 25px;
 	text-align: center;
 }
 	p.complete_novel_text_container_heading {
 		margin: 35px 0 25px 0;
-		font-size: 1.45em;
+		font-size: 1.66em;
 	}
 	ul.complete_novel_text_container_links {
 		list-style-type: none; 
 		padding: 0;
 	}
-		a.btn {
+		a.books_page_button {
 			display: inline-block;
 			width: 150px;
 			margin: 8px;
 			padding: 8px 0;	
 			border-radius: 15px;
-			background-color: #42a3ac;
+			background-color: #428bca;
 			font-size: 14px;
 			color: white;
 			text-decoration: none;
 			border: none;
-
+			&:hover {
+				margin: 6px 0 5px;
+				padding: 10px 2px;
+				width: 160px;
+				border-radius: 17px;
+				font-size: 15px;
+				text-decoration: none;
+				color: white;
+			}
 		}
-		.btn:hover {
-			margin: 6px 0 5px;
-			padding: 10px 2px;
-			border-radius: 17px;
-			font-size: 15px;
-		}
 
-.line {
+.books_page_line {
 	text-align: center;
 	border-top: 1px solid;
 	border-top-color: #040D12;
@@ -57,11 +60,11 @@
 
 
 
-.parts {
+.books_page_parts {
 	text-align: center;
 	margin-bottom: 50px;
 	color: #FBFDFC;
-	font-size: .9em;
+	font-size: 1em;
 }
 .p1 {
   color: #AD0000;
@@ -80,8 +83,8 @@
     box-shadow: 0 0 10px 0px gray;
     margin-top: 5px;
   }
-  	.parts:hover {
-  	  color: #42a3ac;
+  	.books_page_parts:hover {
+  	  color: #428bca;
   	}
   	  .p1:hover {
   	    font-weight: 600;
@@ -92,7 +95,8 @@
 	  margin-top: 0;
 	}
   .read_now {
-	margin: 0;
+  	font-size: 1.05em;
+		margin: .3em 0 0;
   }
 
 
