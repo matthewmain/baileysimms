@@ -1,4 +1,5 @@
 body {
+	font-family: "Linden Hill", serif;
 	background-color: #ffffff;
 	color: #040D12;
 }
@@ -8,7 +9,7 @@ body {
 .part_cover {
 	height: 600px;
 	position: fixed;
-	margin: 40px 0 0 80px;
+	margin: -10px 0 0 80px;
 }
 
 
@@ -16,7 +17,7 @@ body {
 .part_text {
 	font-family: "Linden Hill", serif;
 	text-align: justify;
-	margin: 119px 0 0 50px;
+	margin: 90px 0 0 50px;
 }
 
 .first_letter {
@@ -45,7 +46,7 @@ body {
 
 
 .fill_right.part_1 {
-	margin: 124px 0 0 0;
+	margin: 24px 0 0 0;
 	padding-right: 20px;
 	height: 1750em;
 }
@@ -89,33 +90,43 @@ body {
 
 
 .end_links {
-	text-align: center;
+	font-family: "Linden Hill", serif;
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 	border-color: black;
-	margin: 10px 0 80px 50px;
-	font-size: 18px;
-	line-height: 28px;
+	text-align: center;
+  margin: 10px 0 80px 50px;
+  font-size: 18px;
+  line-height: 28px;
+	a {
+		margin: 0;
+		font-size: 20px;
+		line-height: 28px;
+		color: black;
+		text-align: center;
+		text-decoration: none;
+		&:hover {
+			font-size: 21px;
+		}
+	}
+	p.amazon_link {
+		margin: 20px auto 15px;
+	}
+	.amazon_icon {
+		vertical-align: middle;
+		padding-bottom: 5px;
+	}
+	p.goodreads_link {
+		margin: 15px auto 20px;
+	}
+	.goodreads_icon {
+		vertical-align: middle;
+		padding-bottom: 5px;
+	}
 }
 
-		.btn {
-			text-align: center;
-			color: #040D12;
-			word-spacing: 2px;
-		}
 
-		.btn:hover {
-			font-size: 19px;
-		}
 
-		.amazon_icon {
-			vertical-align: middle;
-		}
-
-		.goodreads_icon {
-			vertical-align: middle;
-			margin-top: 0;
-		}
 
 
 
