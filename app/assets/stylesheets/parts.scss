@@ -1,3 +1,129 @@
-// Place all the styles related to the Parts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	background-color: #ffffff;
+	color: #040D12;
+}
+
+
+
+.part_cover {
+	height: 600px;
+	position: fixed;
+	margin: 40px 0 0 80px;
+}
+
+
+
+.part_text {
+	font-family: "Linden Hill", serif;
+	text-align: justify;
+	margin: 119px 0 0 50px;
+}
+
+.first_letter {
+	font-size: 4em;
+	font-weight: 100;
+	font-family: garamond;
+}
+
+.new_section_first_letter {
+	font-size: 1.5em;
+	font-weight: 100;
+	font-family: garamond;
+}
+
+.part_text p {
+	line-height: 1.5em;
+	font-size: 1.1em;
+  	margin-bottom: 0;
+}
+
+	.part_text p + p {
+  		text-indent: 1.5em;
+  		margin-top: 0;
+  	}
+
+
+
+.fill_right.part_1 {
+	margin: 124px 0 0 0;
+	padding-right: 20px;
+	height: 1750em;
+}
+
+.fill_right.part_2 {
+	margin: 124px 0 0 0;
+	padding-right: 20px;
+	height: 77em;
+}
+
+.fill_right.part_3 {
+	margin: 124px 0 0 0;
+	padding-right: 20px;
+	height: 135em;
+}
+
+.fill_right.part_4 {
+	margin: 124px 0 0 0;
+	padding-right: 20px;
+	height: 67.5em;
+}
+
+.fill_right.part_5 {
+	margin: 124px 0 0 0;
+	padding-right: 20px;
+	height: 140.2em;
+}
+
+.fill_right.part_6 {
+	margin: 124px 0 0 0;
+	padding-right: 20px;
+	height: 127.2em;
+}
+
+.fill_right.part_7 {
+	margin: 124px 0 0 0;
+	padding-right: 20px;
+	height: 96em;
+}
+
+
+
+.end_links {
+	text-align: center;
+	border-top: 1px solid;
+	border-bottom: 1px solid;
+	border-color: black;
+	margin: 10px 0 80px 50px;
+	font-size: 18px;
+	line-height: 28px;
+}
+
+		.btn {
+			text-align: center;
+			color: #040D12;
+			word-spacing: 2px;
+		}
+
+		.btn:hover {
+			font-size: 19px;
+		}
+
+		.amazon_icon {
+			vertical-align: middle;
+		}
+
+		.goodreads_icon {
+			vertical-align: middle;
+			margin-top: 0;
+		}
+
+
+
+
+
+
+
+
+
+
+
