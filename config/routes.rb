@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  get 'ebooks_display' => 'ebooks_display#show'
-
   get 'about' => 'about#show'
   
   get 'contact' => 'contact#show'
