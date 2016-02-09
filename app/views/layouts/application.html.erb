@@ -8,20 +8,16 @@
   <link href='http://fonts.googleapis.com/css?family=Linden+Hill:400,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<%= render 'layouts/header' unless @omit_header %>
+
 	<div>
-		<%= render 'layouts/header' unless @omit_header %>
-
-		<div>
-
-			<% flash.each do |message_type, message| %>
-	    	<%= content_tag(:div, message, class: "flash-alert-#{message_type}") %>
-	    <% end %>
-
-			<%= yield %>
-
-			<%= render 'layouts/footer' unless @omit_footer %>
-			
-		</div>
+		<% flash.each do |message_type, message| %>
+    	<%= content_tag(:div, message, class: "flash-alert-#{message_type}") %>
+    <% end %>
 	</div>
+
+	<%= yield %>
+
+  <%= render 'layouts/footer' unless @omit_footer %>
 </body>
 </html>

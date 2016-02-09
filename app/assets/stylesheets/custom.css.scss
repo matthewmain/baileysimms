@@ -43,7 +43,6 @@ footer {
 	width: 96%;
 	margin: 2% 2% .8%;
 	padding-top: 5px;
-	border-top: 1px solid darkgray;
 	font-size: .75em;
 	ul {
 		float: right;
@@ -51,17 +50,17 @@ footer {
 		color: gray;
 		width: 100%;
 		padding: 0;
-		margin: 0;
+		margin: 5em 0 1em;
+		border-top: 1px solid darkgray;
 		li {
   		float: left;
-  		margin-left: 15px;
-  		margin: 0;
+  		margin: 5px 0 0 15px;
   		a {
   			color: gray;
-  				&:hover {
-					color: white;
+  			&:hover {
+					color: lightgray;
 					text-decoration: none;
-	}
+				}
   		}
 		}
 	}
