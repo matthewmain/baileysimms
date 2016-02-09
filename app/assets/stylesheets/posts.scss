@@ -1,3 +1,95 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+/// LAYOUT ///
+
+#blog_body {
+	min-height: 100%;
+}
+
+#blog_title_container {
+	background: #eae8e8;
+	width: 96%;
+	margin: 2% auto 1%;
+	min-height: 6em;
+	padding: 1%;
+	h1 {
+		margin: 1em auto;
+	}
+}
+
+#blog_posts_index_column_container {
+	background: #eae8e8;
+	width: 23.5%;
+	margin: 1% 1% 1% 2%;
+	min-height: 30em;
+	padding: 1%;
+	float: left;
+	ul {
+		list-style: none;
+		padding: 0;
+		li {
+			font-size: .7em;
+			text-align: justify;
+			padding: 1.25em 1.25em;
+			border-bottom: 2px solid white;
+			p {
+				margin: 0;
+			}
+			#date {
+				margin-bottom: .5em;
+			
+			}
+			#title {
+				font-weight: bold;
+				font-style: italic;
+				line-height: 1.1em;
+				color: #4b5456;
+			}
+			&:hover {
+				background: white;
+				color: #832f31;
+				a {
+					text-decoration: none;
+					color: #832f31;
+				}
+				#date {
+					text-decoration: none;
+					font-weight: 500;
+				}
+				#title {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+#blog_post_container {
+	background: #eae8e8;	
+	width: 70.5%;
+	margin: 1% 2% 1% 1%;
+	min-height: 30em;
+	padding: 1%;
+	float: right;
+}
+
+#blog_comments_container {
+	background: #eae8e8;	
+	width: 96%;
+	margin: 1% 2% 2%;
+	min-height: 10em;
+	padding: 1%;
+	float: left;
+}
+
+
+/// BLOG POSTS INDEX COLUMN ///
+
+
+
+
+

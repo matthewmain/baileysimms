@@ -1,2 +1,32 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<head>
+  <title>Bailey Simms | Blog</title>  
+</head>
+
+<body id="blog_body">
+
+  <div id="blog_title_container">
+    <h1>THE BLOG</h1>
+  </div>
+
+  <div id="blog_posts_index_column_container">
+  	<ul>
+  	<% @posts.each do |post| %>
+	    <li>
+	    <%= link_to post do %>
+	    	<p id="date"><%= post.date.strftime("%A, %B #{post.date.day.ordinalize}, %Y. %l:%m %P") %></p>
+	      <p id="title"><%= post.title %></p>
+	    <% end %>
+	    </li>
+  	<% end %>
+  	</ul>
+  </div>
+
+  <div id="blog_post_container" class="clearfix">
+  	<h5 style="text-align:center">post</h5>
+  </div>
+
+  <div id="blog_comments_container" class="clearfix">
+  	<h5 style="text-align:center">comments</h5>
+  </div>
+
+</body>
