@@ -1,4 +1,4 @@
-<h1>Posts#show</h1>
+<h3 style="text-align:center"><%=@post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %></h3>
+<h1><%=@post.title%></h1>
 
 <%= raw @post.content %>
-

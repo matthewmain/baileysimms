@@ -25,15 +25,15 @@
 	background: #eae8e8;
 	width: 23.5%;
 	margin: 1% 1% 1% 2%;
-	min-height: 30em;
+	height: 30em;
 	padding: 1%;
 	float: left;
+	overflow: scroll;
 	ul {
 		list-style: none;
 		padding: 0;
 		li {
-			font-size: .7em;
-			text-align: justify;
+			font-size: .85em;
 			padding: 1.25em 1.25em;
 			border-bottom: 2px solid white;
 			p {
@@ -72,9 +72,10 @@
 	background: #eae8e8;	
 	width: 70.5%;
 	margin: 1% 2% 1% 1%;
-	min-height: 30em;
+	height: 30em;
 	padding: 1%;
 	float: right;
+	overflow: scroll;
 }
 
 #blog_comments_container {
