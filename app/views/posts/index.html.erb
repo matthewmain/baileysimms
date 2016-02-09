@@ -12,10 +12,10 @@
   	<ul>
   	<% @posts.each do |post| %>
 	    <li>
-	    <%= link_to post do %>
-	    	<p id="date"><%= post.date.strftime("%A, %B #{post.date.day.ordinalize}, %Y. %l:%m %P") %></p>
+	    	<%= link_to post do %>
+	    	<p id="date"><%= post.date.strftime("%A, %B #{post.date.day.ordinalize}, %Y. %l:%M %P.") %></p>
 	      <p id="title"><%= post.title %></p>
-	    <% end %>
+	    	<% end %>
 	    </li>
   	<% end %>
   	</ul>
