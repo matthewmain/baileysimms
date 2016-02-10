@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @intro_page = true
   end
 
   def new
@@ -11,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    @posts = Post.all
     @post = Post.find(params[:id])
   end
 

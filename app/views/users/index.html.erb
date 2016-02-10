@@ -1,4 +1,10 @@
-<h1>All Users</h1>
+<head>
+  <title>Bailey Simms | Community</title>  
+</head>
+
+<body>
+
+<h1>Community</h1>
 
 <ul id="users-index">
   <% @users.each do |user| %>
@@ -14,4 +20,6 @@
 
 <%= will_paginate %>
 <p class="pagination"><%= page_entries_info @users %></p>
+
+</body>
 
