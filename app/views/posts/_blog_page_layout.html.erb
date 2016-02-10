@@ -1,0 +1,38 @@
+<body id="blog_body">
+
+  <div id="blog_title_container">
+    <h1>THE BLOG</h1>
+  </div>
+
+  <div id="blog_posts_index_column_container">
+  	<ul>
+  	<% @posts.each do |post| %>
+      <% if post.id == params[:id].to_i %>
+      <li class = "current_post">
+      <% else %>
+      <li>
+      <% end %>
+	    	<%= link_to post do %>
+	    	<p id="date"><%= post.date.strftime("%A, %B #{post.date.day.ordinalize}, %Y. %l:%M %P.") %></p>
+	      <p id="title"><%= post.title %></p>
+	    	<% end %>
+	    </li>
+  	<% end %>
+  	</ul>
+  </div>
+
+  <div id="blog_post_container">
+    <% if @intro_page == true %>
+      <%= render 'intro_statement' %>
+    <% else %>
+      <h4><%=@post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %></h3>
+      <h1><%=@post.title%></h1>
+      <%= raw @post.content %>
+    <% end %>
+  </div>
+
+  <div id="blog_comments_container">
+  	<h5 style="text-align:center">comments</h5>
+  </div>
+
+</body>

@@ -1,4 +1,5 @@
-<h3 style="text-align:center"><%=@post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %></h3>
-<h1><%=@post.title%></h1>
+<head>
+  <title>Bailey Simms | Blog | <%=@post.date.strftime("%-m/%-e/%y %l:%M%p") %></title>  
+</head>
 
-<%= raw @post.content %>
+<%= render 'blog_page_layout' %>
