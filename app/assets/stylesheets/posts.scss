@@ -10,20 +10,26 @@
 	min-height: 100%;
 }
 
+#blog_page_container {
+	max-width: 960px;
+	margin: auto;
+}
+
 #blog_title_container {
-	background: #eae8e8;
+	background: #55090b;
 	width: 96%;
-	margin: 2% auto 1%;
+	margin: 0 auto 1%;
 	min-height: 6em;
 	padding: 1%;
 	h1 {
 		margin: 1em auto;
+		color: #eae8e8;
 	}
 }
 
 #blog_posts_index_column_container {
 	background: #eae8e8;
-	width: 23.5%;
+	width: 28.5%;
 	margin: 1% 1% 1% 2%;
 	height: 30em;
 	padding: 1%;
@@ -49,7 +55,7 @@
 				color: #525c5e;
 			}
 			&:hover {
-				background: #f2f9f0;
+				background: #f2fbf2;
 				a {
 					text-decoration: none;
 				}
@@ -83,7 +89,7 @@
 #blog_post_container {
 	font-family: Optima;
 	background: #eae8e8;	
-	width: 70.5%;
+	width: 65.5%;
 	margin: 1% 2% 1% 1%;
 	height: 30em;
 	padding: 3em 2em;
