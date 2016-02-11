@@ -25,6 +25,10 @@ h1 {
 	margin: 1.5em auto;
 }
 
+a:hover {
+	text-decoration: none;
+}
+
 
 /*** FORMS ***/
 
