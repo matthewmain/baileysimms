@@ -41,6 +41,10 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { minimum: 3 }, allow_nil: true
 	
 
+  def to_param
+    user_name
+  end
+
 
 	### COOKIES ### 
 
