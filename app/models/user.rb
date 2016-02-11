@@ -41,6 +41,7 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: { minimum: 3 }, allow_nil: true
 	
 
+	#changes User's 'to_param' method's default from 'id' to 'user_name', which re-routes default 'user/:id' URLS to 'user/:user_name'
   def to_param
     user_name
   end
