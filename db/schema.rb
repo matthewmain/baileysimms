@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20160208023140) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "books", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at", null: false
@@ -65,6 +62,6 @@ ActiveRecord::Schema.define(version: 20160208023140) do
     t.datetime "reset_sent_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

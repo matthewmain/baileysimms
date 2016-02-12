@@ -27,14 +27,17 @@ class User < ActiveRecord::Base
 
 	attr_accessor :remember_token, :activation_token, :reset_token
 
-	validates :user_name, presence: true, length: { maximum: 20 }
+	validates :user_name, presence: true, 
+												length:	{ maximum: 20 },
+												format: { with: /\A[a-zA-Z0-9_]+\z/,
+																	message: "must include only letters, numbers, or underscores (no spaces)" } 					
 
 	before_save :downcase_email
 	before_create :create_activation_digest
 	validates :email, presence: true, 
 										length: { maximum: 255 },
 										format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i, 
-															message: "please enter a valid email address" },
+															message: "must be a valid email address" },
 										uniqueness: { case_sensitive: false }
 
 	has_secure_password

@@ -6,6 +6,7 @@ gem 'annotate'
 gem 'awesome_print'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'yaml_db'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
