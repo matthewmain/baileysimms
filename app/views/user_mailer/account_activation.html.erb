@@ -1,6 +1,6 @@
 <h1>baileysimms.com</h1>
 
-<p>Hi <%= @user.user_name %>,</p>
+<p>Hi <%= @user.user_name.gsub(/_/, ' ') %>,</p>
 
 <p>Welcome to baileysimms.com! Click on the link below to activate your account: </p>
 

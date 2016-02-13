@@ -10,7 +10,7 @@
   <% @users.each do |user| %>
     <li>
     	<%= gravatar_for user, size: 50 %>
-      <%= link_to user.user_name, user %>
+      <%= link_to user.user_name.gsub(/_/, ' '), user %>
       <% if current_user.admin? && !current_user?(user) %>
       	<span>|</span><%= link_to "delete", user, method: :delete, data: { confirm: "You sure you want to do this?" } %>
   		<% end %>
