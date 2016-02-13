@@ -26,7 +26,7 @@
 
     <div id="blog_post_container">
       <% if @intro_page == true %>
-        <%= render 'intro_statement' %>
+        <%= render 'posts/intro_statement' %>
       <% else %>
         <h4><%=@post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %></h4>
         <h1><%=@post.title%></h1>
@@ -36,6 +36,13 @@
 
     <div id="blog_comments_container">
     	<h5 style="text-align:center">comments</h5>
+      <% if logged_in? %>                                                       <!--HRTL 11.14, 11.47... -->
+        <%= render 'shared/user_info' %>
+        <%= render 'shared/comment_form' %>
+        <%= render 'shared/feed' %>
+      <% else %>
+        <p style="text-align:center"><i>please log in to comment</i></p>
+      <% end %>                                                                 <!-- ... -->
     </div>
 
    </div> 

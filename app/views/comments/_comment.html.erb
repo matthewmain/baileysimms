@@ -1,0 +1,14 @@
+
+									<!-- #11.21(created) <----* -->
+
+<li id="comment-<%= comment.id %>">
+  <%= link_to gravatar_for(comment.user, size: 50), comment.user %>
+  <span class="user_name"><%= link_to comment.user.user_name.gsub(/_/,' '), comment.user %></span>
+  <span class="content"><%= comment.content %></span>
+  <span class="timestamp">
+  	Posted <%= time_ago_in_words(comment.created_at) %> ago.										<!-- #HRTL 11.49 -->
+    <% if current_user?(comment.user) || current_user.admin? %>
+    	<%= link_to "delete", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %>
+    <% end %>
+  </span>
+</li>

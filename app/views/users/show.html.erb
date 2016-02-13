@@ -7,3 +7,12 @@
 	<h1><%= @user.user_name.gsub(/_/, ' ') %></h1>
 	<h1><%= @user.email %></h1>
 </div>
+
+<div id="profile_comments_div">														<!-- #HRTL 11.23... --> 
+  <% if @user.comments.any? %>
+    <h3>COMMENTS (<%= @user.comments.count %>)</h3>
+    <ol class="profile_comments_list">
+      <%= render @comments %>
+    </ol>
+  <% end %>
+</div>																										<!-- ... <----* -->

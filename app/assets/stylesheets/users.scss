@@ -10,6 +10,36 @@
 	margin: 9em 0 6em;
 }
 
+/* comments */
+
+.profile_comments_list {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user_name {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+  }
+  .timestamp {
+    color: lightgray;
+    display: block;
+    margin-left: 60px;
+  }
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+
 
 /// GRAVATAR ///
 
@@ -28,6 +58,7 @@
 }
 
 
+
 /// INDEX ///
 
 #users-index {
@@ -43,6 +74,7 @@
 		}
 	}
 }
+
 
 
 /// PAGINATION ///

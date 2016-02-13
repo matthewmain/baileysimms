@@ -7,7 +7,7 @@
 <div class="form">
 	<%= form_for(@user) do |f| %>
 
-		<%= render 'shared/error_messages' %>
+		<%= render 'shared/error_messages', object: f.object %>														<!--HRTL 11.41(39+) -->
 		
 		<%= f.label :user_name, "User Name: " %>
 		<%= f.text_field :user_name, :value => (@user.user_name.gsub(/_/, ' ') if @user.user_name), autofocus: true %> 

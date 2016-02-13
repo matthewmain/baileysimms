@@ -1,0 +1,5 @@
+														<!--HRTL 11.36 -->
+
+<%= link_to gravatar_for(current_user, size: 50), current_user %>
+<span><%= link_to current_user.user_name.gsub(/_/,' '), current_user %></span>
+<span><%= pluralize(current_user.comments.count, "comment") %></span>
