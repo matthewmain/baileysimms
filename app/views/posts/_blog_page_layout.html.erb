@@ -36,13 +36,13 @@
 
     <div id="blog_comments_container">
     	<h5 style="text-align:center">comments</h5>
-      <% if logged_in? %>                                                       <!--HRTL 11.14, 11.47... -->
+      <% if logged_in? %>                                            
         <%= render 'shared/user_info' %>
         <%= render 'shared/comment_form' %>
         <%= render 'shared/feed' %>
       <% else %>
         <p style="text-align:center"><i>please log in to comment</i></p>
-      <% end %>                                                                 <!-- ... -->
+      <% end %>                                     
     </div>
 
    </div> 

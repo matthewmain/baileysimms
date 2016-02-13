@@ -23,7 +23,7 @@
 #
 
 class User < ActiveRecord::Base
-	has_many :comments, dependent: :destroy 																												#(C21+)11.18 <----*
+	has_many :comments, dependent: :destroy 			
 
 	attr_accessor :remember_token, :activation_token, :reset_token
 
@@ -125,9 +125,9 @@ class User < ActiveRecord::Base
 		User.all.map { |user| user[:user_name] }
 	end
 
-	def feed																													#HRTL 11.44... <----*
+	def feed																													
 		Comment.where("user_id = ?", id)
-	end																																#... 			<----*
+	end																									
 
 
 
