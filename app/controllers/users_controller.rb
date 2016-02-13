@@ -50,6 +50,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_user_name(params[:id])
+    @comments = @user.comments                             #HRTL 11.22 <----*           
   end
 
   def edit
@@ -82,15 +83,6 @@ class UsersController < ApplicationController
 
 
     ### BEFORE-FILTERS ###
-
-    #confirms that a user is logged in
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "You'd better log in if you're going to try to do that sort of thing."
-        redirect_to login_url
-      end
-    end
 
     #confirms that a user is authorized
     def correct_user
