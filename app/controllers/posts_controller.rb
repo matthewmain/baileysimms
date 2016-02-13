@@ -15,10 +15,10 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @intro_page = true
-    if logged_in?                                                     #HRTL 11.38, 11.45... <----*
+    if logged_in?                                                     
       @comment = current_user.comments.build
       @feed_items = current_user.feed.paginate(page: params[:page]).per_page(5)
-    end                                                               #... <----*
+    end                                              
   end
 
   def new
@@ -30,10 +30,10 @@ class PostsController < ApplicationController
   def show
     @posts = Post.all
     @post = Post.find(params[:id])
-    if logged_in?                                                     #HRTL 11.38, 11.45... <----*  (duplicated from index)
+    if logged_in?                                   
       @comment = current_user.comments.build
       @feed_items = current_user.feed.paginate(page: params[:page]).per_page(5)
-    end                                                               #... <----*
+    end                                              
   end
 
   def edit

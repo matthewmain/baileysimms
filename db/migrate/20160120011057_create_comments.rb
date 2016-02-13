@@ -9,6 +9,6 @@ class CreateComments < ActiveRecord::Migration
       
       t.timestamps null: false
     end
-    add_index :comments, [:user_id, :created_at]      #HRTL 11.1 <----*
+    add_index :comments, [:user_id, :created_at]
   end
 end

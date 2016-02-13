@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   
   resources :posts
   resources :users
-  resources :comments, only: [:create, :destroy]                           #HRTL 11.29 <----* 
+  resources :comments, only: [:create, :destroy]  
   resources :books, only: [:index] do
     resources :parts, only: [:show]
   end

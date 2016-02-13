@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   def home
   end
 
-  private                          											#HRTL 11.31 (moved from users_controller)... <----* 
+  private      
 
     #confirms that a user is logged in
     def logged_in_user
@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
         flash[:danger] = "You'd better log in if you're going to try to do that sort of thing."
         redirect_to login_url
       end
-    end																									#... <----*
+    end						
 
 end
