@@ -29,8 +29,8 @@ class User < ActiveRecord::Base
 
 	validates :user_name, presence: true, 
 												length:	{ maximum: 20 },
-												format: { with: /\A[a-zA-Z0-9_]+\z/,
-																	message: "must include only letters, numbers, or underscores (no spaces)" } 					
+												format: { with: /\A[a-zA-Z0-9_ ]+\z/,
+																	message: "must include only letters, numbers, or spaces" } 					
 
 	before_save :downcase_email
 	before_create :create_activation_digest

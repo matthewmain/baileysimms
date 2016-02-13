@@ -1,5 +1,5 @@
 <head>
-  <title>Bailey Simms | <%=@user.user_name%> | Settings</title>  
+  <title>Bailey Simms | <%=@user.user_name.gsub(/_/, ' ')%> | Settings</title>  
 </head>
 
 <h1>Update Your Settings</h1>
@@ -15,7 +15,7 @@
 	  <%= render 'shared/error_messages' %>
 
 		<%= f.label :user_name, "Update User Name: " %>
-		<%= f.text_field :user_name, autofocus: true %> 
+		<%= f.text_field :user_name, :value => @user.user_name.gsub(/_/, ' '), autofocus: true %> 
 		
 		<%= f.label :email, "Update Email: " %> 
 		<%= f.email_field :email %>

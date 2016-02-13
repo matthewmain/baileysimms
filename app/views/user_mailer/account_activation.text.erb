@@ -1,6 +1,6 @@
 baileysimms.com
 
-Hi <%= @user.user_name %>,
+Hi <%= @user.user_name.gsub(/_/, ' ') %>,
 
 Welcome to baileysimms.com! Click on the link below to activate your account:
 
