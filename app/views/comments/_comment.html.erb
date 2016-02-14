@@ -1,8 +1,5 @@
-
-									<!-- #11.21(created) <----* -->
-
 <li id="comment-<%= comment.id %>">
-  <%= link_to gravatar_for(comment.user, size: 50), comment.user %>
+  <%= link_to gravatar_for(comment.user, size: 25), comment.user %>
   <span class="user_name"><%= link_to comment.user.user_name.gsub(/_/,' '), comment.user %></span>
   <span class="content"><%= comment.content %></span>
   <span class="timestamp">

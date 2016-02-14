@@ -1,10 +1,6 @@
 <div id="blog_intro_statement">
 
-	<p>The blog you are about to read was hosted by a teen under the name “Bailey Simms” for more than a year. Little is still known about the author’s actual identity.</p>
-
-	<p>Among Ms. Simms’s blog posts is a completed serialized novel which has now been published as <i>Dead in Bed</i>. Interspersed within the novel’s segments, blog updates describe events in the author’s life from the winter of 2013 until the spring of 2015. At that point, the posts abruptly stop.</p>
-
-	<p>None of this blog’s original material has been altered. The contents are disturbing.</p>
+	<%= raw Post.find(0).content %>
 
 	<p id="blog_intro_statement_button"><%= link_to 'READ NOW', 'posts/1'%></p>
 

@@ -14,11 +14,11 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @intro_page = true
-    if logged_in?                                                     
-      @comment = current_user.comments.build
-      @feed_items = current_user.feed.paginate(page: params[:page]).per_page(5)
-    end                                              
+    @post = Post.find(0)
+    @post_id = 0         
+    @intro_page = true                                       
+    @comment = current_user.comments.build
+    @feed_items = current_user.feed.paginate(page: params[:page]).per_page(5)                                            
   end
 
   def new
@@ -30,6 +30,7 @@ class PostsController < ApplicationController
   def show
     @posts = Post.all
     @post = Post.find(params[:id])
+    @post_id = @post.id
     if logged_in?                                   
       @comment = current_user.comments.build
       @feed_items = current_user.feed.paginate(page: params[:page]).per_page(5)

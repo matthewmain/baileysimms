@@ -1,6 +1,6 @@
 <% if @feed_items.any? %>
-  <ol class="comments">
-    <%= render @feed_items %>
-  </ol>
+  <ol class="blog_comments">
+    <%= render @feed_items %>							<!-- Because each element of "@feed_items" is an instance of the Comment class, -->
+  </ol>																		<!-- rails automatically renders the "_comment.html.erb" partial for each element. -->
   <%= will_paginate @feed_items %>
 <% end %>
