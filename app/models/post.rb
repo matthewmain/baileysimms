@@ -12,5 +12,9 @@
 
 class Post < ActiveRecord::Base
 	has_many :comments
+
+	def feed																													
+		Comment.where("post_id = ?", id)
+	end		
 	
 end

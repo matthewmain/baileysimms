@@ -37,13 +37,13 @@
     </div>
 
     <div id="blog_comments_container">
-    	<h5 style="text-align:center">comments</h5>
+    	<h4 style="text-align:center">COMMENTS</h4>
       <% if logged_in? %>                                            
         <%= render 'shared/user_info' %>
         <%= render 'shared/comment_form' %>
         <%= render 'shared/feed' %>
       <% else %>
-        <p style="text-align:center"><i>please log in to comment</i></p>
+        <p style="text-align:center"><i>please log in to see comments</i></p>
       <% end %>                                     
     </div>
 

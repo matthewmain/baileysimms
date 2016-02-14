@@ -123,11 +123,7 @@ class User < ActiveRecord::Base
 
 	def self.all_user_names
 		User.all.map { |user| user[:user_name] }
-	end
-
-	def feed																													
-		Comment.where("user_id = ?", id)
-	end																									
+	end																							
 
 
 
