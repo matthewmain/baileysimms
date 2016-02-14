@@ -21,7 +21,7 @@ class CommentsController < ApplicationController
       flash[:success] = "Comment made!" 
       redirect_to request.referrer
     else
-      render :partial => "shared/comment_form"            #<-----fix this
+      render :partial => "shared/comment_form"    #fix this
     end              
   end
 
