@@ -30,11 +30,9 @@ class PostsController < ApplicationController
   def show
     @posts = Post.all
     @post = Post.find(params[:id])
-    @post_id = @post.id
-    if logged_in?                                   
-      @comment = current_user.comments.build
-      @feed_items = @post.feed.paginate(page: params[:page]).per_page(5)
-    end                                              
+    @post_id = @post.id                                  
+    @comment = current_user.comments.build if logged_in?
+    @feed_items = @post.feed.paginate(page: params[:page]).per_page(5)                                           
   end
 
   def edit
