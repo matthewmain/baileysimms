@@ -16,7 +16,7 @@
           <li><%= link_to 'THE BLOG', posts_path %></li>
           <li><%= link_to 'BOOKS', books_path %></li>
           <li><%= link_to 'ABOUT', about_path %></li>
-          <li><%= link_to 'CONTACT', contact_path %></li>
+          <li><%= mail_to'baileysimms96@yahoo.com', 'CONTACT' %></li>
           <% if logged_in? %>
             <li><%= link_to "PROFILE", current_user %></li>
             <li><%= link_to "LOG OUT", logout_path, method: "delete" %></li>

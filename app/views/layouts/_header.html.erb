@@ -6,7 +6,7 @@
           <li><%= link_to 'blog', posts_path %></li>
           <li><%= link_to 'books', books_path %></li>
           <li><%= link_to 'about', about_path %></li>
-          <li><%= link_to 'contact', contact_path %></li>
+          <li><%= mail_to'baileysimms96@yahoo.com', 'contact' %></li>
           <% if logged_in? %>
             <li><%= link_to "community", users_path %></li>
           <% end %>

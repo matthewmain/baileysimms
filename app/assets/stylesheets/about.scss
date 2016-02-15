@@ -1,3 +1,90 @@
-// Place all the styles related to the About controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#about_body {
+	font-family: "Avenir", Helvetica, sans-serif;
+	background: #040d12;
+	color: #57abb6;
+}
+
+#header_links {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	min-width: 1150px;
+	z-index: 1;
+	background: #BDC3C7; 
+	font-family: "Avenir", Helvetica, sans-serif;
+	font-size: .7em;
+	letter-spacing: 3px;
+	padding-top: 1em;
+	height: 2.3em;
+	border-bottom: 2px solid;
+	border-top: 2px solid;
+	border-color: #040d12;
+}
+
+#header_links ul {
+	list-style-type: none;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+#header_links ul li {
+	display: inline-block;
+	padding: 0 60px;
+}
+
+#header_links ul li a {
+	color: #040d12;
+	text-decoration: none;
+}
+
+#header_links ul li a:hover {
+	color: #DEFBFF;
+}
+
+
+
+.bio {
+	margin: 70px 250px 0 250px; 
+}
+
+.bio h1 {
+	text-align: center;
+	font-size: 4em;
+	margin: 0;
+	padding: 0;
+} 
+
+	h1.bailey_head {
+		letter-spacing: .74em;
+	}
+
+	h1.simms_head {
+		letter-spacing: .97em;
+	}
+
+.bio p {
+	text-align: justify;
+	font-size: .95em;
+}
+
+.bio a {
+	text-decoration: none;
+	color: #57abb6;
+}
+
+.bio a:hover {
+	color: white;
+}
+
+
+
+
+
+
+
+
+
