@@ -9,6 +9,17 @@ posts:
   - created_at
   - updated_at
   records: 
+  - - 0
+    - Warning
+    - '2016-02-14 21:46:28.006611'
+    - |-
+      <p>The blog you are about to read was hosted by a teen under the name “Bailey Simms” for more than a year. Little is still known about the author’s actual identity.</p>
+
+      <p>Among Ms. Simms’s blog posts is a completed serialized novel which has now been published as <i>Dead in Bed</i>. Interspersed within the novel’s segments, blog updates describe events in the author’s life from the winter of 2013 until the spring of 2015. At that point, the posts abruptly stop.</p>
+
+      <p>None of this blog’s original material has been altered. The contents are disturbing.</p>
+    - '2016-02-14 21:47:30.184018'
+    - '2016-02-14 21:47:30.184018'
   - - 1
     - First Post
     - '2013-12-27 13:34:00.000000'
@@ -1367,7 +1378,7 @@ users:
     - baileysimms96@yahoo.com
     - 
     - '2016-02-08 01:51:31.404408'
-    - '2016-02-08 05:58:27.904908'
+    - '2016-02-13 05:23:51.299641'
     - "$2a$10$eQBjGg1AUVgi9752i4ERqerArG4WqER7bePlrVPYAcbpT6Tvq7vVW"
     - 
     - true
@@ -2781,29 +2792,97 @@ users:
     - adrianbirchdib@yahoo.com
     - 
     - '2016-02-08 01:51:51.005976'
-    - '2016-02-12 23:16:12.428224'
+    - '2016-02-15 00:23:09.774874'
     - "$2a$10$7DbkQpYZxRkIBLpxUnDpQ.dvmHV0vhtxsr4R24axtf7QnIVzYOdJi"
-    - "$2a$10$F4Ia/3FefjxcnNZrnzhNDOU5PG66yHVYwUGhJZK3XxCP3T0vTImdq"
+    - "$2a$10$hnPsS0iKRe9q9iZwI1Xm/eVeT5ugCyKXhpjPNbxbCUEn9ldVk9krC"
     - true
     - "$2a$10$uJ6c1BSovxNvkmI7OeIrZepwULbE.kHrFHQXHgWFxPGhVGqG2MB3a"
     - true
     - '2016-02-08 01:51:50.943055'
     - 
     - 
-  - - 113
-    - Mr_Valid16
-    - valid16@mr.com
+  - - 117
+    - Mr_Pink
+    - pink@mr.com
     - 
-    - '2016-02-12 23:15:09.370683'
-    - '2016-02-12 23:15:43.414033'
-    - "$2a$10$a9zCGj2alORyU9fmwHTNUurau6SGvy1UYTXMrrIcqeS7RJKBtQ3/m"
+    - '2016-02-13 21:43:22.109134'
+    - '2016-02-15 00:22:47.040322'
+    - "$2a$10$acCAJ/rsojzk6oBLpKVyFOQae1jkxeoPyipU95BHX8Q3/aTYlhtQa"
     - 
     - false
-    - "$2a$10$DiQl6CH3QBvoVEteMUbHtOH.x/4R/2B6VnN8Y5YF1Glk5eYU0t072"
+    - "$2a$10$xyvJLCOKzyWCFPzeNZ3JnOu0QAxFRqTgFSdjKN1vcW6yGo8VWiZbO"
     - true
-    - '2016-02-12 23:15:43.413411'
+    - '2016-02-13 21:43:31.178824'
     - 
     - 
+
+---
+comments:
+  columns:
+  - id
+  - content
+  - date
+  - post_id
+  - user_id
+  - created_at
+  - updated_at
+  records: 
+  - - 71
+    - COMMENT 0
+    - '2016-02-14 23:11:08.000000'
+    - 0
+    - 102
+    - '2016-02-14 23:11:25.058161'
+    - '2016-02-14 23:11:25.058161'
+  - - 72
+    - COMMENT 1
+    - '2016-02-14 23:11:35.000000'
+    - 1
+    - 102
+    - '2016-02-14 23:11:45.206416'
+    - '2016-02-14 23:11:45.206416'
+  - - 73
+    - COMMENT 0
+    - '2016-02-14 23:12:30.000000'
+    - 0
+    - 117
+    - '2016-02-14 23:12:37.950012'
+    - '2016-02-14 23:12:37.950012'
+  - - 74
+    - COMMENT 1
+    - '2016-02-14 23:12:39.000000'
+    - 1
+    - 117
+    - '2016-02-14 23:12:48.620638'
+    - '2016-02-14 23:12:48.620638'
+  - - 75
+    - COMMENT 0
+    - '2016-02-15 00:20:22.000000'
+    - 0
+    - 102
+    - '2016-02-15 00:20:44.268602'
+    - '2016-02-15 00:20:44.268602'
+  - - 76
+    - COMMENT 1
+    - '2016-02-15 00:20:52.000000'
+    - 1
+    - 102
+    - '2016-02-15 00:20:59.541296'
+    - '2016-02-15 00:20:59.541296'
+  - - 77
+    - COMMENT 0
+    - '2016-02-15 00:21:44.000000'
+    - 0
+    - 117
+    - '2016-02-15 00:21:55.289262'
+    - '2016-02-15 00:21:55.289262'
+  - - 78
+    - COMMENT 1
+    - '2016-02-15 00:22:05.000000'
+    - 1
+    - 117
+    - '2016-02-15 00:22:12.140952'
+    - '2016-02-15 00:22:12.140952'
 
 ---
 books:
