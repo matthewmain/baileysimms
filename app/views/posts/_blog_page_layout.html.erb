@@ -41,10 +41,12 @@
       <% if logged_in? %>                                            
         <%= render 'shared/user_info' %>
         <%= render 'shared/comment_form' %>
-        <%= render 'shared/feed' %>
       <% else %>
-        <p style="text-align:center"><i>please log in to see comments</i></p>
+        <p style="text-align:center">
+          <i>Please <u><%= link_to "log in", login_path %></u> to comment. New user? <u><%= link_to "Sign up", new_user_path %></u> here.</i>
+        </p>
       <% end %>                                     
+        <%= render 'shared/feed' %>
     </div>
 
    </div> 

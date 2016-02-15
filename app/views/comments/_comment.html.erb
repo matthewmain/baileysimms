@@ -3,8 +3,8 @@
   <span class="user_name"><%= link_to comment.user.user_name.gsub(/_/,' '), comment.user %></span>
   <span class="content"><%= comment.content %></span>
   <span class="timestamp">
-  	Posted <%= time_ago_in_words(comment.created_at) %> ago.		
-    <% if current_user?(comment.user) || current_user.admin? %>
+  	Posted <%= time_ago_in_words(comment.created_at) %> ago.	
+    <% if logged_in? && ( current_user?(comment.user) || current_user.admin? ) %>
     	<%= link_to "delete", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %>
     <% end %>
   </span>
