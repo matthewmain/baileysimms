@@ -5,7 +5,6 @@
 <div style="text-align: center; color: darkblue", id="profile">
 	<%= gravatar_for @user %>
 	<h1><%= @user.user_name.gsub(/_/, ' ') %></h1>
-	<h1><%= @user.email %></h1>
 </div>
 
 <div id="profile_comments_div">		
