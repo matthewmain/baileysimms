@@ -30,6 +30,7 @@
       <% if @intro_page == true %>
         <%= render 'posts/intro_statement' %>
       <% else %>
+        <%= (link_to 'edit', edit_post_path(@post.id), class: "post_edit_link") if logged_in? && current_user.admin? %>
         <h4><%=@post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %></h4>
         <h1><%=@post.title%></h1>
         <%= raw @post.content %>

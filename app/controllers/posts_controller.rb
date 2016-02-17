@@ -11,6 +11,7 @@
 #
 
 class PostsController < ApplicationController
+  before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -22,9 +23,17 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
   end
 
   def create
+    @post = Post.new(post_params)
+    if @post.save
+      flash[:success] = "\"#{@post.title}\" was successfully posted."
+      redirect_to new_post_path
+    else
+      render 'new'
+    end
   end
 
   def show
@@ -36,12 +45,32 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update_attributes(post_params)
+      flash[:success] = "\"#{@post.title}\" was successfully updated"
+      redirect_to @post
+    else
+      render 'edit'
+    end
   end
 
   def destroy
   end
   
 end
+
+
+  private
+
+    def post_params
+      params.require(:post).permit(:title, :date, :content)
+    end
+
+    #confirms an admin user
+    def admin_user
+      redirect_to(root_url) unless logged_in? && current_user.admin?
+    end

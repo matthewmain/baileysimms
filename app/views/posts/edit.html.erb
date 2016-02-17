@@ -1,2 +1,24 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<head>
+  <title>Bailey Simms | <%=@post.title%> | Edit</title>  
+</head>
+
+<h1 id="post_title">Edit Post</h1>
+
+<div class="form" id="post_form">
+	<%= form_for(@post) do |f| %>
+
+	  <%= render 'shared/error_messages', object: f.object %>	
+		
+		<%= f.label :title, "Title: " %><br>
+		<%= f.text_field :title %><br>
+
+		<%= f.label :date, "Date: " %><br>
+		<%= f.datetime_field :date, value: @post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %><br>
+			
+		<%= f.label :content, "Content: " %><br>
+		<%= f.text_area :content %><br>
+
+	  <%= f.submit "SAVE CHANGES", class: "form-button" %>
+
+	<% end %>	
+</div>
