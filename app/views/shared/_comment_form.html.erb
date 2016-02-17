@@ -3,11 +3,11 @@
   <%= render 'shared/error_messages', object: f.object %>
 
   <div class="field">
-    <%= f.text_area :content, placeholder: "Make a comment..." %>
+    <%= f.text_area :content, placeholder: "say something...", style: "width:500px;height:50px" %>
     <%= f.hidden_field :post_id, value: @post_id %>
     <%= f.hidden_field :date, value: Time.now %>
+  	<%= f.submit "Post", class: "comment_button", style: "vertical-align: bottom" %>
   </div>
 
-  <%= f.submit "Post", class: "comment_button" %>
 
 <% end %>

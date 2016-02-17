@@ -7,6 +7,8 @@
 	<h1><%= @user.user_name.gsub(/_/, ' ') %></h1>
 </div>
 
+<%= render 'admin_user' if logged_in? && current_user.admin? %>
+
 <div id="profile_comments_div">		
   <% if @user.comments.any? %>
     <h3>COMMENTS (<%= @user.comments.count %>)</h3>

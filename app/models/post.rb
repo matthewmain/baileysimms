@@ -13,6 +13,11 @@
 class Post < ActiveRecord::Base
 	has_many :comments
 
+	validates :title, presence: true
+	validates :date, presence: true, timeliness: {type: :datetime}
+	validates :content, presence: true
+
+
 	def feed																													
 		Comment.where("post_id = ?", id)
 	end		
