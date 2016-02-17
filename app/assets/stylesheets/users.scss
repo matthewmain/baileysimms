@@ -61,16 +61,38 @@
 
 /// INDEX ///
 
-#users-index {
+#users_index {
 	display: block;
-	width: 40%;
+	width: 33%;
 	margin: 2.5em auto 0;
 	li {
 		list-style: none;
-		margin-bottom: 1em;
-		a {
-			margin-left: .5em;
+		padding-bottom: 15px;
+		border-bottom: solid 1px lightgray;
+		margin-bottom: 15px;
+		clear: left;
+		&:last-child {
+			border-bottom: none;
+		}
+		img {
+			height: 50px;
+			margin-right: 10px;
+			float: left;
+		}
+		.users_index_user_name {
 			font-size: 1.5em;
+			line-height: 1em;
+			padding-top: 5px;
+			margin: 0;
+		}
+		.users_index_date {
+			margin: 0;
+			span {
+				font-size: 10px;
+			}
+			a {
+				font-size: 10px;
+			}
 		}
 	}
 }
