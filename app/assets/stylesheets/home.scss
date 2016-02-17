@@ -39,14 +39,26 @@
 	display: inline;
 	margin: 3% 3%;
 	line-height: 300%;
+	.highlight {
+		color: #d2ebee;
+		text-decoration: none;
+		font-weight: bold;
+		text-shadow: 0 0 20px #ffffff;
+		&:hover {
+			color: #f4f6de;
+			text-shadow: 0 0 20px #f4f6de;
+		}
+	}
+	a {
+		color: #b4cfd0;
+		text-decoration: none;
+		&:hover {
+			color: #ffffff;
+			text-shadow: 0 0 15px #ffffff;
+		}
+	}
 }
 
-#home_index_nav ul li a {
-	color: #b4cfd0;
-	text-decoration: none;	
-}
 
-#home_index_nav ul li a:hover {
-	color: #ffffff;
-	text-shadow: 0 0 15px #ffffff;
-}
+
+
