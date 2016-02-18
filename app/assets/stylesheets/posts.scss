@@ -109,7 +109,8 @@
 /// BLOG POST CONTAINER ///
 
 #blog_post_container {
-	font-family: Optima;
+	font-family: 'Ropa Sans', sans-serif;
+	font-weight: 100;
 	text-align: justify;
 	background: white;
 	box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.25);
@@ -145,8 +146,8 @@
 		font-weight: 100;
 	}
 	p {
-		line-height: 1.5em;
-		font-size: 1.1em;
+		line-height: 1.66em;
+		font-size: 1.2em;
   	margin-bottom: 0;
 	}
 	p + p {
