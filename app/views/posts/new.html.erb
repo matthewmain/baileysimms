@@ -16,7 +16,7 @@
 		<%= f.datetime_field :date, placeholder: 'mon day year hour:minute a/pm' %><br>
 			
 		<%= f.label :content, "Content: " %><br>
-		<%= f.text_area :content %><br>
+		<%= f.text_area :content, placeholder: '<div id="blog/novel_text"></div>'  %><br>
 					
 		<%= f.submit "ADD POST", class: "form-button" %>
 		

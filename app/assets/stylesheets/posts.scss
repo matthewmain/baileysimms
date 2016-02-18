@@ -1,10 +1,5 @@
-// Place all the styles related to the Posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-
-/// LAYOUT ///
+/// BODY ///
 
 #blog_body {
 	min-height: 100%;
@@ -15,6 +10,10 @@
 	max-width: 960px;
 	margin: auto;
 }
+
+
+
+/// TITLE ///
 
 #blog_title_container {
 	font-style: italic;
@@ -41,6 +40,10 @@
 		letter-spacing: 1.5px;
 	}
 }
+
+
+
+/// INDEX COLUMN ///
 
 #blog_posts_index_column_container {
 	background: #eae8e8;
@@ -101,8 +104,13 @@
 	}
 }
 
+
+
+/// BLOG POST CONTAINER ///
+
 #blog_post_container {
 	font-family: Optima;
+	text-align: justify;
 	background: white;
 	box-shadow: inset 0px 0px 3px 1px rgba(0,0,0,0.25);
 	width: 65.5%;
@@ -112,6 +120,7 @@
 	float: right;
 	overflow: scroll;
 	.post_edit_delete_links {
+		font-family: Avenir, Helvetica, sans-serif;
 		font-size: 12px;
 		position: relative;
 		left: 91%;
@@ -127,13 +136,36 @@
 	h1 {
 		margin: .5em auto 2em;
 	}
+	.first_letter {
+		font-size: 4em;
+		font-weight: 100;
+	}
+	.new_section_first_letter {
+		font-size: 1.5em;
+		font-weight: 100;
+	}
 	p {
-		margin-bottom: 1.33em;
-		line-height: 18px;
+		line-height: 1.5em;
+		font-size: 1.1em;
+  	margin-bottom: 0;
+	}
+	p + p {
+		text-indent: 1.5em;
+		margin-top: 0;
+	}
+
+	// NOVEL TEXT //	
+	.novel_text {
+		font-family: "Linden Hill", serif;
 		.first_letter {
-			font-family: Optima;
+			font-family: garamond;
+		}
+		.new_section_first_letter {
+			font-family: garamond;
 		}
 	}
+	
+	// INTRO STATEMENT CARD //
 	#blog_intro_statement {
 		background: #DFEFBE;
 		font-family: Avenir, Helvetica, sans-serif;
@@ -172,6 +204,10 @@
 	}
 }
 
+
+
+/// COMMENTS SECTION ///
+
 #blog_comments_container {
 	background: #eae8e8;	
 	width: 96%;
@@ -184,12 +220,13 @@
 
 
 
-/// POST FORMS ///
+/// NEW & UPDATE FORMS ///
 
 #post_title {
 	margin-top: 30px;
 	margin-bottom: 20px;
 }
+
 #post_form {
 	width: 80%;
 	margin: auto;
