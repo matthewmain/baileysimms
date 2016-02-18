@@ -2,7 +2,7 @@
   <title>Bailey Simms | New Post</title>  
 </head>
 
-<h1 id="post_title">New Post</h1>
+<h1 id="post_title">New Blog Post</h1>
 
 <div class="form" id="post_form">
 	<%= form_for(@post) do |f| %>
@@ -12,11 +12,11 @@
 		<%= f.label :title, "Title: " %><br>
 		<%= f.text_field :title, autofocus: true %><br>
 		
-		<%= f.label :date, "Date: " %><br> 
-		<%= f.datetime_field :date, placeholder: 'mon day year hour:minute a/pm' %><br>
+		<%= f.label :date, "Date: (mon day year hour:minute a/pm)" %><br> 
+		<%= f.datetime_field :date %><br>
 			
-		<%= f.label :content, "Content: " %><br>
-		<%= f.text_area :content, placeholder: '<div id="blog/novel_text"></div>'  %><br>
+		<%= f.label :content, "Content: (update id for blog post or novel, paste between divs)" %><br>
+		<%= f.text_area :content, value: '<div id="blog/novel_text"></div>'  %><br>
 					
 		<%= f.submit "ADD POST", class: "form-button" %>
 		
