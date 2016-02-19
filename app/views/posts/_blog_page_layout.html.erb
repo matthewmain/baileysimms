@@ -27,7 +27,7 @@
     </div>
 
     <div id="blog_post_container">
-      <% if @intro_page == true %>
+      <% if @intro_page %>
         <%= render 'posts/intro_statement' %>
       <% else %>
         <% if logged_in? && current_user.admin? %>
@@ -63,6 +63,7 @@
 
     <div id="blog_comments_container">
     	<h4 style="text-align:center">COMMENTS</h4>
+
       <% if logged_in? %>                                            
         <%= render 'shared/user_info' %>
         <%= render 'shared/comment_form' %>
@@ -70,8 +71,10 @@
         <p style="text-align:center">
           <i>Please <u><%= link_to "log in", login_path %></u> to comment. New user? <u><%= link_to "Sign up", new_user_path %></u>.</i>
         </p>
-      <% end %>                                     
+      <% end %>        
+                                   
         <%= render 'shared/feed' %>
+
     </div>
 
    </div> 
