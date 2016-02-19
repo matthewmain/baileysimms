@@ -109,8 +109,6 @@
 /// BLOG POST CONTAINER ///
 
 #blog_post_container {
-
-	// INTRO STATEMENT CARD //
 	font-family: 'Ropa Sans', sans-serif;
 	font-weight: 100;
 	text-align: justify;
@@ -129,6 +127,40 @@
 		left: 91%;
 		top: -30px;
 	}
+	// INTRO STATEMENT CARD //
+	#blog_intro_statement {
+		background: #DFEFBE;
+		font-family: Avenir, Helvetica, sans-serif;
+		font-size: .9em;
+		color: #006600;
+		text-align: justify;
+		letter-spacing: .1px;
+		font-weight: 600;
+		padding: 1.8em 2em;
+		width: 95%;
+		margin: auto;
+		border: 4px double #006600;
+		border-radius: 2px;
+		box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+		#blog_intro_statement_button {
+			background: white;
+			padding: 5px 12px;
+			border-radius: 15px;
+			text-align: center;
+			width: 125px;
+			margin: 20px auto 5px;
+			a {
+				color: #006600;
+			}
+			&:hover {
+				background: #006600;
+				a {
+					color: white;
+				}
+			}
+		}
+	}
+	// POST HEADING //
 	h4 {
 		text-align: center;
 		margin: auto;
@@ -139,6 +171,7 @@
 	h1 {
 		margin: .5em auto 2em;
 	}
+	// DEFAULT TEXT //
 	.first_letter {
 		font-size: 4em;
 		font-weight: 100;
@@ -148,64 +181,21 @@
 		font-weight: 100;
 	}
 	p {
-		line-height: 1.66em;
+		hyphens: auto;
+		line-height: 1.33em;
 		font-size: 1.2em;
   	margin-bottom: 0;
 	}
-		p {
-			hyphens: auto;
-			margin-bottom: 1em;
-			line-height: 18px;
-		}
-		p + p {
-			text-indent: 0;
-		}
-		#blog_intro_statement {
-			background: #DFEFBE;
-			font-family: Avenir, Helvetica, sans-serif;
-			font-size: .9em;
-			color: #006600;
-			text-align: justify;
-			letter-spacing: .1px;
-			font-weight: 600;
-			padding: 1.8em 2em;
-			width: 95%;
-			margin: auto;
-			border: 4px double #006600;
-			border-radius: 2px;
-			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
-			#blog_intro_statement_button {
-				background: white;
-				padding: 5px 12px;
-				border-radius: 15px;
-				text-align: center;
-				width: 125px;
-				margin: 20px auto 5px;
-				a {
-					color: #006600;
-				}
-				&:hover {
-					background: #006600;
-					a {
-						color: white;
-					}
-				}
-			}
-		}
-		.read_next_post_button {
-			a {
-				color: red;
-			}
-		}
-
-	// BLOG TEXT //
+	// 'BLOG' TEXT //
 	.blog_text {
 		p {
 			margin-bottom: 1.2em;
 		}
+		p + p {
+			text-indent: 0;
+		}
 	}
-
-	// NOVEL TEXT //	
+	// 'NOVEL' TEXT //	
 	.novel_text {
 		font-family: "Linden Hill", serif;
 		.first_letter {
@@ -214,9 +204,21 @@
 		.new_section_first_letter {
 			font-family: garamond;
 		}
+		p {
+			margin-bottom: 0;
+			line-height: 1.5em;
+		}
 		p + p {
 			text-indent: 1.5em;
 			margin-top: 0;
+		}
+	}
+	// 'READ NEXT' BUTTON //
+	.read_next_button {
+		text-align: center;
+		margin-top: 35px;
+		a {
+			color: #006600;
 		}
 	}
 }
