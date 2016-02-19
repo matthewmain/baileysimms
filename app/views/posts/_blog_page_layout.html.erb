@@ -2,10 +2,12 @@
 
   <div id="blog_page_container">
 
+
     <div id="blog_title_container">
       <h1>THE ORIGINAL BLOG</h1>
       <h5>Complete and Unedited</h5>
     </div>
+
 
     <div id="blog_posts_index_column_container">
     	<ul>
@@ -26,10 +28,12 @@
     	</ul>
     </div>
 
+
     <div id="blog_post_container">
-      <% if @intro_page == true %>
+      <% if @intro_page %>
         <%= render 'posts/intro_statement' %>
       <% else %>
+
         <% if logged_in? && current_user.admin? %>
           <%= (link_to "edit |", edit_post_path(@post.id), class: "post_edit_delete_links")%>
           <%= (link_to " delete", @post,  class: "post_edit_delete_links", 
@@ -61,18 +65,22 @@
       <% end %>
     </div>
 
+
     <div id="blog_comments_container">
-    	<h4 style="text-align:center">COMMENTS</h4>
-      <% if logged_in? %>                                            
+      <% if logged_in? && ( @post.visible_to_users || current_user.admin? ) %> 
+        <h4 style="text-align:center">COMMENTS</h4>                                          
         <%= render 'shared/user_info' %>
         <%= render 'shared/comment_form' %>
-      <% else %>
+        <%= render 'shared/feed' %>
+      <% elsif !logged_in? && @post.visible_to_users %>
+        <h4 style="text-align:center">COMMENTS</h4>
         <p style="text-align:center">
           <i>Please <u><%= link_to "log in", login_path %></u> to comment. New user? <u><%= link_to "Sign up", new_user_path %></u>.</i>
         </p>
-      <% end %>                                     
         <%= render 'shared/feed' %>
+      <% end %>   
     </div>
+
 
    </div> 
 
