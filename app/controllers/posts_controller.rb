@@ -2,12 +2,14 @@
 #
 # Table name: posts
 #
-#  id         :integer          not null, primary key
-#  title      :string
-#  date       :datetime
-#  content    :text
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                :integer          not null, primary key
+#  title             :string
+#  date              :datetime
+#  content           :text
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  visible_to_public :boolean          default(FALSE)
+#  visible_to_users  :boolean          default(FALSE)
 #
 
 class PostsController < ApplicationController
@@ -71,7 +73,7 @@ end
   private
 
     def post_params
-      params.require(:post).permit(:title, :date, :content)
+      params.require(:post).permit(:title, :date, :content, :visible_to_public, :visible_to_users)
     end
 
     #confirms an admin user
