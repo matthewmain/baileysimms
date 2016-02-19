@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
     @post = Post.find(1)
-    @post_id = 0         
+    @post_id = @post.id         
     @intro_page = true
     @comment = current_user.comments.build if logged_in?
     @feed_items = @post.feed.paginate(page: params[:page]).per_page(5) 
