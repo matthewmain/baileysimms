@@ -73,7 +73,7 @@ end
   private
 
     def post_params
-      params.require(:post).permit(:title, :date, :content)
+      params.require(:post).permit(:title, :date, :content, :visible_to_public, :visible_to_users)
     end
 
     #confirms an admin user
