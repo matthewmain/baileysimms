@@ -10,7 +10,7 @@
     <div id="blog_posts_index_column_container">
     	<ul>
     	<% @posts.each do |post| %>
-        <% if post.id > 0 %>
+        <% if post.id > 1 %>
           <% if post.id == params[:id].to_i %>
             <li class = "current_post">
           <% else %>

@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160208023140) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "comments", ["user_id", "created_at"], name: "index_comments_on_user_id_and_created_at"
+
   create_table "parts", force: :cascade do |t|
     t.integer  "part_number"
     t.string   "title"

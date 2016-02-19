@@ -13,7 +13,7 @@
 class Post < ActiveRecord::Base
 	has_many :comments
 
-	default_scope -> { order(date: :asc) }
+	default_scope -> { order(date: :desc) }
 
 	validates :title, presence: true
 	validates :date, presence: true, timeliness: {type: :datetime}

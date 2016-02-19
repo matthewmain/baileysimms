@@ -16,7 +16,7 @@
 		<%= f.datetime_field :date %><br>
 			
 		<%= f.label :content, "Content: (update id for blog post or novel, paste between divs)" %><br>
-		<%= f.text_area :content, value: '<div id="blog/novel_text"></div>'  %><br>
+		<%= f.text_area :content, value: '<div class="blog/novel_text"></div>'  %><br>
 					
 		<%= f.submit "ADD POST", class: "form-button" %>
 		

@@ -7,6 +7,13 @@ User.create(	user_name: 'Bailey_Simms',
 							activated: true,
 							activated_at: "2013-12-27 12:49:17 -0700"	)
 
+User.create(	user_name: 'Adrian_Birch', 
+							email: 'adrianbirchdib@yahoo.com', 
+							password: 'temp', 
+							admin: true,
+							activated: true,
+							activated_at: Time.zone.now	)
+
 # Test Users #
 # 100.times do |n|
 #   user_name  = "Test_#{n+1}"
@@ -19,19 +26,13 @@ User.create(	user_name: 'Bailey_Simms',
 # 								activated_at: Time.zone.now	)
 # end
 
-# User.create(	user_name: 'Adrian_Birch', 
-# 							email: 'adrianbirchdib@yahoo.com', 
-# 							password: 'temp', 
-# 							admin: true,
-# 							activated: true,
-# 							activated_at: Time.zone.now	)
-
 
 
 ### BOOKS ###
 
 Book.create(title: 'Dead in Bed: The Complete First Book')
 Book.create(title: 'Dead in Bed: The Complete Second Book')
+
 
 
 ### PARTS ###

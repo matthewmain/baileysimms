@@ -15,7 +15,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @post = Post.find(0)
+    @post = Post.find(1)
     @post_id = 0         
     @intro_page = true
     @comment = current_user.comments.build if logged_in?
