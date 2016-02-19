@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'ruby', '2.2.4'
 
 gem 'bootstrap-sass'
 
