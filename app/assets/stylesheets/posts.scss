@@ -127,7 +127,7 @@
 		left: 91%;
 		top: -30px;
 	}
-	// INTRO STATEMENT CARD //
+	// INTRO STATEMENT NOTICE //
 	#blog_intro_statement {
 		background: #DFEFBE;
 		font-family: Avenir, Helvetica, sans-serif;
@@ -210,12 +210,40 @@
 			margin-top: 0;
 		}
 	}
-	// 'READ NEXT' BUTTON //
+	// NEXT BUTTON //
 	.read_next_button {
 		text-align: center;
 		margin-top: 35px;
 		a {
 			color: #006600;
+		}
+	}
+	// LOGIN REQUEST NOTICE //
+	#login_request {
+		background: #ecf2f6;
+    width: 90%;
+	  margin: 10px auto 0;
+	  padding: 90px 60px 50px;
+	  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	  transform: rotate(-.75deg);
+		h4 {
+			border: none;
+			width: 100%;
+		}
+	}
+	// NO-ACCESS NOTICE //
+	#no_access {
+		font-family: Avenir, Helvetica, sans-serif;
+		background: #fff0f0;
+    width: 90%;
+	  margin: 5px auto 0;
+	  padding: 120px 60px 120px;
+	  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+	  transform: rotate(.5deg);
+		h4 {
+			border: none;
+			width: 100%;
+			font-weight: bold;
 		}
 	}
 }
