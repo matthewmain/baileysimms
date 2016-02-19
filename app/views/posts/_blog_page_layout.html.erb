@@ -39,6 +39,10 @@
         <h4><%=@post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %></h4>
         <h1><%=@post.title%></h1>
         <%= raw @post.content %>
+        <div class="read_next_post_button">
+          <%= ( link_to 'Read Next...', post_path(@post.id+1) ) if @post.id+1 <= Post.count %>
+        </div>
+
       <% end %>
     </div>
 
