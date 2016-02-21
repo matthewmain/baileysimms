@@ -1,0 +1,26 @@
+<% @comments.each do |comment| %>
+
+	<div id="comment_div">
+		<li id="comment-<%= comment.id %>">
+
+		  <div id="user_image">
+		  	<%= link_to gravatar_for(comment.user), comment.user %>
+		  </div>
+
+		  <div id="comment_header">
+			  <span id="post_name"><%= link_to Post.find(comment.post_id).title, Post.find(comment.post_id) %></span>
+			  <span id="timestamp">
+			  	<%= time_ago_in_words(comment.date) %> ago	
+			    <% if logged_in? && ( current_user?(comment.user) || current_user.admin? ) %>
+			    	<span id="delete_x"><%= link_to "✕", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %></span>
+			    <% end %>
+			  </span>
+		  </div>
+
+		  <div id="content">
+		  	<%= raw (comment.content.gsub(/\n/,"<br>")) %>
+		  </div>
+		</li>
+	</div>
+
+<% end %>

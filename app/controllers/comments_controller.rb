@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]     
   before_action :authorized_user, only: :destroy        
 
-  def create                                                        
+  def create                                                  
     @comment = current_user.comments.build(comment_params)
     if @comment.save
       flash[:success] = "Comment made!" 
