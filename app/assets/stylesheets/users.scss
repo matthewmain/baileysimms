@@ -4,43 +4,6 @@
 
 
 
-/// PROFILE ///
-
-#profile {
-	margin: 9em 0 6em;
-}
-
-/* comments */
-
-.profile_comments_list {
-  list-style: none;
-  padding: 0;
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-  .user_name {
-    margin-top: 5em;
-    padding-top: 0;
-  }
-  .content {
-    display: block;
-    margin-left: 60px;
-  }
-  .timestamp {
-    color: lightgray;
-    display: block;
-    margin-left: 60px;
-  }
-  .gravatar {
-    float: left;
-    margin-right: 10px;
-    margin-top: 5px;
-  }
-}
-
-
-
 /// GRAVATAR ///
 
 .gravatar {
@@ -57,6 +20,103 @@
 	margin-top: -1em;
 }
 
+
+
+/// PROFILE ///
+
+#profile_container {
+	min-height: 500px;
+	h3 {
+		border-bottom: solid 1px;
+	}
+	a:hover {
+		color: #0f4b7e;
+	}
+}
+
+// feature //
+#profile_feature_div {
+	margin: 66px 0 50px;
+	text-align: center;
+	color: #3278b4;
+	font-weight: bold;
+	letter-spacing: 2px;
+	h1 {
+		margin-top: 15px;
+	} 
+}
+
+// admin //
+#admin_div {
+	width: 66%;
+	margin: 0 auto 45px;
+	a {
+		padding-left: 5px;
+	}
+}
+
+// comments //
+#profile_comments_div {
+	width: 66%;
+	margin: auto;
+	h3 {
+		margin-bottom: 10px;
+	}
+	.profile_comments_list {
+		list-style: none;
+		padding: 0;
+		margin-bottom: 50px;
+		#comment_div {
+			min-height: 90px;
+			display: flex;
+			flex-direction: column;
+			padding: 12px 0 35px;
+			border-top: solid 1px lightgray;
+			&:first-child {
+				border: none;
+			}
+			li {
+				height: auto;
+				#user_image {
+					width: 8%;
+					float: left;
+					img {
+						height: 50px;
+						box-shadow: none;
+					}	
+				}
+				#post_name {
+					padding-left: 1%;
+					a {
+						color: #3278b4;
+						font-weight: bold;
+						&:hover {
+							color: #0f4b7e;
+						}
+					}
+				}
+				#timestamp {
+					float: right;
+					padding-right: 5px;
+					color: gray;
+					font-size: .8em;
+					#delete_x {
+						margin: 0 0 0 5px;
+						a {
+							color: #3278b4;
+						} 
+					}
+				}
+				#content {
+					clear: right;
+					width: 91%;
+					margin: 12px 0 0 1%;
+					float: right;
+				}
+			}
+		}
+	}
+}
 
 
 /// INDEX ///

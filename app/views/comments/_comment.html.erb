@@ -1,11 +1,22 @@
-<li id="comment-<%= comment.id %>">
-  <%= link_to gravatar_for(comment.user, size: 25), comment.user %>
-  <span class="user_name"><%= link_to comment.user.user_name.gsub(/_/,' '), comment.user %></span>
-  <span class="content"><%= comment.content %></span>
-  <span class="timestamp">
-  	Posted <%= time_ago_in_words(comment.date) %> ago.	
-    <% if logged_in? && ( current_user?(comment.user) || current_user.admin? ) %>
-    	<%= link_to "delete", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %>
-    <% end %>
-  </span>
-</li>
+<div id="comment_div">
+	<li id="comment-<%= comment.id %>">
+
+	  <div id="user_image">
+	  	<%= link_to gravatar_for(comment.user), comment.user %>
+	  </div>
+
+	  <div id="comment_header">
+		  <span id="user_name"><%= link_to comment.user.user_name.gsub(/_/,' '), comment.user %></span>
+		  <span id="timestamp">
+		  	posted <%= time_ago_in_words(comment.date) %> ago	
+		    <% if logged_in? && ( current_user?(comment.user) || current_user.admin? ) %>
+		    	<span id="delete_x"><%= link_to "✕", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %></span>
+		    <% end %>
+		  </span>
+	  </div>
+
+	  <div id="content">
+	  	<%= raw (comment.content.gsub(/\n/,"<br>")) %>
+	  </div>
+	</li>
+</div>
