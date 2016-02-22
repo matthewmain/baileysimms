@@ -10,14 +10,18 @@
 
   <ul id="users_index">
     <% @users.each do |user| %>
-      <li>
-        <%= gravatar_for user%>
-        <p class="users_index_user_name"><%= link_to user.user_name.gsub(/_/, ' '), user %></p>
-        <p class="users_index_date">Member since <%= user.activated_at.strftime("%B #{user.activated_at.day.ordinalize}, %Y") %>
-          <% if current_user.admin? && !current_user?(user) %>
-          	<span>|</span><%= link_to " delete", user, method: :delete, data: { confirm: "You sure you want to do this?" }%>
-      		<% end %></p>
-      </li>
+
+        <% if user.activated == true %>
+          <li>
+            <%= gravatar_for user%>
+            <p class="users_index_user_name"><%= link_to user.user_name.gsub(/_/, ' '), user %></p>
+            <p class="users_index_date">Member since <%= user.activated_at.strftime("%B #{user.activated_at.day.ordinalize}, %Y") %>
+              <% if current_user.admin? && !current_user?(user) %>
+              	<span>|</span><%= link_to " delete", user, method: :delete, data: { confirm: "You sure you want to do this?" }%>
+          		<% end %></p>
+          </li>
+        <% end %>
+
     <% end %>
   </ul>
 
