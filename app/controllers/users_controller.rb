@@ -28,8 +28,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    # uses will_paginate gem
-    @users = User.paginate(page: params[:page]).per_page(10)
+    @users = User.all
   end
 
   def new
