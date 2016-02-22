@@ -1,12 +1,12 @@
 
 #about_body {
 	font-family: "Avenir", Helvetica, sans-serif;
-	background: #242d36;
-	color: hotpink;
+	background: #0e1215;
+	color: #428bca;
 }
 
 .about_div {
-	margin: 18px 250px 0px 250px; 
+	margin: 35px 250px 20px 250px; 
 }
 
 .about_div h1 {
@@ -33,7 +33,11 @@
 }
 
 .about_div a {
-	color: #57abb6;
+	color: #428bca;
+	text-decoration: underline;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 
