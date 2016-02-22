@@ -22,10 +22,9 @@ class CommentsController < ApplicationController
   def create                                                  
     @comment = current_user.comments.build(comment_params)
     if @comment.save
-      flash[:success] = "Comment made!" 
       redirect_to request.referrer
     else
-      render :partial => "shared/comment_form"    #fix this
+      redirect_to request.referrer             #render :partial => "shared/comment_form"            <--- should be this; fix
     end              
   end
 
