@@ -49,7 +49,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_user_name(params[:id])
-    @comments = @user.comments                  
+    @comments = @user.comments           
   end
 
   def edit
