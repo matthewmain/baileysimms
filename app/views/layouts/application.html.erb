@@ -19,7 +19,8 @@
 
 	<div>
 		<% flash.each do |message_type, message| %>
-    	<%= content_tag(:div, message, class: "flash-alert-#{message_type}") %>
+      <% message = raw message %>
+    	<%= content_tag(:div, message, class: "flash-alert flash-alert-#{message_type}") %>
     <% end %>
 	</div>
 
