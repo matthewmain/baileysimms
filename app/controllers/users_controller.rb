@@ -40,7 +40,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:success] =   "Thanks for signing up! Check your email to activate your account.<br> 
+      flash[:activate] =  "Thanks for signing up! Check your email to activate your account.<br> 
                           <div style='font-size:11px;margin-top:3px'>(Might take a couple minutes, so just hang tight if you don't see an email right away.)</div>"
       redirect_to root_url
     else
