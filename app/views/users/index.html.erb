@@ -7,7 +7,7 @@
 <div id="community_container">
 
   <h1>COMMUNITY</h1>
-  <h4><i><%= User.count %> members and counting...</i></h4>
+  <h4><i><%= User.where(:activated => true).count %> members and counting...</i></h4>
 
   <ul id="users_index">
     <% @users.each do |user| %>
