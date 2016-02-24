@@ -2,28 +2,32 @@
   <title>Bailey Simms | Log In</title>  
 </head>
 
-<h1>Log In</h1>
+<div id="login_container">
 
-<div class="form">
-	<%= form_for(:session, url: login_path) do |f| %>
+	<h1>Log In</h1>
 
-		<%= f.label :email %>
-		<%= f.email_field :email %>
+	<div class="form">
+		<%= form_for(:session, url: login_path) do |f| %>
 
-		<%= f.label :password %>
-		<%= link_to "(forgot password)", new_password_reset_path %>
-		<%= f.password_field :password %>		
+			<%= f.label :email %>
+			<%= f.email_field :email %>
 
-		<%= f.check_box :remember_me, checked: true, class: "remember-me-checkbox" %>
-		<%= f.label :remember_me, "Remember me on this computer", class: "remember-me-label" %>
+			<%= f.label :password %>
+			<%= link_to "(forgot password)", new_password_reset_path %>
+			<%= f.password_field :password %>		
 
-		<%= f.submit "LOG IN", class: "form-button" %>
+			<%= f.check_box :remember_me, checked: true, class: "remember-me-checkbox" %>
+			<%= f.label :remember_me, "Remember me on this computer", class: "remember-me-label" %>
 
-	<% end %>
+			<%= f.submit "LOG IN", class: "form-button" %>
 
-	<div id="login-new-user">
-		<p>Not a member?</p>
-		<p><%= link_to "SIGN UP", new_user_path %></p>
+		<% end %>
+
+		<div id="login-new-user">
+			<p>Not a member?</p>
+			<p><%= link_to "SIGN UP", new_user_path %></p>
+		</div>
+
 	</div>
-
+	
 </div>

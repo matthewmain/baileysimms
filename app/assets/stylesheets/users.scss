@@ -182,7 +182,6 @@
 }
 
 
-
 /// PAGINATION ///
 
 div.pagination {
@@ -202,4 +201,20 @@ p.pagination {
 	color: gray;
 	font-style: italic;
 }
+
+
+/// NEW: SIGNUP FORM ///
+
+#signup_container {
+	min-height: 510px;
+}
+
+
+/// EDIT: SETTINGS FORM  ///
+
+#settings_container {
+	min-height: 510px;
+}
+
+
 
