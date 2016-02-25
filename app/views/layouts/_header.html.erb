@@ -7,9 +7,7 @@
           <li><%= link_to 'books', books_path %></li>
           <li><%= link_to 'about', about_path %></li>
           <li><%= mail_to'baileysimms96@yahoo.com', 'contact' %></li>
-          <% if logged_in? %>
-            <li><%= link_to "community", users_path %></li>
-          <% end %>
+          <li><%= link_to "community", users_path %></li>
         </ul>  
         <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
