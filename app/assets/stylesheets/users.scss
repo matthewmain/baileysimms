@@ -151,7 +151,7 @@
 		font-size: 10px;
 		text-align: center;
 		text-style: italic;
-		margin: 3px 0 25px;
+		margin: 4px 0 30px;
 		color: darkgray;
 	}
 	a:hover {
@@ -175,6 +175,7 @@
 	float: left;
 	h2 {
 		width: 140px;	
+		margin-top: 15px;
 	}	
 	#members_list {
 		padding-left: 0;
@@ -290,7 +291,7 @@
 	float: right;
 	h2 {
 		width: 255px;
-		margin: 25px auto 30px;
+		margin: 25px auto 0;
 	}
 	#recent_comments_list {
 		list-style: none;
