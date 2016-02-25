@@ -248,6 +248,12 @@
 			font-style: italic;
 			line-height: 25px;
 			letter-spacing: .75px;
+			.winner {
+				height: 25px;
+				transform: rotate(22deg);
+				padding-bottom: 8px; 
+
+			}
 			&:last-child {
 				border-bottom: none;
 			}
