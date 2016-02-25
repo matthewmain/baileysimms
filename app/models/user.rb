@@ -156,8 +156,7 @@ class User < ActiveRecord::Base
 
 	def self.top_non_admin_users_by_comment_count(limit)
 		User.all_non_admin_user_names_with_comment_count.sort_by {|key,value| -value }[0..(limit-1)].to_h
-	end																		
-
+	end							
 
 
 	private

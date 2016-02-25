@@ -31,4 +31,12 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.user_name, class: "gravatar")
 	end
 
+	def giveaway_winner_Feb16(name)
+		name == "AJ2002" || 
+	 	name == "Chancelacy" ||
+	 	name == "Tasneem" ||
+	 	name == "samuelmax" ||
+	 	name == "Tiff" ? true : false;
+	end		
+
 end

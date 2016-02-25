@@ -43,11 +43,7 @@
           <span class="rank">#<%=rank%></span>
           <%= gravatar_for User.find_by_user_name(commenter)%>
           <span class="commenter_name"><%= link_to commenter.gsub(/_/, ' '), User.find_by_user_name(commenter) %></span>
-          <%= image_tag("gold_feather.png", alt: "gold feather", class: "winner") if commenter == "AJ2002" || 
-                                                                                     commenter == "Chancelacy" ||
-                                                                                     commenter == "Tasneem" ||
-                                                                                     commenter == "samuelmax" ||
-                                                                                     commenter == "Tiff" %>
+          <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if giveaway_winner_Feb16(commenter)%>
           <span class="comment_count">comments</span> 
           <span class="number"><%= count %></span>
         </li>
