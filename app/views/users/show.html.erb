@@ -12,7 +12,7 @@
 	<%= render 'admin_user' if logged_in? && current_user.admin? && @user.admin? %>
 
 	<div id="profile_comments_div">		
-	<h3>COMMENTS (<%= @user.comments.any? ? @user.comments.count : 0 %>)</h3>
+	<h3>COMMENTS <%= @user.comments.any? ? ( "("+@user.comments.count.to_s+")" unless @user.admin?) : "(0)" %></h3>
 	  <% if @user.comments.any? %>
 	    <ol class="profile_comments_list">
 		    <%= render 'user_comments' %>

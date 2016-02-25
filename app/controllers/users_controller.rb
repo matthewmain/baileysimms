@@ -23,12 +23,14 @@
 #
 
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:index, :show, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:show, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: :destroy
 
   def index
     @users = User.all
+    @top_ten_commenters = User.top_non_admin_users_by_comment_count(10)
+    @recent_comments = Comment.limit(20)
   end
 
   def new

@@ -127,9 +127,11 @@ class User < ActiveRecord::Base
 		User.all.map { |user| user[:user_name] }
 	end
 
+
 	def comment_count
 		self.comments.count
 	end
+
 
 	def self.all_user_names_with_comment_count
 		User.all.each_with_object({}) {|user,hash| hash[user.user_name] = user.comment_count}
@@ -139,8 +141,21 @@ class User < ActiveRecord::Base
 		User.all_user_names_with_comment_count.sort_by {|key,value| -value }.to_h
 	end		
 
-	def self.top_users_by_comment_count(limit)
-		User.all_user_names_with_comment_count.sort_by {|key,value| -value }[0..(limit-1)].to_h
+
+	def self.all_non_admin_users
+		User.where("admin = ?", false)
+	end
+
+	def self.all_non_admin_user_names_with_comment_count
+		User.all_non_admin_users.each_with_object({}) {|user,hash| hash[user.user_name] = user.comment_count}
+	end
+
+	def self.all_non_admin_user_names_by_comment_count
+		User.all_non_admin_user_names_with_comment_count.sort_by {|key,value| -value }.to_h
+	end
+
+	def self.top_non_admin_users_by_comment_count(limit)
+		User.all_non_admin_user_names_with_comment_count.sort_by {|key,value| -value }[0..(limit-1)].to_h
 	end																		
 
 
