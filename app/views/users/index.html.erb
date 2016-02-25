@@ -13,7 +13,7 @@
 
   <div id="members_div">
     <h2>MEMBERS</h2>
-    <h4><i><%= @users.where(:activated => true).count %> of us and counting...</i></h4>
+    <h4><i><%= @users.where(:activated => true).count %> of us and counting</i></h4>
     <ul id="members_list">
       <% @users.each do |user| %>
 
@@ -53,6 +53,7 @@
 
   <div id="recent_comments_div">   
   <h2>RECENT COMMENTS</h2>
+  <h4><i><%= Comment.count %> comments total so far</i></h4>
     <ol id="recent_comments_list">
       <%= render 'recent_comments' %>
     </ol>
