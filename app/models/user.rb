@@ -121,6 +121,7 @@ class User < ActiveRecord::Base
   end
 
 
+
 	### QUERIES ###
 
 	def self.all_user_names
@@ -156,7 +157,13 @@ class User < ActiveRecord::Base
 
 	def self.top_non_admin_users_by_comment_count(limit)
 		User.all_non_admin_user_names_with_comment_count.sort_by {|key,value| -value }[0..(limit-1)].to_h
-	end							
+	end	
+
+
+	def all_comments_word_count
+		(self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ') + 1)
+	end						
+
 
 
 	private
@@ -169,6 +176,7 @@ class User < ActiveRecord::Base
 			self.activation_token = User.new_token
 			self.activation_digest = User.digest(activation_token)
 		end
+
 
 end
 
