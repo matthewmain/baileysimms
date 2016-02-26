@@ -55,7 +55,7 @@ module SessionsHelper
     session.delete(:forwarding_url)
   end
 
-  #stores the URL trying to be accessed
+  #stores the URL trying to be accessed when not logged-in
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
