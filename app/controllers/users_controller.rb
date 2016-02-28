@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @top_ten_commenters = User.top_non_admin_users_by_comment_count(10)
-    @recent_comments = Comment.limit(30)
+    @recent_comments = Comment.limit(100)
   end
 
   def new
