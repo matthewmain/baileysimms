@@ -143,26 +143,29 @@ class User < ActiveRecord::Base
 	end		
 
 
+	def all_comments_word_count
+		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count > 0
+	end		
+
+
 	def self.all_non_admin_users
 		User.where("admin = ?", false)
 	end
 
 	def self.all_non_admin_user_names_with_comment_count
-		User.all_non_admin_users.each_with_object({}) {|user,hash| hash[user.user_name] = user.comment_count}
+		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = user.comment_count}
 	end
 
 	def self.all_non_admin_user_names_by_comment_count
-		User.all_non_admin_user_names_with_comment_count.sort_by {|key, value| -value }.to_h
+		User.all_non_admin_user_names_with_comment_count.sort_by {|user, comment_count| comment_count }.reverse.to_h
 	end
 
 	def self.top_non_admin_users_by_comment_count(limit)
-		User.all_non_admin_user_names_with_comment_count.sort_by {|key, value| -value }[0..(limit-1)].to_h
+		User.all_non_admin_user_names_with_comment_count.sort_by do |user, comment_count| 
+			[comment_count, User.find_by_user_name(user).all_comments_word_count]
+		end[0..(limit-1)].reverse.to_h
 	end	
 
-
-	def all_comments_word_count
-		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count > 0
-	end						
 
 
 
