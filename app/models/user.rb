@@ -164,7 +164,7 @@ class User < ActiveRecord::Base
 		User.all_non_admin_user_names_with_comment_count.sort_by do |user, comment_count| 
 			comment_count
 			# [comment_count, User.find_by_user_name(user).all_comments_word_count]
-		end[0..(limit-1)].reverse.to_h
+		end[0..(limit-1)].to_h
 	end	
 
 
