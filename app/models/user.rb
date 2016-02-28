@@ -162,8 +162,7 @@ class User < ActiveRecord::Base
 
 	def self.top_non_admin_users_by_comment_count(limit)
 		User.all_non_admin_user_names_with_comment_count.sort_by do |user, comment_count| 
-			comment_count
-			# [comment_count, User.find_by_user_name(user).all_comments_word_count]
+			[-(comment_count), -(User.find_by_user_name(user).all_comments_word_count.to_i)]
 		end[0..(limit-1)].to_h
 	end	
 
