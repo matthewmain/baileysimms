@@ -39,4 +39,10 @@ module UsersHelper
 	 	name == "Tiff" ? true : false;
 	end		
 
+	def total_words_commented(commenter)
+		if User.find_by_user_name(commenter).comment_count > 0
+			User.find_by_user_name(commenter).all_comments_word_count.to_s + " words"
+		end
+	end
+
 end

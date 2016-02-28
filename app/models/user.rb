@@ -152,16 +152,16 @@ class User < ActiveRecord::Base
 	end
 
 	def self.all_non_admin_user_names_by_comment_count
-		User.all_non_admin_user_names_with_comment_count.sort_by {|key,value| -value }.to_h
+		User.all_non_admin_user_names_with_comment_count.sort_by {|key, value| -value }.to_h
 	end
 
 	def self.top_non_admin_users_by_comment_count(limit)
-		User.all_non_admin_user_names_with_comment_count.sort_by {|key,value| -value }[0..(limit-1)].to_h
+		User.all_non_admin_user_names_with_comment_count.sort_by {|key, value| -value }[0..(limit-1)].to_h
 	end	
 
 
 	def all_comments_word_count
-		(self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ') + 1)
+		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count > 0
 	end						
 
 
