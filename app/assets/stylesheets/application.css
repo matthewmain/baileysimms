@@ -30,6 +30,23 @@ a:hover {
 }
 
 
+
+							/*** RESPONSIVE ***/
+
+							@media screen and (min-width: 480px) {
+								body {
+									background: lightgreen;
+								}
+							}
+
+							@media screen and (min-width: 660px) {
+								body {
+									background: darkgreen;
+								}
+							}
+
+
+
 /*** FORMS ***/
 
 .form { 
