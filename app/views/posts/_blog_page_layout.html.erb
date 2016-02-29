@@ -12,7 +12,7 @@
       <div id="blog_posts_index_column">
 
         <div id="blog_posts_image">
-          <% if @post.title =~ /DEAD IN BED/ && @post.title.split('')[18].to_i < 9 %>
+          <% if @post.title =~ /DEAD IN BED/ && @post.title.slice(18,19).to_i < 9 %>
             <%= image_tag("DiB#{@post.title.split('')[18]} cover.jpg", alt: "Part #{@post.title.split('')[18]} Cover") %>
           <% else %>
             <%= image_tag("Bailey Simms pic.jpg", alt: "Bailey Simms", style: "border: solid 2px; border-radius: 50%; width: 135px;") %>
