@@ -63,3 +63,19 @@
 
 
 
+/*** RESPONSIVE ***/
+
+
+@media screen and (max-width: 660px) {
+	#home_body {
+		background: orange;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#home_body {
+		background: green;
+	}
+}
+
+
