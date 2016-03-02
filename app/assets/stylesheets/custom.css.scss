@@ -8,37 +8,87 @@
 
 /*** HEADER ***/
 
-header.navbar-fixed-top {
-	border-bottom: solid 1px #121f2b;	
-	margin-bottom: 0;
+header {
+	background: black;
 }
 
-.nav {
-	background: black;
-	margin: none;
-	.nav-divider {
-		font-size: 2em;
-		color: red;
+nav.nav {
+	#logo {
+		float: left;
+		margin: 0px 20px 0px 15px;
+		padding: 0;
+		img {
+			height: 32px;
+		}
+		&:hover {
+			color: white;
+			background: black;
+		}
+	}
+	.navbar-nav li a {
+		padding: 0;
+		margin-right: 30px;
+		color: #4499c5;
+		font-size: 11.5px;
+		line-height: 50px;
+		letter-spacing: 1px;
+		vertical-align: center;
+		&:hover {
+			background: black;
+			color: #ffffff;
+			text-shadow: 0 0 15px #ffffff;
+		}
+	}
+	.navbar-nav.navbar-right a {
+		text-align: right;
+		margin-right: 12px;
+		font-size: 13px;
+		letter-spacing: 0;
+		&:focus {
+			background: black;
+		}
+	}
+	li.not_logged_in {
+		margin-left: 10px;
+		font-weight: bold;
+	}
+	.dropdown-menu {
+		min-width: 120px;
+		padding: 5px 0 0;
+		.dropdown_li a {
+			color: black;
+			line-height: 35px;
+			margin: 0;
+			text-align: center;
+		}
+		.dropdown_li .open > a {
+			background-color: red;
+		}
+		li a:hover {
+			color: #4499c5;
+			background-color: white;
+		}
 	}
 	img.gravatar {
-		height: 2.66em;
-		width: 2.66em;
-		margin-top: .4em;
+		height: 40px;
+		width: 40px;
+		margin: 5px 0;
 	}
 	.navbar-nav.navbar-right:last-child {
-			margin-right: 1em;
+		margin-right: 10px;
 	}
+	/* prevents flash after click */
+	.open {
+		> a {
+			background-color: black;
+		}
+		.dropdown-menu .dropdown_li a {
+			background-color: white;
+		}
+	}	
 }
 
-#logo {
-	float: left;
-	font-weight: bold;
-	margin-right: 1em;
-	&:hover {
-		color: white;
-		background: black;
-	}
-}
+
 
 
 
