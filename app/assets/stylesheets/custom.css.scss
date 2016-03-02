@@ -1,8 +1,5 @@
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-
 
 
 
@@ -16,13 +13,9 @@ nav.nav {
 	#logo {
 		float: left;
 		margin: 0px 20px 0px 15px;
-		padding: 0;
+		padding: 9px 0;
 		img {
 			height: 32px;
-		}
-		&:hover {
-			color: white;
-			background: black;
 		}
 	}
 	.navbar-nav li a {
@@ -39,20 +32,23 @@ nav.nav {
 			text-shadow: 0 0 15px #ffffff;
 		}
 	}
-	.navbar-nav.navbar-right a {
-		text-align: right;
-		margin-right: 12px;
-		font-size: 13px;
-		letter-spacing: 0;
-		&:focus {
-			background: black;
+	.navbar-nav.navbar-right {
+			a {
+			text-align: right;
+			margin: 0;
+			font-size: 13px;
+			letter-spacing: 0;
+			&:focus {
+				background: black;
+			}
 		}
 	}
 	li.not_logged_in {
-		margin-left: 10px;
+		margin-left: 20px;
 		font-weight: bold;
 	}
 	.dropdown-menu {
+		margin-right: 37px;
 		min-width: 120px;
 		padding: 5px 0 0;
 		.dropdown_li a {
@@ -68,11 +64,14 @@ nav.nav {
 			color: #4499c5;
 			background-color: white;
 		}
+		.divider {
+    	margin: 5px 0;
+    }
 	}
 	img.gravatar {
 		height: 40px;
 		width: 40px;
-		margin: 5px 0;
+		margin: 5px 0 5px 12px;
 	}
 	.navbar-nav.navbar-right:last-child {
 		margin-right: 10px;

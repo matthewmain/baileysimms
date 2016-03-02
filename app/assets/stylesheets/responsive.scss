@@ -2,6 +2,110 @@
 
 ///// RESPONSIVE STYLING /////
 
+/* Standard Web Page */
+
+#phone_only {
+	display: none;
+}
+
+
+
+/// HEADER ///
+
+/** Large Tablet Header **/
+
+@media screen and (max-width: 767px) {
+	nav.nav {
+		.navbar-nav {
+			li {
+				display: inline-block;
+				a {
+					margin-right: 26.15px;
+				}
+			}
+		}
+	}
+	ul.navbar-left {
+		display: block;
+		float: left;
+		margin: 0;
+	}
+	ul.navbar-right {
+		display: block;
+		float: right;
+		margin: 0;
+		li.dropdown {
+			a.dropdown-toggle {
+			}
+			.dropdown-menu {
+				position: absolute;
+				top: 52px;
+				left: -22px;
+				background: #ffffff;
+				width: 120px;
+				border: 1px solid rgba(0, 0, 0, 0.15);
+				border-top: none;
+				border-radius: 0;
+    		box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    		.divider {
+    			height: 1px;
+    			background-color: #e5e5e5;
+    			display: list-item;
+    		}
+    		li {
+    			width: 100%;
+    			text-align: center;
+    			a {
+    				padding: 0
+    			}
+    		}
+			}
+		}
+	}
+}
+
+
+/** Phone (& Small Tablet) Header **/
+
+@media screen and (max-width: 650px) {
+	#phone_only {
+		display: inline;
+	}
+	nav.nav {
+		height: 50px;
+		a.navbar_icon {
+			font-size: 25px;
+			line-height: 50px;
+			vertical-align: center;
+			margin-left: -8px;
+		}
+	}
+	ul.navbar-left {
+		display: none;
+	}
+	ul.navbar-right {
+		display: inline-block;
+		margin: 0;
+		float: right;
+		li.dropdown {
+			display: inline-block;
+			.dropdown-menu {
+				top: 51px;
+				left: -10px;
+			}
+			a.dropdown-toggle {
+				font-size: 15px;
+			}
+		}
+		img {
+			display: inline-block;
+			float: right;
+		}
+	}
+}
+
+
+
 
 /// HOME PAGE ///
 
@@ -88,21 +192,25 @@
 
 
 
-/// BLOG PAGE ///
 
+
+/// BLOG PAGE ///
 
 /** Tablet **/
 
 @media screen and (max-width: 768px) {
+
+	/* body */
 	#blog_body {
 
 	}
 }
 
-
 /** Phone **/
 
 @media screen and (max-width: 414px) {
+
+	/* body */
 	#blog_body {
 
 	}
