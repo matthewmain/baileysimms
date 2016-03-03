@@ -3,13 +3,14 @@
   <div id="blog_page_container">
 
 
-    <div id="blog_title_container">
-      <h1>THE ORIGINAL BLOG</h1>
-      <h5>Complete and Unedited</h5>
-    </div>
 
 
       <div id="blog_posts_index_column">
+
+        <div id="blog_title_container">
+          <h1>THE ORIGINAL BLOG</h1>
+          <h5>Complete and Unedited</h5>
+        </div>
 
         <div id="blog_posts_image">
           <% if @post.title =~ /DEAD IN BED/ && @post.title.slice(18,19).to_i < 9 %>
@@ -19,22 +20,32 @@
           <% end %>
         </div>
 
-      	<ul>
-      	<% @posts.each do |post| %>
-          <% if post.id > 1 %>
-            <% if post.id == params[:id].to_i %>
-              <li class = "current_post">
-            <% else %>
-              <li>
-            <% end %>
-      	    	<%= link_to post do %>
-      	    	<p id="date"><%= post.date.strftime("%-m.%-d.%Y %l:%M %p") %></p>
-      	      <p id="title"><%= post.title %></p>
-      	    	<% end %>
-      	    </li>
+        <div id="featured_post">
+          <% if @post.id > 1 %>
+            <p class="date"><%= @post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %></p>
+            <p class="title"><%= @post.title %></p>
           <% end %>
-      	<% end %>
-      	</ul>
+        </div>
+
+        <div id="blog_posts_index">
+        	<ul>
+        	<% @posts.each do |post| %>
+            <% if post.id > 1 %>
+              <% if post.id == params[:id].to_i %>
+                <li class = "current_post">
+              <% else %>
+                <li>
+              <% end %>
+        	    	<%= link_to post do %>
+        	    	<p id="date"><%= post.date.strftime("%-m.%-d.%Y %l:%M %p") %></p>
+        	      <p id="title"><%= post.title %></p>
+        	    	<% end %>
+        	    </li>
+            <% end %>
+        	<% end %>
+        	</ul>
+        </div>
+
       </div>
 
       <div id="blog_post">
@@ -82,8 +93,9 @@
             <i>Please <u><%= link_to "log in", login_path %></u> to comment. New user? <u><%= link_to "Sign up", new_user_path %></u>.</i>
           </p>
           <%= render 'shared/feed' %>
-        <% end %>   
+        <% end %>
       </div>
+
 
    </div> 
 
