@@ -25,12 +25,11 @@
           
         <% else %>
           <ul class="nav navbar-nav navbar-right">
-            <li class="not_logged_in"><%= link_to 'SIGN UP', new_user_path %></li>
             <li class="not_logged_in"><%= link_to "LOG IN", login_path %></li>
-          <  
+            <li class="not_logged_in"><%= link_to 'SIGN UP', new_user_path %></li>
+				</ul>
         <% end %>
 
-				</ul>
 
 		</div>
 	</header>	

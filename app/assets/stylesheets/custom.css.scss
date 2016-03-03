@@ -9,6 +9,10 @@ header {
 	background: black;
 }
 
+.navbar {
+	border-bottom: solid 1px #222;
+}
+
 nav.nav {
 	#logo {
 		float: left;
@@ -33,9 +37,9 @@ nav.nav {
 		}
 	}
 	.navbar-nav.navbar-right {
-			a {
+		a {
 			text-align: right;
-			margin: 0;
+			margin: 0 10px 0 0;
 			font-size: 13px;
 			letter-spacing: 0;
 			&:focus {
@@ -94,8 +98,8 @@ nav.nav {
 /*** FOOTER ***/
 
 footer {
-	width: 96%;
-	margin: 0 2%;
+	width: 100%;
+	margin: 0 1% 0 0;
 	font-size: .75em;
 	ul {
 		float: right;
@@ -106,7 +110,7 @@ footer {
 		margin: 15px 0 10px;
 		li {
   		float: left;
-  		margin: 5px 0 0 15px;
+  		margin: 0 1% 0 0;
   		a {
   			color: gray;
   			&:hover {
