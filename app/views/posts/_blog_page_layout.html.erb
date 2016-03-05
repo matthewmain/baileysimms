@@ -91,7 +91,7 @@
         <%= render 'shared/feed' %>
       <% elsif !logged_in? && @post.visible_to_users %>
         <p id="blog_comments_login_request">
-          <i>Please <%= link_to "log in", login_path %> to comment. New user? <%= link_to "Sign up", new_user_path %>.</i>
+          <i>Please <%= link_to "log in", login_path %> to comment.<br> New user? <%= link_to "Sign up", new_user_path %>.</i>
         </p>
         <%= render 'shared/feed' %>
       <% end %>
