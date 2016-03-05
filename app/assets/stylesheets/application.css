@@ -28,6 +28,9 @@ h1 {
 a:hover {
 	text-decoration: none;
 }
+a:focus {
+	outline: none;
+}
 
 
 

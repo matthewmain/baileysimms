@@ -14,3 +14,5 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( author-name-with-feather.png )
 Rails.application.config.assets.precompile += %w( Bailey Simms pic.jpg )
 Rails.application.config.assets.precompile += %w( favicon.png )
+Rails.application.config.assets.precompile += %w( down.png )
+Rails.application.config.assets.precompile += %w( x_circled.png )
