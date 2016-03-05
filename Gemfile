@@ -9,6 +9,8 @@ gem 'will_paginate'
   gem 'bootstrap-will_paginate'
 gem 'yaml_db'
 gem 'validates_timeliness', '~> 4.0'
+gem 'jquery-turbolinks'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'

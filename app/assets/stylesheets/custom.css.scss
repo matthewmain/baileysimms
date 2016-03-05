@@ -24,7 +24,7 @@ nav.nav {
 	}
 	.navbar-nav li a {
 		padding: 0;
-		margin-right: 30px;
+		margin-right: 29px;
 		color: #4499c5;
 		font-size: 11.5px;
 		line-height: 50px;
@@ -48,7 +48,7 @@ nav.nav {
 		}
 	}
 	li.not_logged_in {
-		margin-left: 20px;
+		margin-left: 11px;
 		font-weight: bold;
 	}
 	.dropdown-menu {
@@ -60,9 +60,6 @@ nav.nav {
 			line-height: 35px;
 			margin: 0;
 			text-align: center;
-		}
-		.dropdown_li .open > a {
-			background-color: red;
 		}
 		li a:hover {
 			color: #4499c5;
