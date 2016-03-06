@@ -75,7 +75,7 @@
 			display: flex;
 			flex-direction: column;
 			padding: 12px 0 35px;
-			border-top: solid 1px lightgray;
+			border-top: solid 1px gray;
 			&:first-child {
 				border: none;
 			}
@@ -125,14 +125,11 @@
 
 /// COMMUNITY ///
 
-#community_body {
-	min-height: 100%;
-	background: #f7f6f3;
-}
+#community_body {}
 
 #community_container {
 	max-width: 960px;
-	margin: auto;
+	margin: 20px auto;
 	min-height: 100%;
 	h1 {
 		font-size: 28px;
@@ -152,22 +149,19 @@
 		text-align: center;
 		text-style: italic;
 		margin: 4px 0 30px;
-		color: darkgray;
+		color: gray;
 	}
 	a:hover {
 		color: #0f4b7e;
 	}
 }
 
-// Title //
-#title_div {
-	margin: 30px 0;
-}
 
 // Members //
-#members_div {
-	background: white;
-	width: 36%;
+.members_div {
+	background: #ffffff;
+	width: 37%;
+	margin: 0 1.5%;
 	min-height: 600px;
 	padding: 20px 25px 0;
 	box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.5);
@@ -176,13 +170,14 @@
 	h2 {
 		width: 140px;	
 		margin-top: 15px;
+		font-weight: bold;
 	}	
 	#members_list {
 		padding-left: 0;
 		li {
 			list-style: none;
 			padding-bottom: 15px;
-			border-bottom: solid 1px lightgray;
+			border-bottom: solid 1px gray;
 			margin-bottom: 15px;
 			clear: left;
 			&:last-child {
@@ -219,9 +214,9 @@
 
 // Top Contributors //
 #top_commenters_div {
-	width: 59%;
-	margin-left: 3%;
-	margin-bottom: 20px;
+	width: 57%;
+	margin: 0 1.5% 20px;
+	padding: 20px 0 0;
 	float: right;
 	background: #1b252b;
 	color: #f3f4f7;
@@ -229,7 +224,7 @@
 	box-shadow: inset 0px 0px 25px 2px rgba(0,0,0,1), 0px 0px 2px 0px rgba(0,0,0, .75);
 	h2 {
 		width: 225px;
-		margin: 25px auto 30px;
+		margin: 15px auto 35px;
 		border-bottom: none;
 	}
 	a {
@@ -279,6 +274,12 @@
 				margin: 0;
 				font-size: 20px;
 				padding-top: 5px;
+				a {
+					color: #2b90c4;
+					&:hover {
+						color: #d8e4ea;
+					}
+				}
 			}
 			.number {
 				float: right;
@@ -311,14 +312,14 @@
 
 // Recent Comments //
 #recent_comments_div {
-	width: 59%;
+	width: 57%;
 	padding: 0 10px;
-	margin-left: 3%;
-	margin-bottom: 20px;
+	margin: 0 1.5% 20px;
 	float: right;
 	h2 {
 		width: 255px;
 		margin: 25px auto 0;
+		font-weight: bold;
 	}
 	#recent_comments_list {
 		list-style: none;
@@ -329,7 +330,7 @@
 			display: flex;
 			flex-direction: column;
 			padding: 12px 0 35px;
-			border-top: solid 1px lightgray;
+			border-top: solid 1px gray;
 			&:first-child {
 				border: none;
 			}
@@ -389,11 +390,6 @@
 }
 
 
-
-
-
-
-
 /// PAGINATION ///
 
 div.pagination {
@@ -429,4 +425,281 @@ p.pagination {
 }
 
 
+
+
+
+
+
+
+
+
+/******* RESPONSIVE STYLING *******/
+
+
+
+/*** Standard Web Page ***/
+
+.tablet_view {
+	display: none;
+}
+.mobile_view {
+	display: none;
+}
+
+
+
+/** <=900px **/
+
+@media screen and (max-width: 900px) {
+	#community_body {
+
+		.web_view {
+			display: none;
+		}
+		.tablet_view {
+			display: block;
+		}
+
+		#top_commenters_div {
+			width: 97%;
+			margin: 0 1.5% 20px;
+		}
+
+		#members_list li {
+			.users_index_date {
+				font-size: 8px;
+				span {
+					font-size: 10px;
+				}
+				a {
+					font-size: 15px;
+				}
+			}
+		}
+
+		#recent_comments_div {
+			h2 {
+				margin: 35px auto 0;
+			}
+		}
+
+		// Recent Comments //
+		#recent_comments_list #comment_div li {
+			#user_image {
+				width: 12%;
+				float: left;
+			}
+			#user_name {
+				padding-left: 2%;
+			}
+			#post_name {
+				clear: right;
+				width: 88%;
+				padding-left: 2%;
+				margin: 0;
+			}
+			#content {
+				clear: right;
+				width: 88%;
+				padding-left: 2%;
+				margin: 12px 0 0;
+			}
+		}
+	}
+}
+
+
+
+/** <=700px **/
+
+@media screen and (max-width: 700px) {
+	#community_body {
+
+		.tablet_view {
+			display: none;
+		}
+		.mobile_view {
+			display: block;
+		}
+
+		#top_commenters_div {
+			float: none;
+			width: 92%;
+			margin: 0 auto 20px;
+			#top_commenters_list li {
+				span {
+					font-size: 14px;
+				}
+			}
+		}
+
+		#recent_comments_div {
+			float: none;
+			clear: both;
+			width: 85%;
+			padding-top: 10px;
+			margin: auto;
+			h2 {
+				margin: 35px auto 0;
+			}
+			#recent_comments_list #comment_div li {
+				#user_image {
+					width: 12%;
+					float: left;
+				}
+				#user_name {
+					padding-left: 2%;
+				}
+				#post_name {
+					clear: right;
+					width: 88%;
+					padding-left: 2%;
+					margin: 0;
+				}
+				#content {
+					clear: right;
+					width: 88%;
+					padding-left: 2%;
+					margin: 12px 0 0;
+				}
+			}
+		}
+
+		.members_div {
+			width: 92%;
+			margin: auto;
+			float: none;
+			#members_list li {
+				.users_index_date {
+					font-size: 14px;
+				}
+			}
+		}	
+
+	}
+}
+
+
+
+/** <=500px **/
+
+@media screen and (max-width: 500px) {
+	#community_body {
+
+		#top_commenters_div {
+			#top_commenters_list {
+				padding: 5px 17px;
+				li {
+					margin-bottom: 2px;
+					span {
+						font-size: 12px;
+					}
+					span.rank {
+						font-size: 14px;
+						width: 22px;
+						letter-spacing: 0;
+					}
+					img {
+						height: 20px;
+						margin-top: 3px;
+					}
+					span.comment_count {
+						font-size: 10px;
+					}
+				}
+			}
+		}
+
+		#recent_comments_div {
+			h2 {
+				margin: 25px auto 0;
+			}
+			#recent_comments_list #comment_div li {
+				#user_image {
+					width: 16%;
+				}
+				#user_name {
+					padding-left: 3%;
+				}
+				#timestamp {
+					float: right;
+					font-size: 9px;
+				}
+				#post_name {
+					width: 84%;
+					padding-left: 3%;
+					font-size: 10px;
+				}
+				#content {
+					float: right;
+					clear: both;
+					width: 100%;
+					padding: 0 2px;
+				}
+			}
+		}
+
+		.members_div {
+			#members_list li {
+				.users_index_date {
+					font-size: 12px;
+				}
+			}
+		}	
+
+	}
+}
+
+
+
+/** <=350px **/
+
+@media screen and (max-width: 350px) {
+	#community_body {
+
+		#top_commenters_div {
+			#top_commenters_list {
+				li {
+					margin-bottom: 2px;
+					padding-bottom: 2px;
+					span {
+						font-size: 10px;
+						letter-spacing: 0;
+					}
+					.word_count {
+						top: -15px;
+					}
+				}
+			}
+		}
+
+		#recent_comments_div {
+			#recent_comments_list #comment_div li {
+				#user_image {
+					width: 16%;
+					float: left;
+				}
+				#user_name {
+					padding-left: 6%;
+					float: none;
+				}
+				#timestamp {
+					font-size: 8px;
+				}
+				#post_name {
+					padding-left: 6%;
+				}
+			}
+		}
+
+		.members_div {
+			#members_list li {
+				.users_index_date {
+					font-size: 10px;
+				}
+			}
+		}	
+
+	}
+}
 

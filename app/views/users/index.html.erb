@@ -6,52 +6,17 @@
 
 <div id="community_container">
 
-  <div id="title_div">
-    <h1>COMMUNITY</h1>
-  </div>
-  
-
-  <div id="members_div">
-    <h2>MEMBERS</h2>
-    <h4><i><%= @users.where(:activated => true).count %> of us and counting</i></h4>
-    <ul id="members_list">
-      <% @users.each do |user| %>
-
-        <% if user.activated == true %>
-          <li>
-            <%= gravatar_for user%>
-            <p class="users_index_user_name"><%= link_to user.user_name.gsub(/_/, ' '), user %></p>
-            <p class="users_index_date">Member since <%= user.activated_at.strftime("%B #{user.activated_at.day.ordinalize}, %Y") %>
-              <% if logged_in? && current_user.admin? && !current_user?(user) %>
-              	<span> | </span><%= link_to "×", user, method: :delete, data: { confirm: "You sure you want to do this?" }%>
-          		<% end %></p>
-          </li>
-        <% end %>
-
-      <% end %>
-    </ul>
+  <div class="members_div web_view">
+    <%= render 'members' %>
   </div> 
-
 
   <div id="top_commenters_div">
-  <h2>TOP CONTRIBUTORS</h2>
-    <ol id="top_commenters_list">
-      <% rank = 0 %>
-      <% @top_ten_commenters.each do |commenter, count| %>
-        <% rank += 1%>
-        <li>
-          <span class="rank">#<%=rank%></span>
-          <%= gravatar_for User.find_by_user_name(commenter)%>
-          <span class="commenter_name"><%= link_to commenter.gsub(/_/, ' '), User.find_by_user_name(commenter) %></span>
-          <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if giveaway_winner_Feb16(commenter)%>
-          <span class="comment_count">comments</span> 
-          <span class="number"><%= count %></span>
-          <div class="word_count"><%= total_words_commented(commenter)%></div>
-        </li>
-      <% end %>
-    </ol>
+    <%= render 'top_contributors' %>
   </div> 
 
+  <div class="members_div tablet_view">
+    <%= render 'members' %>
+  </div> 
 
   <div id="recent_comments_div">   
   <h2>RECENT COMMENTS</h2>
@@ -61,6 +26,9 @@
     </ol>
   </div>  
 
+  <div class="members_div mobile_view">
+    <%= render 'members' %>
+  </div> 
 
 </div>
 

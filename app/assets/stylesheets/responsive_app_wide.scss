@@ -80,10 +80,13 @@
 	nav.nav {
 		height: 50px;
 		a.navbar_icon {
-			font-size: 25px;
+			font-size: 28px;
 			line-height: 50px;
 			vertical-align: center;
 			margin-left: -8px;
+			&:hover {
+				color: #ffffff;
+			}
 		}
 	}
 	ul.navbar-left {
