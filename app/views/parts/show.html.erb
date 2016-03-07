@@ -6,20 +6,17 @@
   </head>
 
   <body id="part_body">
-    <div class="container_12 clearfix">
-    
-      <div class="part_text grid_text">
-      	<%= raw @part.content %>
-      </div>
+    <div id="part_container">
 
-      <div class="grid_5">
+      <div id="part_cover_div">
         <%= image_tag("DiB#{@part.part_number} cover.jpg", class: "part_cover") %>
       </div>  
-
-      <div class="grid_6 fill_right part_<%=@part.part_number%>">
+    
+      <div id="part_content_div">
+        <%= raw @part.content %>
       </div>
 
-      <div class="grid_text end_links">
+      <div class="end_links">
         <p class="amazon_link"><a href="http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr="><%= image_tag("amazon icon.png", width: "19px", class: "amazon_icon") %> Buy the complete novel at Amazon</a></p>
         <p class="goodreads_link"><a href="https://www.goodreads.com/book/show/<%= @part.goodreads_id %>"><%= image_tag("goodreads icon.png", width: "19px", class: "goodreads_icon") %> Add to Goodreads</a></p>
       </div>

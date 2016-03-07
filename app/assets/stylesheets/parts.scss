@@ -1,20 +1,35 @@
+
+
 #part_body {
 	background: #ffffff;
 	color: #040D12;
 }
 
-
-
-.part_cover {
-	height: 600px;
-	position: fixed;
-	margin: -10px 0 0 80px;
+#part_container {
+	max-width: 960px;
+	margin: auto;
 }
 
-.part_text {
+#part_cover_div {
+	position: fixed;
+	float: left;
+	width: 50%;
+	max-width: 480px;
+	margin: 0 auto;
+	img.part_cover {
+		display: block;
+		width: 82%;
+		margin: auto;
+	}
+}
+
+#part_content_div {
+	display: block;
+	float: right;
+	width: 50%;
+	padding: 100px 40px 0;
 	font-family: "Linden Hill", serif;
 	text-align: justify;
-	margin: 90px 0 0 50px;
 }
 
 .first_letter {
@@ -29,70 +44,28 @@
 	font-family: garamond;
 }
 
-.part_text p {
+#part_content_div p {
 	line-height: 1.5em;
 	font-size: 1.1em;
   	margin-bottom: 0;
 }
 
-	.part_text p + p {
-  		text-indent: 1.5em;
-  		margin-top: 0;
-  	}
-
-
-
-.fill_right.part_1 {
-	margin: 24px 0 0 0;
-	padding-right: 20px;
-	height: 22300px;
-}
-
-.fill_right.part_2 {
-	margin: 124px 0 0 0;
-	padding-right: 20px;
-	height: 77em;
-}
-
-.fill_right.part_3 {
-	margin: 124px 0 0 0;
-	padding-right: 20px;
-	height: 135em;
-}
-
-.fill_right.part_4 {
-	margin: 124px 0 0 0;
-	padding-right: 20px;
-	height: 67.5em;
-}
-
-.fill_right.part_5 {
-	margin: 124px 0 0 0;
-	padding-right: 20px;
-	height: 140.2em;
-}
-
-.fill_right.part_6 {
-	margin: 124px 0 0 0;
-	padding-right: 20px;
-	height: 127.2em;
-}
-
-.fill_right.part_7 {
-	margin: 124px 0 0 0;
-	padding-right: 20px;
-	height: 96em;
-}
-
-
+#part_content_div p + p {
+		text-indent: 1.5em;
+		margin-top: 0;
+	}
 
 .end_links {
+	clear: both;
+	float: right;
+	display: block;
+	width: 40%;
+  margin: 100px 5%;
 	font-family: "Linden Hill", serif;
 	border-top: 1px solid;
 	border-bottom: 1px solid;
 	border-color: black;
 	text-align: center;
-  margin: 10px 0 80px 50px;
   font-size: 18px;
   line-height: 28px;
 	a {
@@ -103,7 +76,7 @@
 		text-align: center;
 		text-decoration: none;
 		&:hover {
-			font-size: 21px;
+			color: #888;
 		}
 	}
 	p.amazon_link {
@@ -114,6 +87,7 @@
 		padding-bottom: 5px;
 	}
 	p.goodreads_link {
+		margin-bottom: 20px;
 		margin: 15px auto 20px;
 	}
 	.goodreads_icon {
@@ -123,6 +97,105 @@
 }
 
 
+
+
+
+
+
+
+/******* RESPONSIVE STYLING *******/
+
+
+/** <=800px **/
+
+@media screen and (max-width: 800px) {
+	#part_body {
+
+		#part_cover_div {
+			position: static;
+			max-width: none;
+			width: 100%;
+			img.part_cover {
+				display: block;
+				max-width: 328px;
+				margin: 50px auto 0;
+				box-shadow: 0 0 3px 1px rgba(0,0,0,.5);
+			}
+		}
+		#part_content_div {
+			display: block;
+			clear: both;
+			width: 100%;
+			padding: 85px 15% 0;
+		}
+		.end_links {
+			width: 70%;
+		  margin: 100px 15%;
+		}
+
+	}	
+}
+
+
+
+/** <=475px **/
+
+@media screen and (max-width: 475px) {
+	#part_body {
+
+		#part_cover_div {
+			img.part_cover {
+				max-width: 70%
+			}
+		}
+		#part_content_div {
+			width: 80%;
+			margin: 10%;
+			padding: 50px 0 0;
+		}
+		.end_links {
+			a {
+				font-size: 18px;
+			}
+		}
+
+
+	}
+}
+
+
+
+/** <=375px **/
+
+@media screen and (max-width: 375px) {
+	#part_body {
+
+		.end_links {
+			a {
+				font-size: 16px;
+			}
+		}
+
+
+	}
+}
+
+
+
+/** <=350px **/
+
+@media screen and (max-width: 350px) {
+	#part_body {
+
+		.end_links {
+			a {
+				font-size: 15px;
+			}
+		}
+
+
+	}
+}
 
 
 

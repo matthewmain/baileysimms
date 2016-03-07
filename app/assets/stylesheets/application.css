@@ -40,8 +40,8 @@ a:focus {
 /*** FORMS ***/
 
 .form { 
+	width: 300px;
 	margin: auto;
-	width: 30%;
 	font-weight: bold;
 }
 
@@ -108,3 +108,26 @@ input.form-button {
   width: 460px;
   margin-left: -230px;
 }
+
+
+
+
+
+
+
+/******* RESPONSIVE STYLING *******/
+
+/** <=500px **/
+
+@media screen and (max-width: 500px) {
+
+	.flash-alert-activate {
+		width: 300px;
+		margin-left: -150px;
+	}
+
+{
+
+
+
+
