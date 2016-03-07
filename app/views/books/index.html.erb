@@ -3,14 +3,14 @@
 </head>
 
 <body id="books_body">
-  <div class="container_12">
+<div id="books_container">
 
-    <div id="complete_first_book_image_container" class="grid_4">
+    <div id="complete_first_book_image_container">
       <a href="http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr="></a>
       <%= image_tag("DiBC1 cover.jpg", alt: "Complete First Book", class: "complete_first_book_image") %>
     </div> 
 
-    <div id="complete_first_book_text_container" class="grid_8">
+    <div id="complete_first_book_text_container">
       <p class="complete_first_book_text_container_heading"><i>DEAD IN BED, The Complete First Book</i><br>is now available.</p>
       <ul class="complete_first_book_text_container_links"> 
         <li class="complete_first_book_text_container_links_amazon"><a href="http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr=" class="books_page_button">Buy at Amazon</a></li>
@@ -19,47 +19,50 @@
     </div> 
 
 
-    <div class="grid_12 books_page_line">
+    <div class="horizontal_line">
+    </div>
+
+    <div id="parts_container">
+      <div class="books_page_part p1">
+        <%= link_to image_tag("DiB1 cover.jpg", alt: "Part 1", height: "156px", class: "part_image1"), 'books/1/parts/1' %>
+        <p class="read_now"><i>READ NOW</i></p>
+      </div>
+
+      <div class="books_page_part p2">
+        <%= link_to image_tag("DiB2 cover.jpg", alt: "Part 2", class: "part_image"), 'books/1/parts/2' %>
+        <p class="sample"><i>SAMPLE</i></p>
+      </div>
+
+      <div class="books_page_part p3">
+        <%= link_to image_tag("DiB3 cover.jpg", alt: "Part 3", class: "part_image"), 'books/1/parts/3' %>
+        <p class="sample"><i>SAMPLE</i></p>
+      </div>
+
+      <div class="books_page_part p4">
+        <%= link_to image_tag("DiB4 cover.jpg", alt: "Part 4", class: "part_image"), 'books/1/parts/4' %>
+        <p class="sample"><i>SAMPLE</i></p>
+      </div>
+
+      <div id="last_three">
+        <div class="books_page_part p5">
+          <%= link_to image_tag("DiB5 cover.jpg", alt: "Part 5", class: "part_image"), 'books/1/parts/5' %>
+          <p class="sample"><i>SAMPLE</i></p>
+        </div>
+
+        <div class="books_page_part p6">
+          <%= link_to image_tag("DiB6 cover.jpg", alt: "Part 6", class: "part_image"), 'books/1/parts/6' %>
+          <p class="sample"><i>SAMPLE</i></p>
+        </div>
+
+        <div class="books_page_part p7">
+          <%= link_to image_tag("DiB7 cover.jpg", alt: "Part 7", class: "part_image"), 'books/1/parts/7' %>
+          <p class="sample"><i>SAMPLE</i></p>
+        </div>
+      </div>
     </div>
 
 
-    <div class="grid_sevenths books_page_parts p1">
-      <%= link_to image_tag("DiB1 cover.jpg", alt: "Part 1", height: "156px", class: "part_image1"), 'books/1/parts/1' %>
-      <p class="read_now read_now1"><i>READ NOW</i></p>
-    </div>
-
-    <div class="grid_sevenths books_page_parts p2">
-      <%= link_to image_tag("DiB2 cover.jpg", alt: "Part 2", class: "part_image"), 'books/1/parts/2' %>
-      <p class="read_now"><i>SAMPLE</i></p>
-    </div>
-
-    <div class="grid_sevenths books_page_parts p3">
-      <%= link_to image_tag("DiB3 cover.jpg", alt: "Part 3", class: "part_image"), 'books/1/parts/3' %>
-      <p class="read_now"><i>SAMPLE</i></p>
-    </div>
-
-    <div class="grid_sevenths books_page_parts p4">
-      <%= link_to image_tag("DiB4 cover.jpg", alt: "Part 4", class: "part_image"), 'books/1/parts/4' %>
-      <p class="read_now"><i>SAMPLE</i></p>
-    </div>
-
-    <div class="grid_sevenths books_page_parts p5">
-      <%= link_to image_tag("DiB5 cover.jpg", alt: "Part 5", class: "part_image"), 'books/1/parts/5' %>
-      <p class="read_now"><i>SAMPLE</i></p>
-    </div>
-
-    <div class="grid_sevenths books_page_parts p6">
-      <%= link_to image_tag("DiB6 cover.jpg", alt: "Part 6", class: "part_image"), 'books/1/parts/6' %>
-      <p class="read_now"><i>SAMPLE</i></p>
-    </div>
-
-    <div class="grid_sevenths books_page_parts p7">
-      <%= link_to image_tag("DiB7 cover.jpg", alt: "Part 7", class: "part_image"), 'books/1/parts/7' %>
-      <p class="read_now"><i>SAMPLE</i></p>
-    </div>
-
-
-  </div>
+</div>
 </body>
 
 
