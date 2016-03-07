@@ -6,7 +6,8 @@
 }
 
 .about_div {
-	margin: 35px 250px 20px 250px; 
+	width: 455px;
+	margin: 35px auto 20px; 
 }
 
 .about_div h1 {
@@ -43,6 +44,38 @@
 
 
 
+
+
+
+
+/******* RESPONSIVE STYLING *******/
+
+
+/** <=500px **/
+
+@media screen and (max-width: 500px) {
+	#about_body {
+
+		.about_div {
+			width: 300px;
+			margin: 35px auto; 
+		}
+
+		h1 {
+			font-size: 45px;
+		}
+
+		h1.bailey_head {
+			letter-spacing: .65em;
+		}
+
+		h1.simms_head {
+			letter-spacing: .85em;
+			margin-bottom: 30px;
+		}
+
+	}
+}	
 
 
 

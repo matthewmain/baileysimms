@@ -4,10 +4,28 @@
 
 
 #login_container {
+	display: block;
+	width: 300px;
+	margin: auto;
 	min-height: 510px;
 	h1 {
 		margin-top: 70px;
 	}
+	.form {
+		display: block;
+		width: 300px;
+		margin: auto;
+		#forgot_password {
+			font-size: 9px;
+		}
+	}
+}
+
+#forgot_password_container .form {
+	display: block;
+	width: 300px;
+	margin: auto;
+	min-height: 510px;
 }
 
 .form {

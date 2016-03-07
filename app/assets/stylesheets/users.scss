@@ -25,12 +25,13 @@
 /// PROFILE ///
 
 #profile_container {
-	min-height: 510px;
+	height: 100%;
+	color: black;
 	h3 {
 		border-bottom: solid 1px;
 	}
 	a:hover {
-		color: #0f4b7e;
+		color: #ffffff;
 	}
 }
 
@@ -38,7 +39,7 @@
 #profile_feature_div {
 	margin: 66px 0 50px;
 	text-align: center;
-	color: #3278b4;
+	color: black;
 	font-weight: bold;
 	letter-spacing: 2px;
 	h1 {
@@ -46,7 +47,7 @@
 	} 
 	h4 {
 		margin-bottom: 20px;
-		color: darkslategray;
+		color: black;
 	}
 }
 
@@ -75,7 +76,7 @@
 			display: flex;
 			flex-direction: column;
 			padding: 12px 0 35px;
-			border-top: solid 1px gray;
+			border-top: solid 1px black;
 			&:first-child {
 				border: none;
 			}
@@ -92,30 +93,30 @@
 				#post_name {
 					padding-left: 1%;
 					a {
-						color: #3278b4;
+						color: #2b90c4;
 						font-weight: bold;
 						&:hover {
-							color: #0f4b7e;
+							color: #ffffff;
 						}
 					}
 				}
 				#timestamp {
 					float: right;
 					padding-right: 5px;
-					color: gray;
+					color: #1b252b;
 					font-size: .8em;
 					#delete_x {
 						margin: 0 0 0 5px;
 						a {
-							color: #3278b4;
+							color: #2b90c4;
 						} 
 					}
 				}
 				#content {
 					clear: right;
-					width: 91%;
-					margin: 12px 0 0 1%;
-					float: right;
+					padding-left: 1%;
+					margin-top: 12px;
+					float: left;
 				}
 			}
 		}
@@ -413,15 +414,19 @@ p.pagination {
 
 /// NEW: SIGNUP FORM ///
 
-#signup_container {
-	min-height: 510px;
+#signup_container .form {
+	display: block;
+	width: 300px;
+	margin: auto;
 }
 
 
 /// EDIT: SETTINGS FORM  ///
 
-#settings_container {
-	min-height: 510px;
+#settings_container .form {
+	display: block;
+	width: 300px;
+	margin: auto;
 }
 
 
@@ -506,6 +511,23 @@ p.pagination {
 			}
 		}
 	}
+
+	// PROFILE PAGE //
+	#profile_comments_div .profile_comments_list #comment_div li {
+		#post_name {
+			padding-left: 4%;
+			a {
+				font-size: 13px;
+			}
+		}
+		#timestamp {
+			font-size: 8px;
+		}
+		#content {
+			padding-left: 4%;
+		}
+	}
+
 }
 
 
@@ -577,7 +599,21 @@ p.pagination {
 		}	
 
 	}
+
+	// PROFILE PAGE //
+	#admin_div {
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;	
+	}
+	#profile_comments_div {
+		width: 90%;
+		margin: 0 5%;
+	}
+
 }
+
+
 
 
 
@@ -648,6 +684,38 @@ p.pagination {
 		}	
 
 	}
+
+	// PROFILE PAGE //
+	#profile_comments_div .profile_comments_list #comment_div {
+		padding: 8px 0 20px;
+		li {
+			#user_image {
+				width: 35px;
+				img {
+					height: 35px;
+				}	
+			}
+			#post_name {
+				padding-left: 5px;
+				a {
+					font-size: 11px;
+					line-height: 6px;
+				}
+			}
+			#timestamp {
+				float: none;
+				display: block;	
+				padding-left: 40px;
+				font-size: 10px;
+			}
+			#content {
+				float: left;
+				clear: both;
+				padding-left: 4px;
+			}
+		}
+	}
+
 }
 
 
@@ -701,5 +769,24 @@ p.pagination {
 		}	
 
 	}
+
+	// PROFILE PAGE //
+	#profile_comments_div .profile_comments_list #comment_div {
+		li {
+			#post_name {
+				padding-left: 5px;
+				a {
+					font-size: 10px;
+				}
+			}
+		}
+	}
+
 }
+
+
+
+
+
+
 

@@ -1,14 +1,16 @@
-<h1>Forgot your password?</h1>
+<div id="forgot_password_container">
+	<h1>Forgot your password?</h1>
 
-<div class="form">
+	<div class="form">
 
-    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+	    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
 
-      <%= f.label :email, "Enter your email:" %>
-      <%= f.email_field :email %>
+	      <%= f.label :email, "Enter your email:" %>
+	      <%= f.email_field :email %>
 
-      <%= f.submit "Submit", class: "form-button" %>
+	      <%= f.submit "Submit", class: "form-button" %>
 
-    <% end %>
-    
+	    <% end %>
+	    
+	</div>
 </div>
