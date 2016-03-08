@@ -170,10 +170,15 @@ class User < ActiveRecord::Base
 
 
 
-	## ** DOES NOT WORK WITH POSTRESS ** ##
+
 	def comment_count_this_month
-		#For pg, need to use: self.where('extract(month from date) = ?', Time.now.month).count
-		self.comments.where("strftime('%m', date)+0 = ?", Time.now.month).count
+		#For SQLite database queries (local development environment)
+		if Rails.env.development?
+			self.comments.where("strftime('%m', date)+0 = ?", Time.now.month).count
+		#For Postgres database queries (remote Heroku production enviroment)
+		elsif Rails.env.production?
+			self.where('extract(month from date) = ?', Time.now.month).count
+		end
 	end
 
 
