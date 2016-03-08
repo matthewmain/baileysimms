@@ -172,10 +172,10 @@ class User < ActiveRecord::Base
 
 
 	def comment_count_this_month
-		#For SQLite database queries (local development environment)
+		#SQLite database queries (local development environment) need to use 'strftime()' to grab info from datetimes
 		if Rails.env.development?
 			self.comments.where("strftime('%m', date)+0 = ?", Time.now.month).count
-		#For Postgres database queries (remote Heroku production enviroment)
+		#Postgres database queries (remote Heroku production enviroment) need to use 'extract' to grab info from datetimes
 		elsif Rails.env.production?
 			self.where('extract(month from date) = ?', Time.now.month).count
 		end
