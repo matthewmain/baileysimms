@@ -32,7 +32,8 @@ class User < ActiveRecord::Base
 	validates :user_name, presence: true, 
 												length:	{ maximum: 20 },
 												format: { with: /\A[a-zA-Z0-9_ ]+\z/,
-																	message: "must include only letters, numbers, or spaces" } 					
+																	message: "must include only letters, numbers, or spaces" },
+												uniqueness: { case_sensitive: false } 					
 
 	before_save :downcase_email
 	before_create :create_activation_digest
@@ -166,6 +167,13 @@ class User < ActiveRecord::Base
 		end[0..(limit-1)].to_h
 	end	
 
+
+
+	## ** DOES NOT WORK WITH POSTRESS ** ##
+	def comment_count_this_month
+		#For pg, need to use: self.where('extract(month from date) = ?', Time.now.month).count
+		self.comments.where("strftime('%m', date)+0 = ?", Time.now.month).count
+	end
 
 
 
