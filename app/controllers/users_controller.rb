@@ -16,6 +16,7 @@
 #  activated_at      :datetime
 #  reset_digest      :string
 #  reset_sent_at     :datetime
+#  vip               :boolean          default(FALSE)
 #
 # Indexes
 #
@@ -94,6 +95,11 @@ class UsersController < ApplicationController
     #confirms an admin user
     def admin_user
       redirect_to(root_url) unless current_user.admin?
+    end
+
+    #confirms a vip user (has read-only access to all posts)
+    def admin_user
+      redirect_to(root_url) unless current_user.vip?
     end
   
 end
