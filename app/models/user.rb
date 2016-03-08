@@ -177,7 +177,7 @@ class User < ActiveRecord::Base
 			self.comments.where("strftime('%m', date)+0 = ?", Time.now.month).count
 		#Postgres database queries (remote Heroku production enviroment) need to use 'extract' to grab info from datetimes
 		elsif Rails.env.production?
-			self.where('extract(month from date) = ?', Time.now.month).count
+			self.comments.where('extract(month from date) = ?', Time.now.month).count
 		end
 	end
 
