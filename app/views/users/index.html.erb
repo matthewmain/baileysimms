@@ -6,17 +6,29 @@
 
 <div id="community_container">
 
+
   <div class="members_div web_view">
     <%= render 'members' %>
   </div> 
 
-  <div id="top_commenters_div">
-    <%= render 'top_contributors' %>
+
+  <div id="top_contributors_all_time_div" class="top_contributors_div">
+    <%= render 'top_contributors_all_time' %>
   </div> 
+
+  <div id="top_contributors_this_month_div" class="top_contributors_div secondary">
+    <%= render 'top_contributors_this_month' %>
+  </div> 
+
+  <div id="top_contributors_last_month_div" class="top_contributors_div secondary">
+    <%= render 'top_contributors_last_month' %>
+  </div> 
+
 
   <div class="members_div tablet_view">
     <%= render 'members' %>
   </div> 
+
 
   <div id="recent_comments_div">   
   <h2>RECENT COMMENTS</h2>

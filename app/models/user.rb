@@ -131,10 +131,35 @@ class User < ActiveRecord::Base
 	end
 
 
+	#Comment/Word Count, All-Time
+
 	def comment_count
 		self.comments.count
 	end
 
+	def all_comments_word_count
+		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count > 0
+	end		
+
+
+	#Comment/Word Count, By Month
+
+	def comment_count_by_month(month)
+		if Rails.env.development?
+			#SQLite database queries (local development environment) need to use 'strftime()' to grab info from datetimes
+			self.comments.where("strftime('%m', date)+0 = ?", month).count
+		elsif Rails.env.production?
+			#Postgres database queries (remote Heroku production enviroment) need to use 'extract' to grab info from datetimes
+			self.comments.where('extract(month from date) = ?', month).count
+		end
+	end
+
+	def comments_word_count_by_month(month)
+		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count_by_month(month) > 0
+	end	
+
+
+	#Generate Hash of User Names and Their Comment Counts, All-Time
 
 	def self.all_user_names_with_comment_count
 		User.all.each_with_object({}) {|user,hash| hash[user.user_name] = user.comment_count}
@@ -145,10 +170,7 @@ class User < ActiveRecord::Base
 	end		
 
 
-	def all_comments_word_count
-		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count > 0
-	end		
-
+	#Generate Hash of Non-Admin User Names and Their Comment Counts, All-Time
 
 	def self.all_non_admin_users
 		User.where("admin = ?", false)
@@ -169,17 +191,23 @@ class User < ActiveRecord::Base
 	end	
 
 
+	#Generate Hash of Non-Admin User Names and Their Comment Counts, By Month
 
-
-	def comment_count_this_month
-		#SQLite database queries (local development environment) need to use 'strftime()' to grab info from datetimes
-		if Rails.env.development?
-			self.comments.where("strftime('%m', date)+0 = ?", Time.now.month).count
-		#Postgres database queries (remote Heroku production enviroment) need to use 'extract' to grab info from datetimes
-		elsif Rails.env.production?
-			self.comments.where('extract(month from date) = ?', Time.now.month).count
-		end
+	def self.all_non_admin_user_names_with_comment_count_by_month(month)
+		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = user.comment_count_by_month(month)}
 	end
+
+	def self.all_non_admin_user_names_by_comment_count_by_month(month)
+		User.all_non_admin_user_names_with_comment_count_by_month(month).sort_by {|user, comment_count| comment_count }.reverse.to_h
+	end
+
+	def self.top_non_admin_users_by_comment_count_by_month(month,limit)
+		User.all_non_admin_user_names_with_comment_count_by_month(month).sort_by do |user, comment_count| 
+			[-(comment_count), -(User.find_by_user_name(user).comments_word_count_by_month(month).to_i)]
+		end[0..(limit-1)].to_h
+	end	
+	
+
 
 
 

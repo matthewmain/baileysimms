@@ -1,0 +1,17 @@
+<h3 class="top_contributors_heading"><i>TOP CONTRIBUTORS THIS MONTH SO FAR</i></h3>
+<h4 class="top_contributors_heading"><%= Time.now.strftime("%^B %Y") %></h4>
+<ol id="top_commenters_list">
+  <% rank = 0 %>
+  <% @top_five_contributors_this_month.each do |commenter, count| %>
+    <% rank += 1%>
+    <li>
+      <span class="rank">#<%=rank%></span>
+      <%= gravatar_for User.find_by_user_name(commenter)%>
+      <span class="commenter_name"><%= link_to commenter.gsub(/_/, ' '), User.find_by_user_name(commenter) %></span>
+      <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if giveaway_winner(commenter)%>
+      <span class="comment_count">comments</span> 
+      <span class="number"><%= count %></span>
+      <div class="word_count"><%= total_words_commented_this_month(commenter)%></div>
+    </li>
+  <% end %>
+</ol>
