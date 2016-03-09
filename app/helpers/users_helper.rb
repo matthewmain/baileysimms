@@ -32,17 +32,30 @@ module UsersHelper
     image_tag(gravatar_url, alt: user.user_name, class: "gravatar")
 	end
 
-	def giveaway_winner_Feb16(name)
+	def giveaway_winner(name)
 		name == "AJ2002" || 
 	 	name == "Chancelacy" ||
 	 	name == "Tasneem" ||
 	 	name == "samuelmax" ||
-	 	name == "Tiff" ? true : false;
+	 	name == "Tiff" ||
+	 	name == "Mr_Pink" ? true : false;
 	end		
 
 	def total_words_commented(commenter)
 		if User.find_by_user_name(commenter).comment_count > 0
 			User.find_by_user_name(commenter).all_comments_word_count.to_s + " words"
+		end
+	end
+
+	def total_words_commented_this_month(commenter)
+		if User.find_by_user_name(commenter).comment_count_by_month(Time.now.month) > 0
+			User.find_by_user_name(commenter).comments_word_count_by_month(Time.now.month).to_s + " words"
+		end
+	end
+
+	def total_words_commented_last_month(commenter)
+		if User.find_by_user_name(commenter).comment_count_by_month(1.month.ago.month) > 0
+			User.find_by_user_name(commenter).comments_word_count_by_month(1.month.ago.month).to_s + " words"
 		end
 	end
 

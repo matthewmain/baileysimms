@@ -214,100 +214,149 @@
 }
 
 // Top Contributors //
-#top_commenters_div {
-	width: 57%;
-	margin: 0 1.5% 20px;
-	padding: 20px 0 0;
-	float: right;
-	background: #1b252b;
-	color: #f3f4f7;
-	border-radius: 2px;
-	box-shadow: inset 0px 0px 25px 2px rgba(0,0,0,1), 0px 0px 2px 0px rgba(0,0,0, .75);
-	h2 {
-		width: 225px;
-		margin: 15px auto 35px;
-		border-bottom: none;
-	}
-	a {
-		color: #428bca;
-	}
-	#top_commenters_list {
-		padding: 0 30px 6px;
-		margin: 0;
-		li {
-			list-style: none;
-			padding-bottom: 7px;
-			border-bottom: solid 1px #2b3b45;
-			margin-bottom: 7px;
-			text-transform: uppercase;
-			font-weight: bold;
+
+#community_container { 
+	.top_contributors_div {
+		width: 57%;
+		margin: 0 1.5% 20px;
+		padding: 20px 0 0;
+		float: right;
+		background: #1b252b;
+		color: #f3f4f7;
+		border-radius: 2px;
+		box-shadow: inset 0px 0px 25px 2px rgba(0,0,0,1), 0px 0px 2px 0px rgba(0,0,0, .75);
+		.top_contributors_heading {
+			margin: 15px auto 35px;
+			border-bottom: none;
+		}
+		h3.top_contributors_heading {
+			font-size: 14px;
+			text-align: center;
+			margin: 12px 0 8px;
+			letter-spacing: 1px;
+		}
+		h4.top_contributors_heading {
 			font-style: italic;
-			line-height: 25px;
-			letter-spacing: .75px;
-			img.winner {
-				position: relative;
-				top: -3px;
-				left: 3px;
-				height: 25px;
-				padding-bottom: 8px; 
-				border: solid 1px white;
-				padding: 0;
+			margin: 0 0 20px;
+			letter-spacing: 1px;
+		}
+		a {
+			color: #428bca;
+		}
+		#top_commenters_list {
+			padding: 0 30px 6px;
+			margin: 0;
+			li {
+				list-style: none;
+				padding-bottom: 7px;
+				border-bottom: solid 1px #2b3b45;
+				margin-bottom: 7px;
+				text-transform: uppercase;
+				font-weight: bold;
+				font-style: italic;
 				line-height: 25px;
-				transform: rotate(2deg);
-				text-shadow: 0 0 20px #f4f6de;
-			}
-			&:last-child {
-				border-bottom: none;
-			}
-			.rank {
-				float: left;
-				font-size: 20px;
-				width: 40px;
-			}
-			.gravatar {
-				height: 25px;
-				margin: 0 6px 0 9px;
-				box-shadow: none;
-				float: left;
-				border: solid 1px white;
-			}
-			.commenter_name {
-				margin: 0;
-				font-size: 20px;
-				padding-top: 5px;
-				a {
-					color: #2b90c4;
-					&:hover {
-						color: #d8e4ea;
+				letter-spacing: .75px;
+				img.winner {
+					position: relative;
+					top: -3px;
+					left: 3px;
+					height: 25px;
+					padding-bottom: 8px; 
+					border: solid 1px white;
+					padding: 0;
+					line-height: 25px;
+					transform: rotate(2deg);
+					text-shadow: 0 0 20px #f4f6de;
+				}
+				&:last-child {
+					border-bottom: none;
+				}
+				.rank {
+					float: left;
+					font-size: 20px;
+					width: 40px;
+				}
+				.gravatar {
+					height: 25px;
+					margin: 0 6px 0 9px;
+					box-shadow: none;
+					float: left;
+					border: solid 1px white;
+				}
+				.commenter_name {
+					margin: 0;
+					font-size: 20px;
+					padding-top: 5px;
+					a {
+						color: #2b90c4;
+						&:hover {
+							color: #d8e4ea;
+						}
 					}
 				}
-			}
-			.number {
-				float: right;
-				font-size: 24px;
-				margin-right: 5px;
-			}
-			.comment_count {
-				float: right;
-				margin: 0;
-				font-size: 16px;
-				clear: right;
-			}
-			.word_count {
-				float: right;
-				display: block;
-				clear: both;
-				position: relative;
-				top: -12px;
-				right: 0;
-				text-transform: lowercase;
-				font-size: 7px;
-				font-weight: normal;
-				letter-spacing: 0px;
-				height: 0;
-				color: #8f999f;
+				.number {
+					float: right;
+					font-size: 24px;
+					margin-right: 5px;
+				}
+				.comment_count {
+					float: right;
+					margin: 0;
+					font-size: 16px;
+					clear: right;
+				}
+				.word_count {
+					float: right;
+					display: block;
+					clear: both;
+					position: relative;
+					top: -12px;
+					right: 0;
+					text-transform: lowercase;
+					font-size: 7px;
+					font-weight: normal;
+					letter-spacing: 0px;
+					height: 0;
+					color: #8f999f;
+				}
 			}
 		}
+	}
+	.top_contributors_div.secondary {
+		background: #2c373e;
+		#top_commenters_list {
+			li {
+				padding-bottom: 6px;
+				border-bottom: solid 1px #1b252b;
+				margin-bottom: 3px;
+				letter-spacing: .5px;
+				img.winner {
+					height: 17px;
+				}
+				.rank {
+					font-size: 15px;
+					width: 25px;
+				}
+				.gravatar {
+					height: 17px;
+				}
+				.commenter_name {
+					font-size: 15px;
+					padding-top: 5px;
+				}
+				.number {
+					font-size: 19px;
+				}
+				.comment_count {
+					font-size: 11px;
+				}
+				.word_count {
+					font-size: 7px;
+				}
+			}
+		}
+
+
 	}
 }
 
@@ -465,7 +514,7 @@ p.pagination {
 			display: block;
 		}
 
-		#top_commenters_div {
+		.top_contributors_div {
 			width: 97%;
 			margin: 0 1.5% 20px;
 		}
@@ -544,7 +593,7 @@ p.pagination {
 			display: block;
 		}
 
-		#top_commenters_div {
+		.top_contributors_div {
 			float: none;
 			width: 92%;
 			margin: 0 auto 20px;
@@ -622,7 +671,7 @@ p.pagination {
 @media screen and (max-width: 500px) {
 	#community_body {
 
-		#top_commenters_div {
+		.top_contributors_div {
 			#top_commenters_list {
 				padding: 5px 17px;
 				li {
@@ -725,14 +774,33 @@ p.pagination {
 @media screen and (max-width: 350px) {
 	#community_body {
 
-		#top_commenters_div {
+		.top_contributors_div {
+			h3.top_contributors_heading {
+				font-size: 11px;
+			}
+			h4.top_contributors_heading {
+				font-size: 9px;
+			}
 			#top_commenters_list {
 				li {
 					margin-bottom: 2px;
 					padding-bottom: 2px;
-					span {
-						font-size: 10px;
+					.rank {
+						margin-top: 2px;
+					}
+					.gravatar {
+						margin-top: 5px;
+						height: 17px;
+					}
+					span a {
+						font-size: 14px;
 						letter-spacing: 0;
+					}
+					img.winner {
+						height: 16px;
+					}
+					.number {
+						font-size: 15px;
 					}
 					.word_count {
 						top: -15px;
@@ -740,6 +808,22 @@ p.pagination {
 				}
 			}
 		}
+		.top_contributors_div.secondary #top_commenters_list li {
+			padding-bottom: 2px;
+			margin-bottom: 0;
+			.rank, .commenter_name a, .number, .comment_count {
+				font-size: 11px;
+			}
+			.rank {
+				margin-top: 1px;
+				width: 14px;
+			}
+			.gravatar {
+				height: 14px;
+				margin-top: 5px;
+			}
+		}
+
 
 		#recent_comments_div {
 			#recent_comments_list #comment_div li {
