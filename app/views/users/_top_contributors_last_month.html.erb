@@ -8,7 +8,7 @@
       <span class="rank">#<%=rank%></span>
       <%= gravatar_for User.find_by_user_name(commenter)%>
       <span class="commenter_name"><%= link_to commenter.gsub(/_/, ' '), User.find_by_user_name(commenter) %></span>
-      <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if giveaway_winner(commenter)%>
+      <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if rank == 1%>
       <span class="comment_count">comments</span> 
       <span class="number"><%= count %></span>
       <div class="word_count"><%= total_words_commented_last_month(commenter) %></div>
