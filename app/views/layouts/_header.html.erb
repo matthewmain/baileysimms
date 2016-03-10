@@ -13,7 +13,15 @@
         <% if logged_in? %>
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.user_name.gsub(/_/, ' ') %> <b class="caret"></b><%= gravatar_for current_user %></a>
+            <div href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <div class="header_gravatar">
+                <%= gravatar_for current_user %>
+              </div>
+              <div class="header_user_name_dropdown_div">
+                <div class="caret_div"><b class="caret"></b></div>
+                <div class="header_user_name_div"><%= current_user.user_name.gsub(/_/, ' ') %></div>
+              </div>
+            </div>
             <ul class="dropdown-menu">
               <li class="dropdown_li"><%= link_to "PROFILE", current_user %></li>
               <li class="dropdown_li"><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
@@ -24,9 +32,9 @@
          </ul> 
           
         <% else %>
-          <ul class="nav navbar-nav navbar-right">
-            <li class="not_logged_in"><%= link_to "LOG IN", login_path %></li>
-            <li class="not_logged_in"><%= link_to 'SIGN UP', new_user_path %></li>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="not_logged_in"><%= link_to "LOG IN", login_path %></li>
+          <li class="not_logged_in"><%= link_to 'SIGN UP', new_user_path %></li>
 				</ul>
         <% end %>
 

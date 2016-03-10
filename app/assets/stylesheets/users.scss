@@ -176,24 +176,34 @@
 	#members_list {
 		padding-left: 0;
 		li {
+			display: block;
 			list-style: none;
-			padding-bottom: 15px;
+			height: 60px;
 			border-bottom: solid 1px gray;
-			margin-bottom: 15px;
+			margin-bottom: 8px;
 			clear: left;
 			&:last-child {
 				border-bottom: none;
 			}
-			img {
-				height: 50px;
-				margin-right: 10px;
+			.users_index_gravatar {
+				display: block;
 				float: left;
+				width: 20%;
+				img {
+					height: 50px;
+				}
 			}
 			.users_index_user_name {
+				display: block;
+				float: right;
+				width: 77%;
+				margin: 0 3% 0 0;
+				overflow-x: scroll;
+				overflow-y: hidden;
+				white-space: nowrap;
 				font-size: 1.5em;
 				line-height: 1em;
 				padding-top: 5px;
-				margin: 0;
 				a {
 					color: #55090b;
 					font-weight: 500;
@@ -201,9 +211,11 @@
 			}
 			.users_index_date {
 				margin: 0;
-				font-size: 13px;
+				font-size: 12px;
+				color: #1b252b;
 				span {
 					font-size: 14px;
+					color: #1b252b;
 				}
 				a {
 					font-size: 16px;
@@ -236,57 +248,50 @@
 			letter-spacing: 1px;
 		}
 		h4.top_contributors_heading {
-			font-style: italic;
 			margin: 0 0 20px;
 			letter-spacing: 1px;
 		}
 		a {
 			color: #428bca;
 		}
-		#top_commenters_list {
+		#top_contributors_list {
 			padding: 0 30px 6px;
 			margin: 0;
 			li {
-				list-style: none;
-				padding-bottom: 7px;
+				display: block;
+				height: 35px;
 				border-bottom: solid 1px #2b3b45;
-				margin-bottom: 7px;
+				margin-bottom: 5px;
+				list-style: none;
 				text-transform: uppercase;
-				font-weight: bold;
+				font-weight: 600;
 				font-style: italic;
-				line-height: 25px;
 				letter-spacing: .75px;
-				img.winner {
-					position: relative;
-					top: -3px;
-					left: 3px;
-					height: 25px;
-					padding-bottom: 8px; 
-					border: solid 1px white;
-					padding: 0;
-					line-height: 25px;
-					transform: rotate(2deg);
-					text-shadow: 0 0 20px #f4f6de;
-				}
-				&:last-child {
-					border-bottom: none;
-				}
 				.rank {
+					display: block;
 					float: left;
 					font-size: 20px;
-					width: 40px;
+					width: 33px;
+					letter-spacing: 0px;
 				}
 				.gravatar {
+					display: block;
+					float: left;
 					height: 25px;
-					margin: 0 6px 0 9px;
+					margin: 0 5px 0 6px;
 					box-shadow: none;
 					float: left;
 					border: solid 1px white;
 				}
-				.commenter_name {
-					margin: 0;
+				.contributor_name {
+					display: block;
+					float: left;
+					max-width: 233px;
+					overflow-x: scroll;
+					overflow-y: hidden;
+					white-space: nowrap;
 					font-size: 20px;
-					padding-top: 5px;
+					padding: 0 3px 0 0;
 					a {
 						color: #2b90c4;
 						&:hover {
@@ -294,23 +299,41 @@
 						}
 					}
 				}
+				img.winner {
+					display: block;
+					float: left;
+					position: relative;
+					top: 3px;
+					left: 3px;
+					height: 18px;
+					border: solid 1px white;
+					margin: 0 0 5px 5px;
+					line-height: 25px;
+					transform: rotate(2deg);
+					text-shadow: 0 0 20px #f4f6de;
+				}	
 				.number {
+					display: block;
 					float: right;
-					font-size: 24px;
+					position: relative;
+					top: -4px;
+					font-size: 25px;
 					margin-right: 5px;
 				}
 				.comment_count {
+					display: block;
 					float: right;
+					padding-top: 2px;
 					margin: 0;
 					font-size: 16px;
 					clear: right;
 				}
 				.word_count {
-					float: right;
 					display: block;
+					float: right;
 					clear: both;
 					position: relative;
-					top: -12px;
+					top: -15px;
 					right: 0;
 					text-transform: lowercase;
 					font-size: 7px;
@@ -319,57 +342,104 @@
 					height: 0;
 					color: #8f999f;
 				}
+
+				&:first-child {
+					.contributor_name a {
+						font-size: 21px;
+						font-weight: bold;
+						letter-spacing: 0;
+					}
+				}
+				&:last-child {
+					border-bottom: none;
+				}
+
 			}
 		}
 	}
 	.top_contributors_div.secondary {
 		background: #2c373e;
-		#top_commenters_list {
+		#top_contributors_list {
 			li {
-				padding-bottom: 6px;
+				display: block;
+				padding-bottom: 0;
 				border-bottom: solid 1px #1b252b;
 				margin-bottom: 3px;
 				letter-spacing: .5px;
+				height: 25px;
 				img.winner {
-					height: 17px;
+					height: 14px;
+					margin: 5px 0 0 4px;
 				}
 				.rank {
+					display: block;
+					float: left;
 					font-size: 15px;
 					width: 25px;
 				}
 				.gravatar {
+					display: block;
+					float: left;
 					height: 17px;
 				}
-				.commenter_name {
+				.contributor_name {
+					display: block;
+					float: left;
 					font-size: 15px;
-					padding-top: 5px;
+					margin: 0;
+				}
+				img.winner {
+					top: -2px;
 				}
 				.number {
+					display: block;
+					float: right;
 					font-size: 19px;
 				}
 				.comment_count {
+					display: block;
+					float: right;
 					font-size: 11px;
+					padding: 0;
 				}
 				.word_count {
+					display: block;
+					clear: both;
+					float: right;
+					position: relative;
+					top: -14px;
 					font-size: 7px;
+				}
+				&:first-child {
+					.contributor_name a {
+						font-size: 16px;
+						font-weight: bold;
+						letter-spacing: 0;
+					}
+				}
+				&:last-child {
+					border-bottom: none;
 				}
 			}
 		}
-
-
 	}
 }
 
 // Recent Comments //
+
 #recent_comments_div {
+	float: right;
 	width: 57%;
 	padding: 0 10px;
 	margin: 0 1.5% 20px;
-	float: right;
+	color: #000000;
 	h2 {
 		width: 255px;
 		margin: 25px auto 0;
 		font-weight: bold;
+	}
+	h4 {
+		color: darkgray;
 	}
 	#recent_comments_list {
 		list-style: none;
@@ -380,7 +450,7 @@
 			display: flex;
 			flex-direction: column;
 			padding: 12px 0 35px;
-			border-top: solid 1px gray;
+			border-top: solid 1px #1b252b;
 			&:first-child {
 				border: none;
 			}
@@ -400,7 +470,7 @@
 					a {
 						color: #3278b4;
 						&:hover {
-							color: #0f4b7e;
+							color: #ffffff;
 						}
 					}
 				}
@@ -424,7 +494,7 @@
 					a {
 						color: #6990b0;
 						&:hover {
-							color: #0f4b7e;
+							color: #ffffff;
 						}
 					}
 				}
@@ -520,13 +590,23 @@ p.pagination {
 		}
 
 		#members_list li {
+			display: block;
+			height: 45px;
+			.users_index_gravatar img {
+				height: 35px;
+			}
+			.users_index_user_name {
+				padding-top: 0;
+				padding-bottom: 2px;
+			}
 			.users_index_date {
-				font-size: 8px;
+				font-size: 9px;
 				span {
 					font-size: 10px;
 				}
 				a {
 					font-size: 15px;
+					line-height: 10px;
 				}
 			}
 		}
@@ -597,7 +677,10 @@ p.pagination {
 			float: none;
 			width: 92%;
 			margin: 0 auto 20px;
-			#top_commenters_list li {
+			#top_contributors_list li {
+				.contributor_name {
+					max-width: 185px;
+				}
 				span {
 					font-size: 14px;
 				}
@@ -628,9 +711,9 @@ p.pagination {
 					margin: 0;
 				}
 				#content {
-					clear: right;
-					width: 88%;
-					padding-left: 2%;
+					clear: both;
+					width: 100%;
+					padding-left: 0;
 					margin: 12px 0 0;
 				}
 			}
@@ -641,8 +724,20 @@ p.pagination {
 			margin: auto;
 			float: none;
 			#members_list li {
+				.users_index_gravatar {
+					display: block;
+					float: left;
+					width: 45px;
+				}
+				.users_index_user_name {
+					display: block;
+					float: none;
+					width: auto;
+				}
 				.users_index_date {
-					font-size: 14px;
+					display: block;
+					float: none;
+					font-size: 12px;
 				}
 			}
 		}	
@@ -672,54 +767,132 @@ p.pagination {
 	#community_body {
 
 		.top_contributors_div {
-			#top_commenters_list {
+			#top_contributors_list {
 				padding: 5px 17px;
 				li {
-					margin-bottom: 2px;
-					span {
-						font-size: 12px;
+					height: 25px;
+					padding: 0;
+					margin: 0 0 5px;
+					&:first-child {
+						.contributor_name a {
+							font-size: 12px;
+						}
 					}
-					span.rank {
-						font-size: 14px;
-						width: 22px;
-						letter-spacing: 0;
+					.rank {
+						font-size: 15px;
+						width: 25px;
+						line-height: 19px;
 					}
-					img {
-						height: 20px;
-						margin-top: 3px;
+					.gravatar {
+						height: 17px;
 					}
-					span.comment_count {
+					.contributor_name {
+						max-width: 140px;
+						font-size: 11px;
+						line-height: 18px;
+					}
+					img.winner {
+						height: 12px;
+						top: 1px;
+					}
+					.number {
+						font-size: 15px;
+						line-height: 23px;
+					}
+					.comment_count {
 						font-size: 10px;
+						line-height: 13px;
+						padding: 0;
+					}
+					.word_count {
+						font-size: 6px;
+						top: -12px;
+					}
+				}
+			}
+		}
+		.top_contributors_div.secondary {
+			h3.top_contributors_heading {
+				font-size: 12px;
+			}
+			#top_contributors_list {
+				padding: 4px 16px;
+				li {
+					height: 20px;
+					padding: 0;
+					margin: 0 0 4px;
+					&:first-child {
+						.contributor_name a {
+							font-size: 11px;
+						}
+					}
+					.rank {
+						font-size: 14px;
+						width: 25px;
+						line-height: 18px;
+					}
+					.gravatar {
+						height: 14px;
+					}
+					.contributor_name {
+						max-width: 150px;
+						font-size: 10px;
+						line-height: 17px;
+					}
+					img.winner {
+						height: 11px;
+						top: -3px;
+					}
+					.number {
+						font-size: 14px;
+						line-height: 22px;
+					}
+					.comment_count {
+						font-size: 9px;
+						line-height: 12px;
+						padding: 0;
+					}
+					.word_count {
+						font-size: 5px;
+						top: -12px;
 					}
 				}
 			}
 		}
 
 		#recent_comments_div {
+			float: none;
+			clear: both;
+			width: 85%;
+			padding-top: 10px;
+			margin: auto;
 			h2 {
-				margin: 25px auto 0;
+				margin: 35px auto 0;
 			}
 			#recent_comments_list #comment_div li {
-				#user_image {
-					width: 16%;
+				#user_image .gravatar {
+					height: 36px;
 				}
 				#user_name {
-					padding-left: 3%;
-				}
-				#timestamp {
-					float: right;
-					font-size: 9px;
+					display: block;
+					float: left;
+					width: 140px;
+					overflow: scroll;
+					white-space: nowrap;
+					padding-left: 6px;
 				}
 				#post_name {
-					width: 84%;
-					padding-left: 3%;
+					clear: right;
+					width: 88%;
+					padding-left: 2%;
+					margin: 0;
 					font-size: 10px;
 				}
 				#content {
-					float: right;
 					clear: both;
 					width: 100%;
-					padding: 0 2px;
+					padding-left: 0;
+					margin: 12px 0 0;
 				}
 			}
 		}
@@ -775,79 +948,72 @@ p.pagination {
 	#community_body {
 
 		.top_contributors_div {
-			h3.top_contributors_heading {
-				font-size: 11px;
-			}
-			h4.top_contributors_heading {
-				font-size: 9px;
-			}
-			#top_commenters_list {
+			#top_contributors_list {
 				li {
-					margin-bottom: 2px;
-					padding-bottom: 2px;
-					.rank {
-						margin-top: 2px;
-					}
-					.gravatar {
-						margin-top: 5px;
-						height: 17px;
-					}
-					span a {
-						font-size: 14px;
-						letter-spacing: 0;
-					}
-					img.winner {
-						height: 16px;
-					}
-					.number {
-						font-size: 15px;
-					}
-					.word_count {
-						top: -15px;
+					.contributor_name {
+						max-width: 105px;
 					}
 				}
 			}
 		}
-		.top_contributors_div.secondary #top_commenters_list li {
-			padding-bottom: 2px;
-			margin-bottom: 0;
-			.rank, .commenter_name a, .number, .comment_count {
-				font-size: 11px;
+		.top_contributors_div.secondary {
+			h3.top_contributors_heading {
+				margin-top: 8px;
+				font-size: 10px;
 			}
-			.rank {
-				margin-top: 1px;
-				width: 14px;
+			h4.top_contributors_heading {
+				font-size: 7px;
 			}
-			.gravatar {
-				height: 14px;
-				margin-top: 5px;
+			#top_contributors_list {
+				padding: 4px 16px;
+				li {
+					.contributor_name {
+						max-width: 120px
+					}
+				}
 			}
 		}
-
 
 		#recent_comments_div {
 			#recent_comments_list #comment_div li {
-				#user_image {
-					width: 16%;
-					float: left;
+				#user_image .gravatar {
+					height: 40px;
 				}
 				#user_name {
-					padding-left: 6%;
-					float: none;
+					display: block;
+					float: left;
+					width: 140px;
+					overflow: scroll;
+					white-space: nowrap;
+					padding-left: 17px;
 				}
 				#timestamp {
-					font-size: 8px;
+					display: block;
+					float: right;
+					padding-top: 4px;
+					font-size: 9px;
 				}
 				#post_name {
-					padding-left: 6%;
+					width: 84%;
+					padding-left: 3%;
+					font-size: 9px;
+				}
+				#content {
+					float: right;
+					clear: both;
+					width: 100%;
+					padding: 0 2px;
 				}
 			}
 		}
 
 		.members_div {
 			#members_list li {
+				.users_index_user_name {
+					font-size: 14px;
+				}
 				.users_index_date {
-					font-size: 10px;
+					font-size: 10.5px;
 				}
 			}
 		}	
@@ -856,12 +1022,31 @@ p.pagination {
 
 	// PROFILE PAGE //
 	#profile_comments_div .profile_comments_list #comment_div {
+		padding: 8px 0 20px;
 		li {
+			#user_image {
+				width: 35px;
+				img {
+					height: 35px;
+				}	
+			}
 			#post_name {
 				padding-left: 5px;
 				a {
-					font-size: 10px;
+					font-size: 11px;
+					line-height: 6px;
 				}
+			}
+			#timestamp {
+				float: none;
+				display: block;	
+				padding-left: 40px;
+				font-size: 10px;
+			}
+			#content {
+				float: left;
+				clear: both;
+				padding-left: 4px;
 			}
 		}
 	}
