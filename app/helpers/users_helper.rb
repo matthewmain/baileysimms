@@ -38,7 +38,9 @@ module UsersHelper
 	 	name == "Tasneem" ||
 	 	name == "samuelmax" ||
 	 	name == "Tiff" ||
-	 	name == "Mr_Pink" ? true : false;
+
+	 	name == "Mr_Blue" ||
+	 	name == "Mr PPPPPPPPPPPPPPink" ? true : false;
 	end		
 
 	def total_words_commented(commenter)
