@@ -36,6 +36,9 @@ nav.nav {
 			color: #ffffff;
 			text-shadow: 0 0 15px #ffffff;
 		}
+		&:visited {
+			background: black;
+		}
 	}
 	.navbar-nav.navbar-right {
 		a, li.dropdown {
