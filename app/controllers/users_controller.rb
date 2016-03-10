@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @top_ten_contributors_all_time = User.top_non_admin_users_by_comment_count(10)
     @top_five_contributors_this_month = User.top_non_admin_users_by_comment_count_by_month(Time.now.month,5)
     @top_five_contributors_last_month = User.top_non_admin_users_by_comment_count_by_month(1.month.ago.month,5)
-    @recent_comments = Comment.limit(15)
+    @recent_comments = Comment.limit(50)
   end
 
   def new
