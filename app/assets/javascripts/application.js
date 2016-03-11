@@ -15,7 +15,6 @@
 //= require bootstrap
 //= require turbolinks
 //= require jquery.turbolinks
-//= require ahoy
 //= require_tree .
 
 
