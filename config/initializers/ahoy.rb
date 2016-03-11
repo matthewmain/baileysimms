@@ -1,3 +1,3 @@
-class Ahoy::Store < Ahoy::Stores::LogStore
+class Ahoy::Store < Ahoy::Stores::ActiveRecordStore
   # customize here
 end
