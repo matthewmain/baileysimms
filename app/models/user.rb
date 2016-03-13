@@ -206,6 +206,19 @@ class User < ActiveRecord::Base
 			[-(comment_count), -(User.find_by_user_name(user).comments_word_count_by_month(month).to_i)]
 		end[0..(limit-1)].to_h
 	end	
+
+
+	#Community user data...
+	def self.community_user_data
+		User.all.each_with_object({}) do |user, hash| 
+			if !user.admin? && user.activated? 
+				hash[user.user_name] = 	{ :member_since => user.activated_at, 
+																	:comment_count => user.comments.count,
+																	:comments_word_count => user.all_comments_word_count
+															 	}
+			end
+		end
+	end
 	
 
 
