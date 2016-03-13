@@ -12,6 +12,7 @@ gem 'validates_timeliness', '~> 4.0'
 gem 'jquery-turbolinks'
 gem 'ahoy_matey'
   gem 'activeuuid', '>= 0.5.0'
+gem 'whenever', :require => false
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
