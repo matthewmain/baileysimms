@@ -159,7 +159,7 @@ class User < ActiveRecord::Base
 	end	
 
 
-	#Generate Hash of User Names and Their Comment Counts, All-Time
+	#Generate Hash of User Names and Their Comment Counts, All
 
 	def self.all_user_names_with_comment_count
 		User.all.each_with_object({}) {|user,hash| hash[user.user_name] = user.comment_count}
@@ -170,7 +170,7 @@ class User < ActiveRecord::Base
 	end		
 
 
-	#Generate Hash of Non-Admin User Names and Their Comment Counts, All-Time
+	#Generate Hash of Non-Admin User Names and Their Comment Counts, All
 
 	def self.all_non_admin_users
 		User.where("admin = ?", false)
