@@ -147,10 +147,10 @@ class User < ActiveRecord::Base
 	def comment_count_by_month(month)
 		if Rails.env.development?
 			#SQLite database queries (local development environment) need to use 'strftime()' to grab info from datetimes
-			self.comments.where("strftime('%m', date)+0 = ?", month).count
+			self.comments.where("strftime('%m', created_at)+0 = ?", month).count
 		elsif Rails.env.production?
 			#Postgres database queries (remote Heroku production enviroment) need to use 'extract' to grab info from datetimes
-			self.comments.where('extract(month from date) = ?', month).count
+			self.comments.where('extract(month from created_at) = ?', month).count
 		end
 	end
 
@@ -205,19 +205,6 @@ class User < ActiveRecord::Base
 		User.all_non_admin_user_names_with_comment_count_by_month(month).sort_by do |user, comment_count| 
 			[-(comment_count), -(User.find_by_user_name(user).comments_word_count_by_month(month).to_i)]
 		end[0..(limit-1)].to_h
-	end	
-
-
-	#Community user data...
-	def self.community_user_data
-		User.all.each_with_object({}) do |user, hash| 
-			if !user.admin? && user.activated? 
-				hash[user.user_name] = 	{ :member_since => user.activated_at, 
-																	:comment_count => user.comments.count,
-																	:comments_word_count => user.all_comments_word_count
-															 	}
-			end
-		end
 	end
 	
 
