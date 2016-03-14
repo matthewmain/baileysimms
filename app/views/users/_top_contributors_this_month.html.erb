@@ -3,15 +3,17 @@
 <ol id="top_contributors_list">
   <% rank = 0 %>
   <% @top_five_contributors_this_month.each do |commenter, count| %>
-    <% rank += 1%>
-    <li>
-      <div class="rank">#<%=rank%></div>
-      <%= gravatar_for User.find_by_user_name(commenter)%>
-      <div class="contributor_name"><%= link_to commenter.gsub(/_/, ' '), User.find_by_user_name(commenter) %></div>
-      <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if giveaway_winner(commenter)%>
-      <div class="comment_count">comments</div> 
-      <div class="number"><%= count %></div>
-      <div class="word_count"><%= total_words_commented_this_month(commenter)%></div>
-    </li>
+    <% if count > 0 %>
+      <% rank += 1%>
+      <li>
+        <div class="rank">#<%=rank%></div>
+        <%= gravatar_for User.find_by_user_name(commenter)%>
+        <div class="contributor_name"><%= link_to commenter.gsub(/_/, ' '), User.find_by_user_name(commenter) %></div>
+        <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if giveaway_winner(commenter)%>
+        <div class="comment_count"><% if count > 1 %>comments<% else %>comment<% end %></div>  
+        <div class="number"><%= count %></div>
+        <div class="word_count"><%= total_words_commented_this_month(commenter)%></div>
+      </li>
+    <% end %>  
   <% end %>
 </ol>

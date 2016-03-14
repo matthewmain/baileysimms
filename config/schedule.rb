@@ -38,7 +38,7 @@ every '0 * * * * ' do
 	#updates 'top_five_this_month' ranking (id: 2)
 	runner "Ranking.update(2, data_hash: User.top_non_admin_users_by_comment_count_by_month(Time.now.month,5))", :environment => "development"
 	#updates 'top_five_last_month' ranking (id: 3)
-	runner "Ranking.update(3, data_hash: User.top_non_admin_users_by_comment_count_by_month(@last_month,5))", :environment => "development"
+	runner "Ranking.update(3, data_hash: User.top_non_admin_users_by_comment_count_by_month((Time.now.month-1 > 0 ? Time.now.month-1 : 12),5))", :environment => "development"
 end
 
 
