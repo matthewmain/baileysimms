@@ -38,6 +38,7 @@ module UsersHelper
 	 	name == "Tasneem" ||
 	 	name == "samuelmax" ||
 	 	name == "Tiff" ||
+	 	name == "BbandHockey" ||
 
 	 	name == "Mr_Blue" ||
 	 	name == "Mr PPPPPPPPPPPPPPink" ? true : false;

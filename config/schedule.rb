@@ -27,7 +27,7 @@
 # Must update crontab with: $ whenever --update-crontab
 # To check crontab, use: crontab -l
 
-# For scheduled tasks in production, see 'lib/tasks/scheduler.rake' (for Heroku)
+# For scheduled tasks in production (Heroku), see 'lib/tasks/scheduler.rake' and 'https://scheduler.heroku.com/dashboard'
 
 #avoids whenever gem bug that automatically converts '1.month' to seconds
 @last_month = Time.now.month-1 > 0 ? Time.now.month-1 : 12
