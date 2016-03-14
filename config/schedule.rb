@@ -17,28 +17,24 @@
 #   runner "AnotherModel.prune_old_records"
 # end
 
-# IMPORTANT:
-#
-# Must update crontab with: $ whenever --update-crontab
-# To check crontab, use: crontab -l
-
 # Learn more: http://github.com/javan/whenever
 
 
 
 
+
+# Must update crontab with: $ whenever --update-crontab
+# To check crontab, use: crontab -l
+
 #avoids whenever gem bug that automatically converts '1.month' to seconds
 @last_month = Time.now.month-1 > 0 ? Time.now.month-1 : 12
 
-every '45 * * * * ' do
+every '0 * * * * ' do
 	#updates 'top_ten_all_time' ranking (id: 1)
-	runner "Ranking.update(1, data_hash: User.top_non_admin_users_by_comment_count(10))", :environment => "production"
 	runner "Ranking.update(1, data_hash: User.top_non_admin_users_by_comment_count(10))", :environment => "development"
 	#updates 'top_five_this_month' ranking (id: 2)
-	runner "Ranking.update(2, data_hash: User.top_non_admin_users_by_comment_count_by_month(Time.now.month,5))", :environment => "production"
 	runner "Ranking.update(2, data_hash: User.top_non_admin_users_by_comment_count_by_month(Time.now.month,5))", :environment => "development"
 	#updates 'top_five_last_month' ranking (id: 3)
-	runner "Ranking.update(3, data_hash: User.top_non_admin_users_by_comment_count_by_month(@last_month,5))", :environment => "production"
 	runner "Ranking.update(3, data_hash: User.top_non_admin_users_by_comment_count_by_month(@last_month,5))", :environment => "development"
 end
 
