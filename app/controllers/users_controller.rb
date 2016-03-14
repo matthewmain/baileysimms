@@ -30,12 +30,14 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-  @top_five_contributors_this_month = {}
-  @top_five_contributors_last_month = {}
-  @top_ten_contributors_all_time = {}
+
     # @top_ten_contributors_all_time = User.top_non_admin_users_by_comment_count(10)
     # @top_five_contributors_this_month = User.top_non_admin_users_by_comment_count_by_month(Time.now.month,5)
     # @top_five_contributors_last_month = User.top_non_admin_users_by_comment_count_by_month(1.month.ago.month,5)
+    @top_ten_contributors_all_time = Ranking.find_by_name("top_ten_all_time").data_hash
+    @top_five_contributors_this_month = Ranking.find_by_name("top_five_this_month").data_hash
+    @top_five_contributors_last_month = Ranking.find_by_name("top_five_last_month").data_hash
+
     @recent_comments = Comment.limit(50)
   end
 
