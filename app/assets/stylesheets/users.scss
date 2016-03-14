@@ -361,6 +361,7 @@
 	.top_contributors_div.secondary {
 		background: #2c373e;
 		#top_contributors_list {
+			padding-bottom: 12px;
 			li {
 				display: block;
 				padding-bottom: 0;
@@ -882,6 +883,9 @@ p.pagination {
 					white-space: nowrap;
 					padding-left: 6px;
 				}
+				#timestamp {
+					font-size: 9px;
+				}
 				#post_name {
 					clear: right;
 					width: 88%;
@@ -992,7 +996,7 @@ p.pagination {
 					display: block;
 					float: right;
 					padding-top: 4px;
-					font-size: 9px;
+					font-size: 7px;
 				}
 				#post_name {
 					width: 84%;
