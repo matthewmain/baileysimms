@@ -66,7 +66,7 @@
         <% if @post.visible_to_public || logged_in? && ( @post.visible_to_users || current_user.vip? || current_user.admin? ) %>
           <%= raw @post.content %>
 
-          <div class="fb-share-button" data-href="https://baileysimms.herokuapp.com/" data-layout="button_count"></div>
+          <div class="fb-share-button" data-href="http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=asap_bc?ie=UTF8" data-layout="button_count"></div>
 
           <div class="read_next_button">
             <%= ( link_to 'NEXT POST ➤', post_path(@post.id+1) ) if @post.id+1 <= Post.count %>
