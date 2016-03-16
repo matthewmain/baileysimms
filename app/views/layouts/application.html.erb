@@ -16,28 +16,29 @@
 
   <!-- Mobile Layout -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-    <meta property="og:url"           content="http://www.baileysimms.com" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="You've never, ever read anything like this." />
-    <meta property="og:description"   content="A blog hosted by a teen under the name “Bailey Simms” was recently discovered. After a little over a year, the author's entries abruptly stop. Her wherabouts are now unknown. None of the original material has been altered. The contents are disturbing." />
-    <meta property="og:image"         content="https://baileysimms.herokuapp.com/assets/author-name-with-feather-black-background-09efd0dd1de328c69dd8e322330927fc42547a3147aab02edaca28ab5fcd8f51.jpg" />
+
+  <!-- Facebook share open graph markup -->
+  <meta property="og:url"           content="http://www.baileysimms.com" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="You've never, ever read anything like this." />
+  <meta property="og:description"   content="A blog hosted by a teen under the name “Bailey Simms” was recently discovered. After a little over a year, the author's entries abruptly stopped. Her wherabouts are now unknown. None of the original material has been altered. The contents are disturbing." />
+  <meta property="og:image"         content="https://baileysimms.herokuapp.com/assets/author-name-with-feather-black-background-09efd0dd1de328c69dd8e322330927fc42547a3147aab02edaca28ab5fcd8f51.jpg" />
       
 </head>
 
 
 <body>
 
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
-
+  <!--facebook share button script-->
+  <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
 
 	<%= render 'layouts/header' unless @omit_header %>
 
@@ -51,6 +52,7 @@
 	<%= yield %>
 
   <%= render 'layouts/footer' unless @omit_footer %>
+
 </body>
 
 

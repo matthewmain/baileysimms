@@ -13,11 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap
-//= require turbolinks
+// require turbolinks						//(Note: turbolinks temporarily disabled to allow facebook buttons to load without refresh until FB API fully implemented)
 //= require jquery.turbolinks
 //= require_tree .
-
-
-
 
 

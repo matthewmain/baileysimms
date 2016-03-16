@@ -63,20 +63,15 @@
 
         <h4><%= @post.date.strftime("%A, %B #{@post.date.day.ordinalize}, %Y. %l:%M %P.") %></h4>
         <h1><%= @post.title %></h1>
+
         <% if @post.visible_to_public || logged_in? && ( @post.visible_to_users || current_user.vip? || current_user.admin? ) %>
           <%= raw @post.content %>
 
-
-
-
           <div class="fb-share-button" data-href="http://www.baileysimms.com" data-layout="button_count"></div>
-
-
-
-
           <div class="read_next_button">
             <%= ( link_to 'NEXT POST ➤', post_path(@post.id+1) ) if @post.id+1 <= Post.count %>
           </div>
+
         <% elsif !logged_in? && @post.visible_to_users %>
           <div id="login_request">
             <h3>Hi! You have to <%= link_to "log in", login_path %> to read this post.</h3><br>
