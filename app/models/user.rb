@@ -127,7 +127,15 @@ class User < ActiveRecord::Base
 	### QUERIES ###
 
 	def self.all_user_names
-		User.all.map { |user| user[:user_name] }
+		self.all.map { |user| user[:user_name] }
+	end
+
+	def self.all_emails_as_array
+		self.all.map { |user| user[:email] }
+	end
+
+	def self.all_emails_as_string
+		puts self.all_emails.join(', ')
 	end
 
 
