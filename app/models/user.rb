@@ -126,16 +126,16 @@ class User < ActiveRecord::Base
 
 	### QUERIES ###
 
-	def self.all_user_names
-		self.all.map { |user| user[:user_name] }
+	def self.all_activated_user_names
+		self.all.map { |user| user[:user_name] if user.activated? }.compact
 	end
 
-	def self.all_emails_as_array
-		self.all.map { |user| user[:email] }
+	def self.all_activated_emails_as_array
+		self.all.map { |user| user[:email] if user.activated? }.compact
 	end
 
-	def self.all_emails_as_string
-		puts self.all_emails.join(', ')
+	def self.all_activated_emails_as_string
+		self.all_activated_emails_as_array.join(', ')
 	end
 
 
