@@ -68,6 +68,14 @@
           <%= raw @post.content %>
 
           <% if @post.id+1 <= Post.count %>
+
+            <div
+              class="fb-like"
+              data-share="false"
+              data-layout="button"
+              data-show-faces="false">
+            </div>
+
             <div class="fb-share-button" data-href="http://www.baileysimms.com" data-layout="button_count"></div>
             <div class="read_next_button"><%= link_to 'NEXT POST ➤', post_path(@post.id+1) %></div>
           <% else %>
