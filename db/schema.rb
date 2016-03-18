@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160313230140) do
+ActiveRecord::Schema.define(version: 20160318220414) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20160313230140) do
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean  "vip",               default: false
+    t.integer  "part_access_level", default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

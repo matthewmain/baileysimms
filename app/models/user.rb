@@ -17,6 +17,7 @@
 #  reset_digest      :string
 #  reset_sent_at     :datetime
 #  vip               :boolean          default(FALSE)
+#  part_access_level :integer          default(1)
 #
 # Indexes
 #
