@@ -150,10 +150,10 @@ class User < ActiveRecord::Base
 	end
 
 	def disconnect_from_facebook
-		self.provider = nil
-    self.uid = nil
+		self.oauth_provider = nil
     self.oauth_token = nil
     self.oauth_expires_at = nil
+    self.facebook_id = nil
 		self.save!
 	end
 
