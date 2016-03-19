@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318220414) do
+ActiveRecord::Schema.define(version: 20160319154415) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -20,11 +20,6 @@ ActiveRecord::Schema.define(version: 20160318220414) do
     t.text     "properties"
     t.datetime "time"
   end
-
-  add_index "ahoy_events", ["id"], name: "sqlite_autoindex_ahoy_events_1", unique: true
-  add_index "ahoy_events", ["time"], name: "index_ahoy_events_on_time"
-  add_index "ahoy_events", ["user_id"], name: "index_ahoy_events_on_user_id"
-  add_index "ahoy_events", ["visit_id"], name: "index_ahoy_events_on_visit_id"
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -86,6 +81,12 @@ ActiveRecord::Schema.define(version: 20160318220414) do
     t.datetime "reset_sent_at"
     t.boolean  "vip",               default: false
     t.integer  "part_access_level", default: 1
+    t.string   "oauth_provider"
+    t.string   "oauth_token"
+    t.datetime "oauth_expires_at"
+    t.string   "facebook_id"
+    t.string   "facebook_name"
+    t.string   "facebook_image"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -117,8 +118,5 @@ ActiveRecord::Schema.define(version: 20160318220414) do
     t.string   "utm_campaign"
     t.datetime "started_at"
   end
-
-  add_index "visits", ["id"], name: "sqlite_autoindex_visits_1", unique: true
-  add_index "visits", ["user_id"], name: "index_visits_on_user_id"
 
 end

@@ -21,5 +21,10 @@ Rails.application.routes.draw do
 
   get 'password_resets/new'
   get 'password_resets/edit'
+
+  #Omniauth Facebook
+  match 'auth/:provider/callback', to: 'fb_sessions#create'       , via: [:get, :post]
+  match 'auth/failure', to: redirect('/')                         , via: [:get, :post]
+  match 'fb_signout', to: 'fb_sessions#destroy', as: 'fb_signout' , via: [:get, :post]
   
 end
