@@ -14,17 +14,17 @@ User.create(	user_name: 'Adrian_Birch',
 							activated: true,
 							activated_at: Time.zone.now	)
 
-# Test Users #
-# 100.times do |n|
-#   user_name  = "Test_#{n+1}"
-#   email = "test#{n+1}@test.com"
-#   password = "test"
-#   User.create( 	user_name: user_name, 
-#   							email: email, 
-#   							password: password,
-#   							activated: true,
-# 								activated_at: Time.zone.now	)
-# end
+%w(red orange yellow green blue purple pink gray white black).each do |name|
+  user_name  = "Mr_#{name.capitalize}"
+  email = "#{name}@mr.com"
+  password = "#{name}"
+  User.create( 	user_name: user_name, 
+  							email: email, 
+  							password: password,
+  							activated: true,
+								activated_at: Time.zone.now	)
+end
+
 
 
 
@@ -52,5 +52,13 @@ Part.create(book_id: 2, part_number: 11, title: 'Love Is In The Air')
 Part.create(book_id: 2, part_number: 12, title: 'Spread It')
 Part.create(book_id: 2, part_number: 13, title: 'Falling To Pieces')
 Part.create(book_id: 2, part_number: 14, title: 'Heavenly')
+
+
+### RANKINGS ###
+
+Ranking.create(name: 'top_ten_all_time')
+Ranking.create(name: 'top_five_this_month')
+Ranking.create(name: 'top_five_last_month')
+
 
 

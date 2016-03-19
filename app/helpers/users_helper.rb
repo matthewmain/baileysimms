@@ -18,6 +18,12 @@
 #  reset_sent_at     :datetime
 #  vip               :boolean          default(FALSE)
 #  part_access_level :integer          default(1)
+#  oauth_provider    :string
+#  oauth_token       :string
+#  oauth_expires_at  :datetime
+#  facebook_id       :string
+#  facebook_name     :string
+#  facebook_image    :string
 #
 # Indexes
 #
@@ -42,7 +48,7 @@ module UsersHelper
 	 	name == "BbandHockey" ||
 
 	 	name == "Mr_Blue" ||
-	 	name == "Mr PPPPPPPPPPPPPPink" ? true : false;
+	 	name == "Mr_Pink" ? true : false;
 	end		
 
 	def total_words_commented(commenter)

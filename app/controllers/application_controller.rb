@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
         flash[:danger] = "You'd better log in if you're going to try to do that sort of thing."
         redirect_to login_url
       end
-    end						
+    end				
 
 end

@@ -2,7 +2,7 @@
 #
 # Table name: visits
 #
-#  id               :uuid(16)         primary key
+#  id               :integer          not null, primary key
 #  visitor_id       :uuid(16)
 #  ip               :string
 #  user_agent       :text
@@ -28,11 +28,6 @@
 #  utm_content      :string
 #  utm_campaign     :string
 #  started_at       :datetime
-#
-# Indexes
-#
-#  index_visits_on_user_id    (user_id)
-#  sqlite_autoindex_visits_1  (id) UNIQUE
 #
 
 class Visit < ActiveRecord::Base

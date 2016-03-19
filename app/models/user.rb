@@ -18,6 +18,12 @@
 #  reset_sent_at     :datetime
 #  vip               :boolean          default(FALSE)
 #  part_access_level :integer          default(1)
+#  oauth_provider    :string
+#  oauth_token       :string
+#  oauth_expires_at  :datetime
+#  facebook_id       :string
+#  facebook_name     :string
+#  facebook_image    :string
 #
 # Indexes
 #
@@ -125,6 +131,34 @@ class User < ActiveRecord::Base
 
 
 
+  ### FACEBOOK OMNIAUTH ###
+
+	def self.from_omniauth(auth,current_user)
+	  current_user.tap do |user| 
+	    user.oauth_provider = auth.provider
+	    user.oauth_token = auth.credentials.token
+	    user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+	    user.facebook_id = auth.uid
+	    user.facebook_name = auth.info.name
+	    user.facebook_image = auth.info.image
+	    user.save!
+	  end
+	end
+
+	def is_connected_to_facebook
+		self.oauth_token?
+	end
+
+	def disconnect_from_facebook
+		self.provider = nil
+    self.uid = nil
+    self.oauth_token = nil
+    self.oauth_expires_at = nil
+		self.save!
+	end
+
+
+
 	### QUERIES ###
 
 	def self.all_activated_user_names
@@ -216,7 +250,6 @@ class User < ActiveRecord::Base
 		end[0..(limit-1)].to_h
 	end
 	
-
 
 
 
