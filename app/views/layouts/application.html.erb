@@ -30,11 +30,14 @@
 <body>
 
   <!--facebook SDK script-->
+  <div id="fb-root"></div>
   <script>
     window.fbAsyncInit = function() {
       FB.init({
         appId      : <%= ENV['FACEBOOK_APP_ID'] %>,
+        cookie     : true, 
         xfbml      : true,
+        oauth      : true, 
         version    : 'v2.5'
       });
     };
