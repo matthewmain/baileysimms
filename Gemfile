@@ -13,8 +13,7 @@ gem 'jquery-turbolinks'
 gem 'ahoy_matey'
   gem 'activeuuid', '>= 0.5.0'
 gem 'whenever', :require => false
-gem 'omniauth'
-gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-facebook'
 gem 'figaro'
 
 
