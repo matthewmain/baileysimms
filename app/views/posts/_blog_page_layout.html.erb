@@ -71,13 +71,13 @@
           <% if @post.id+1 <= Post.count %>
 
             <div id="fb_login">
-              <% if !logged_in? %>
-                <%= link_to "Log in", login_path %> or <%= link_to "sign up", new_user_path %> to read the next post.
+              <% if !logged_in? && !@posts.find(@post.id+1).visible_to_public %>
+                <p><%= link_to "Log in", login_path %> or <%= link_to "sign up", new_user_path %> to read the next post.</p>
               <% elsif logged_in? && !current_user.is_connected_to_facebook %>
-                <%= link_to "Connect to Facebook", "/auth/facebook", id: "fb_sign_in" %>
+                <p><%= link_to "Connect to Facebook", "/auth/facebook", id: "sign_in" %></p>
               <% elsif logged_in? && current_user.is_connected_to_facebook %>
-                Connected to Facebook as <b><i><%= current_user.facebook_name %></i></b><br>
-                <%= link_to "Disconnect from Facebook", fb_signout_path, id: "fb_sign_out" %>
+                <p>Connected to Facebook as <b><i><%= current_user.facebook_name %> </i> |</b>
+                <%= link_to "disconnect", fb_signout_path, id: "sign_out" %></p>
               <% end %>
             </div>
 

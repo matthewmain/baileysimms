@@ -14,6 +14,7 @@ gem 'ahoy_matey'
   gem 'activeuuid', '>= 0.5.0'
 gem 'whenever', :require => false
 gem 'omniauth-facebook'
+gem 'figaro'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
