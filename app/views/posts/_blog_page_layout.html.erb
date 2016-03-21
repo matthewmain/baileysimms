@@ -70,7 +70,7 @@
 
           <% if @post.id+1 <= Post.count %>
 
-            <div id="fb_login">
+            <div id="fb_connect">
               <% if !logged_in? && !@posts.find(@post.id+1).visible_to_public %>
                 <p><%= link_to "Log in", login_path %> or <%= link_to "sign up", new_user_path %> to read the next post.</p>
               <% elsif logged_in? && !current_user.is_connected_to_facebook %>
