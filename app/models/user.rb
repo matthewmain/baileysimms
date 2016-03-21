@@ -153,7 +153,6 @@ class User < ActiveRecord::Base
 		self.oauth_provider = nil
     self.oauth_token = nil
     self.oauth_expires_at = nil
-    self.facebook_id = nil
 		self.save!
 	end
 
