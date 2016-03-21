@@ -1,0 +1,49 @@
+  
+  <div id="fb-root"></div>
+  <script>
+
+    //Facebook popup dialogue windows
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : <%= ENV['FACEBOOK_APP_ID'] %>,
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v2.5'
+      });
+    };
+
+    //Facebook Share button
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "//connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+
+    //Facebook client-side login
+    $(function() {
+      $.ajax({
+        url: "{window.location.protocol}//connect.facebook.net/en_US/all.js",
+        dataType: 'script',
+        cache: true
+      });
+      $('#fb_connect').click(function(e) {
+        e.preventDefault();
+        return FB.login(function(response) {
+          if (response.authResponse) {
+            return window.location = '/auth/facebook/callback';
+          }
+        });
+      });
+      return $('#fb_disconnect').click(function(e) {
+        FB.getLoginStatus(function(response) {
+          if (response.authResponse) {
+            return FB.logout();
+          }
+        });
+        return true;
+      });
+    });
+
+  </script>
