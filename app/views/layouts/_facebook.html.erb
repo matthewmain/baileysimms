@@ -13,6 +13,7 @@
       });
     };
 
+
     //Facebook SDK
     (function(d, s, id){
        var js, fjs = d.getElementsByTagName(s)[0];
@@ -21,6 +22,7 @@
        js.src = "//connect.facebook.net/en_US/sdk.js";
        fjs.parentNode.insertBefore(js, fjs);
      }(document, 'script', 'facebook-jssdk'));
+
 
     //Facebook client-side app login
     $(function() {
@@ -46,7 +48,6 @@
         return true;
       });
     });
-
 
 
     // FB.ui Share Button
