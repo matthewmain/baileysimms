@@ -6,6 +6,7 @@
     window.fbAsyncInit = function() {
       FB.init({
         appId      : <%= ENV['FACEBOOK_APP_ID'] %>,
+        status     : true,
         cookie     : true,
         xfbml      : true,
         version    : 'v2.5'
@@ -45,6 +46,28 @@
         return true;
       });
     });
+
+
+
+    // FB.ui Share Button
+    (function() {
+      var e = document.createElement('script'); e.async = true;
+      e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
+
+    $(document).ready(function(){
+      $('#fbui_share').click(function(e){
+      e.preventDefault();
+      FB.ui(
+        {
+        method: 'share',
+        href: 'https://www.baileysimms.herokuapp.com/',
+        });
+      });
+    });
+
+
 
   </script>
 
