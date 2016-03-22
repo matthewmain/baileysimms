@@ -131,7 +131,7 @@ class User < ActiveRecord::Base
 
 
 
-  ### FACEBOOK OMNIAUTH ###
+  ### FACEBOOK OMNIAUTH & KOALA ###
 
 	def self.from_omniauth(auth,current_user)
 	  current_user.tap do |user| 
@@ -154,6 +154,10 @@ class User < ActiveRecord::Base
     self.oauth_token = nil
     self.oauth_expires_at = nil
 		self.save!
+	end
+
+	def facebook
+		@facebook ||= Koala::Facebook::API.new(oauth_token)
 	end
 
 
