@@ -15,6 +15,7 @@ gem 'ahoy_matey'
 gem 'whenever', :require => false
 gem 'omniauth-facebook'
 gem 'figaro'
+gem 'koala'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
