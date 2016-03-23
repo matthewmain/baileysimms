@@ -4,22 +4,15 @@
 
 
 
-/// GRAVATAR ///
+/// USER IMAGE ///
 
-.gravatar {
+.user_image {
 	color: black;
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 50%;
 	box-shadow: 1px 1px 3px;
 }
-
-#user-edit-gravatar {
-	text-align: center;
-	margin-bottom: 2.25em;
-	margin-top: -1em;
-}
-
 
 
 /// PROFILE ///
@@ -42,12 +35,41 @@
 	color: black;
 	font-weight: bold;
 	letter-spacing: 2px;
+	img {
+		height: 150px;
+	}
 	h1 {
 		margin: 15px auto 10px;
 	} 
 	h4 {
 		margin-bottom: 20px;
 		color: black;
+	}
+}
+
+// FACEBOOK LOGIN //
+#fb_connection_div {
+	display: block;
+	width: 100%;
+	margin: 7px 0 0;
+	letter-spacing: 0;
+	p {
+		text-align: center;
+		font-size: 9px;
+		font-weight: normal;
+	}
+	a {
+		position: relative;
+		top: -1px;
+		background: #337ab7;;
+		color: white;
+		font-size: 7px;
+		padding: 1px 5px;
+		border-radius: 6px;
+		&:hover {
+			background: white;
+			color: #337ab7;
+		}
 	}
 }
 
@@ -125,6 +147,45 @@
 }
 
 
+/// SETTINGS ///
+
+#settings_container {
+	color: black;
+	#user_edit_image_div {
+		margin: 10px 0 50px;
+		text-align: center;
+		color: black;
+		font-weight: bold;
+		letter-spacing: 2px;
+		img {
+			height: 150px;
+		}
+		p, a {
+			font-size: 10px;
+		}
+		p {
+			font-weight: bold;
+		}
+	}
+	.form-button {
+		background: #337ab7;;
+		color: white;
+		font-size: 8px;
+		padding: 1px 5px;
+		min-width: 0;
+		height: auto;
+		border: none;
+		margin: 8px auto 25px;
+		border-radius: 6px;
+		&:hover {
+			background: white;
+			color: #337ab7;
+		}
+	}
+
+}
+
+
 /// COMMUNITY ///
 
 #community_body {}
@@ -186,7 +247,7 @@
 			&:last-child {
 				border-bottom: none;
 			}
-			.users_index_gravatar {
+			.users_index_user_image {
 				display: block;
 				float: left;
 				width: 20%;
@@ -275,7 +336,7 @@
 					width: 33px;
 					letter-spacing: 0px;
 				}
-				.gravatar {
+				.user_image {
 					display: block;
 					float: left;
 					height: 25px;
@@ -379,7 +440,7 @@
 					font-size: 15px;
 					width: 25px;
 				}
-				.gravatar {
+				.user_image {
 					display: block;
 					float: left;
 					height: 17px;
@@ -461,7 +522,7 @@
 				#user_image {
 					width: 10%;
 					float: left;
-					.gravatar {
+					.user_image {
 						height: 50px;
 						box-shadow: none;
 					}	
@@ -594,7 +655,7 @@ p.pagination {
 		#members_list li {
 			display: block;
 			height: 45px;
-			.users_index_gravatar img {
+			.users_index_user_image img {
 				height: 35px;
 			}
 			.users_index_user_name {
@@ -726,7 +787,7 @@ p.pagination {
 			margin: auto;
 			float: none;
 			#members_list li {
-				.users_index_gravatar {
+				.users_index_user_image {
 					display: block;
 					float: left;
 					width: 45px;
@@ -785,7 +846,7 @@ p.pagination {
 						width: 25px;
 						line-height: 19px;
 					}
-					.gravatar {
+					.user_image {
 						height: 17px;
 					}
 					.contributor_name {
@@ -833,7 +894,7 @@ p.pagination {
 						width: 25px;
 						line-height: 18px;
 					}
-					.gravatar {
+					.user_image {
 						height: 14px;
 					}
 					.contributor_name {
@@ -872,7 +933,7 @@ p.pagination {
 				margin: 35px auto 0;
 			}
 			#recent_comments_list #comment_div li {
-				#user_image .gravatar {
+				#user_image .user_image {
 					height: 36px;
 				}
 				#user_name {
@@ -981,7 +1042,7 @@ p.pagination {
 
 		#recent_comments_div {
 			#recent_comments_list #comment_div li {
-				#user_image .gravatar {
+				#user_image .user_image {
 					height: 40px;
 				}
 				#user_name {

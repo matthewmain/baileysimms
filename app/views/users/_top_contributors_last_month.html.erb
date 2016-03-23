@@ -7,7 +7,7 @@
       <% rank += 1%>
       <li>
         <div class="rank">#<%=rank%></div>
-        <%= gravatar_for User.find_by_user_name(commenter)%>
+        <%= user_image_for User.find_by_user_name(commenter)%>
         <div class="contributor_name"><%= link_to commenter.gsub(/_/, ' '), User.find_by_user_name(commenter) %></div>
         <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if rank == 1%>
         <div class="comment_count"><% if count > 1 %>comments<% else %>comment<% end %></div> 

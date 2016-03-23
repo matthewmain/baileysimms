@@ -4,7 +4,7 @@
 		<li id="comment-<%= comment.id %>">
 
 		  <div id="user_image">
-		  	<%= link_to gravatar_for(comment.user), comment.user %>
+		  	<%= link_to user_image_for(comment.user), comment.user %>
 		  </div>
 
 		  <div id="comment_header">

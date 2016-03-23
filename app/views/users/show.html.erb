@@ -5,9 +5,20 @@
 <div id="profile_container">
 
 	<div id="profile_feature_div">
-		<%= gravatar_for @user %>
+		<%= user_image_for(@user) %>
+
+    <div id="fb_connection_div">
+	    <% if @user == current_user && !current_user.is_connected_to_facebook %>
+	      <p><%= link_to "Connect to Facebook to use your Facebook profile picture", "/auth/facebook", id: "fb_connect" %></p>
+	    <% elsif @user == current_user && current_user.is_connected_to_facebook %>
+	      <p>Connected to Facebook as <b><i><%= current_user.facebook_name %></i></b>&nbsp;&nbsp;
+	      <%= link_to "disconnect", fb_disconnect_path, id: "fb_disconnect" %></p>
+	    <% end %>
+  	</div>
+
 		<h1><%= @user.user_name.gsub(/_/, ' ') %></h1>
 		<% if @user.vip? %><h4 style="color:gold;font-size:12px">✨<i style="font-size:16px">VIP</i> ✨</h4><% end %>
+
 		<h4><%= @user.email if logged_in? && current_user.admin? %></h4>
 	</div>
 

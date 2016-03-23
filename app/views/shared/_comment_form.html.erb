@@ -4,7 +4,7 @@
 
   <div id="comment_form">
   	<div id="user_image">
-  		<%= link_to gravatar_for(current_user), current_user %>
+  		<%= link_to user_image_for(current_user), current_user %>
   	</div>
     <div id="form_field"><%= f.text_area :content, placeholder: "say something..." %>
 	    <%= f.hidden_field :post_id, value: @post_id %>

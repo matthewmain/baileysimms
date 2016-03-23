@@ -72,22 +72,10 @@
 
 
 <div id="fbui_share" >FB.ui Share</div>
+            <!-- <div class="fb-share-button" data-href="https://baileysimms.herokuapp.com/" data-layout="button_count"></div> -->
 
 
-            <div id="fb_connection_div">
-              <% if !logged_in? && !@posts.find(@post.id+1).visible_to_public %>
-                <p><%= link_to "Log in", login_path %> or <%= link_to "sign up", new_user_path %> to read the next post.</p>
-              <% elsif logged_in? && !current_user.is_connected_to_facebook %>
-                <p><%= link_to "Connect to Facebook", "/auth/facebook", id: "fb_connect" %></p>
-              <% elsif logged_in? && current_user.is_connected_to_facebook %>
-                <p>Connected to Facebook as <b><i><%= current_user.facebook_name %> </i> |</b>
-                <%= link_to "disconnect", fb_disconnect_path, id: "fb_disconnect" %></p>
-              <% end %>
-            </div>
-
-            <div class="fb-share-button" data-href="https://baileysimms.herokuapp.com/" data-layout="button_count"></div>
             <div class="read_next_button"><%= link_to 'NEXT POST ➤', post_path(@post.id+1) %></div>
-
           <% else %>
             <div class="fb-share-button last_post" data-href="http://www.baileysimms.com" data-layout="button_count"></div>
           <% end %>

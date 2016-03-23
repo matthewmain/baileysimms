@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160319154415) do
+ActiveRecord::Schema.define(version: 20160323203324) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -69,24 +69,41 @@ ActiveRecord::Schema.define(version: 20160319154415) do
     t.string   "user_name"
     t.string   "email"
     t.string   "password"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "password_digest"
     t.string   "remember_digest"
-    t.boolean  "admin",             default: false
+    t.boolean  "admin",              default: false
     t.string   "activation_digest"
-    t.boolean  "activated",         default: false
+    t.boolean  "activated",          default: false
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
-    t.boolean  "vip",               default: false
-    t.integer  "part_access_level", default: 1
+    t.boolean  "vip",                default: false
+    t.integer  "share_count",        default: 1
     t.string   "oauth_provider"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"
     t.string   "facebook_id"
     t.string   "facebook_name"
     t.string   "facebook_image"
+    t.boolean  "has_shared_website", default: false
+    t.boolean  "has_shared_part_1",  default: false
+    t.boolean  "has_shared_part_2",  default: false
+    t.boolean  "has_shared_part_3",  default: false
+    t.boolean  "has_shared_part_4",  default: false
+    t.boolean  "has_shared_part_5",  default: false
+    t.boolean  "has_shared_part_6",  default: false
+    t.boolean  "has_shared_part_7",  default: false
+    t.boolean  "has_shared_part_8",  default: false
+    t.boolean  "has_shared_part_9",  default: false
+    t.boolean  "has_shared_part_10", default: false
+    t.boolean  "has_shared_part_11", default: false
+    t.boolean  "has_shared_part_12", default: false
+    t.boolean  "has_shared_part_13", default: false
+    t.boolean  "has_shared_part_14", default: false
+    t.boolean  "has_shared_book_1",  default: false
+    t.boolean  "has_shared_book_2",  default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
