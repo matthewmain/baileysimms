@@ -64,10 +64,10 @@
         href: 'https://baileysimms.herokuapp.com/',
         }, function(response){
           if (response && !response.error_message) {
-            <% flash[:success] = "Thanks for sharing. Welcome to the next part." %>
+            <%= flash[:success] = "Thanks for sharing. Welcome to the next part." %>
             alert('Posting completed.');
           } else {
-            <% flash[:danger] = "Something went terribly wrong." %>;
+            <%= flash[:danger] = "Something went terribly wrong." %>;
             alert('Error while posting.');
           }
         });
