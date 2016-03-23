@@ -58,12 +58,16 @@
     }());
 
     $(document).ready(function(){
-      $('#fbui_share').click(function(e){
-      e.preventDefault();
-      FB.ui(
-        {
+      $('#fbui_share').click(function(){
+      FB.ui({
         method: 'share',
-        href: 'https://www.baileysimms.herokuapp.com/',
+        href: 'https://baileysimms.herokuapp.com/',
+        }, function(response){
+          if (response && !response.error_message) {
+            alert('Posting completed.');
+          } else {
+            alert('Error while posting.');
+          }
         });
       });
     });
