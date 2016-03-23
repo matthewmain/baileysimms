@@ -64,9 +64,16 @@
         href: 'https://baileysimms.herokuapp.com/',
         }, function(response){
           if (response && !response.error_message) {
-            alert('Posting completed.');
+
+            $.ajax({
+              url : "/increase_part_access_level",
+              method : "PATCH",
+              data : { share_status: 'shared' }
+            });
+
+            alert("Thanks for sharing!");
           } else {
-            alert('Error while posting.');
+            alert("Looks like your share didn't go through.");
           }
         });
       });
