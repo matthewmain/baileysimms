@@ -107,7 +107,7 @@ class UsersController < ApplicationController
     end
 
     #confirms a vip user (has read-only access to all posts)
-    def admin_user
+    def vip_user
       redirect_to(root_url) unless current_user.vip?
     end
   
