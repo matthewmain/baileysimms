@@ -68,7 +68,7 @@
           if (response && !response.error_message) {
 
             $.ajax({
-              url : "/increase_part_access_level",
+              url : "/log_shares",
               method : "PATCH",
               data : { share_status: 'shared' }
             });
