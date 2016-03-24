@@ -10,7 +10,9 @@
 #  updated_at        :datetime         not null
 #  visible_to_public :boolean          default(FALSE)
 #  visible_to_users  :boolean          default(FALSE)
+#  book_part         :integer
 #
 
 module PostsHelper
+	
 end
