@@ -1,36 +1,44 @@
-<html>
 
-  <head>
-    <title>Bailey Simms</title>
-  </head>
+<head>
+  <title>Bailey Simms</title>
 
-  <body id="home_body">
-    <div id="home_wrapper">
+  <% content_for :head do %>
+    <!-- Facebook share open graph markup -->
+    <meta property="fb:app_id"        content=<%=ENV['FACEBOOK_APP_ID']%> />
+    <meta property="og:url"           content="https://baileysimms.herokuapp.com/" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="You've never, ever read anything like this." />
+    <meta property="og:description"   content="A blog hosted by a teen under the name “Bailey Simms” was recently discovered. After a little over a year, the author's entries abruptly stopped. Her wherabouts are now unknown. None of the original material has been altered. The contents are disturbing." />
+    <meta property="og:image"         content="https://baileysimms.herokuapp.com/assets/author-name-with-feather-facebook-596f2fc72cdfe7b8b3200a9c332e8b563d5642ff190999ffeacd3fb7e2863336.jpg" />
+  <% end %>
 
-      <div id="home_feature_image">
-        <%= image_tag("author-name-with-feather-home.png", alt: "Baily Simms", id: "home_name_with_feather_image") %>
-      </div>
+</head>
 
-      <div id="home_index_nav">
-        <ul>
-          <li id="li-blog"><%= link_to 'THE ORIGINAL BLOG', posts_path, class: "highlight" %></li>
-          <li id="li-community"><%= link_to 'COMMUNITY', users_path %></li>
-          <li id="li-books"><%= link_to 'BOOKS', books_path %></li>
-          <li id="li-about"><%= link_to 'ABOUT', about_path %></li>
-          <li id="li-contact"><%= mail_to'baileysimms96@yahoo.com', 'CONTACT' %></li>
-          <% if logged_in? %>
-            <li id="li-profile"><%= link_to 'PROFILE', current_user %></li>
-            <li id="li-logout"><%= link_to 'LOG OUT', logout_path, method: "delete" %></li>
-          <% else %>
-            <li id="li-signup"><%= link_to 'SIGN UP', new_user_path %></li>
-            <span>/</span>
-            <li id="li-login"><%= link_to 'LOG IN', login_path %></li>  
-          <% end %>
-        </ul>
-      </div>  
+<body id="home_body">
+  <div id="home_wrapper">
 
+    <div id="home_feature_image">
+      <%= image_tag("author-name-with-feather-home.png", alt: "Baily Simms", id: "home_name_with_feather_image") %>
     </div>
-  </body>
 
-</html>
+    <div id="home_index_nav">
+      <ul>
+        <li id="li-blog"><%= link_to 'THE ORIGINAL BLOG', posts_path, class: "highlight" %></li>
+        <li id="li-community"><%= link_to 'COMMUNITY', users_path %></li>
+        <li id="li-books"><%= link_to 'BOOKS', books_path %></li>
+        <li id="li-about"><%= link_to 'ABOUT', about_path %></li>
+        <li id="li-contact"><%= mail_to'baileysimms96@yahoo.com', 'CONTACT' %></li>
+        <% if logged_in? %>
+          <li id="li-profile"><%= link_to 'PROFILE', current_user %></li>
+          <li id="li-logout"><%= link_to 'LOG OUT', logout_path, method: "delete" %></li>
+        <% else %>
+          <li id="li-signup"><%= link_to 'SIGN UP', new_user_path %></li>
+          <span>/</span>
+          <li id="li-login"><%= link_to 'LOG IN', login_path %></li>  
+        <% end %>
+      </ul>
+    </div>  
+
+  </div>
+</body>
 

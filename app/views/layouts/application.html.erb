@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html>
+
 <head>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -17,13 +17,9 @@
   <!-- Mobile Layout -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Facebook share open graph markup -->
-  <meta property="fb:app_id"        content=<%=ENV['FACEBOOK_APP_ID']%> />
-  <meta property="og:url"           content="https://baileysimms.herokuapp.com/" />
-  <meta property="og:type"          content="website" />
-  <meta property="og:title"         content="You've never, ever read anything like this." />
-  <meta property="og:description"   content="A blog hosted by a teen under the name “Bailey Simms” was recently discovered. After a little over a year, the author's entries abruptly stopped. Her wherabouts are now unknown. None of the original material has been altered. The contents are disturbing." />
-  <meta property="og:image"         content="https://baileysimms.herokuapp.com/assets/author-name-with-feather-facebook-596f2fc72cdfe7b8b3200a9c332e8b563d5642ff190999ffeacd3fb7e2863336.jpg" />
+  <% if content_for? :head %>
+    <%= yield :head %>
+  <% end %>
       
 </head>
 
@@ -34,7 +30,6 @@
   <%= render 'layouts/facebook' %>
 
 	<%= render 'layouts/header' unless @omit_header %>
-
 
 	<div>
 		<% flash.each do |message_type, message| %>
