@@ -12,9 +12,11 @@
       $('.facebook_share_button').click(function(){
       FB.ui({
         method: 'feed',
-        href: 'https://baileysimms.herokuapp.com/',
 
-        title: 'DEAD IN BED, Part <%=@post.book_part%>: <%=Part.find_by_part_number(@post.book_part).title%>',
+        name: 'BAILEY SIMMS',
+        link: 'http://www.baileysimms.com/',
+
+        caption: 'DEAD IN BED, Part <%=@post.book_part%>: <%=Part.find_by_part_number(@post.book_part).title%>',
         description: "You've never, ever read anything like this. An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. Her wherabouts are now unknown. None of the original material has been altered. The contents are disturbing.",
         picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB<%=@post.book_part%>_fb_share.jpg',
 
