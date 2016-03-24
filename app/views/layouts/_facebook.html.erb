@@ -63,8 +63,9 @@
         method: 'share',
         href: 'https://baileysimms.herokuapp.com/',
 
-        description: <%="DEAD IN BED, Part #{@post.book_part}: #{Part.find_by_part_number(@post.book_part).title}"%>,
-        image: <%="https://baileysimms.herokuapp.com/assets/facebook/DiB#{@post.book_part}_fb_share.jpg"%>,
+        image: "https://baileysimms.herokuapp.com/assets/facebook/DiB1_fb_share.jpg",
+        description: "DEAD IN BED, Part 1: Fifty Shades of Gangrene",  
+
 
         }, function(response){
           if (response && !response.error_message) {
