@@ -8,6 +8,7 @@
 	width: 300px;
 	margin: auto;
 	min-height: 510px;
+	color: black;
 	h1 {
 		margin-top: 70px;
 	}
@@ -19,13 +20,6 @@
 			font-size: 9px;
 		}
 	}
-}
-
-#forgot_password_container .form {
-	display: block;
-	width: 300px;
-	margin: auto;
-	min-height: 510px;
 }
 
 .form {
@@ -40,6 +34,15 @@
 		font-size: .75em;
 		margin: 0;
 	}
+	.form-button {
+		margin-bottom: 0;
+	}
+	#forgot_password {
+		display: block;
+		text-align: center;
+		font-style: italic;
+		margin-top: 10px;
+	}
 }
 
 #login-new-user {
@@ -50,3 +53,9 @@
 	}
 }
 
+#forgot_password_container {
+	display: block;
+	text-align: center;
+	margin: auto;
+	min-height: 510px;
+}

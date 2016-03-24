@@ -96,18 +96,17 @@ class UsersController < ApplicationController
     end
   end
 
-
-  def increase_part_access_level
-    current_user.update_attribute(:part_access_level, current_user.part_access_level+1 ) if params[:share_status] == "shared"
-  end
-
-
-
   def destroy
     User.find_by_user_name(params[:id]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url
   end
+
+
+  def increase_part_access_level
+    current_user.update_attribute(:part_access_level, current_user.part_access_level+1 ) if params[:share_status] == "shared"
+  end
+
 
 
   private

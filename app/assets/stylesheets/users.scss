@@ -4,6 +4,17 @@
 
 
 
+/// SIGNUP ///
+
+#signup_container {
+	min-height: 510px;
+	color: black;
+	h1 {
+		margin-top: 70px;
+	}
+}
+
+
 /// USER IMAGE ///
 
 .user_image {
@@ -37,6 +48,7 @@
 	letter-spacing: 2px;
 	img {
 		height: 150px;
+		width: 150px;
 	}
 	h1 {
 		margin: 15px auto 10px;
@@ -109,6 +121,7 @@
 					float: left;
 					img {
 						height: 50px;
+						width: 50px;
 						box-shadow: none;
 					}	
 				}
@@ -159,6 +172,7 @@
 		letter-spacing: 2px;
 		img {
 			height: 150px;
+			width: 150px;
 		}
 		p, a {
 			font-size: 10px;
@@ -253,6 +267,7 @@
 				width: 20%;
 				img {
 					height: 50px;
+					width: 50px;
 				}
 			}
 			.users_index_user_name {
@@ -340,6 +355,7 @@
 					display: block;
 					float: left;
 					height: 25px;
+					width: 25px;
 					margin: 0 5px 0 6px;
 					box-shadow: none;
 					float: left;
@@ -444,6 +460,7 @@
 					display: block;
 					float: left;
 					height: 17px;
+					width: 17px;
 				}
 				.contributor_name {
 					display: block;
@@ -524,6 +541,7 @@
 					float: left;
 					.user_image {
 						height: 50px;
+						width: 50px;
 						box-shadow: none;
 					}	
 				}
@@ -657,6 +675,7 @@ p.pagination {
 			height: 45px;
 			.users_index_user_image img {
 				height: 35px;
+				width: 35px;
 			}
 			.users_index_user_name {
 				padding-top: 0;
@@ -790,6 +809,7 @@ p.pagination {
 				.users_index_user_image {
 					display: block;
 					float: left;
+					height: 45px;
 					width: 45px;
 				}
 				.users_index_user_name {
@@ -848,6 +868,7 @@ p.pagination {
 					}
 					.user_image {
 						height: 17px;
+						width: 17px;
 					}
 					.contributor_name {
 						max-width: 140px;
@@ -896,6 +917,7 @@ p.pagination {
 					}
 					.user_image {
 						height: 14px;
+						width: 14px;
 					}
 					.contributor_name {
 						max-width: 150px;
@@ -935,6 +957,7 @@ p.pagination {
 			#recent_comments_list #comment_div li {
 				#user_image .user_image {
 					height: 36px;
+					width: 36px;
 				}
 				#user_name {
 					display: block;
@@ -1044,6 +1067,7 @@ p.pagination {
 			#recent_comments_list #comment_div li {
 				#user_image .user_image {
 					height: 40px;
+					width: 40px;
 				}
 				#user_name {
 					display: block;
