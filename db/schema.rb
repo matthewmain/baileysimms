@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324165243) do
+ActiveRecord::Schema.define(version: 20160324173909) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -81,7 +81,7 @@ ActiveRecord::Schema.define(version: 20160324165243) do
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
     t.boolean  "vip",                default: false
-    t.integer  "share_count",        default: 1
+    t.integer  "share_count",        default: 0
     t.string   "oauth_provider"
     t.string   "oauth_token"
     t.datetime "oauth_expires_at"

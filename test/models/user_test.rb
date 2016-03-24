@@ -17,7 +17,7 @@
 #  reset_digest       :string
 #  reset_sent_at      :datetime
 #  vip                :boolean          default(FALSE)
-#  share_count        :integer          default(1)
+#  share_count        :integer          default(0)
 #  oauth_provider     :string
 #  oauth_token        :string
 #  oauth_expires_at   :datetime
