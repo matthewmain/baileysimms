@@ -1,0 +1,35 @@
+  
+  <script>
+
+    // FB.ui Share Button
+    (function() {
+      var e = document.createElement('script'); e.async = true;
+      e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+      document.getElementById('fb-root').appendChild(e);
+    }());
+
+    $(document).ready(function(){
+      $('.facebook_share_button').click(function(){
+      FB.ui({
+        method: 'share',
+        href: 'https://baileysimms.herokuapp.com/',
+
+        description: 'DEAD IN BED, Part <%=@post.book_part%>: <%=Part.find_by_part_number(@post.book_part).title%>',
+        image: 'https://baileysimms.herokuapp.com/assets/facebook/DiB<%=@post.book_part%>_fb_share.jpg',
+
+        }, function(response){
+          if (response && !response.error_message) {
+            $.ajax({
+              url : "/log_shares",
+              method : "PATCH",
+              data : { share_status: 'shared' }
+            });
+            alert("Thanks for sharing!");
+          } else {
+            alert("Looks like your share didn't go through.");
+          }
+        });
+      });
+    });
+    
+  </script>  
