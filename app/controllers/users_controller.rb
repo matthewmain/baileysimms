@@ -104,7 +104,7 @@ class UsersController < ApplicationController
 
 
   def increase_part_access_level
-    current_user.update_attribute(:part_access_level, current_user.part_access_level+1 ) if params[:share_status] == "shared"
+    # current_user.update_attribute(:part_access_level, current_user.part_access_level+1 ) if params[:share_status] == "shared"
   end
 
 
