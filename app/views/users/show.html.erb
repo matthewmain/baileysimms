@@ -9,7 +9,7 @@
 
     <div id="fb_connection_div">
 	    <% if @user == current_user && !current_user.is_connected_to_facebook %>
-	      <p><%= link_to "Connect to Facebook to use your Facebook profile picture", "/auth/facebook", id: "fb_connect" %></p>
+	      <p><%= link_to "connect to Facebook to use your Facebook profile picture", "/auth/facebook", id: "fb_connect" %></p>
 	    <% elsif @user == current_user && current_user.is_connected_to_facebook %>
 	      <p>Connected to Facebook as <b><i><%= current_user.facebook_name %></i></b>&nbsp;&nbsp;
 	      <%= link_to "disconnect", fb_disconnect_path, id: "fb_disconnect" %></p>

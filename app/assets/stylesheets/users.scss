@@ -164,6 +164,11 @@
 
 #settings_container {
 	color: black;
+	h1 {
+		font-style: italic;
+		font-weight: bold;
+		letter-spacing: 2px;
+	}
 	#user_edit_image_div {
 		margin: 10px 0 50px;
 		text-align: center;

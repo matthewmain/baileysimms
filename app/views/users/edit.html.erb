@@ -4,14 +4,14 @@
 
 <div id="settings_container">
 
-	<h1>Update Your Settings</h1>
+	<h1>SETTINGS</h1>
 
 	<div id="user_edit_image_div">
 	 	<%= user_image_for(@user) %>
 
     <div id="fb_connection_div">
 	    <% if @user == current_user && !current_user.is_connected_to_facebook %>
-	      <p><%= link_to "connect to Facebook to use your Facebook profile picture", "/auth/facebook", id: "fb_connect" %></p>
+	      <p><%= link_to "change to your Facebook profile picture", "/auth/facebook", id: "fb_connect" %></p>
 	      <p><a href="http://gravatar.com/emails" target="_blank">use Gravatar to change your profile picture</a></p>
 	    <% elsif @user == current_user && current_user.is_connected_to_facebook %>
 	      <p>You're currently using a Facebook connection for your profile picture.</p>
