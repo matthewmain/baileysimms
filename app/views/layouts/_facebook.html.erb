@@ -62,17 +62,17 @@
       FB.ui({
         method: 'share',
         href: 'https://baileysimms.herokuapp.com/',
-        // description:
-        // image: 
+
+        description: "DEAD IN BED, Part 1: Fifty Shades of Gangrene",  //<%="DEAD IN BED, Part #{@post.book_part}: #{Part.find_by_part_number(@post.book_part).title}"%>,
+        image: "https://baileysimms.herokuapp.com/assets/facebook/DiB1_fb_share.jpg",  //<%="https://baileysimms.herokuapp.com/assets/facebook/DiB#{@post.book_part}_fb_share.jpg"%>,
+
         }, function(response){
           if (response && !response.error_message) {
-
             $.ajax({
               url : "/log_shares",
               method : "PATCH",
               data : { share_status: 'shared' }
             });
-
             alert("Thanks for sharing!");
           } else {
             alert("Looks like your share didn't go through.");

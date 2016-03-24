@@ -44,7 +44,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post_id = @post.id                                  
     @comment = current_user.comments.build if logged_in?
-    @feed_items = @post.feed.paginate(page: params[:page]).per_page(250)                                           
+    @feed_items = @post.feed.paginate(page: params[:page]).per_page(250)
   end
 
   def edit
