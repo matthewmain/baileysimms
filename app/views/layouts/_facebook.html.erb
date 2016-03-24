@@ -61,11 +61,7 @@
       $('.facebook_share_button').click(function(){
       FB.ui({
         method: 'share',
-        href: 'https://baileysimms.herokuapp.com/',
-
-        image: "https://baileysimms.herokuapp.com/assets/facebook/DiB1_fb_share.jpg",
-        description: "DEAD IN BED, Part 1: Fifty Shades of Gangrene",  
-
+        href: 'https://baileysimms.herokuapp.com/', 
 
         }, function(response){
           if (response && !response.error_message) {
