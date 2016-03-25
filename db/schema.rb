@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160324173909) do
+ActiveRecord::Schema.define(version: 20160325004828) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -89,22 +89,20 @@ ActiveRecord::Schema.define(version: 20160324173909) do
     t.string   "facebook_name"
     t.string   "facebook_image"
     t.boolean  "has_shared_website", default: false
-    t.boolean  "has_shared_part_1",  default: false
-    t.boolean  "has_shared_part_2",  default: false
-    t.boolean  "has_shared_part_3",  default: false
-    t.boolean  "has_shared_part_4",  default: false
-    t.boolean  "has_shared_part_5",  default: false
-    t.boolean  "has_shared_part_6",  default: false
-    t.boolean  "has_shared_part_7",  default: false
-    t.boolean  "has_shared_part_8",  default: false
-    t.boolean  "has_shared_part_9",  default: false
-    t.boolean  "has_shared_part_10", default: false
-    t.boolean  "has_shared_part_11", default: false
-    t.boolean  "has_shared_part_12", default: false
-    t.boolean  "has_shared_part_13", default: false
-    t.boolean  "has_shared_part_14", default: false
-    t.boolean  "has_shared_book_1",  default: false
-    t.boolean  "has_shared_book_2",  default: false
+    t.boolean  "can_access_AU_1",    default: false
+    t.boolean  "can_access_part_2",  default: false
+    t.boolean  "can_access_part_3",  default: false
+    t.boolean  "can_access_part_4",  default: false
+    t.boolean  "can_access_part_5",  default: false
+    t.boolean  "can_access_part_6",  default: false
+    t.boolean  "can_access_part_7",  default: false
+    t.boolean  "can_access_part_8",  default: false
+    t.boolean  "can_access_part_9",  default: false
+    t.boolean  "can_access_part_10", default: false
+    t.boolean  "can_access_part_11", default: false
+    t.boolean  "can_access_part_12", default: false
+    t.boolean  "can_access_part_13", default: false
+    t.boolean  "can_access_part_14", default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
