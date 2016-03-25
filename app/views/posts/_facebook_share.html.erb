@@ -15,10 +15,10 @@
 
         method: 'feed',
         link: 'https://baileysimms.herokuapp.com/posts',
-        
+
         picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB<%=@post.book_part%>_fb_share.jpg',
         name: "You've never, ever read anything like this.", 
-        description: "An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. Her wherabouts are now unknown. But her blog has been preserved here. None of the original material has been altered. The contents are disturbing.",
+        description: "An abandoned blog has been recently discovered. It had been hosted by a teen under the name “Bailey Simms,” but her wherabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
         caption: 'DEAD IN BED, Part <%=@post.book_part%>: <%=Part.find_by_part_number(@post.book_part).title%>',
 
 
