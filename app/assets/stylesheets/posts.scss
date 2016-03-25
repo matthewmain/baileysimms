@@ -203,20 +203,16 @@
 			font-size: 12px;
 			font-style: italic;
 			background: #006600;
+			color: white;
 			padding: 5px 12px;
 			border: 1px solid #006600;
 			border-radius: 15px;
 			text-align: center;
 			width: 125px;
 			margin: 40px auto 0;
-			a { 
-				color: white;
-			}
 			&:hover {
-				background: white;
-				a {
-					color: #006600;
-				}
+				background: #40a340;;
+
 			}
 		}
 	}
@@ -294,6 +290,7 @@
 			margin: 20px auto 0;
 			&:hover {
 				background: darkblue;
+				cursor: pointer;
 			}
 		}
 	}

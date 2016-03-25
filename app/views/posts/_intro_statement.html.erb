@@ -3,6 +3,8 @@
 	<h3><%=@post.title.upcase%></h3>
 	<%= raw @post.content %>
 
-	<p id="blog_intro_statement_button"><%= link_to 'READ NOW', 'posts/2'%></p>
+	<%= link_to 'posts/2' do %>
+  	<p id="blog_intro_statement_button">READ NOW</p>
+	<% end %>
 
 </div>

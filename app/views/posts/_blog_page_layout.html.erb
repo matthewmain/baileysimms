@@ -72,7 +72,8 @@
 
           <!-- <div class="fb-share-button" data-href="https://baileysimms.herokuapp.com/" data-layout="button_count"></div> -->
           <div id="facebook_share_div">
-            <p>Spread the word, not the plague. Share Bailey's blog on Facebook:</p>
+            <p><b>Spread the word, not the plague.</b></p> 
+            <br><p><i>Share Bailey's blog on Facebook before you sneak over to her next post:</i></p>
             <div class="facebook_share_button">
               Share
             </div>
@@ -82,7 +83,7 @@
             <div id="read_next_button"><%= link_to 'NEXT POST ➤', post_path(@post.id+1) %></div>
           <% end %>
 
-          
+
 
         <% elsif !logged_in? && @post.visible_to_users %>
           <div id="login_request">
