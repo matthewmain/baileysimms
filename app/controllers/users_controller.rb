@@ -104,8 +104,9 @@ class UsersController < ApplicationController
 
   def log_shares
     current_user.update_attribute(:share_count, current_user.share_count+1 )
+    current_user.update_attribute(:has_shared_website, true) if params[:shared] == "website"
     current_user.update_attribute(":can_access_#{params[:unlocked_segment]}", true)
-    curennt_user.update_attribute(:share_record, current_user.share_record << "#{params[:shared]} (#{Time.zone.now})")
+    curennt_user.update_attribute(:share_record, (current_user.share_record << "#{params[:shared]} (#{Time.zone.now})") )
   end
 
 
