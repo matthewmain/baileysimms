@@ -39,6 +39,7 @@
 #  can_access_part_12 :boolean          default(FALSE)
 #  can_access_part_13 :boolean          default(FALSE)
 #  can_access_part_14 :boolean          default(FALSE)
+#  share_record       :text
 #
 # Indexes
 #
@@ -102,7 +103,9 @@ class UsersController < ApplicationController
 
 
   def log_shares
-    current_user.update_attribute(:share_count, current_user.share_count+1 ) if params[:share_status] == "shared"
+    current_user.update_attribute(:share_count, current_user.share_count+1 )
+    current_user.update_attribute(":can_access_#{params[:unlocked_segment]}", true)
+    curennt_user.update_attribute(:share_record, current_user.share_record << "#{params[:shared]} (#{Time.zone.now})")
   end
 
 

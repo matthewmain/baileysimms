@@ -69,15 +69,26 @@
           <%= raw @post.content %>
 
 
+<!-- for shares that unlock nothing (and share website) -->
+<div class="facebook_share_website_button">
+</div>
 
-          <!-- <div class="fb-share-button" data-href="https://baileysimms.herokuapp.com/" data-layout="button_count"></div> -->
+<!-- for shares that unlock the CURRENT part (by sharing the previous part) -->
+<div class="facebook_share_previous_part_button">
+</div>
+
+
           <div id="facebook_share_div">
             <p><b>Spread the word, not the plague.</b></p> 
             <br><p><i>Share Bailey's blog on Facebook before you sneak over to her next post:</i></p>
-            <div class="facebook_share_button">
+
+            <!-- for shares that unlock the NEXT part (by sharing the current part) -->
+            <div class="facebook_share_this_part_button">
               Share
             </div>
+
           </div>
+
 
           <% if @post.id+1 <= Post.count %>
             <div id="read_next_button"><%= link_to 'NEXT POST ➤', post_path(@post.id+1) %></div>

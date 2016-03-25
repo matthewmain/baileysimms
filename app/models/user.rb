@@ -39,6 +39,7 @@
 #  can_access_part_12 :boolean          default(FALSE)
 #  can_access_part_13 :boolean          default(FALSE)
 #  can_access_part_14 :boolean          default(FALSE)
+#  share_record       :text
 #
 # Indexes
 #
@@ -68,6 +69,8 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 	validates :password, presence: true, length: { minimum: 3 }, allow_nil: true
+
+	serialize :share_record, Array
 	
 
 	#changes User's 'to_param' method's default from 'id' to 'user_name', which re-routes default 'user/:id' URLS to 'user/:user_name'

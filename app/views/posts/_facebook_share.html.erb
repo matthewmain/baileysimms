@@ -9,25 +9,30 @@
     }());
 
     $(document).ready(function(){
-      $('.facebook_share_button').click(function(){
+      $('.facebook_share_this_part_button').click(function(){
       FB.ui({
 
         method: 'feed',
-        link: 'https://baileysimms.herokuapp.com/posts',
         name: "You've never, ever read anything like this.", 
         description: "An abandoned blog has been recently discovered. It had been hosted by a teen under the name “Bailey Simms,” but her wherabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
 
-        if (<%=current_user.has_shared_website%>) {
-          picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB<%=@post.book_part%>_fb_share.jpg',
-          caption: 'DEAD IN BED, Part <%=@post.book_part%>: <%=Part.find_by_part_number(@post.book_part).title%>',
-        }
+        <% if current_user.has_shared_website %>
+          <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>,
+          <%=raw "picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB#{@post.book_part}_fb_share.jpg',"%>
+          <%=raw "caption: 'DEAD IN BED, Part #{@post.book_part}: #{Part.find_by_part_number(@post.book_part).title}',"%>
+        <% else %>
+          <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
+        <% end %>
         
         }, function(response){
           if (response && !response.error_message) {
             $.ajax({
               url : "/log_shares",
               method : "PATCH",
-              data : { share_status: 'shared' }
+              data : { shared: '<%= current_user.has_shared_website ? "Part #{@post.book_part}" : "website" %>',
+                       //tells controller what was shared, either the current part if user has already shared the website, or the website if not (by default) 
+                       unlocked_segment: 'can_access_<%=@post.id == 3 ? "AU_1" : "part_#{@post.book_part+1}"%>', }
+                       //tells controller to unlock "Author's Update, Part 1" if on "DEAD IN BED, Part 1" post (id 3); otherwise unlocks next part
             });
             alert("Thanks for sharing!");
           } else {

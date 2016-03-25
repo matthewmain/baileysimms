@@ -39,6 +39,7 @@
 #  can_access_part_12 :boolean          default(FALSE)
 #  can_access_part_13 :boolean          default(FALSE)
 #  can_access_part_14 :boolean          default(FALSE)
+#  share_record       :text
 #
 # Indexes
 #
