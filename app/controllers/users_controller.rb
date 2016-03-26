@@ -103,9 +103,15 @@ class UsersController < ApplicationController
 
 
   def log_shares
+    #update's user's share count
     current_user.update_attribute(:share_count, current_user.share_count+1 )
+    #if website is shared, logs it so only shared on user's first share
     current_user.update_attribute(:has_shared_website, true) if params[:shared] == "website"
+    #unlocks any segment that AJAX call tells it to
     current_user.update_attribute("can_access_#{params[:unlocked_segment]}", true)
+    #when any part is shared, always unlocks following part
+    current_user.update_attribute("can_access_part_#{(params[:unlocked_segment][-1].to_i)+1}", true) if params[:unlocked_segment].slice(0,4) == "Part"
+    #logs share into user's share record
     current_user.update_attribute(:share_record, (current_user.share_record << "#{params[:shared].upcase} (#{Time.now})") )
   end
 
