@@ -267,7 +267,7 @@
 
 
 	// SOCIAL MEDIA SHARE //
-	#facebook_share_div {
+	.facebook_share_div {
 		display: block;
 		width: 200px;
 		font-family: 'Avenir', sans-serif;
@@ -279,7 +279,7 @@
 		p {
 			margin: 0;
 		}
-		.facebook_share_this_part_button {
+		.facebook_share_this_part_button, .facebook_share_previous_part_button {
 			text-align: center;
 			width: 75px;
 			background: blue;

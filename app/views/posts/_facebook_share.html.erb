@@ -1,17 +1,21 @@
   
   <script>
 
-    // FB.ui Share Button
+    // FB.ui Shares
     (function() {
       var e = document.createElement('script'); e.async = true;
       e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
       document.getElementById('fb-root').appendChild(e);
     }());
 
+
     $(document).ready(function(){
+
+
+      //for shares that unlock the NEXT part (by sharing the current part)
+
       $('.facebook_share_this_part_button').click(function(){
       FB.ui({
-
         method: 'feed',
         name: "You've never, ever read anything like this.", 
         description: "An abandoned blog has been recently discovered. It had been hosted by a teen under the name “Bailey Simms,” but her wherabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
@@ -32,10 +36,11 @@
                        //tells controller what was shared, either the current part if user has already shared the website, or the website if not (by default) 
               data : { shared: '<%= logged_in? && current_user.has_shared_website ? "Part #{@post.book_part}" : "website" %>',
                        //tells controller to unlock "Author's Update, Part 1" if on "First Post" (id 2) or "Part 1" (id 3); otherwise unlocks next part
-                       unlocked_segment: '<%=@post.id == 2 || @post.id == 3 ? "AU_1" : "part_#{@post.book_part+1}"%>',
-
-                       //tells controller which part the user is on  MOVE TO 'UNLOCK CURRENT PART' SELECTOR
-                       current_part: '<%="Part #{@post.book_part}"%>', }
+                       unlocked_segment: '<%=@post.id == 2 || @post.id == 3 ? "AU_1" : "part_#{@post.book_part+1}"%>', 
+                       //tells controller which part the user is on
+                       current_part: '<%="Part #{@post.book_part}"%>',
+                       //tells controller which post the user is on
+                       current_post: '<%="#{@post.id}"%>', }
             });
             alert("Thanks for sharing!");
           } else {
@@ -43,7 +48,46 @@
           }
         });
       });
+
+
+
+      //for shares that unlock the CURRENT part (by sharing the previous part)
+
+      $('.facebook_share_previous_part_button').click(function(){
+      FB.ui({
+        method: 'feed',
+        name: "You've never, ever read anything like this.", 
+        description: "An abandoned blog has been recently discovered. It had been hosted by a teen under the name “Bailey Simms,” but her wherabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
+
+        <% if logged_in? && current_user.has_shared_website && @post.book_part > 1 %>
+          <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
+          <%=raw "picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB#{@post.book_part-1}_fb_share.jpg',"%>
+          <%=raw "caption: 'DEAD IN BED, Part #{@post.book_part-1}: #{Part.find_by_part_number(@post.book_part-1).title}',"%>
+        <% else %>
+          <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
+        <% end %>
+        
+        }, function(response){
+          if (response && !response.error_message) {
+            $.ajax({
+              url : "/log_shares",
+              method : "PATCH",
+                       //tells controller what was shared, either the current part if user has already shared the website, or the website if not (by default) 
+              data : { shared: '<%= logged_in? && current_user.has_shared_website ? "Part #{@post.book_part-1}" : "website" %>',
+                       //tells controller to unlock the current part if on Part 2 or higher; or, if on Part 1, unlocks "Author's Update, Part 1"
+                       unlocked_segment: '<%=@post.book_part > 1 ? "part_#{@post.book_part}" : "AU_1"%>',
+                       //tells controller which part the user is on
+                       current_part: '<%="Part #{@post.book_part}"%>',
+                       //tells controller which post the user is on
+                       current_post: '<%="#{@post.id}"%>', }
+            });
+            alert("Thanks for sharing!");
+          } else {
+            alert("Looks like your share didn't go through.");
+          }
+        });
+      });
+
     });
 
-
-  </script>  
+</script>  

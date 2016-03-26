@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160325173955) do
+ActiveRecord::Schema.define(version: 20160326140615) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160325173955) do
     t.boolean  "visible_to_public", default: false
     t.boolean  "visible_to_users",  default: false
     t.integer  "book_part"
+    t.boolean  "share_locked",      default: true
   end
 
   create_table "rankings", force: :cascade do |t|

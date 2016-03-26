@@ -180,6 +180,23 @@ class User < ActiveRecord::Base
 
 
 
+	### SHARE UNLOCKS ###
+
+	def has_unlocked?(partnumber)
+		partnumber == 1 ? self.can_access_AU_1 : self.send("can_access_part_#{partnumber}")
+	end
+
+	def reset_share_history
+		self.share_count = 0
+		self.has_shared_website = false
+		self.can_access_AU_1 = false
+		(2..14).each {|n| self.send("can_access_part_#{n}=", false) }
+		self.share_record = []
+		self.save!
+	end
+
+
+
 	### QUERIES ###
 
 	def self.all_activated_user_names
