@@ -110,7 +110,9 @@ class UsersController < ApplicationController
     #unlocks any segment that AJAX call tells it to
     current_user.update_attribute("can_access_#{params[:unlocked_segment]}", true)
     #when any part is shared, always unlocks following part
-    current_user.update_attribute("can_access_part_#{(params[:unlocked_segment][-1].to_i)+1}", true) if params[:unlocked_segment].slice(0,4) == "Part"
+    current_user.update_attribute("can_access_part_#{(params[:shared][-1].to_i)+1}", true) if params[:shared].slice(0,4) == "Part"
+    #if the user first enters the blog beyond Part 1 and shares the website to access that part, unlocks that part
+    current_user.update_attribute("can_access_part_#{params[:current_part][-1]}", true) if params[:shared] == "website" && params[:current_part][-1].to_i > 1
     #logs share into user's share record
     current_user.update_attribute(:share_record, (current_user.share_record << "#{params[:shared].upcase} (#{Time.now})") )
   end

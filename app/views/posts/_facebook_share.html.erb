@@ -32,7 +32,9 @@
                        //tells controller what was shared, either the current part if user has already shared the website, or the website if not (by default) 
               data : { shared: '<%= logged_in? && current_user.has_shared_website ? "Part #{@post.book_part}" : "website" %>',
                        //tells controller to unlock "Author's Update, Part 1" if on "First Post" (id 2) or "Part 1" (id 3); otherwise unlocks next part
-                       unlocked_segment: '<%=@post.id == 2 || @post.id == 3 ? "AU_1" : "part_#{@post.book_part+1}"%>', }
+                       unlocked_segment: '<%=@post.id == 2 || @post.id == 3 ? "AU_1" : "part_#{@post.book_part+1}"%>',
+                       //tells controller which part the user is on
+                       current_part: '<%="Part #{@post.book_part}"%>', }
             });
             alert("Thanks for sharing!");
           } else {
