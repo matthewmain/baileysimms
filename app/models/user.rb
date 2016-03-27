@@ -195,6 +195,12 @@ class User < ActiveRecord::Base
 		self.save!
 	end
 
+	def self.all_activated_users_unlock_part(partnum)
+		@all_activated_users = User.where("activated = ?", true)
+		@all_activated_users.each {|user| user.update_attribute(:can_access_AU_1, true)} if partnum == 1
+		@all_activated_users.each {|user| user.send("can_access_part_#{partnum}=", true); user.save!} if partnum > 1
+	end
+
 
 
 	### QUERIES ###
