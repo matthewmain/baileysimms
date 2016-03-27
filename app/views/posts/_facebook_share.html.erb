@@ -29,25 +29,30 @@
         <% end %>
         
         }, function(response){
-          if (response && !response.error_message) {
-            $.ajax({
-              url : "/log_shares",
-              method : "PATCH",
-                       //tells controller what was shared, either the current part if user has already shared the website, or the website if not (by default) 
-              data : { shared: '<%= logged_in? && current_user.has_shared_website ? "Part #{@post.book_part}" : "website" %>',
-                       //tells controller to unlock "Author's Update, Part 1" if on "First Post" (id 2) or "Part 1" (id 3); otherwise unlocks next part
-                       unlocked_segment: '<%=@post.id == 2 || @post.id == 3 ? "AU_1" : "part_#{@post.book_part+1}"%>', 
-                       //tells controller which part the user is on
-                       current_part: '<%="Part #{@post.book_part}"%>',
-                       //tells controller which post the user is on
-                       current_post: '<%="#{@post.id}"%>', }
+
+          //NOTE: AJAX & location.href moved out of conditional because callback response not recieved on mobile devises
+          $.ajax({
+            url : "/log_shares",
+            method : "PATCH",
+                     //tells controller what was shared, either the current part if user has already shared the website, or the website if not (by default) 
+            data : { shared: '<%= logged_in? && current_user.has_shared_website ? "Part #{@post.book_part}" : "website" %>',
+                     //tells controller to unlock "Author's Update, Part 1" if on "First Post" (id 2) or "Part 1" (id 3); otherwise unlocks next part
+                     unlocked_segment: '<%=@post.id == 2 || @post.id == 3 ? "AU_1" : "part_#{@post.book_part+1}"%>', 
+                     //tells controller which part the user is on
+                     current_part: '<%="Part #{@post.book_part}"%>',
+                     //tells controller which post the user is on
+                     current_post: '<%="#{@post.id}"%>', }
             });
-            //refreshes page with now-unlocked material
-            location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
+
+          //refreshes page with now-unlocked material
+          location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
+            
+          if (response && !response.error_message) {
             alert("Thanks for sharing!");
           } else {
-            alert("Looks like your share didn't go through.");
+            alert("Thanks!"); //"Looks like your share didn't go through.");
           }
+
         });
       });
 
@@ -70,7 +75,8 @@
         <% end %>
         
         }, function(response){
-          if (response && !response.error_message) {
+
+            //NOTE: AJAX & location.href moved out of conditional because callback response not recieved on mobile devises
             $.ajax({
               url : "/log_shares",
               method : "PATCH",
@@ -83,12 +89,16 @@
                        //tells controller which post the user is on
                        current_post: '<%="#{@post.id}"%>', }
             });
+
             //refreshes page with now-unlocked material
             location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
+
+          if (response && !response.error_message) {
             alert("Thanks for sharing!");
           } else {
-            alert("Looks like your share didn't go through.");
+            alert("Thanks!"); //"Looks like your share didn't go through.");
           }
+          
         });
       });
 
