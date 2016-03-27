@@ -43,7 +43,7 @@
                        current_post: '<%="#{@post.id}"%>', }
             });
             location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
-            // alert("Thanks for sharing!");
+            alert("Thanks for sharing!");
           } else {
             alert("Looks like your share didn't go through.");
           }
@@ -84,7 +84,7 @@
             });
             //refreshes page with now-unlocked material
             location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
-            // alert("Thanks for sharing!");
+            alert("Thanks for sharing!");
           } else {
             alert("Looks like your share didn't go through.");
           }
