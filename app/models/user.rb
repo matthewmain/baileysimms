@@ -180,7 +180,7 @@ class User < ActiveRecord::Base
 
 
 
-	### SHARE UNLOCKS ###
+	### SHARES AND UNLOCKS ###
 
 	def has_unlocked?(partnumber)
 		partnumber == 1 ? self.can_access_AU_1 : self.send("can_access_part_#{partnumber}")
@@ -199,6 +199,10 @@ class User < ActiveRecord::Base
 		@all_activated_users = User.where("activated = ?", true)
 		@all_activated_users.each {|user| user.update_attribute(:can_access_AU_1, true)} if partnum == 1
 		@all_activated_users.each {|user| user.send("can_access_part_#{partnum}=", true); user.save!} if partnum > 1
+	end
+
+	def self.total_shares
+		User.all.each_with_object(0) {|user,sum| sum += user.share_count}
 	end
 
 

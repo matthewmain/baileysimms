@@ -116,7 +116,6 @@ class UsersController < ApplicationController
     #logs share into user's share record
     current_user.update_attribute(:share_record, (current_user.share_record << "#{params[:shared].upcase} (#{Time.now})") )
     #reloads post page with updated visiblity status
-    redirect_to("/posts/#{params[:current_post]}")      #<---- NOT WORKING; FIX
   end
 
 
