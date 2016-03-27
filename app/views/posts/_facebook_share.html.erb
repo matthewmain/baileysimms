@@ -42,7 +42,7 @@
                        //tells controller which post the user is on
                        current_post: '<%="#{@post.id}"%>', }
             });
-            flash[:success] = "Thanks for Sharing. You're the best."
+            <%flash[:success] = "Thanks for Sharing. You're the best."%>
             location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
           } else {
             alert("Looks like your share didn't go through.");
