@@ -19,7 +19,6 @@
         method: 'feed',
         name: "You've never, ever read anything like this.", 
         description: "An abandoned blog has been recently discovered. It had been hosted by a teen under the name “Bailey Simms,” but her wherabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
-        redirect_uri: "/posts/<%=@post.id%>",
 
         <% if logged_in? && current_user.has_shared_website %>
           <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
@@ -43,6 +42,7 @@
                        //tells controller which post the user is on
                        current_post: '<%="#{@post.id}"%>', }
             });
+            location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
             alert("Thanks for sharing!");
           } else {
             alert("Looks like your share didn't go through.");
@@ -59,7 +59,6 @@
         method: 'feed',
         name: "You've never, ever read anything like this.", 
         description: "An abandoned blog has been recently discovered. It had been hosted by a teen under the name “Bailey Simms,” but her wherabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
-        redirect_uri: "/posts/<%=@post.id%>",
 
         <% if logged_in? && current_user.has_shared_website && @post.book_part > 1 %>
           <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
@@ -83,6 +82,7 @@
                        //tells controller which post the user is on
                        current_post: '<%="#{@post.id}"%>', }
             });
+            location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
             alert("Thanks for sharing!");
           } else {
             alert("Looks like your share didn't go through.");
