@@ -29,7 +29,7 @@
         <% end %>
         
         }, function(response){
-          if (response && !response.error_message) {
+          if (response) {//&& !response.error_message) {
             $.ajax({
               url : "/log_shares",
               method : "PATCH",
@@ -42,6 +42,7 @@
                        //tells controller which post the user is on
                        current_post: '<%="#{@post.id}"%>', }
             });
+            //refreshes page with now-unlocked material
             //location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
             alert("Thanks for sharing!");
           } else {
@@ -69,7 +70,7 @@
         <% end %>
         
         }, function(response){
-          if (response && !response.error_message) {
+          if (response) {//&& !response.error_message) {
             $.ajax({
               url : "/log_shares",
               method : "PATCH",
@@ -83,7 +84,7 @@
                        current_post: '<%="#{@post.id}"%>', }
             });
             //refreshes page with now-unlocked material
-            location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
+            // location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
             alert("Thanks for sharing!");
           } else {
             alert("Looks like your share didn't go through.");
