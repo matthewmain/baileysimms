@@ -202,7 +202,7 @@ class User < ActiveRecord::Base
 	end
 
 	def self.total_shares
-		User.all.each_with_object(0) {|user,sum| sum += user.share_count}
+		User.all.inject(0) {|sum, user| sum += user.share_count}
 	end
 
 
