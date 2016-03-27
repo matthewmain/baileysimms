@@ -42,8 +42,13 @@
                        //tells controller which post the user is on
                        current_post: '<%="#{@post.id}"%>', }
             });
-            <%flash[:success] = "Thanks for Sharing. You're the best."%>
             location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
+
+            $('.flash_share_thanks').delay(500).fadeIn('normal', function() {
+                  $(this).delay(2500).fadeOut();
+               });
+            });
+
           } else {
             alert("Looks like your share didn't go through.");
           }
