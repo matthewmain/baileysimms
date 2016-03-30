@@ -18,7 +18,7 @@
       FB.ui({
         method: 'feed',
         name: "You've never, ever read anything like this.", 
-        description: "An abandoned blog has been recently discovered. It had been hosted by a teen under the name “Bailey Simms,” but her wherabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
+        description: "An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
 
         <% if logged_in? && current_user.has_shared_website %>
           <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
@@ -61,7 +61,7 @@
       FB.ui({
         method: 'feed',
         name: "You've never, ever read anything like this.", 
-        description: "An abandoned blog has been recently discovered. It had been hosted by a teen under the name “Bailey Simms,” but her wherabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
+        description: "An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
 
         <% if logged_in? && current_user.has_shared_website && @post.book_part > 1 %>
           <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
