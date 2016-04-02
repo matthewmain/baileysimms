@@ -303,12 +303,12 @@
 				margin: 25px auto 5px;
 				height: 25px;
 				width: 108;
-				background: asset-data-url("facebook-share.png");
+				background: url(asset-path("facebook-share.png"));
 				background-size: 108px 25px;
 				border-radius: 4px;
 				&:hover {
 					cursor: pointer;
-					background: asset-data-url("facebook-share-hover.png");
+					background: url(asset-path("facebook-share-hover.png"));
 					background-size: 108px 25px;				
 				}
 			}
