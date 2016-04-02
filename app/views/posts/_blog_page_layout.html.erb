@@ -92,13 +92,13 @@
 
             <div class="share_div">
               <% if @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
-                <% if current_user.has_shared_website %>
+                <% if logged_in? && current_user.has_shared_website %>
                   <p><i><b>Thanks for sharing! You're good to go to read on to the next post right here on the website.</b></i></p> 
                 <% else %>
                   <p><i><b>Share Bailey's blog on Facebook, and read the next post right here, right now.</b></i></p>    
                 <% end %>                          
               <% elsif Post.find(@post.id+1).visible_to_users == false %>  
-                <% if current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") %>
+                <% if logged_in? && current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") %>
                   <p><b>Thanks for sharing! Part <%=@post.book_part+1%> will be released on the website soon. Stay tuned! You're good to go to read it as soon as it's available.</b></p>
                 <% else %>
                   <p><b>Part <%=@post.book_part+1%> hasn't been released on this website quite yet. But it will be soon! Share Part <%=@post.book_part%> on Facebook now to have instant access to Part <%=@post.book_part+1%> as soon as it's available.</b></p>
@@ -107,7 +107,7 @@
                 <p style="font-size:15px;margin-bottom:10px"><b>Spread the word, not the plague.</b></p> 
                 <br><p><i>Tell your Facebook friends about Bailey's blog.</i></p>
               <% elsif Post.find(@post.id+1).book_part > @post.book_part %> 
-                <% if current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") %>
+                <% if logged_in? && current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") %>
                   <p><i><b>Thanks for sharing! You're good to go to read on to the next post right here on the website.</b></i></p> 
                 <% else %>
                  <p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part%>, and you can read Part <%=@post.book_part+1%> right here,<br>right now.<b></i></p>
@@ -152,7 +152,7 @@
               <p class="or">&mdash; or &mdash;</p>
 
               <div class="share_div">
-                <% if current_user.has_shared_website %>
+                <% if logged_in? && current_user.has_shared_website %>
                   <p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part-1%>, and you can read Part <%=@post.book_part%> right here,<br>right now.<b></i></p>
                 <% else %>
                   <p><i><b>Share Bailey's blog on Facebook, and read it right here, right now.</b></i></p>
