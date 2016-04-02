@@ -79,7 +79,7 @@
             <% if Post.find(@post.id+1).book_part > @post.book_part || @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
               <div class="buy_div">
                 <h5>Thanks for reading Bailey's blog!</h5>
-                <h5>Want to read the next post?</h5>
+                <h5><b>Want to read the next post?</b></h5>
                 <br><p><i>You can buy the ebook at Amazon, Barnes & Noble, or the iBookstore.</i></p>
                 <%= link_to image_tag("amazon icon.png", alt: "amazon icon", height: "35px", class: "buy_icon"), 'http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=asap_bc?ie=UTF8', :target => "_blank" %>
                 <%= link_to image_tag("barnes and noble icon.png", alt: "barnes and noble icon", height: "35px", class: "buy_icon"), 'http://www.barnesandnoble.com/w/dead-in-bed-by-bailey-simms-adrian-birch/1122772864?ean=9781633700932', :target => "_blank" %>
@@ -93,7 +93,7 @@
             <div class="share_div">
               <% if @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
                 <% if !logged_in? %>
-                  <p><i><b><%= link_to "Log in", login_path %> to read the next post. New user? <%= link_to "Sign up here", new_user_path %>.</b></i></p>
+                  <p><i><b><%= link_to "Log in", login_path %> to read the next post.<br>New user? <%= link_to "Sign up here", new_user_path %>.</b></i></p>
                 <% elsif logged_in? && current_user.has_shared_website %>
                   <p><i><b>Thanks for sharing! You're good to go to read on to the next post right here on the website.</b></i></p> 
                 <% else %>
@@ -144,7 +144,7 @@
 
               <div class="buy_div">
                 <h5>Thanks for checking out Bailey's blog!</h5>
-                <h5>Want to read this post?</h5>
+                <h5><b>Want to read this post?</b></h5>
                 <br><p><i>You can buy the ebook at Amazon, Barnes & Noble, or the iBookstore.</i></p>
                 <%= link_to image_tag("amazon icon.png", alt: "amazon icon", height: "35px", class: "buy_icon"), 'http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=asap_bc?ie=UTF8', :target => "_blank" %>
                 <%= link_to image_tag("barnes and noble icon.png", alt: "barnes and noble icon", height: "35px", class: "buy_icon"), 'http://www.barnesandnoble.com/w/dead-in-bed-by-bailey-simms-adrian-birch/1122772864?ean=9781633700932', :target => "_blank" %>
@@ -157,7 +157,7 @@
                 <% if logged_in? && current_user.has_shared_website %>
                   <p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part-1%>, and you can read Part <%=@post.book_part%> right here,<br>right now.<b></i></p>
                 <% else %>
-                  <p><i><b>Share Bailey's blog on Facebook, and read it right here, right now.</b></i></p>
+                  <p><i><b>Share on Facebook, and read it right here, right now.</b></i></p>
                 <% end %>  
                 <!-- for shares that unlock the CURRENT part (by sharing the previous part or the website) -->
                 <div class="facebook_share_previous_part_button">
