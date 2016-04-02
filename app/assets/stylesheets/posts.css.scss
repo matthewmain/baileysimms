@@ -303,12 +303,12 @@
 				margin: 25px auto 5px;
 				height: 25px;
 				width: 108;
-				background: url("https://baileysimms.herokuapp.com/assets/facebook-share-27474bea5d67ab98fbce4d55b192fbb573432cae2ece82f8052cdc81b716019b.png");
+				background: url("facebook-share.png");
 				background-size: 108px 25px;
 				border-radius: 4px; 
 				&:hover {
 					cursor: pointer;
-					background: url("https://baileysimms.herokuapp.com/assets/facebook-share-hover-8f9e64ab93c470a62fc8972a69c31a2e1aa2d48ea8afa33085e26e99f452dfca.png");
+					background: url("facebook-share-hover.png");
 					background-size: 108px 25px;				
 				}
 			}
