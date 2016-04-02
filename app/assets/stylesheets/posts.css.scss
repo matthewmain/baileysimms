@@ -331,6 +331,25 @@
 		}
 	}
 
+	#next_locked {
+		display: block;
+		width: 100%;
+		text-align: center;
+		margin: 35px auto -52px;
+		p {
+			font-size: 25px;
+			color: #d4999b;
+			padding-left: 25px;
+		}
+		#lock {
+			position: relative;
+			top: -5;
+			right: 4;
+			height: 40px;
+		}
+	}
+
+
 
 	// LOGIN REQUEST NOTICE //
 	#login_request {

@@ -182,8 +182,23 @@ class User < ActiveRecord::Base
 
 	### SHARES AND UNLOCKS ###
 
-	def has_unlocked?(partnumber)
-		partnumber == 1 ? self.can_access_AU_1 : self.send("can_access_part_#{partnumber}")
+	def has_unlocked_part(partnumber)
+		if partnumber < 1 || partnumber > 14
+			false
+		else
+			partnumber == 1 ? self.can_access_AU_1 : self.send("can_access_part_#{partnumber}")
+		end
+	end
+
+	def can_access_post(post_id)
+		if !Post.exists?(post_id) 
+			false
+		elsif post_id == 1
+			true
+		else
+			part_number = Post.find(post_id).book_part
+			self.has_unlocked_part(part_number)
+		end
 	end
 
 	def reset_share_history
