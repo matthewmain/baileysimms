@@ -106,7 +106,7 @@
                           <div class="buy_div">
                             <p style="font-size:14px">Thanks for reading Bailey's blog!</p>
                             <p style="font-size:14px">Want to read this post?</p>
-                            <br><p><i>You can buy the ebook at Amazon, Barnes & Noble, or the iBookstore:</i></p>
+                            <br><p><i>You can buy the ebook at Amazon, Barnes & Noble, or the iBookstore.</i></p>
                             <%= link_to image_tag("amazon icon.png", alt: "amazon icon", height: "35px", class: "buy_icon"), 'http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=asap_bc?ie=UTF8', :target => "_blank" %>
                             <%= link_to image_tag("barnes and noble icon.png", alt: "barnes and noble icon", height: "35px", class: "buy_icon"), 'http://www.barnesandnoble.com/w/dead-in-bed-by-bailey-simms-adrian-birch/1122772864?ean=9781633700932', :target => "_blank" %>
                             <%= link_to image_tag("apple icon.png", alt: "apple icon", height: "35px", class: "buy_icon"), 'https://itunes.apple.com/us/book/dead-in-bed-by-bailey-simms/id1046606444?mt=11&ign-mpt=uo%3D4', :target => "_blank" %>
@@ -116,9 +116,9 @@
 
                           <div class="share_div"
                             <% if current_user.has_shared_website  %>
-                              <br><p><i>Tell your Facebook friends how you liked Part <%=@post.book_part-1%>, and you can tear into Part <%=@post.book_part%> right here, right now:</i></p>
+                              <br><p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part-1%>, and you can read Part <%=@post.book_part%> right here,<br>right now.<b></i></p>
                             <% else %>
-                              <br><p><i><b>Share Bailey's blog on Facebook, and read it right here, right now:</b></i></p>
+                              <br><p><i><b>Share Bailey's blog on Facebook, and read it right here, right now.</b></i></p>
                             <% end %>  
                             <!-- for shares that unlock the CURRENT part (by sharing the previous part or the website) -->
                             <div class="facebook_share_previous_part_button"></div>
