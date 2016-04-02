@@ -70,7 +70,6 @@
         <h1><%= @post.title %></h1>
 
 
-
         <!-- criteria to DISPLAY a post's content -->
         <% if @post.visible_to_public || logged_in? && ( (@post.visible_to_users && current_user.has_unlocked?(@post.book_part) ) || current_user.vip? || current_user.admin? ) %>
 
@@ -118,13 +117,12 @@
               <div class="facebook_share_this_part_button">
               </div>
             </div>
-            
+
           </div>
 
           <% if @post.id+1 <= Post.count %>
             <div id="read_next_button"><%= link_to 'NEXT POST ➤', post_path(@post.id+1) %></div>
           <% end %>
-
 
 
         <!-- criteria to HIDE a post's content and request an action in order to see it -->
@@ -167,6 +165,7 @@
             </div> 
                         
           <% end %>
+
 
         <!-- criteria to HIDE a post's content to anyone but admin or vip -->
         <% elsif !@post.visible_to_users %>
