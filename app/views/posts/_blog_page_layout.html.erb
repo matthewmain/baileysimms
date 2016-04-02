@@ -76,11 +76,34 @@
           <%= raw @post.content %>
 
                         <div class="buy_or_share_div">
-                          <p><b>Spread the word, not the plague.</b></p> 
-                          <br><p><i>Share Bailey's blog on Facebook before you sneak over to her next post:</i></p>
-                          <!-- for shares that unlock the NEXT part (by sharing the current part or the website) -->
-                          <div class="facebook_share_this_part_button">
-                            Share
+                          <% if Post.find(@post.id+1).book_part > @post.book_part || @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
+                            <div class="buy_div">
+                              <h5>Thanks for reading Bailey's blog!</h5>
+                              <h5>Want to read the next post?</h5>
+                              <br><p><i>You can buy the ebook at Amazon, Barnes & Noble, or the iBookstore.</i></p>
+                              <%= link_to image_tag("amazon icon.png", alt: "amazon icon", height: "35px", class: "buy_icon"), 'http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=asap_bc?ie=UTF8', :target => "_blank" %>
+                              <%= link_to image_tag("barnes and noble icon.png", alt: "barnes and noble icon", height: "35px", class: "buy_icon"), 'http://www.barnesandnoble.com/w/dead-in-bed-by-bailey-simms-adrian-birch/1122772864?ean=9781633700932', :target => "_blank" %>
+                              <%= link_to image_tag("apple icon.png", alt: "apple icon", height: "35px", class: "buy_icon"), 'https://itunes.apple.com/us/book/dead-in-bed-by-bailey-simms/id1046606444?mt=11&ign-mpt=uo%3D4', :target => "_blank" %>  
+                            </div>
+
+                            <p class="or">&mdash; or &mdash;</p>
+
+                          <% end %>
+
+                          <div class="share_div">
+                            <% if @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
+                              <p><i><b>Share Bailey's blog on Facebook, and read the next post right here, right now.</b></i></p>                              
+                            <% elsif Post.find(@post.id+1).visible_to_users == false %>  
+                              <p><b>Part <%=@post.book_part+1%> hasn't been released on this website quite yet. But it will be soon! Share Part <%=@post.book_part%> on Facebook now to have instant access to Part <%=@post.book_part+1%> as soon as it's available.</b></p>
+                            <% elsif Post.find(@post.id+1).book_part == @post.book_part %>
+                              <p style="font-size:15px;margin-bottom:10px"><b>Spread the word, not the plague.</b></p> 
+                              <br><p><i>Tell your Facebook friends about Bailey's blog.</i></p>
+                            <% elsif Post.find(@post.id+1).book_part > @post.book_part %> 
+                              <p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part%>, and you can read Part <%=@post.book_part+1%> right here,<br>right now.<b></i></p>
+                            <% end %>
+                            <!-- for shares that unlock the NEXT part (by sharing the current part or the website) -->
+                            <div class="facebook_share_this_part_button">
+                            </div>
                           </div>
                         </div>
 
@@ -104,8 +127,8 @@
                         <div class="buy_or_share_div">
 
                           <div class="buy_div">
-                            <p style="font-size:14px">Thanks for reading Bailey's blog!</p>
-                            <p style="font-size:14px">Want to read this post?</p>
+                            <h5>Thanks for checking out Bailey's blog!</h5>
+                            <h5>Want to read this post?</h5>
                             <br><p><i>You can buy the ebook at Amazon, Barnes & Noble, or the iBookstore.</i></p>
                             <%= link_to image_tag("amazon icon.png", alt: "amazon icon", height: "35px", class: "buy_icon"), 'http://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B0163QSJ4S/ref=asap_bc?ie=UTF8', :target => "_blank" %>
                             <%= link_to image_tag("barnes and noble icon.png", alt: "barnes and noble icon", height: "35px", class: "buy_icon"), 'http://www.barnesandnoble.com/w/dead-in-bed-by-bailey-simms-adrian-birch/1122772864?ean=9781633700932', :target => "_blank" %>
@@ -114,14 +137,15 @@
 
                           <p class="or">&mdash; or &mdash;</p>
 
-                          <div class="share_div"
-                            <% if current_user.has_shared_website  %>
-                              <br><p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part-1%>, and you can read Part <%=@post.book_part%> right here,<br>right now.<b></i></p>
+                          <div class="share_div">
+                            <% if current_user.has_shared_website %>
+                              <p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part-1%>, and you can read Part <%=@post.book_part%> right here,<br>right now.<b></i></p>
                             <% else %>
-                              <br><p><i><b>Share Bailey's blog on Facebook, and read it right here, right now.</b></i></p>
+                              <p><i><b>Share Bailey's blog on Facebook, and read it right here, right now.</b></i></p>
                             <% end %>  
                             <!-- for shares that unlock the CURRENT part (by sharing the previous part or the website) -->
-                            <div class="facebook_share_previous_part_button"></div>
+                            <div class="facebook_share_previous_part_button">
+                            </div>
                           </div>
                         </div> 
                         
