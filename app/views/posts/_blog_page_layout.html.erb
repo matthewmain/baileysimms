@@ -86,7 +86,7 @@
                 <%= link_to image_tag("apple icon.png", alt: "apple icon", height: "35px", class: "buy_icon"), 'https://itunes.apple.com/us/book/dead-in-bed-by-bailey-simms/id1046606444?mt=11&ign-mpt=uo%3D4', :target => "_blank" %>  
               </div>
 
-              <p class="or">&mdash; or &mdash;</p>
+              <p class="or">&mdash; <span style="position:relative;top:1px">OR</span> &mdash;</p>
 
             <% end %>
 
@@ -155,7 +155,7 @@
                 <%= link_to image_tag("apple icon.png", alt: "apple icon", height: "35px", class: "buy_icon"), 'https://itunes.apple.com/us/book/dead-in-bed-by-bailey-simms/id1046606444?mt=11&ign-mpt=uo%3D4', :target => "_blank" %>
               </div> 
 
-              <p class="or">&mdash; or &mdash;</p>
+              <p class="or">&mdash; <span style="position:relative;top:1px">OR</span> &mdash;</p>
 
               <div class="share_div">
                 <% if logged_in? && current_user.has_shared_website %>
