@@ -235,7 +235,6 @@
 	}
 	// DEFAULT TEXT //
 	p {
-		hyphens: auto;
 		line-height: 1.33em;
 		font-size: 1.33em;
   	margin-bottom: 1.2em;
@@ -267,30 +266,47 @@
 
 
 	// SOCIAL MEDIA SHARE //
-	.facebook_share_div {
+	.buy_or_share_div {
 		display: block;
-		width: 200px;
+		width: 275px;
 		font-family: 'Avenir', sans-serif;
-		font-size: 10px;
-		padding: 20px 10px;
-		margin: 60px auto 0;
+		font-size: 9px;
+		padding: 10px 15px;
+		margin: 60px auto 20px;
 		text-align: center;
 		border: solid 1px gray;
-		p {
-			margin: 0;
+		.buy_div {
+			width: 100%;
+			padding: 10px 0;
+			margin: 5px 0 0;
+			p {
+				margin: 0 0 3px;
+			}
+			.buy_icon {
+				margin: 20px 15px 0;
+				border-radius: 4px;
+			}
 		}
-		.facebook_share_this_part_button, .facebook_share_previous_part_button {
-			text-align: center;
-			width: 75px;
-			background: blue;
-			color: white;
-			font-weight: bold;
-			padding: 4px 0;
-			border-radius: 5px;
-			margin: 20px auto 0;
-			&:hover {
-				background: darkblue;
-				cursor: pointer;
+		.or {
+			margin: 15px 0 0;
+			font-size: 12px;
+		}
+		.share_div {
+			width: 100%;
+			padding: 10px 0;
+			margin: 8px 0;
+			.facebook_share_this_part_button, .facebook_share_previous_part_button {
+				margin: 25px auto 5px;
+				height: 25px;
+				width: 108;
+				background: url("facebook-share.png");
+				background-size: 108px 25px;
+				border-radius: 4px;
+				&:hover {
+					cursor: pointer;
+					background: url("facebook-share-hover.png");
+					background-size: 108px 25px;				
+				}
 			}
 		}
 	}
