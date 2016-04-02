@@ -93,7 +93,7 @@
             <div class="share_div">
               <% if @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
                 <% if !logged_in? %>
-                  <p><i><b><%= link_to "Log in", login_path %> to read the next post.<br>New user? <%= link_to "Sign up here", new_user_path %>.</b></i></p>
+                  <p><i><b><%= link_to "Log in", login_path %> to read the next post here.<br>New user? <%= link_to "Sign up", new_user_path %>.</b></i></p>
                 <% elsif logged_in? && current_user.has_shared_website %>
                   <p><i><b>Thanks for sharing! You're good to go to read on to the next post right here on the website.</b></i></p> 
                 <% else %>
