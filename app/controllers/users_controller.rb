@@ -115,7 +115,7 @@ class UsersController < ApplicationController
     current_user.update_attribute("can_access_part_#{params[:current_part][-1]}", true) if params[:shared] == "website" && params[:current_part][-1].to_i > 1
     current_user.update_attribute("can_access_AU_1", true) if params[:shared] == "website" 
     #logs share into user's share record
-    current_user.update_attribute(:share_record, (current_user.share_record << "#{params[:shared].upcase} (#{Time.now})") )
+    current_user.update_attribute(:share_record, (current_user.share_record << { shared: params[:shared], date: Time.zone.now } ))
   end
 
 

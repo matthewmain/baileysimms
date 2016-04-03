@@ -401,9 +401,9 @@
 					position: relative;
 					top: -4px;
 					font-size: 25px;
-					margin-right: 5px;
+					margin-right: 7px;
 				}
-				.comment_count {
+				.share_count {
 					display: block;
 					float: right;
 					padding-top: 2px;
@@ -411,14 +411,13 @@
 					font-size: 16px;
 					clear: right;
 				}
-				.word_count {
+				.comment_count {
 					display: block;
 					float: right;
 					clear: both;
 					position: relative;
 					top: -15px;
 					right: 0;
-					text-transform: lowercase;
 					font-size: 7px;
 					font-weight: normal;
 					letter-spacing: 0px;
@@ -449,7 +448,7 @@
 				padding-bottom: 0;
 				border-bottom: solid 1px #1b252b;
 				margin-bottom: 3px;
-				letter-spacing: .5px;
+				letter-spacing: 2px;
 				height: 25px;
 				img.winner {
 					height: 14px;
@@ -481,13 +480,13 @@
 					float: right;
 					font-size: 19px;
 				}
-				.comment_count {
+				.share_count {
 					display: block;
 					float: right;
 					font-size: 11px;
 					padding: 0;
 				}
-				.word_count {
+				.comment_count {
 					display: block;
 					clear: both;
 					float: right;
@@ -888,12 +887,12 @@ p.pagination {
 						font-size: 15px;
 						line-height: 23px;
 					}
-					.comment_count {
+					.share_count {
 						font-size: 10px;
 						line-height: 13px;
 						padding: 0;
 					}
-					.word_count {
+					.comment_count {
 						font-size: 6px;
 						top: -12px;
 					}
@@ -937,12 +936,12 @@ p.pagination {
 						font-size: 14px;
 						line-height: 22px;
 					}
-					.comment_count {
+					.share_count {
 						font-size: 9px;
 						line-height: 12px;
 						padding: 0;
 					}
-					.word_count {
+					.comment_count {
 						font-size: 5px;
 						top: -12px;
 					}
