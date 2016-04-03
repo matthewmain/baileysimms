@@ -423,6 +423,10 @@
 					letter-spacing: 0px;
 					height: 0;
 					color: #8f999f;
+					.comment_count_number {
+						font-weight: bold;
+						font-size: 9px;
+					}
 				}
 
 				&:first-child {
@@ -449,7 +453,7 @@
 				border-bottom: solid 1px #1b252b;
 				margin-bottom: 3px;
 				letter-spacing: 2px;
-				height: 25px;
+				height: 28px;
 				img.winner {
 					height: 14px;
 					margin: 5px 0 0 4px;
@@ -493,6 +497,10 @@
 					position: relative;
 					top: -14px;
 					font-size: 7px;
+					.comment_count_number {
+						font-weight: bold;
+						font-size: 9px;
+					}
 				}
 				&:first-child {
 					.contributor_name a {
@@ -895,6 +903,10 @@ p.pagination {
 					.comment_count {
 						font-size: 6px;
 						top: -12px;
+						.comment_count_number {
+							font-weight: bold;
+							font-size: 8px;
+						}
 					}
 				}
 			}
@@ -944,6 +956,10 @@ p.pagination {
 					.comment_count {
 						font-size: 5px;
 						top: -12px;
+						.comment_count_number {
+							font-weight: bold;
+							font-size: 7px;
+						}
 					}
 				}
 			}

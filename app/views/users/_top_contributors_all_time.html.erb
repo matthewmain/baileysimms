@@ -9,9 +9,9 @@
         <%= user_image_for User.find_by_user_name(name)%>
         <div class="contributor_name"><%= link_to name.gsub(/_/, ' '), User.find_by_user_name(name) %></div>
         <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if giveaway_winner(name) %>
-        <div class="share_count"><% if participation[:shares] > 1 %>shares<% else %>share<% end %></div> 
+        <div class="share_count"><% if participation[:shares] == 1 %>share<% else %>shares<% end %></div> 
         <div class="number"><%= participation[:shares] %></div>
-        <div class="comment_count"><b style="font-size:9px;"><%= participation[:comments]%></b>&nbsp;&nbsp;comments</div>
+        <div class="comment_count"><span class="comment_count_number"><%= participation[:comments]%></span>&nbsp;&nbsp;comments</div>
       </li>
     <% end %>  
   <% end %>
