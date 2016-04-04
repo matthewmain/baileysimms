@@ -97,9 +97,37 @@
       });
 
 
+      //button for sharing the website generally 
+
+      $('.facebook_share_website').click(function(){
+      FB.ui({
+        method: 'feed',
+        name: "You've never, ever read anything like this.", 
+        description: "An abandoned blog written by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
+        link: 'https://baileysimms.herokuapp.com/',
+        
+        }, function(response){
+
+          if (response && !response.error_message) {
+            $.ajax({
+              url : "/log_shares",
+              method : "PATCH",
+              data : { shared: "website",
+                       unlocked_segment: nil, 
+                       current_part: nil,
+                       current_post: nil, }
+            });
+            alert("Thanks for sharing!");
+          } else {
+            alert("Sorry. Looks like your share didn't go through.");
+          }
+
+        });
+      });
+
+
     });
 
 
 </script> 
 
- 
