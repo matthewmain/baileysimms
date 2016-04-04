@@ -341,7 +341,7 @@
 			margin: 0;
 			li {
 				display: block;
-				height: 35px;
+				height: 38px;
 				border-bottom: solid 1px #2b3b45;
 				margin-bottom: 5px;
 				list-style: none;
@@ -439,7 +439,31 @@
 				&:last-child {
 					border-bottom: none;
 				}
-
+			}
+		}
+		.rankings_share {
+			width: 100%;
+			padding: 0;
+			margin: 5px 0 0;
+			p {
+				display: block;
+				text-align: center;
+				color: white;
+				font-weight: bold;
+				margin: 0;
+			}
+			.facebook_share_website {
+				margin: 6px auto 25px;
+				height: 25px;
+				width: 108;
+				background: url("facebook-share-27474bea5d67ab98fbce4d55b192fbb573432cae2ece82f8052cdc81b716019b.png");
+				background-size: 108px 25px;
+				border-radius: 4px; 
+				&:hover {
+					cursor: pointer;
+					background: url("facebook-share-hover-8f9e64ab93c470a62fc8972a69c31a2e1aa2d48ea8afa33085e26e99f452dfca.png");
+					background-size: 108px 25px;				
+				}
 			}
 		}
 	}
