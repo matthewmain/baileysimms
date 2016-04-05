@@ -67,6 +67,8 @@ module UsersHelper
 	 	name == "BbandHockey" ||
 	 	name == "PikachuBonnie" || 
 
+	 	#github test
+
 	 	name == "Mr_Blue" ||
 	 	name == "Mr_Pink" ? true : false;
 	end		
