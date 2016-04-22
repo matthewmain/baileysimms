@@ -48,6 +48,7 @@
 
 class User < ActiveRecord::Base
 	has_many :comments, dependent: :destroy
+	has_many :replies, dependent: :destroy
 
 	default_scope -> { order(activated_at: :desc) }			
 

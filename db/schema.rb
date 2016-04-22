@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326140615) do
+ActiveRecord::Schema.define(version: 20160422153039) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -63,6 +63,14 @@ ActiveRecord::Schema.define(version: 20160326140615) do
   create_table "rankings", force: :cascade do |t|
     t.string   "name"
     t.text     "data_hash"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "replies", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "comment_id"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
