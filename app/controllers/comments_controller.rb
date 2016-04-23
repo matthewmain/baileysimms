@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
   def create                                                  
     @comment = current_user.comments.build(comment_params)
     if @comment.save
-      redirect_to request.referrer
+      redirect_to request.referrer + "#comments"
     else
       #to use comment errors, render :partial => "shared/comment_form"
       redirect_to request.referrer
@@ -32,7 +32,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment.destroy                       
     flash[:success] = "Comment deleted"
-    redirect_to request.referrer                       
+    redirect_to request.referrer + "#comments"                  
   end
 
   private                                                        

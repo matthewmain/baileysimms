@@ -5,13 +5,13 @@ class RepliesController < ApplicationController
   def create                                                  
     @reply = current_user.replies.build(reply_params)
     if @reply.save
-      redirect_to request.referrer
+      redirect_to request.referrer + "#comments"
     end              
   end
 
   def destroy
     @reply.destroy                       
-    redirect_to request.referrer                       
+    redirect_to request.referrer + "#comments"                       
   end
 
   private                                                        
