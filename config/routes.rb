@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
     patch 'log_shares' => 'users#log_shares'
-  resources :comments, only: [:create, :destroy]  
+  resources :comments, only: [:create, :destroy]
+  resources :replies, only: [:create, :destroy]  
   resources :books, only: [:index] do
     resources :parts, only: [:show]
   end

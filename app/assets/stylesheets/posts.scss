@@ -430,6 +430,7 @@
 			textarea {
 				background: #282828;
 				color: #eee;
+				font-weight: normal;
 				width: 100%;
 				max-width: 100%;
 				height: 80px;
@@ -468,6 +469,8 @@
 			box-shadow: 0 0 3px 1px rgba(0,0,0, .25), inset 0 0 20px -5px rgba(200,200,200, .5);
 			li {
 				height: auto;
+				border-bottom: 1px solid #36362e;
+				margin-bottom: 10px;
 				#user_image {
 					width: 9%;
 					float: left;
@@ -492,6 +495,7 @@
 					padding-right: 5px;
 					color: gray;
 					font-size: .8em;
+					font-weight: normal;
 					#delete_x {
 						margin: 0 0 0 5px;
 						a {
@@ -502,8 +506,93 @@
 				#content {
 					clear: right;
 					width: 90%;
-					margin: 12px 0 0 1%;
+					margin: 12px 0 15px 1%;
+					font-weight: normal;
 					float: right;
+				}
+			}
+
+			#replies_div {
+				clear: both;
+				width: 100%;
+				#replies_feed {
+					padding: 0 10px;
+					#reply_li {
+						list-style: none;
+						padding: 0 10px 10px;	
+						border-bottom: 1px solid #20201d;
+						#reply_user_image { 
+							float: left;
+							img {
+								height: 17px;
+								width: 17px;
+							}
+						}
+						#reply_header {
+							margin: 0 0 0 21px;
+							#reply_user_name {
+								font-size: 13px;
+							}
+							#reply_timestamp {
+								float: right;
+								color: #404040;
+								font-size: 9px;
+								font-weight: normal;
+							}
+						}
+						#reply_content {
+							margin: 5px 0 0;
+							font-size: 13px;
+							font-weight: normal;
+						}
+					}
+				}	
+				#reply_form {
+					margin: 15px 20px 0;
+					#reply_user_image {
+						float: left;
+						margin: 6px 0 0;
+						width: 4%;
+						img {
+							hieght: 17px;
+							width: 17px;
+						}
+					}
+					#reply_form_field {
+						#reply_content {
+							width: 96%;
+							background: #282828;
+							color: darkgray;
+							font-size: 13px;
+							font-weight: normal;
+							height: 30px;
+							padding: 4px 7px;
+							border: solid 1px #111;
+							border-radius: 2px;
+						}
+					}
+					#reply_submit_button input {
+						clear: both;
+						float: right;
+						background: darkgray;
+						color: black;
+						font-size: 10px;
+						padding: 0 4px;
+						margin: 7px 7px 0;
+						border: none;
+						border-radius: 5px;
+						font-weight: bold;
+					}
+				}
+				#login_to_reply {
+					float: right;
+					color: #404040;
+					font-size: 9px;
+					font-style: italic;
+					margin: 0 20px 0 0;
+					a {
+						color: #1d5d7e;
+					}
 				}
 			}
 		}
@@ -689,7 +778,19 @@
 					#content {
 						padding-left: 7px;
 						width: 90%;
-						margin: 12px 0 0 0;
+						margin: 12px 0 15px;
+					}
+				}
+				#replies_div {
+					#reply_form {
+						#reply_user_image {
+							width: 5%;
+						}
+						#reply_form_field {
+							#reply_content {
+								width: 95%;
+							}
+						}
 					}
 				}
 			}
@@ -742,6 +843,18 @@
 					}
 					#content {
 						padding-left: 12px;
+					}
+				}
+				#replies_div {
+					#reply_form {
+						#reply_user_image {
+							width: 6%;
+						}
+						#reply_form_field {
+							#reply_content {
+								width: 94%;
+							}
+						}
 					}
 				}
 			}
@@ -845,9 +958,21 @@
 						}	
 					}
 					#content {
-						margin: 5px 0 0 0;
+						margin: 5px 0 10px;
 					}
 				}
+				#replies_div {
+					#reply_form {
+						#reply_user_image {
+							width: 7%;
+						}
+						#reply_form_field {
+							#reply_content {
+								width: 93%;
+							}
+						}
+					}
+				}				
 			}
 		}
 		
@@ -923,7 +1048,19 @@
 						}	
 					}
 					#content {
-						margin: 5px 0 0 0;
+						margin: 5px 0 10px 0;
+					}
+				}
+				#replies_div {
+					#reply_form {
+						#reply_user_image {
+							width: 9%;
+						}
+						#reply_form_field {
+							#reply_content {
+								width: 91%;
+							}
+						}
 					}
 				}
 			}
