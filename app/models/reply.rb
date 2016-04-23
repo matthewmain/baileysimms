@@ -14,7 +14,7 @@ class Reply < ActiveRecord::Base
 	belongs_to :comment
 	belongs_to :user
 
-	default_scope -> { order(created_at: :desc) }
+	default_scope -> { order(created_at: :asc) }
 
 	validates :comment_id, presence: true
 	validates :user_id, presence: true													

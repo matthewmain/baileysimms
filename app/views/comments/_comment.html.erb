@@ -19,12 +19,14 @@
 	  	<%= raw (comment.content.gsub(/\n/,"<br>")) %>
 	  </div>
 
+	</li>
+
 
 	  <div id="replies_div">
 
 	  	<ol id="replies_feed">
 	  		<% comment.replies.each do |reply| %>
-	  		<li>
+	  		<li id="reply_li">
 				  <div id="reply_user_image">
 				  	<%= link_to user_image_for(User.find(reply.user_id)), User.find(reply.user_id) %>
 				  </div>
@@ -44,24 +46,26 @@
 	  		<% end %>
 	  	</ol>	
 
-	  	<%= pluralize(comment.replies.count, "reply") %>
-	  	<p id="reply_button"><i>REPLY</i></p>
-
-	  	<%= form_for(@reply) do |f| %>
-			  <div id="reply_form">
-			  	<div id="user_image">
-			  		<%= link_to user_image_for(current_user), current_user %>
-			  	</div>
-			    <div id="form_field"><%= f.text_area :content, placeholder: "reply..." %>
-				    <%= f.hidden_field :comment_id, value: comment.id %>
-				    <%= f.hidden_field :user_id, value: current_user.id %>
-			    </div>
-			  	<%= f.submit "Reply" %>
-			  </div>
+	  	<% if logged_in? %>
+		  	<%= form_for(@reply) do |f| %>
+				  <div id="reply_form">
+				  	<div id="reply_user_image">
+				  		<%= link_to user_image_for(current_user), current_user %>
+				  	</div>
+				    <div id="reply_form_field"><%= f.text_area :content, placeholder: "reply..." %>
+					    <%= f.hidden_field :comment_id, value: comment.id %>
+					    <%= f.hidden_field :user_id, value: current_user.id %>
+				    </div>
+				    <div id="reply_submit_button">
+				  		<%= f.submit "reply" %>
+				  	</div>
+				  </div>
+				<% end %>
+			<% else %>
+				<span id="login_to_reply"><%= link_to "log in", login_path %> or <%= link_to "sign up", new_user_path %> to reply</span>
 			<% end %>
 
 	  </div>
 
 
-	</li>
 </div>

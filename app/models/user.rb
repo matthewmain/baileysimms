@@ -246,7 +246,11 @@ class User < ActiveRecord::Base
 
 	def all_comments_word_count
 		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count > 0
-	end		
+	end
+
+	def reply_count
+		self.replies.count
+	end
 
 
 	#Share/Comment/Word Count, By Month
@@ -258,10 +262,10 @@ class User < ActiveRecord::Base
 	def comment_count_by_month(month)
 		if Rails.env.development?
 			#SQLite database queries (local development environment) need to use 'strftime()' to grab info from datetimes
-			self.comments.where("strftime('%m', created_at)+0 = ?", month).count
+			self.comments.where("strftime('%m', created_at)+0 = ?", month).count + self.replies.where("strftime('%m', created_at)+0 = ?", month).count
 		elsif Rails.env.production?
 			#Postgres database queries (remote Heroku production enviroment) need to use 'extract' to grab info from datetimes
-			self.comments.where('extract(month from created_at) = ?', month).count
+			self.comments.where('extract(month from created_at) = ?', month).count + self.replies.where('extract(month from created_at) = ?', month).count
 		end
 	end
 
@@ -288,7 +292,7 @@ class User < ActiveRecord::Base
 	end
 
 	def self.all_non_admin_user_names_with_comment_count
-		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = user.comment_count}
+		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = user.comment_count + user.reply_count }
 	end
 
 	def self.all_non_admin_user_names_by_comment_count
@@ -322,7 +326,7 @@ class User < ActiveRecord::Base
 	#Hashes of Non-Admin Users With Share Counts and Comment Counts, All
 
 	def self.all_non_admin_users_with_share_and_comment_counts
-		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = {shares: user.share_count, comments: user.comment_count} }
+		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = {shares: user.share_count, comments: user.comment_count + user.reply_count} }
 	end
 
 	def self.top_non_admin_users_by_share_then_comment_counts(limit)
