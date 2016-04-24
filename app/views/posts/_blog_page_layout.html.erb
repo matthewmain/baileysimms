@@ -75,6 +75,7 @@
 
           <%= raw @post.content %>
 
+          <a name="next_unlocked"></a>
           <div class="buy_or_share_div">
             <% if Post.find(@post.id+1).book_part > @post.book_part || @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
               <div class="buy_div">
