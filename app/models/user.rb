@@ -347,6 +347,13 @@ class User < ActiveRecord::Base
 			[-(participation[:shares]), -(participation[:comments])]
 		end[0..(limit-1)].to_h
 	end
+
+
+	#Facebook shares
+
+	def self.facebook_share_count
+		User.all.inject(0) {|sum,user| sum + user.share_count.to_i}
+	end
 	
 
 
