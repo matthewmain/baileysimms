@@ -2,7 +2,7 @@
 <h2 class="top_contributors_heading">TOP CONTRIBUTORS</h2>
 
 <% if logged_in? && current_user.admin? %>
-  <h4 class="facebook_share_total"><%=User.facebook_share_count%> TOTAL SHARES</h4>
+  <h4 class="facebook_share_total" style="text-align:right;margin:0 30px 15px 0"><u><%=User.facebook_share_count%> TOTAL SHARES</u></h4>
 <% end %>  
 
 <ol id="top_contributors_list">
