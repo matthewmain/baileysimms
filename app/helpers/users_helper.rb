@@ -69,6 +69,7 @@ module UsersHelper
 	 	name == "Vissh" ||
 	 	name == "zonika" ||
 	 	name == "DanielleBBy" ||
+	 	name == "Skittles4you" ||
 
 	 	name == "Mr_Blue" ||
 	 	name == "Mr_Pink" ? true : false;
