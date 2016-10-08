@@ -30,8 +30,10 @@
 	    <ol class="profile_comments_list">
 		    <%= render 'user_comments' %>
 	    </ol>
-		<% else %>
+		<% elsif @user == current_user %>
 			<p><i>Looks like you haven't commented yet. What's the deal? <u><%= link_to 'Start reading Bailey\'s blog ', posts_path %></u>and get on it!</i></p>
+		<% else %>
+			<p><i>Looks like <%= @user.user_name.gsub(/_/, ' ') %> hasn't commented yet...</i></p>
 	  <% end %>
 	</div>	
 
