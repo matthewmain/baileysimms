@@ -19,7 +19,7 @@
 		<h1><%= @user.user_name.gsub(/_/, ' ') %></h1>
 		<% if @user.vip? %><h4 style="color:gold;font-size:12px">✨<i style="font-size:16px">VIP</i> ✨</h4><% end %>
 
-		<h4><%= @user.email if logged_in? && current_user.admin? %></h4>
+		<h4><%= mail_to @user.email if logged_in? && current_user.admin? %></h4>
 	</div>
 
 	<%= render 'admin_user' if logged_in? && current_user.admin? && @user.admin? %>
