@@ -13,7 +13,7 @@
 
       <div id="blog_posts_image">
         <% if @post.title =~ /DEAD IN BED/ && @post.title.slice(18,20).to_i > 0 %>
-          <%= image_tag("DiB#{@post.title.split('')[18]} cover.jpg", alt: "Part #{@post.title.split('')[18]} Cover", class: "post_cover") %>
+          <%= image_tag("DiB#{@post.title.split('')[18]+@post.title.split('')[19]} cover.jpg", alt: "Part #{@post.title.split('')[18]} Cover", class: "post_cover") %>
         <% else %>
           <%= image_tag("Bailey Simms pic.jpg", alt: "Bailey Simms", class: "post_portrait") %>
         <% end %>
@@ -31,22 +31,22 @@
       </div>
 
       <div id="blog_posts_index">
-      	<ul>
-      	<% @posts.each do |post| %>
+        <ul>
+        <% @posts.each do |post| %>
           <% if post.id > 1 %>
             <% if post.id == params[:id].to_i %>
               <li class = "current_post">
             <% else %>
               <li>
             <% end %>
-      	    	<%= link_to post do %>
-      	    	<p id="date"><%= post.date.strftime("%-m/%-d/%Y %l:%M %p") %></p>
-      	      <p id="title"><%= post.title %></p>
-      	    	<% end %>
-      	    </li>
+              <%= link_to post do %>
+              <p id="date"><%= post.date.strftime("%-m/%-d/%Y %l:%M %p") %></p>
+              <p id="title"><%= post.title %></p>
+              <% end %>
+            </li>
           <% end %>
-      	<% end %>
-      	</ul>
+        <% end %>
+        </ul>
       </div>
 
     </div>
