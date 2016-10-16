@@ -77,7 +77,7 @@
 
           <a name="next_unlocked"></a>
           <div class="buy_or_share_div">
-            <% if Post.find(@post.id+1).book_part > @post.book_part || @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
+            <% if !Post.find(@post.id) == Post.order(id: :desc).last.id || Post.find(@post.id+1).book_part > @post.book_part || @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
               <div class="buy_div">
                 <h5>Thanks for reading Bailey's blog!</h5>
                 <h5><b>Want to read the next post?</b></h5>
