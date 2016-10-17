@@ -89,46 +89,46 @@
                 </div>
                 <p class="or">&mdash; <span style="position:relative;top:1px">OR</span> &mdash;</p>
               <% end %>
-            <% end %>
-            <div class="share_div">
-              <% if @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
-                <% if !logged_in? %>
-                  <p><i><b><%= link_to "Log in", login_path %> to read the next post here.<br>New user? <%= link_to "Sign up", new_user_path %>.</b></i></p>
-                <% elsif logged_in? && current_user.has_shared_website %>
-                  <p><i><b>Thanks for sharing! You're good to go to read on to the next post right here on the website.</b></i></p> 
-                <% else %>
-                  <p><i><b>Share Bailey's blog on Facebook, and read the next post right here, right now.</b></i></p>    
-                <% end %>                          
-              <% elsif Post.find(@post.id+1).visible_to_users == false %>  
-                <% if logged_in? && current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") %>
-                  <p><b>Thanks for sharing! Part <%=@post.book_part+1%> will be released on the website soon. Stay tuned! You're good to go to read it as soon as it's available.</b></p>
-                <% else %>
-                  <p><b>Part <%=@post.book_part+1%> hasn't been released on this website quite yet. But it will be soon! Share Part <%=@post.book_part%> on Facebook now to have instant access to Part <%=@post.book_part+1%> as soon as it's available.</b></p>
-                <% end %>  
-              <% elsif Post.find(@post.id+1).book_part == @post.book_part %>
-                <p style="font-size:15px;margin-bottom:10px"><b>Spread the word, not the plague.</b></p> 
-                <br><p><i>Tell your Facebook friends about Bailey's blog.</i></p>
-              <% elsif Post.find(@post.id+1).book_part > @post.book_part %> 
-                <% if logged_in? && current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") %>
-                  <p><i><b>Thanks for sharing! You're good to go to read on to the next post right here on the website.</b></i></p> 
-                <% else %>
-                 <p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part%>, and you can read Part <%=@post.book_part+1%> right here,<br>right now.<b></i></p>
+              <div class="share_div">
+                <% if @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
+                  <% if !logged_in? %>
+                    <p><i><b><%= link_to "Log in", login_path %> to read the next post here.<br>New user? <%= link_to "Sign up", new_user_path %>.</b></i></p>
+                  <% elsif logged_in? && current_user.has_shared_website %>
+                    <p><i><b>Thanks for sharing! You're good to go to read on to the next post right here on the website.</b></i></p> 
+                  <% else %>
+                    <p><i><b>Share Bailey's blog on Facebook, and read the next post right here, right now.</b></i></p>    
+                  <% end %>                          
+                <% elsif Post.find(@post.id+1).visible_to_users == false %>  
+                  <% if logged_in? && current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") %>
+                    <p><b>Thanks for sharing! Part <%=@post.book_part+1%> will be released on the website soon. Stay tuned! You're good to go to read it as soon as it's available.</b></p>
+                  <% else %>
+                    <p><b>Part <%=@post.book_part+1%> hasn't been released on this website quite yet. But it will be soon! Share Part <%=@post.book_part%> on Facebook now to have instant access to Part <%=@post.book_part+1%> as soon as it's available.</b></p>
+                  <% end %>  
+                <% elsif Post.find(@post.id+1).book_part == @post.book_part %>
+                  <p style="font-size:15px;margin-bottom:10px"><b>Spread the word, not the plague.</b></p> 
+                  <br><p><i>Tell your Facebook friends about Bailey's blog.</i></p>
+                <% elsif Post.find(@post.id+1).book_part > @post.book_part %> 
+                  <% if logged_in? && current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") %>
+                    <p><i><b>Thanks for sharing! You're good to go to read on to the next post right here on the website.</b></i></p> 
+                  <% else %>
+                   <p><i><b>Tell your Facebook friends how you liked<br>Part <%=@post.book_part%>, and you can read Part <%=@post.book_part+1%> right here,<br>right now.<b></i></p>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <!-- for shares that unlock the NEXT part (by sharing the current part or the website) -->
-              <div class="facebook_share_this_part_button">
+                <!-- for shares that unlock the NEXT part (by sharing the current part or the website) -->
+                <div class="facebook_share_this_part_button">
+                </div>
               </div>
+
             </div>
 
-          </div>
-
-          <% if @post.id+1 <= Post.count %>
-            <% if @post.title == "First Post" || ( logged_in? && current_user.can_access_post?(@post.id+1) ) %>
-              <div id="read_next_button"><%= link_to 'NEXT POST ➤', post_path(@post.id+1) %></div>
-            <% else %>
-              <div id="next_locked"><p><%= image_tag("lock.png", id: "lock") %>➤</p></div>
+            <% if @post.id+1 <= Post.count %>
+              <% if @post.title == "First Post" || ( logged_in? && current_user.can_access_post?(@post.id+1) ) %>
+                <div id="read_next_button"><%= link_to 'NEXT POST ➤', post_path(@post.id+1) %></div>
+              <% else %>
+                <div id="next_locked"><p><%= image_tag("lock.png", id: "lock") %>➤</p></div>
+              <% end %>
             <% end %>
-          <% end %>
+          <% end %>          
 
 
         <!-- criteria to HIDE a post's content and request an action in order to see it -->
