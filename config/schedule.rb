@@ -26,7 +26,7 @@
 
 # For scheduled tasks in production (Heroku), see 'lib/tasks/scheduler.rake' and 'https://scheduler.heroku.com/dashboard'
 
-every '0 0 * * * ' do
+every '0 0 * * *' do
 	#updates 'top_ten_all_time' ranking (id: 1)
 	runner "Ranking.update(1, data_hash: User.top_non_admin_users_by_share_then_comment_counts(10))", :environment => "development"
 	#updates 'top_five_this_month' ranking (id: 2)
