@@ -115,7 +115,7 @@ class UsersController < ApplicationController
     current_user.update_attribute("can_access_part_#{(params[:shared][-2]+params[:shared][-1]).to_i+1}", true) if params[:shared].slice(0,4) == "Part" && (params[:current_part][-2]+params[:current_part][-1]) != "14"
     #logs share into user's share record
     current_user.update_attribute(:share_record, (current_user.share_record << { shared: params[:shared], date: Time.zone.now } ))
-    #updates user's share count
+    #updates user's share count 
     current_user.update_attribute(:share_count, current_user.share_count+1 )
   end
 
