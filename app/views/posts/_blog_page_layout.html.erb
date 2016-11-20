@@ -75,7 +75,7 @@
 
           <%= raw @post.content %>
 
-          <% if Post.exists?(id: @post.id+1) %>
+          <% if Post.exists?(id: @post.id+1 ) %>
 
           <a name="next_unlocked"></a>
           <div class="buy_or_share_div">
@@ -130,7 +130,9 @@
             <% end %>
           <% end %>    
 
-        <% end %>      
+        <% else %>
+          <div class="facebook_share_this_part_button">
+        <% end %>   
 
 
         <!-- criteria to HIDE a post's content and request an action in order to see it -->
