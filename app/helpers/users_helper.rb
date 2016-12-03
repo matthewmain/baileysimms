@@ -58,7 +58,7 @@ module UsersHelper
 		end
 	end
 
-	def giveaway_winner(name)
+	def book_1_giveaway_winner(name)
 		name == "AJ2002" || 
 	 	name == "Chancelacy" ||
 	 	name == "Tasneem" ||
@@ -77,6 +77,10 @@ module UsersHelper
 	 	name == "Mr_Blue" ||
 	 	name == "Mr_Pink" ? true : false;
 	end		
+
+	def book_2_giveaway_winner(name)
+		name == "Penny25" ? true : false
+	end
 
 	def total_words_commented(commenter)
 		if User.find_by_user_name(commenter).comment_count > 0
