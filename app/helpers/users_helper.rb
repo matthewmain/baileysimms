@@ -59,6 +59,9 @@ module UsersHelper
 	end
 
 	def book_1_giveaway_winner(name)
+	 	name == "Mr_Blue" ||
+	 	name == "Mr_Pink" ||
+
 		name == "AJ2002" || 
 	 	name == "Chancelacy" ||
 	 	name == "Tasneem" ||
@@ -72,14 +75,12 @@ module UsersHelper
 	 	name == "Skittles4you" ||
 	 	name == "CynthiaJade" ||
 	 	name == "Jammymean" ||
-	 	name == "kinkharrold" ||
-
-	 	name == "Mr_Blue" ||
-	 	name == "Mr_Pink" ? true : false;
+	 	name == "kinkharrold"
 	end		
 
 	def book_2_giveaway_winner(name)
-		name == "Penny25" ? true : false
+		name == "Penny25" ||
+		name == "Anditya"
 	end
 
 	def total_words_commented(commenter)
