@@ -255,8 +255,28 @@ class User < ActiveRecord::Base
 
 	#Share/Comment/Word Count, By Month
 
-	def share_count_by_month(month)
-		self.share_record.count {|share| share[:date].strftime("%-m") == month.to_s }
+	# def share_count_by_month(month)
+	# 	self.share_record.count {|share| share[:date].strftime("%-m") == month.to_s }
+	# end
+
+	# def comment_count_by_month(month)
+	# 	if Rails.env.development?
+	# 		#SQLite database queries (local development environment) need to use 'strftime()' to grab info from datetimes
+	# 		self.comments.where("strftime('%m', created_at)+0 = ?", month).count + self.replies.where("strftime('%m', created_at)+0 = ?", month).count
+	# 	elsif Rails.env.production?
+	# 		#Postgres database queries (remote Heroku production enviroment) need to use 'extract' to grab info from datetimes
+	# 		self.comments.where('extract(month from created_at) = ?', month).count + self.replies.where('extract(month from created_at) = ?', month).count
+	# 	end
+	# end
+
+	# def comments_word_count_by_month(month)
+	# 	self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count_by_month(month) > 0
+	# end	
+
+
+
+	def share_count_by_month(month,year)
+		self.share_record.count {|share| share[:date].strftime("%-m") == month.to_s && share[:date].strftime("%-Y") == year.to_s}
 	end
 
 	def comment_count_by_month(month)
@@ -272,6 +292,7 @@ class User < ActiveRecord::Base
 	def comments_word_count_by_month(month)
 		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count_by_month(month) > 0
 	end	
+
 
 
 	#Hashes of User Names and Their Comment Counts, All
@@ -338,12 +359,12 @@ class User < ActiveRecord::Base
 
 	#Hashes of Non-Admin Users With Share Counts and Comment Counts, By Month
 
-	def self.all_non_admin_users_with_share_and_comment_counts_by_month(month)
-		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = {shares: user.share_count_by_month(month), comments: user.comment_count_by_month(month)} }
+	def self.all_non_admin_users_with_share_and_comment_counts_by_month(month,year)
+		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = {shares: user.share_count_by_month(month,year), comments: user.comment_count_by_month(month)} }
 	end
 
-	def self.top_non_admin_users_by_share_then_comment_counts_by_month(month,limit)
-		User.all_non_admin_users_with_share_and_comment_counts_by_month(month).sort_by do |user, participation| 
+	def self.top_non_admin_users_by_share_then_comment_counts_by_month(month,year,limit)
+		User.all_non_admin_users_with_share_and_comment_counts_by_month(month,year).sort_by do |user, participation| 
 			[-(participation[:shares]), -(participation[:comments])]
 		end[0..(limit-1)].to_h
 	end
