@@ -22,7 +22,7 @@
 
 
 # Must update crontab with: $ whenever --update-crontab
-# To check crontab, use: crontab -l
+# To check crontab, use: $ crontab -l
 
 # For scheduled tasks in production (Heroku), see 'lib/tasks/scheduler.rake' and 'https://scheduler.heroku.com/dashboard'
 

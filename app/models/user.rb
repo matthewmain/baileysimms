@@ -264,18 +264,18 @@ class User < ActiveRecord::Base
 			#SQLite database queries (local development environment) need to use 'strftime()' to grab info from datetimes
 			comment_count = self.comments.where("strftime('%m', created_at)+0 = ? AND strftime('%Y', date)+0 = ?", month, year).count
 			reply_count = self.replies.where("strftime('%m', created_at)+0 = ? AND strftime('%Y', created_at)+0 = ?", month, year).count
+			comment_count + reply_count
 		elsif Rails.env.production?
 			#Postgres database queries (remote Heroku production enviroment) need to use 'extract' to grab info from datetimes
 			comment_count = self.comments.where("extract(month from created_at) = ? AND extract(year from date) = ?", month, year).count
 			reply_count = self.replies.where("extract(month from created_at) = ? AND extract(year from created_at) = ?", month, year).count
+			comment_count + reply_count
 		end
-		comment_count + reply_count
 	end
 
 	def comments_word_count_by_month(month,year)
 		self.comments.pluck("content").join(' ').gsub(/\r\n/,' ').count(' ')+1 if self.comment_count_by_month(month,year) > 0
 	end	
-
 
 
 	#Hashes of User Names and Their Comment Counts, All
