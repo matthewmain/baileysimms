@@ -358,6 +358,11 @@ class User < ActiveRecord::Base
 	def self.facebook_share_count
 		User.all.inject(0) {|sum,user| sum + user.share_count.to_i}
 	end
+
+
+
+	### CRON ###
+	
 	
 
 	private

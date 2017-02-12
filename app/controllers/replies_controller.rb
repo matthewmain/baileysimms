@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: replies
+#
+#  id         :integer          not null, primary key
+#  content    :text
+#  comment_id :integer
+#  user_id    :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class RepliesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]     
   before_action :authorized_user, only: :destroy        

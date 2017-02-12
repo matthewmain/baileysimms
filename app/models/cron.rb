@@ -1,14 +1,15 @@
 # == Schema Information
 #
-# Table name: replies
+# Table name: crons
 #
 #  id         :integer          not null, primary key
-#  content    :text
-#  comment_id :integer
-#  user_id    :integer
+#  name       :string
+#  data_hash  :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-module RepliesHelper
+class Cron < ActiveRecord::Base
+	serialize :data_hash, Hash
+
 end
