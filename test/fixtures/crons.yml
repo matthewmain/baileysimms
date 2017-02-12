@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: crons
+#
+#  id         :integer          not null, primary key
+#  name       :string
+#  data_hash  :text
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  data_hash: MyText
+
+two:
+  name: MyString
+  data_hash: MyText
