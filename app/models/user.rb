@@ -202,7 +202,7 @@ class User < ActiveRecord::Base
 		end
 	end
 
-	def reset_share_history
+	def clear_share_history_for_user
 		self.share_count = 0
 		self.has_shared_website = false
 		self.can_access_AU_1 = false
@@ -211,7 +211,7 @@ class User < ActiveRecord::Base
 		self.save!
 	end
 
-	def unlock_all_parts
+	def unlock_all_parts_for_user
 		self.can_access_AU_1 = true
 		(2..14).each {|n| self.send("can_access_part_#{n}=", true) }
 		self.save!
