@@ -584,12 +584,13 @@
 				}
 				#timestamp {
 					float: right;
-					font-size: .75em;
+					font-size: .7em;
 					color: gray;
 					font-style: italic;
 					padding-right: 5px;
 					#delete_x {
-						margin: 0 0 0 5px;
+						margin: 0 0 0 2px;
+						font-style: normal;
 						a {
 							color: #3278b4;
 						} 
@@ -642,14 +643,13 @@
 							}
 						}
 						#reply_content {
-							margin: 0 0 0 21px;
 							font-size: 12px;
 							font-weight: normal;
 						}			
 					}
 				}		
 			}
-				
+
 		}
 	}
 }

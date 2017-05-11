@@ -39,7 +39,7 @@
 				  <div id="reply_header">
 					  <span id="reply_user_name"><%= link_to User.find(reply.user_id).user_name.gsub(/_/,' '), User.find(reply.user_id) %></span>
 					  <span class="reply_header_text"> replied
-						  <span id="reply_timestamp"> <%= time_ago_in_words(reply.created_at) %> ago:	
+						  <span id="reply_timestamp"> <%= time_ago_in_words(reply.created_at) %> ago
 						    <% if logged_in? && ( current_user?(User.find(reply.user_id)) || current_user.admin? ) %>
 						    	<span id="delete_x"><%= link_to "✕", reply, method: :delete, data: { confirm: "You sure you want to delete that reply?" } %></span>
 						    <% end %>
