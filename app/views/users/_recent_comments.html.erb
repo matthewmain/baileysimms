@@ -1,59 +1,63 @@
 <% @recent_comments.each do |comment| %>
 
-	<div id="comment_div">
-		<li id="comment-<%= comment.id %>" class="comment_li">
+	<% unless comment.display_on_community_page == false %>
 
-		  <div id="user_image">
-		  	<%= link_to user_image_for(comment.user), comment.user %>
+		<div id="comment_div">
+			<li id="comment-<%= comment.id %>" class="comment_li">
+
+			  <div id="user_image">
+			  	<%= link_to user_image_for(comment.user), comment.user %>
+			  </div>
+
+			  <div id="comment_header">
+			  	<span id="user_name"><%= link_to User.find(comment.user_id).user_name.gsub(/_/," "), User.find(comment.user_id) %></span>
+			  	<span class="comment_header_text"> commented on</span>
+				  <span id="timestamp">	<%= time_ago_in_words(comment.date) %> ago	
+				    <% if logged_in? && ( current_user?(comment.user) || current_user.admin? ) %>
+				    	<span id="delete_x"><%= link_to "✕", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %></span>
+				    <% end %>
+				  </span>
+				  <span id="post_name"><% if comment.post_id == 1 %> 
+				  											<%= link_to Post.find(comment.post_id).title, posts_path %>
+				  										 <% else %>
+				  											<%= link_to Post.find(comment.post_id).title, Post.find(comment.post_id) %>
+				  										 <% end %>
+				  </span>
+			  </div>
+
+			  <div id="content">
+			  	<%= raw (comment.content.gsub(/\n/,"<br>")) %>
+			  </div>
+			  
+			</li>
+
+			<div id="replies_div">
+		  	<ol id="replies_feed">
+		  		<% comment.replies.each do |reply| %>
+		  		<li class="reply_li">
+					  <div id="reply_user_image">
+					  	<%= link_to user_image_for(User.find(reply.user_id)), User.find(reply.user_id) %>
+					  </div>
+					  <div id="reply_header">
+						  <span id="reply_user_name"><%= link_to User.find(reply.user_id).user_name.gsub(/_/,' '), User.find(reply.user_id) %></span>
+						  <span class="reply_header_text"> replied
+							  <span id="reply_timestamp"> <%= time_ago_in_words(reply.created_at) %> ago
+							    <% if logged_in? && ( current_user?(User.find(reply.user_id)) || current_user.admin? ) %>
+							    	<span id="delete_x"><%= link_to "✕", reply, method: :delete, data: { confirm: "You sure you want to delete that reply?" } %></span>
+							    <% end %>
+							  </span>
+							</span>  
+					  </div>
+					  <div id="reply_content">
+					  	<%= raw (reply.content.gsub(/\n/,"<br>")) %>
+					  </div>
+		  		</li>
+		  		<% end %>
+		  	</ol>	
 		  </div>
 
-		  <div id="comment_header">
-		  	<span id="user_name"><%= link_to User.find(comment.user_id).user_name.gsub(/_/," "), User.find(comment.user_id) %></span>
-		  	<span class="comment_header_text"> commented on</span>
-			  <span id="timestamp">	<%= time_ago_in_words(comment.date) %> ago	
-			    <% if logged_in? && ( current_user?(comment.user) || current_user.admin? ) %>
-			    	<span id="delete_x"><%= link_to "✕", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %></span>
-			    <% end %>
-			  </span>
-			  <span id="post_name"><% if comment.post_id == 1 %> 
-			  											<%= link_to Post.find(comment.post_id).title, posts_path %>
-			  										 <% else %>
-			  											<%= link_to Post.find(comment.post_id).title, Post.find(comment.post_id) %>
-			  										 <% end %>
-			  </span>
-		  </div>
+		</div>
 
-		  <div id="content">
-		  	<%= raw (comment.content.gsub(/\n/,"<br>")) %>
-		  </div>
-		  
-		</li>
-
-		<div id="replies_div">
-	  	<ol id="replies_feed">
-	  		<% comment.replies.each do |reply| %>
-	  		<li class="reply_li">
-				  <div id="reply_user_image">
-				  	<%= link_to user_image_for(User.find(reply.user_id)), User.find(reply.user_id) %>
-				  </div>
-				  <div id="reply_header">
-					  <span id="reply_user_name"><%= link_to User.find(reply.user_id).user_name.gsub(/_/,' '), User.find(reply.user_id) %></span>
-					  <span class="reply_header_text"> replied
-						  <span id="reply_timestamp"> <%= time_ago_in_words(reply.created_at) %> ago
-						    <% if logged_in? && ( current_user?(User.find(reply.user_id)) || current_user.admin? ) %>
-						    	<span id="delete_x"><%= link_to "✕", reply, method: :delete, data: { confirm: "You sure you want to delete that reply?" } %></span>
-						    <% end %>
-						  </span>
-						</span>  
-				  </div>
-				  <div id="reply_content">
-				  	<%= raw (reply.content.gsub(/\n/,"<br>")) %>
-				  </div>
-	  		</li>
-	  		<% end %>
-	  	</ol>	
-	  </div>
-
-	</div>
+	<% end %>	
 
 <% end %>
