@@ -17,7 +17,7 @@
 				    	<span id="delete_x"><%= link_to "✕", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %></span>
 			    		<%= form_for(comment) do |f| %>
 								<%= f.hidden_field :display_on_community_page, value: false %>
-							  <%= f.submit "H", class: "hide_comment_button" %>
+							  <%= f.submit "H", class: "hide_comment_button", data: { confirm: "You sure you want to hide that comment from the community page?" } %>
 							<% end %>
 				    <% end %>
 				  </span>
