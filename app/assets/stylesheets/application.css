@@ -65,6 +65,10 @@ input.form-button {
 	font-weight: bold;
 }
 
+input:focus, textarea:focus {
+	outline: none;
+}
+
 
 
 /*** FLASH ALERT ***/
