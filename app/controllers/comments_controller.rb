@@ -30,6 +30,12 @@ class CommentsController < ApplicationController
     end              
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update_attributes(comment_params)
+    redirect_to request.referrer
+  end
+
   def destroy
     @comment.destroy                       
     flash[:success] = "Comment deleted"
@@ -39,7 +45,7 @@ class CommentsController < ApplicationController
   private                                                        
 
     def comment_params
-      params.require(:comment).permit(:content, :post_id, :date)
+      params.require(:comment).permit(:content, :post_id, :date, :display_on_community_page)
     end                                                
 
     def comment_belongs_to_current_user?
