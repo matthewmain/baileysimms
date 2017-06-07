@@ -15,6 +15,10 @@
 				  <span id="timestamp">	<%= time_ago_in_words(comment.date) %> ago	
 				    <% if logged_in? && ( current_user?(comment.user) || current_user.admin? ) %>
 				    	<span id="delete_x"><%= link_to "✕", comment, method: :delete, data: { confirm: "You sure you want to delete that comment?" } %></span>
+			    		<%= form_for(comment) do |f| %>
+								<%= f.hidden_field :display_on_community_page, value: false %>
+							  <%= f.submit "H", class: "hide_comment_button" %>
+							<% end %>
 				    <% end %>
 				  </span>
 				  <span id="post_name"><% if comment.post_id == 1 %> 

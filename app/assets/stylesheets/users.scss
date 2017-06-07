@@ -591,9 +591,23 @@
 					#delete_x {
 						margin: 0 0 0 2px;
 						font-style: normal;
-						a {
-							color: #3278b4;
-						} 
+						a { color: #3278b4; } 
+					}
+					.edit_comment {
+						margin: 0;
+						padding: 0;
+						display: inline;
+						width: auto;
+						font-style: normal;	
+						.hide_comment_button {
+					    text-align: center;
+					    color: #3278b4;
+					    font-weight: 500;
+					    font-size: 102%;
+					    background-color: inherit;
+					    padding: 0;
+					    border-style: none;
+						}
 					}
 				}
 				#post_name {
