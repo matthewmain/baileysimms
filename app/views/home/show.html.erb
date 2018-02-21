@@ -1,6 +1,6 @@
 
 <head>
-  <title>Bailey Simms</title>
+<!--   <title>Bailey Simms</title>
 
   <% content_for :head do %>
     <!-- Facebook share open graph markup -->
@@ -10,13 +10,66 @@
     <meta property="og:title"         content="You've never, ever read anything like this." />
     <meta property="og:description"   content="An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing." />
     <meta property="og:image"         content="https://baileysimms.herokuapp.com/assets/facebook/website_fb_share.jpg" />
-  <% end %>
+  <% end %> -->
 
 </head>
 
 <body id="home_body">
-  <div id="home_wrapper">
 
+<div id="menu_icon_div">
+  <%= image_tag("menu icon.svg", alt: "menu icon", class: "menu_icon") %>
+</div>
+
+<div id="DEAD_IN_BED_div">
+  <div id="DIB_div_c_shadows" class="DIB_image_div">
+    <%= image_tag("logo text (c shadows).png", alt: "logo text (c shadows)", class: "DIB_img") %>
+  </div>  
+  <div id="DIB_div_b_shadows" class="DIB_image_div">
+    <%= image_tag("logo text (b shadows).png", alt: "logo text (b shadows)", class: "DIB_img") %>
+  </div>  
+  <div id="DIB_div_a_shadows" class="DIB_image_div">
+    <%= image_tag("logo text (a shadows).png", alt: "logo text (a shadows)", class: "DIB_img") %>
+  </div>  
+  <div id="subheading_div">
+    <div id="subheading_1" class="subheading_text_div">
+      <p style="animation-name:s1">A</p><p style="animation-name:s2">n</p><p style="margin-right:3.5px">&nbsp;</p><p style="animation-name:s3">o</p><p style="animation-name:s4">n</p><p style="animation-name:s5">l</p><p style="animation-name:s6">i</p><p style="animation-name:s7">n</p><p style="animation-name:s8">e</p><p style="margin-right:2px">&nbsp;</p><p style="animation-name:s9">n</p><p style="animation-name:s10">o</p><p style="animation-name:s11">v</p><p style="animation-name:s12">e</p><p style="animation-name:s13">l</p>
+    </div>
+    <div id="subheading_2" class="subheading_text_div">
+      <p style="animation-name:s14">b</p><p style="animation-name:s15">y</p><p>&nbsp;</p><p style="animation-name:s16">B</p><p style="animation-name:s17">a</p><p style="animation-name:s18">i</p><p style="animation-name:s19">l</p><p style="animation-name:s20">e</p><p style="animation-name:s21">y</p><p>&nbsp;</p><p style="animation-name:s22">S</p><p style="animation-name:s23">i</p><p style="animation-name:s24">m</p><p style="animation-name:s25">m</p><p style="animation-name:s26">s</p>
+    </div>
+  </div>  
+</div>
+
+<div id="feather_div">
+  <%= image_tag("feather on rotational axis.png", alt: "feather on rotational axis", id: "feather_img") %>
+</div>
+
+<div id="feather_shadow_div">
+  <svg id="shadow_svg" viewBox="0 0 400 50">
+    <defs>
+      <filter id="f1" x="-50%" y="-250%" width="200%" height="600%">
+       <feGaussianBlur stdDeviation="7"/>
+      </filter>
+    </defs>
+    <ellipse fill="rgba(0, 0, 0, 0.35)" cx="200" cy="25" rx="105" ry="3" filter="url(#f1)"></ellipse> 
+  </svg>
+</div>
+
+<div id="intro_div">
+  <p>In the winter of 2013, a blog was established by a teen writing under the name “Bailey Simms.“ Little is known about the author’s actual identity.</p>
+  <p>Among Ms. Simms’s blog posts is a completed serialized novel which has now been published as "Dead in Bed". Interspersed within the novel’s segments, blog updates describe events in the author’s life up to the spring of 2015. At that point, the posts abruptly stop.</p>
+  <p>The complete blog has now been reproduced here on this web app. None of the original material has been altered. The contents are disturbing.</p>
+</div>
+
+<div id="intro_button_div">
+  <%= link_to 'posts/2' do %>
+    <p id="read_button">READ</p>
+  <% end %>
+</div>
+
+
+<!-- OLD -->
+<!--   <div id="home_wrapper">
     <div id="home_feature_image">
       <%= image_tag("author-name-with-feather-home.png", alt: "Baily Simms", id: "home_name_with_feather_image") %>
     </div>
@@ -38,7 +91,7 @@
         <% end %>
       </ul>
     </div>  
+  </div> -->
 
-  </div>
 </body>
 
