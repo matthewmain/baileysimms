@@ -10,17 +10,14 @@
 }
 
 .menu_icon {
-	width: 24px;
-	height: 18px;
+	width: 32px;
+	height: 24px;
 	top: 35px;
 }
 
 #menu_icon_open {
   position: fixed;
 	left: 35px;
-	g {
-		fill: #2D2D2D;
-	}
 }
 
 #menu_div {
@@ -35,24 +32,20 @@
   	float: right;
 	  right: 35px;
 	  opacity: 0;
-		g {
-  		fill: #F0F0F0;
-  	}
 	}
-  #menu_feather_img {
+  #blue_feather_logo_img {
   	position: relative;
-  	top: -15px;
-  	left: 128px;
-  	width: 150px;
-  	transform: scaleX(-1) rotate(-5deg);
+  	top: 57px;
+  	left: 160px;
+  	width: 100px;
   }
   ul {
   	list-style-type: none;
-  	font-family: Matol, Andale Mono, Courier;
-		font-weight: bold;
-		font-size: 35px;
+  	font-family: Matol, Avenir, Courier;
+		font-weight: 500;
+		font-size: 30px;
   	padding: 0 0 0 50px;
-  	margin: 20px 0 0 0;
+  	margin: 80px 0 0 0;
   	li {
   		line-height: 115px;
 			a {
@@ -105,7 +98,7 @@
 	.subheading_text_div p {
 	  background-color: rgba(0, 0, 0, 0);
 	  display: inline;
-	  font-family: Matol, Andale Mono, Courier;
+	  font-family: Matol, Avenir, Courier;
 	  font-size: 12px;
 	 	line-height: 18px;
 	  padding: 1px 0 0 1px;
@@ -144,12 +137,13 @@
 }
 
 #intro_div {
+	display: none; //(revealed via jQuery after logo animation completes)
 	position: relative;
 	top: 60px;
 	width: 500px;
 	margin: auto;
 	p {
-		font-family: Matol, Andale Mono, Courier;
+		font-family: Matol, Avenir, Courier;
 	  font-size: 15px;
 	  text-align: justify;
 	 	line-height: 24px;
@@ -157,35 +151,35 @@
 	  color: #24475D;
 	  margin-bottom: 24px;
 	}
-}
-
-#intro_button_div {
-	position: relative;
-	top: 125px;
-	margin: 0 auto 125px;
-	#read_button {
-		width: 165px;
-		height: 40px;
-		font-family: Matol, Andale Mono, Courier;
-		font-weight: bold;
-		font-size: 15px;
-		letter-spacing: 3px;
-		text-align: center;
-		color: #000000;
-		background: #BA3C32;
-		border-radius: 1.5px;
-		padding-top: 12px;
-		margin: 40px auto 0;
+	#intro_button_div {
+		position: relative;
+		top: 75px;
+		margin: 0 auto 125px;
+		#read_button {
+			width: 165px;
+			height: 40px;
+			font-family: Matol, Avenir, Courier;
+			font-weight: bold;
+			font-size: 15px;
+			letter-spacing: 3px;
+			text-align: center;
+			color: #000000;
+			background: #BA3C32;
+			border-radius: 1.5px;
+			padding-top: 12px;
+			margin: 40px auto 0;
 			&:hover {
 				background: #8C090D;
 			}
 		}
+	}
 }
 
 
 
+
 @font-face {
-  font-family: matol;
+  font-family: Matol;
   src: url(fonts/Matol-R-Round.otf);
 }
 
@@ -313,81 +307,6 @@
     opacity: 1;
   }
 }
-
-
-
-
-
-
-
-
-
-														/***** OLD *****/
-														/**
-														#home_body {
-															font-family: 'Avenir', Helvetica, sans-serif;
-															background: black;
-															padding: 0;
-														}
-
-														#home_wrapper {
-															max-width: 940px;
-															margin: 0 auto;
-															padding: 0 5%;
-														}
-
-														#home_feature_image {
-														}
-
-														#home_name_with_feather_image {
-															display: block;
-															width: 70%;
-															max-width: 420px;
-															margin: 3% auto;
-														}
-
-														#home_index_nav {
-															font-size: 10px;
-															letter-spacing: 2px;
-														}
-
-														#home_index_nav ul {
-															list-style-type: none;
-															text-align: center;
-															padding: 0;
-															#li-signup {
-																margin-right: 0;
-															}
-															span {
-																color: #b4cfd0;
-																padding: 0 5px;
-															}
-															#li-login {
-																margin-left: 0;
-															}
-														}
-
-														#home_index_nav ul li {
-															display: inline;
-															margin: 3% 13px;
-															line-height: 300%;
-															.highlight {
-																color: #d2ebee;
-																text-decoration: none;
-																font-weight: bold;
-																text-shadow: 0 0 20px #ffffff;
-															}
-															a {
-																color: #b4cfd0;
-																text-decoration: none;
-																&:hover {
-																	color: #ffffff;
-																	text-shadow: 0 0 15px #ffffff;
-																}
-															}
-														}
-														**/
-
 
 
 

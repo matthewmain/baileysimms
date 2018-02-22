@@ -16,25 +16,17 @@
 
 <body id="home_body">
 
-<svg id="menu_icon_open" class="menu_icon">
-    <g transform="translate(-372, -39)">
-      <path d="M373.077551,43 L396,43 L391.105685,39 L391.105685,40.140172 L373.077551,40.140172 C372.482436,40.140172 372,40.7803663 372,41.570086 C372,42.3598057 372.482436,43 373.077551,43 Z M373.077551,53 L396,53 L391.105685,57 L391.105685,55.859828 L373.077551,55.859828 C372.482436,55.859828 372,55.2196337 372,54.429914 C372,53.6401943 372.482436,53 373.077551,53 Z" id="menu-icon" transform="translate(384, 48) translate(-384, -48) "></path>
-    </g>
-</svg>
+<%= image_tag("menu icon open.svg", id: "menu_icon_open", class: "menu_icon") %>
 
 <div id="menu_div"> 
-    <svg id="menu_icon_close" class="menu_icon">
-        <g transform="translate(-372, -39)">
-          <path d="M373.077551,43 L396,43 L391.105685,39 L391.105685,40.140172 L373.077551,40.140172 C372.482436,40.140172 372,40.7803663 372,41.570086 C372,42.3598057 372.482436,43 373.077551,43 Z M373.077551,53 L396,53 L391.105685,57 L391.105685,55.859828 L373.077551,55.859828 C372.482436,55.859828 372,55.2196337 372,54.429914 C372,53.6401943 372.482436,53 373.077551,53 Z" id="menu-icon" transform="translate(384, 48) translate(-384, -48) "></path>
-        </g>
-    </svg>
-    <%= image_tag("feather on rotational axis.png", id: "menu_feather_img") %>
-    <ul>
-      <li><%= link_to 'Read the Book', posts_path %></li>
-      <li><%= link_to 'Shop', books_path %></li>
-      <li><%= link_to 'Community', users_path %></li>
-      <li><%= link_to 'About', about_path %></li>
-    </ul>
+  <%= image_tag("menu icon close.svg", id: "menu_icon_close", class: "menu_icon") %>
+  <%= image_tag("blue feather logo.png", id: "blue_feather_logo_img") %>
+  <ul>
+    <li><%= link_to 'Read the Book', posts_path %></li>
+    <li><%= link_to 'Shop', books_path %></li>
+    <li><%= link_to 'Community', users_path %></li>
+    <li><%= link_to 'About', about_path %></li>
+  </ul>
 </div>
 
 <div id="DEAD_IN_BED_div">
@@ -74,15 +66,17 @@
 
 <div id="intro_div">
   <p>In the winter of 2013, a blog was established by a teen writing under the name “Bailey Simms.“ Little is known about the author’s actual identity.</p>
-  <p>Among Ms. Simms’s blog posts is a completed serialized novel which has now been published as "Dead in Bed". Interspersed within the novel’s segments, blog updates describe events in the author’s life up to the spring of 2015. At that point, the posts abruptly stop.</p>
+  <p>Among Ms. Simms’s blog posts is a completed serialized novel which has now been published as <span style="font-style:italic" >Dead in Bed</span>. Interspersed within the novel’s segments, blog updates describe events in the author’s life up to the spring of 2015. At that point, the posts abruptly stop.</p>
   <p>The complete blog has now been reproduced here on this web app. None of the original material has been altered. The contents are disturbing.</p>
+
+  <div id="intro_button_div">
+    <%= link_to 'posts/2' do %>
+      <p id="read_button">READ</p>
+    <% end %>
+  </div>
+
 </div>
 
-<div id="intro_button_div">
-  <%= link_to 'posts/2' do %>
-    <p id="read_button">READ</p>
-  <% end %>
-</div>
 
 
 <!-- OLD -->

@@ -25,7 +25,7 @@ $(document).ready(function(){
   	AnimateRotate("#menu_icon_close", 0, 180, 800);
     $("#menu_div").animate({left: "0px" }, 800);
     $("#menu_icon_open").animate({"opacity": "0"}, 800);
-    $("#menu_icon_close").animate({"opacity": "1"}, 800);
+    $("#menu_icon_close").delay(100).animate({"opacity": "1"}, 700);
   });
 
   $("#menu_icon_close").click(function(){
@@ -36,7 +36,10 @@ $(document).ready(function(){
     $("#menu_icon_close").animate({"opacity": "0"}, 625);
   });
 
+  $("#intro_div").delay(11300).fadeIn(3000);
+
 });
+
 
 function AnimateRotate(element,start_degree,end_degree,duration){
    var elem = $(element);
