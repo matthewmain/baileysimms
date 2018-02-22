@@ -16,8 +16,25 @@
 
 <body id="home_body">
 
-<div id="menu_icon_div">
-  <%= image_tag("menu icon.svg", alt: "menu icon", class: "menu_icon") %>
+<svg id="menu_icon_open" class="menu_icon">
+    <g transform="translate(-372, -39)">
+      <path d="M373.077551,43 L396,43 L391.105685,39 L391.105685,40.140172 L373.077551,40.140172 C372.482436,40.140172 372,40.7803663 372,41.570086 C372,42.3598057 372.482436,43 373.077551,43 Z M373.077551,53 L396,53 L391.105685,57 L391.105685,55.859828 L373.077551,55.859828 C372.482436,55.859828 372,55.2196337 372,54.429914 C372,53.6401943 372.482436,53 373.077551,53 Z" id="menu-icon" transform="translate(384, 48) translate(-384, -48) "></path>
+    </g>
+</svg>
+
+<div id="menu_div"> 
+    <svg id="menu_icon_close" class="menu_icon">
+        <g transform="translate(-372, -39)">
+          <path d="M373.077551,43 L396,43 L391.105685,39 L391.105685,40.140172 L373.077551,40.140172 C372.482436,40.140172 372,40.7803663 372,41.570086 C372,42.3598057 372.482436,43 373.077551,43 Z M373.077551,53 L396,53 L391.105685,57 L391.105685,55.859828 L373.077551,55.859828 C372.482436,55.859828 372,55.2196337 372,54.429914 C372,53.6401943 372.482436,53 373.077551,53 Z" id="menu-icon" transform="translate(384, 48) translate(-384, -48) "></path>
+        </g>
+    </svg>
+    <%= image_tag("feather on rotational axis.png", id: "menu_feather_img") %>
+    <ul>
+      <li><%= link_to 'Read the Book', posts_path %></li>
+      <li><%= link_to 'Shop', books_path %></li>
+      <li><%= link_to 'Community', users_path %></li>
+      <li><%= link_to 'About', about_path %></li>
+    </ul>
 </div>
 
 <div id="DEAD_IN_BED_div">
