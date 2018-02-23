@@ -310,16 +310,13 @@
 @keyframes feather_shadow_appear {
   0% {
     left: 175px; 
-    opacity: 0;
-  }
+    opacity: 0; }
   80% {
     left: 175px;
-    opacity: 0;
-  }
+    opacity: 0; }
   100% {
     left: 0px;
-    opacity: 1;
-  }
+    opacity: 1; }
 }
 
 
@@ -361,7 +358,7 @@
 	}
 
 	.DIB_image_div {
-	  top: 80px;
+	  top: 30px;
 	  width: 400px;
 		.DIB_img {
 		  width: 400px;
@@ -369,7 +366,7 @@
 	}
 
 	#subheading_div {
-	  top: 310px;
+	  top: 260px;
 	  right: 70px;
 		.subheading_text_div p {
 		  font-size: 10px;
@@ -378,6 +375,7 @@
 	}
 
 	#feather_div {
+		top: -142px;
 	  width: 200px;
 		#feather_img {
 		  width: 200px;
@@ -385,13 +383,13 @@
 	}
 
 	#feather_shadow_div { 
-	  width: 264px;
-	  height: 33px;
-	  top: -117px;
+	  top: -165px;
+	  width: 250px;
+	  height: 40px;
 	}
 
 	#intro_div {
-		top: -35px;
+		top: -85px;
 		width: 355px;
 		p {
 		  font-size: 12px;
@@ -404,10 +402,10 @@
 		}
 	}
 
-		@keyframes feather_fall {
+	@keyframes feather_fall {
 	  0% { 
 	    transform: rotate(-80deg);
-      top: -670px;	    
+	    top: -670px;	    
 	    left: 165px }
 	  38% {
 	    transform: rotate(40deg); 
@@ -415,27 +413,24 @@
 	    left: -90px } 
 	  80% {
 	    transform: rotate(-385deg); 
-	    top: -130px;
+	    top: -200px;
 	    left: 110px }
 	  100% { 
 	    transform: rotate(-355deg);
-	    top: -92px; 
-	    left: 0px }
+	    top: -142px; 
+		  left: 0px }
 	}  
 
 	@keyframes feather_shadow_appear {
 	  0% {
 	    left: 115px; 
-	    opacity: 0;
-	  }
+	    opacity: 0; }
 	  80% {
 	    left: 115px;
-	    opacity: 0;
-	  }
+	    opacity: 0; }
 	  100% {
 	    left: 0px;
-	    opacity: 1;
-	  }
+	    opacity: 1; }
 	}
 
 }
@@ -451,6 +446,17 @@
 	.menu_icon {
 		width: 25px;
 		height: 19px;
+		top: 20px;
+	}
+
+	#menu_icon_open {
+		left: 20px;
+	}
+
+	#menu_div {
+	  #menu_icon_close {
+		  right: 20px;
+		}
 	}
 
 	#DEAD_IN_BED_div {
@@ -458,7 +464,7 @@
 	}
 
 	.DIB_image_div {
-	  top: 130px;
+	  top: 100px;
 	  width: 350px;
 		.DIB_img {
 		  width: 350px;
@@ -466,7 +472,7 @@
 	}
 
 	#subheading_div {
-	  top: 330px;
+	  top: 300px;
 	  right: 60px;
 		.subheading_text_div p {
 		  font-size: 9px;
@@ -475,7 +481,7 @@
 	}
 
 	#feather_div {
-		top: -70px;
+		top: -100px;
 	  width: 175px;
 		#feather_img {
 		  width: 175px;
@@ -485,24 +491,24 @@
 	#feather_shadow_div { 
 	  width: 240px;
 	  height: 30px;
-	  top: -93px;
+	  top: -123px;
 	}
 
 	#intro_div {
 		top: 155px;
 		width: 228px;
 		p {
-		  font-size: 11px;
-		 	line-height: 18px;
+		  font-size: 10px;
+		 	line-height: 16px;
 		  margin-bottom: 10px;
 		}
 		#intro_button_div {
 			top: 40px;
-			padding-bottom: 125px;
+			padding-bottom: 150px;
 		}
 	}
 
-		@keyframes feather_fall {
+	@keyframes feather_fall {
 	  0% { 
 	    transform: rotate(-80deg);
       top: -550px;	    
@@ -513,27 +519,24 @@
 	    left: -85px } 
 	  80% {
 	    transform: rotate(-385deg); 
-	    top: -100px;
+	    top: -130px;
 	    left: 90px }
 	  100% { 
 	    transform: rotate(-355deg);
-	    top: -70px; 
+	    top: -100px; 
 	    left: 0px }
 	}  
 
 	@keyframes feather_shadow_appear {
 	  0% {
 	    left: 115px; 
-	    opacity: 0;
-	  }
+	    opacity: 0; }
 	  80% {
 	    left: 115px;
-	    opacity: 0;
-	  }
+	    opacity: 0; }
 	  100% {
 	    left: 0px;
-	    opacity: 1;
-	  }
+	    opacity: 1; }
 	}
 
 }
