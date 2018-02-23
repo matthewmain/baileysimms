@@ -49,7 +49,6 @@ class PostsController < ApplicationController
     @feed_items = @post.feed.paginate(page: params[:page]).per_page(250)
     @reply = current_user.replies.build if logged_in?
     store_location
-    # current_user.update_attribute(:current_post, @post.id) if logged_in?
   end
 
   def edit
