@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170602200412) do
+ActiveRecord::Schema.define(version: 20180223205740) do
 
   create_table "ahoy_events", force: :cascade do |t|
     t.uuid     "visit_id",   limit: 16
@@ -121,6 +121,7 @@ ActiveRecord::Schema.define(version: 20170602200412) do
     t.boolean  "can_access_part_13", default: false
     t.boolean  "can_access_part_14", default: false
     t.text     "share_record"
+    t.integer  "current_post",       default: 1
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
