@@ -18,6 +18,7 @@
 #menu_icon_open {
   position: fixed;
 	left: 35px;
+	z-index: 1;
 }
 
 #menu_div {
@@ -26,12 +27,13 @@
   background: #000000;
   width: 426px;
   height: 100%;
-  z-index: 1;
+  z-index: 2;
   #menu_icon_close {
     position: absolute;
   	float: right;
 	  right: 35px;
 	  opacity: 0;
+	  z-index: 3;
 	}
   #blue_feather_logo_img {
   	position: relative;
@@ -41,9 +43,8 @@
   }
   ul {
   	list-style-type: none;
-  	font-family: Matol, Avenir, Courier;
-		font-weight: 500;
-		font-size: 30px;
+  	font-family: Matol-M-Round, Avenir, Courier;
+  	font-size: 30px;
   	padding: 0 0 0 50px;
   	margin: 80px 0 0 0;
   	li {
@@ -95,10 +96,13 @@
   top: 375px;
   position: absolute;
   right: 120px;
+  #subheading_2 {
+  	padding-left: 1px;
+  }
 	.subheading_text_div p {
 	  background-color: rgba(0, 0, 0, 0);
 	  display: inline;
-	  font-family: Matol, Avenir, Courier;
+	  font-family: Matol-R-Round, Avenir, Courier;
 	  font-size: 12px;
 	 	line-height: 18px;
 	  padding: 1px 0 0 1px;
@@ -143,7 +147,7 @@
 	width: 500px;
 	margin: auto;
 	p {
-		font-family: Matol, Avenir, Courier;
+		font-family: Matol-R-Round, Avenir, Courier;
 	  font-size: 15px;
 	  text-align: justify;
 	 	line-height: 24px;
@@ -154,11 +158,12 @@
 	#intro_button_div {
 		position: relative;
 		top: 75px;
-		margin: 0 auto 125px;
+		margin: 0 auto;
+		padding-bottom: 125px;
 		#read_button {
 			width: 165px;
 			height: 40px;
-			font-family: Matol, Avenir, Courier;
+			font-family: Matol-B-Round, Avenir, Courier;
 			font-weight: bold;
 			font-size: 15px;
 			letter-spacing: 3px;
@@ -177,10 +182,19 @@
 
 
 
+@font-face {
+  font-family: Matol-R-Round;
+  src: url(Matol-R-Round.otf);
+}
 
 @font-face {
-  font-family: Matol;
-  src: url(fonts/Matol-R-Round.otf);
+  font-family: Matol-M-Round;
+  src: url(Matol-M-Round.otf);
+}
+
+@font-face {
+  font-family: Matol-B-Round;
+  src: url(Matol-B-Round.otf);
 }
 
 
@@ -312,88 +326,220 @@
 
 
 
-/******* RESPONSIVE STYLING *******/
 
 
-/** Tablet **/
+
+
+/************************ RESPONSIVE STYLING *************************/
+
+
+
+/*** Tablet ***/
 
 @media screen and (max-width: 768px) {
-	#home_body {
-		#home_name_with_feather_image {
-			width: 85%;
-			margin-bottom: 30px;
-		}
 
-		#home_index_nav {
-			margin-bottom: 60px;
-		}
+	#menu_div {
+	  left: -250px;
+	  width: 250px;
+	  #blue_feather_logo_img {
+	  	top: 100px;
+	  	left: 87px;
+	  	width: 78px;
+	  }
+	  ul {
+	  	font-size: 22px;
+	  	padding: 0 0 0 50px;
+	  	margin: 125px 0 0 0;
+	  	li {
+	  		line-height: 75px;
+			}
+	  }
+	}
 
-		#home_index_nav ul {
-			list-style-type: none;
-			text-align: center;
-			padding: 0;
-		}
+	#DEAD_IN_BED_div {
+	  width: 400px;
+	}
 
-		#home_index_nav ul li {
-			display: block;
-			clear: both;
-			width: 75%; 
-			margin: 0 auto 30px;
-			line-height: 300%;
-			border: solid 1px #b4cfd0;
-			font-size: 12px;
-		}
-		#li-blog a {
-			letter-spacing: 3.5px;
-			margin-right: -3.5px;
-		}
-		#li-community a {
-			letter-spacing: 12.7px;
-			margin-right: -12.7px;
-		}
-		#li-books a {
-			letter-spacing: 20px;
-			margin-right: -20px;
-		}
-		#li-about a {
-			letter-spacing: 20px;
-			margin-right: -20px;
-		}
-		#li-contact a {
-			letter-spacing: 11px;
-			margin-right: -11px;
-		}
-		#li-profile a {
-			letter-spacing: 13px;
-			margin-right: -13px;
-		}
-		#li-logout a {
-			letter-spacing: 12px;
-			margin-right: -12px;
-		}
-		#li-signup a {
-			letter-spacing: 9px;
-			margin-right: -9px;
-		}
-		#li-login a {
-			letter-spacing: 11.75px;
-			margin-right: -11.75px;
-		}
-		span {
-			display: none;
+	.DIB_image_div {
+	  top: 80px;
+	  width: 400px;
+		.DIB_img {
+		  width: 400px;
 		}
 	}
+
+	#subheading_div {
+	  top: 310px;
+	  right: 70px;
+		.subheading_text_div p {
+		  font-size: 10px;
+		 	line-height: 14px;
+		}
+	}
+
+	#feather_div {
+	  width: 200px;
+		#feather_img {
+		  width: 200px;
+		}
+	}
+
+	#feather_shadow_div { 
+	  width: 264px;
+	  height: 33px;
+	  top: -117px;
+	}
+
+	#intro_div {
+		top: -35px;
+		width: 355px;
+		p {
+		  font-size: 12px;
+		 	line-height: 20px;
+		  margin-bottom: 10px;
+		}
+		#intro_button_div {
+			top: 40px;
+			padding-bottom: 80px;
+		}
+	}
+
+		@keyframes feather_fall {
+	  0% { 
+	    transform: rotate(-80deg);
+      top: -670px;	    
+	    left: 165px }
+	  38% {
+	    transform: rotate(40deg); 
+	    top: -430px;   
+	    left: -90px } 
+	  80% {
+	    transform: rotate(-385deg); 
+	    top: -130px;
+	    left: 110px }
+	  100% { 
+	    transform: rotate(-355deg);
+	    top: -92px; 
+	    left: 0px }
+	}  
+
+	@keyframes feather_shadow_appear {
+	  0% {
+	    left: 115px; 
+	    opacity: 0;
+	  }
+	  80% {
+	    left: 115px;
+	    opacity: 0;
+	  }
+	  100% {
+	    left: 0px;
+	    opacity: 1;
+	  }
+	}
+
 }
 
 
-/** Phone **/
+
+
+
+/*** Phone ***/
 
 @media screen and (max-width: 414px) {
-	#home_body {
-		#home_index_nav ul li {
-			width: 85%; 
-			margin: 0 auto 30px;
+
+	.menu_icon {
+		width: 25px;
+		height: 19px;
+	}
+
+	#DEAD_IN_BED_div {
+	  width: 350px;
+	}
+
+	.DIB_image_div {
+	  top: 130px;
+	  width: 350px;
+		.DIB_img {
+		  width: 350px;
 		}
 	}
+
+	#subheading_div {
+	  top: 330px;
+	  right: 60px;
+		.subheading_text_div p {
+		  font-size: 9px;
+		 	line-height: 13px;
+		}
+	}
+
+	#feather_div {
+		top: -70px;
+	  width: 175px;
+		#feather_img {
+		  width: 175px;
+		}
+	}
+
+	#feather_shadow_div { 
+	  width: 240px;
+	  height: 30px;
+	  top: -93px;
+	}
+
+	#intro_div {
+		top: 155px;
+		width: 228px;
+		p {
+		  font-size: 11px;
+		 	line-height: 18px;
+		  margin-bottom: 10px;
+		}
+		#intro_button_div {
+			top: 40px;
+			padding-bottom: 125px;
+		}
+	}
+
+		@keyframes feather_fall {
+	  0% { 
+	    transform: rotate(-80deg);
+      top: -550px;	    
+	    left: 100px }
+	  38% {
+	    transform: rotate(40deg); 
+	    top: -350px;   
+	    left: -85px } 
+	  80% {
+	    transform: rotate(-385deg); 
+	    top: -100px;
+	    left: 90px }
+	  100% { 
+	    transform: rotate(-355deg);
+	    top: -70px; 
+	    left: 0px }
+	}  
+
+	@keyframes feather_shadow_appear {
+	  0% {
+	    left: 115px; 
+	    opacity: 0;
+	  }
+	  80% {
+	    left: 115px;
+	    opacity: 0;
+	  }
+	  100% {
+	    left: 0px;
+	    opacity: 1;
+	  }
+	}
+
 }
+
+
+
+
+
 
