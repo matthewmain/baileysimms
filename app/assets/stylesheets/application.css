@@ -14,6 +14,28 @@
  *= require_self
  */
 
+
+
+
+@font-face {
+  font-family: Matol-R-Round;
+  src: url("Matol-R-Round.otf");
+}
+
+@font-face {
+  font-family: Matol-M-Round;
+  src: url("Matol-M-Round.otf");
+}
+
+@font-face {
+  font-family: Matol-B-Round;
+  src: url("Matol-B-Round.otf");
+}
+
+
+
+
+
 html {
 	height: 100%;
 }
