@@ -180,6 +180,24 @@
 	}
 }
 
+
+
+@font-face {
+  font-family: Matol-R-Round;
+  src: asset_url("Matol-R-Round.otf");
+}
+
+@font-face {
+  font-family: Matol-M-Round;
+  src: asset_url("Matol-M-Round.otf");
+}
+
+@font-face {
+  font-family: Matol-B-Round;
+  src: asset_url("Matol-B-Round.otf");
+}
+
+
 @keyframes DIB_c_shadows_appear {
   /*off*/
   0% { opacity: 0; }
