@@ -59,15 +59,6 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
-
- #  #returns location of current reading position
-	# def reading_location
-	# 	if !logged_in? or current_user.current_post == 1
-	# 		posts_path
-	# 	else
-	# 		post_path(current_user.current_post)
-	# 	end
-	# end
-
+  
 
 end

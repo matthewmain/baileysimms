@@ -59,7 +59,7 @@ module UsersHelper
 	end
 
 	#returns location of current reading position
-	def reading_location
+	def current_reading_location
 		if !logged_in? or current_user.current_post == 1
 			posts_path
 		else
