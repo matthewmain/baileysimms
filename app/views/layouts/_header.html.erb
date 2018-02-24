@@ -1,4 +1,94 @@
-	<header class="navbar navbar-fixed-top">
+
+
+<div class="header_div">
+
+  <div class="header_left">
+    <div id="logo_div"><%= link_to image_tag('header_logo.png'), root_path %></div>
+    <div id="list_div">
+
+      <div id="reading_div">
+        <div class="item_div" id="read_div">
+          <p <%="class=current" if params[:controller] == "posts"%> ><%= link_to 'Read', current_reading_location %></p>
+        </div>
+        <div class="item_div" id="currently_reading_div">
+        <div id="point"></div>
+          <div id="mask">
+            <a href=<%=current_reading_location%>>
+              <% if current_reading_post_title =~ /DEAD IN BED/ %>
+                <%= image_tag(cover_image_of(current_reading_post_title), alt: "Part #{current_reading_post_title.split('')[18]} Cover", class: "post_image", id: "post_cover") %>
+              <% else %>
+                <%= image_tag("Bailey Simms pic.jpg", alt: "Bailey Simms", class: "post_image", id: "post_portrait") %>
+              <% end %>
+              <div id="labels_div">
+                <p id="continue_label"><%= params[:controller] == "posts" ? "Currently reading" : "Continue reading"%></p>
+                <p id="current_reading_title"><%=current_reading_post_title%></p>
+              </div>
+            </a>
+            <%= image_tag("posts menu icon.svg", id: "posts_menu_icon") %>
+          </div>
+        </div>
+      </div>
+      <div id="last_items_div">
+        <div class="item_div" id="shop_div">
+          <p <%="class=current" if params[:controller] == "books"%> ><%= link_to 'Shop', books_path %></p>
+        </div>
+        <div class="item_div" id="community_div">
+          <p <%="class=current" if params[:controller] == "users"%> ><%= link_to 'Community', users_path %></p>
+        </div>
+        <div class="item_div" id="about_div">
+          <p <%="class=current" if params[:controller] == "about"%> ><%= link_to 'About', about_path %></p>
+        </div>
+      </div>
+    </div> 
+  </div>  
+
+  <div class=header_right>
+    <%= user_image_for current_user %>
+    <%= image_tag('profile menu icon.svg', class: "profile_menu_icon") %>
+  </div>
+
+
+<!--   <% if logged_in? %>
+    <ul class="header_right">
+      <li class="dropdown">
+        <div href="#" class="dropdown-toggle" data-toggle="dropdown">
+          <div class="header_user_image">
+            <%= user_image_for current_user %>
+          </div>
+          <div class="header_user_name_dropdown_div">
+            <div class="caret_div"><b class="caret"></b></div>
+            <div class="header_user_name_div"><%= current_user.user_name.gsub(/_/, ' ') %></div>
+          </div>
+        </div>
+        <ul class="dropdown-menu">
+          <li class="dropdown_li"><%= link_to "PROFILE", current_user %></li>
+          <li class="dropdown_li"><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
+          <li class="divider"></li>
+          <li class="dropdown_li"><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+        </ul>
+      </li>
+    </ul> 
+  <% else %>
+    <ul class="header_right">
+      <li class="not_logged_in"><%= link_to "LOG IN", login_path %></li>
+      <li class="not_logged_in"><%= link_to 'SIGN UP', new_user_path %></li>
+    </ul>
+  <% end %> -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- OLD VERSION -->
+
+<!-- 	<header class="navbar navbar-fixed-top">
 
       <nav class="nav">
           <%= link_to image_tag('favicon.png'), root_path, id: "logo" %>
@@ -38,6 +128,8 @@
 				</ul>
         <% end %>
 
-
 		</div>
-	</header>	
+	</header>	 -->
+
+
+

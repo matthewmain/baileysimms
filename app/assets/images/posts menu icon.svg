@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="14px" viewBox="0 0 24 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>chapter menu icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="read,-logged-in" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-571.000000, -34.000000)">
+        <g id="header,-web" fill="#555555">
+            <g id="header-items" transform="translate(171.000000, 0.000000)">
+                <g id="read-navigation-tab" transform="translate(65.000000, 0.000000)">
+                    <path d="M340.096667,27.0000166 C339.544774,27.0032633 339.0949,27.4812599 339.091845,28.0676518 L339,44 L353.962748,43.9026036 C354.532443,43.8992521 354.99683,43.4058363 354.999984,42.8005286 C355.003138,42.1952208 354.543866,41.7072388 353.974171,41.7105902 L341.010001,41.7962293 L341.090423,28.0558944 C341.093478,27.4695025 340.648559,26.9967699 340.096667,27.0000166 Z" id="chapter-menu-icon" transform="translate(347.000000, 35.500000) rotate(-45.000000) translate(-347.000000, -35.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

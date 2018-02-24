@@ -67,6 +67,21 @@ module UsersHelper
 		end
 	end
 
+	#returns the post id of the current reading position
+	def current_reading_post_id
+		!logged_in? or current_user.current_post == 1 ? 1 : current_user.current_post
+	end
+
+	#returns the post title of the current reading position
+	def current_reading_post_title
+		Post.find(current_reading_post_id).title
+	end
+
+	#returns the post date of the current reading position
+	def current_reading_post_date
+		Post.find(current_reading_post_id).date
+	end
+
 	def book_1_giveaway_winner(name)
 	 	name == "Mr_Blue" ||
 	 	name == "Mr_Pink" ||
