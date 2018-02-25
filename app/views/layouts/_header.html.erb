@@ -8,12 +8,13 @@
 
       <div id="reading_div">
         <div class="item_div" id="read_div">
-          <p <%="class=current" if params[:controller] == "posts"%> ><%= link_to 'Read', current_reading_location %></p>
+
+          <p <%="class=current" if params[:controller] == "posts"%> ><%= link_to 'Read', logged_in? || params[:controller] != "posts" ? current_reading_location : @post.id != 1 ? post_path(@post.id) : posts_path %></p>
         </div>
         <div class="item_div" id="currently_reading_div">
         <div id="point"></div>
           <div id="mask">
-            <a href=<%=current_reading_location%>>
+            <a href=<%= logged_in? || params[:controller] != "posts" ? current_reading_location : @post.id != 1 ? post_path(@post.id) : posts_path %>>
               <% if current_reading_post_title =~ /DEAD IN BED/ %>
                 <%= image_tag(cover_image_of(current_reading_post_title), alt: "Part #{current_reading_post_title.split('')[18]} Cover", class: "post_image", id: "post_cover") %>
               <% else %>
@@ -23,13 +24,21 @@
                 <p id="continue_label">
                   <% if params[:controller] == "posts" %>
                     Currently reading
-                  <% elsif params[:controller] != "posts" && current_reading_post_id != 1 %>
+                  <% elsif current_reading_post_id != 1 && logged_in? %>
                     Continue Reading
                   <% else %>
                     Start Reading
                   <% end %>
                 </p>
-                <p id="current_reading_title"><%= current_reading_post_title %></p>
+                <p id="current_reading_title">
+
+                  <% if logged_in? || params[:controller] != "posts"%>
+                    <%= current_reading_post_title %>
+                  <% else %>
+                    <%= @post.title %>
+                  <% end %>
+
+                </p>
               </div>
             </a>
             <%= image_tag("posts menu icon.svg", id: "posts_menu_icon") %>
@@ -49,11 +58,6 @@
       </div>
     </div> 
   </div>  
-
-  <div class=header_right>
-    <%= user_image_for current_user if logged_in? %>
-    <%= image_tag('profile menu icon.svg', class: "profile_menu_icon") %>
-  </div>
 
 </div>
 

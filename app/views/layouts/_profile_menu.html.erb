@@ -2,7 +2,7 @@
 <% if logged_in? %>
 
 	<%= image_tag("profile menu icon open.svg", id: "profile_menu_icon_open", class: "profile_menu_icon logged_in") %>
- 	<%= user_image_for current_user %>
+ 	<div id="profile_menu_user_image_div"><%= user_image_for current_user %></div>
 
 	<div id="profile_menu_div"> 
 	  <%= image_tag("profile menu icon close.svg", id: "profile_menu_icon_close", class: "profile_menu_icon logged_in") %>

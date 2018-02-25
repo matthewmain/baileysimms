@@ -24,7 +24,7 @@
   background: #000000;
   width: 426px;
   height: 100%;
-  z-index: 2;
+  z-index: 4;
   #nav_menu_icon_close {
     position: absolute;
   	float: right;
@@ -54,6 +54,9 @@
 				}
 			}	
 		}
+	  #emphasize {
+			font-family: Matol-B-Round;
+		}
   }
 }
 
@@ -70,7 +73,7 @@
 	width: 100%;
 	height: 75px;
 	background: #FCFCFC;
-	z-index: 10000;
+	z-index: 2;
 	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
 }
 
@@ -202,39 +205,42 @@
 	top: 26px;
 }
 
-.user_image {
+#profile_menu_user_image_div {
 	position: fixed;
-	float: right;
-	width: 40px;
-	top: 17px;
-	right: 22px;
-	box-shadow: none;
-	z-index: 3;
+	z-index: 5;
+	.user_image {
+		position: fixed;
+		float: right;
+		width: 40px;
+		top: 17px;
+		right: 22px;
+	}
 }
 
 #profile_menu_icon_open {
   position: fixed;
   right: 80px;
-	z-index: 2;
+	z-index: 3;
 }
 
 #profile_menu_icon_open.logged_out {
+	position: fixed;
 	right: 35px;
 }
 
 #profile_menu_div {
   position: fixed;
   right: -426px;
+  top: 0px;
   background: #000000;
   width: 426px;
   height: 100%;
-  z-index: 2;
+  z-index: 4;
   #profile_menu_icon_close {
     position: absolute;
   	float: left;
   	left: 35px;
 	  opacity: 0;
-	  z-index: 3;
 	}
 	.profile_menu_user_name {
 		float: right;
