@@ -25,25 +25,39 @@ $(document).ready(function(){
 
   $("#intro_div").delay(11300).fadeIn(3000);
 
-	$("#menu_icon_open").click(function(){
-		AnimateRotate("#menu_icon_open", 0, 180, 600);
-		AnimateRotate("#menu_icon_close", 0, 180, 600);
-	  $("#menu_div").animate({left: "0px" }, 600);
-	  $("#menu_icon_open").animate({"opacity": "0" }, 600);
-	  $("#menu_icon_close").delay(75).animate({"opacity": "1"}, 600);
+  //nav menu
+	$("#nav_menu_icon_open").click(function(){
+		AnimateRotate("#nav_menu_icon_open", 0, 180, 600);
+		AnimateRotate("#nav_menu_icon_close", 0, 180, 600);
+	  $("#nav_menu_div").animate({left: "0px" }, 600);
+	  $("#nav_menu_icon_open").animate({"opacity": "0" }, 600);
+	  $("#nav_menu_icon_close").delay(75).animate({"opacity": "1"}, 600);
+	});
+	$("#nav_menu_icon_close").click(function(){
+		AnimateRotate("#nav_menu_icon_open", 180, 0, 500);
+		AnimateRotate("#nav_menu_icon_close", 180, 0, 500);
+	  $("#nav_menu_div").animate({left: -$("#nav_menu_div").width() }, 600);
+	  $("#nav_menu_icon_open").animate({"opacity": "1" }, 600);
+	  $("#nav_menu_icon_close").animate({"opacity": "0"}, 500);
 	});
 
-	$("#menu_icon_close").click(function(){
-		AnimateRotate("#menu_icon_open", 180, 0, 500);
-		AnimateRotate("#menu_icon_close", 180, 0, 500);
-	  $("#menu_div").animate({left: -$("#menu_div").width() }, 600);
-	  $("#menu_icon_open").animate({"opacity": "1" }, 600);
-	  $("#menu_icon_close").animate({"opacity": "0"}, 500);
+	//profile menu
+	$("#profile_menu_icon_open, .header_right.user_image").click(function(){
+		AnimateRotate("#profile_menu_icon_open", 0, -180, 600);
+		AnimateRotate("#profile_menu_icon_close", 0, -180, 600);
+	  $("#profile_menu_div").animate({right: "0px" }, 600);
+	  $("#profile_menu_icon_open").animate({"opacity": "0" }, 600);
+	  $("#profile_menu_icon_close").delay(75).animate({"opacity": "1"}, 600);
+	  $(".profile_menu_user_name").delay(450).animate({"opacity": "1"}, 400);
 	});
-
-	  if ($("#menu_div").position().left == 0) {
-			alert($("#menu_div").position().left)
-		}
+	$("#profile_menu_icon_close").click(function(){
+		AnimateRotate("#profile_menu_icon_open", -180, 0, 500);
+		AnimateRotate("#profile_menu_icon_close", -180, 0, 500);
+	  $("#profile_menu_div").animate({right: -$("#profile_menu_div").width() }, 600);
+	  $("#profile_menu_icon_open").animate({"opacity": "1" }, 600);
+	  $("#profile_menu_icon_close").animate({"opacity": "0"}, 500);
+	  $(".profile_menu_user_name").animate({"opacity": "0"}, 100);
+	});
 
 });
 
@@ -58,3 +72,6 @@ function AnimateRotate(element,start_degree,end_degree,duration){
     }
   });
 }
+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="34px" height="51px" viewBox="0 0 34 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>profile menu icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Style-Guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="profile-menu-icon" transform="translate(-8.000000, 9.000000)" fill="#D5D5D5">
+            <path d="M41.6666667,-5.10491652 L41.6666667,38.4383066 C41.6666117,40.2212806 40.1845048,41.6666667 38.3562333,41.6666667 C37.4924122,41.6666667 36.6628071,41.3373799 36.0445031,40.7490951 C19.3722621,24.8863043 10.1352055,16.8469381 8.33333333,16.6309967 C10.1544389,16.3383473 19.3941352,8.32025186 36.052422,-7.42328968 C37.3653533,-8.66412579 39.4611461,-8.63205057 40.7335058,-7.35164816 C41.3319969,-6.749374 41.6666667,-5.94360382 41.6666667,-5.10491652 Z"></path>
+        </g>
+    </g>
+</svg>

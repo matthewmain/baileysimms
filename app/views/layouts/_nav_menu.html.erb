@@ -1,0 +1,13 @@
+
+<%= image_tag("nav menu icon open.svg", id: "nav_menu_icon_open", class: "nav_menu_icon") %>
+
+<div id="nav_menu_div"> 
+  <%= image_tag("nav menu icon close.svg", id: "nav_menu_icon_close", class: "nav_menu_icon") %>
+  <%= image_tag("blue feather logo.png", id: "blue_feather_logo_img") %>
+  <ul>
+    <li><%= link_to 'Read the Book', current_reading_location %></li> 
+    <li><%= link_to 'Shop', books_path %></li>
+    <li><%= link_to 'Community', users_path %></li>
+    <li><%= link_to 'About', about_path %></li>
+  </ul>
+</div>

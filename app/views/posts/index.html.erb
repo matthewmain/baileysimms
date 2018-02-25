@@ -3,3 +3,5 @@
 </head>
 
 <%= render 'posts/blog_page_layout' %>
+
+<% current_user.update_attribute(:current_post, @post.id) if logged_in? %>

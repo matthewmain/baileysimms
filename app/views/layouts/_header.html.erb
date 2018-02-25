@@ -20,8 +20,16 @@
                 <%= image_tag("Bailey Simms pic.jpg", alt: "Bailey Simms", class: "post_image", id: "post_portrait") %>
               <% end %>
               <div id="labels_div">
-                <p id="continue_label"><%= params[:controller] == "posts" ? "Currently reading" : "Continue reading"%></p>
-                <p id="current_reading_title"><%=current_reading_post_title%></p>
+                <p id="continue_label">
+                  <% if params[:controller] == "posts" %>
+                    Currently reading
+                  <% elsif params[:controller] != "posts" && current_reading_post_id != 1 %>
+                    Continue Reading
+                  <% else %>
+                    Start Reading
+                  <% end %>
+                </p>
+                <p id="current_reading_title"><%= current_reading_post_title %></p>
               </div>
             </a>
             <%= image_tag("posts menu icon.svg", id: "posts_menu_icon") %>
@@ -43,93 +51,9 @@
   </div>  
 
   <div class=header_right>
-    <%= user_image_for current_user %>
+    <%= user_image_for current_user if logged_in? %>
     <%= image_tag('profile menu icon.svg', class: "profile_menu_icon") %>
   </div>
 
-
-<!--   <% if logged_in? %>
-    <ul class="header_right">
-      <li class="dropdown">
-        <div href="#" class="dropdown-toggle" data-toggle="dropdown">
-          <div class="header_user_image">
-            <%= user_image_for current_user %>
-          </div>
-          <div class="header_user_name_dropdown_div">
-            <div class="caret_div"><b class="caret"></b></div>
-            <div class="header_user_name_div"><%= current_user.user_name.gsub(/_/, ' ') %></div>
-          </div>
-        </div>
-        <ul class="dropdown-menu">
-          <li class="dropdown_li"><%= link_to "PROFILE", current_user %></li>
-          <li class="dropdown_li"><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
-          <li class="divider"></li>
-          <li class="dropdown_li"><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
-        </ul>
-      </li>
-    </ul> 
-  <% else %>
-    <ul class="header_right">
-      <li class="not_logged_in"><%= link_to "LOG IN", login_path %></li>
-      <li class="not_logged_in"><%= link_to 'SIGN UP', new_user_path %></li>
-    </ul>
-  <% end %> -->
-
 </div>
-
-
-
-
-
-
-
-
-
-
-<!-- OLD VERSION -->
-
-<!-- 	<header class="navbar navbar-fixed-top">
-
-      <nav class="nav">
-          <%= link_to image_tag('favicon.png'), root_path, id: "logo" %>
-          <%= link_to '☰', root_path, class: "navbar_icon phone_only" %>
-        <ul class="nav navbar-nav navbar-left">
-          <li><%= link_to 'BLOG', posts_path %></li>
-          <li><%= link_to 'COMMUNITY', users_path %></li>
-          <li><%= link_to 'BOOKS', books_path %></li>
-          <li><%= link_to 'ABOUT', about_path %></li>
-          <li><%= mail_to 'baileysimms96@yahoo.com', 'CONTACT' %></li>
-        </ul>  
-        <% if logged_in? %>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <div href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <div class="header_user_image">
-                <%= user_image_for current_user %>
-              </div>
-              <div class="header_user_name_dropdown_div">
-                <div class="caret_div"><b class="caret"></b></div>
-                <div class="header_user_name_div"><%= current_user.user_name.gsub(/_/, ' ') %></div>
-              </div>
-            </div>
-            <ul class="dropdown-menu">
-              <li class="dropdown_li"><%= link_to "PROFILE", current_user %></li>
-              <li class="dropdown_li"><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li class="dropdown_li"><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
-            </ul>
-          </li>
-         </ul> 
-          
-        <% else %>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="not_logged_in"><%= link_to "LOG IN", login_path %></li>
-          <li class="not_logged_in"><%= link_to 'SIGN UP', new_user_path %></li>
-				</ul>
-        <% end %>
-
-		</div>
-	</header>	 -->
-
-
 

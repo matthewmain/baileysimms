@@ -9,57 +9,6 @@
 	padding: 0 0 0 0;
 }
 
-.menu_icon {
-	width: 32px;
-	height: 24px;
-	top: 35px;
-}
-
-#menu_icon_open {
-  position: fixed;
-	left: 35px;
-	z-index: 1;
-}
-
-#menu_div {
-  position: fixed;
-  left: -426px;
-  background: #000000;
-  width: 426px;
-  height: 100%;
-  z-index: 2;
-  #menu_icon_close {
-    position: absolute;
-  	float: right;
-	  right: 35px;
-	  opacity: 0;
-	  z-index: 3;
-	}
-  #blue_feather_logo_img {
-  	position: relative;
-  	top: 57px;
-  	left: 160px;
-  	width: 100px;
-  }
-  ul {
-  	list-style-type: none;
-  	font-family: Matol-M-Round, Avenir, Courier;
-  	font-size: 30px;
-  	padding: 0 0 0 50px;
-  	margin: 80px 0 0 0;
-  	li {
-  		line-height: 115px;
-			a {
-				text-decoration: none;
-				color: #457A9D;
-				&:hover {
-					text-shadow: 0 0 30px #457A9D;
-				}
-			}	
-		}
-  }
-}
-
 #DEAD_IN_BED_div {
   position: relative;
   margin: auto;
