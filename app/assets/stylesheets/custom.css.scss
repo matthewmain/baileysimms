@@ -66,15 +66,15 @@
 /*** HEADER ***/
 
 
-.header_div {
+#header_div {
 	position: fixed;
 	float: left;
 	top: 0;
 	width: 100%;
 	height: 75px;
 	background: #FCFCFC;
-	z-index: 2;
 	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+	z-index: 2;
 }
 
 .item_div {
@@ -97,7 +97,7 @@
 	}
 }
 
-.header_left {
+#header_left {
   float: left;
   width: 85%;
   height: 100%;
@@ -111,87 +111,190 @@
 			left: 7px;
 		}
   }
-  #list_div {
-  	float: left;
-  	width: 90%;
-  	height: 100%;
-	  #reading_div {
-	  	width: 50%;
-	  	float: left;
-		  #read_div {
-		  	width: 30%;
-		  	p {
-		  		left: 20px;
-		  	}
-		  }
-	  	#currently_reading_div {
-	  		width: 70%;
-	  		height: 76px;
-	  		background: #F8F8F8;
-	  		box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .3);
-	  		#point {
-	  			position: relative;
-	  		  background: #F8F8F8;
-	  			height: 15px;
-	  			width: 16px;
-	  			top: 28px;
-	  			left: -8px;
-	  			transform: rotate(45deg);
-	  			box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .3);
-	  		}
-	  		#mask {
-	  			position: relative;
-	  			top: -16;
-	  			height: 76px;
-	  		  background: #F8F8F8;
-	  		  .post_image {
-	  		  	float: left;
-	  		  	height: 35px;
-	  		  	margin: 20px;
-	  		  }
-	  		  #post_cover {
-	  		  	border: 1px solid #A3A3A3;
-	  		  }
-	  		  #labels_div {
-	  		  	float: left;
-	  		  	width: 150px;
-	  		  	padding: 20 0 0;
-		  		  #continue_label {
-		  		  	position: relative;
-		  		  	text-align: left;
-		  		  	font-size: 8px;
-		  		  	color: #555555;
-		  		  	transform: none;
-		  		  	margin: 0;
-		  		  }
-		  		  #current_reading_title {
-		  		  	text-align: left;
-		  		  	font-family: Matol-M-Round;
-		  		  	font-size: 10;
-		  		  	line-height: 12px;
-		  		  	color: #8C090D;
-		  		  	transform: none;
-		  		  	margin: 1px 0 0;
-		  		  }
-	  		  }
-	  		  #posts_menu_icon {
-	  		  	float: right;
-	  		  	position: relative;
-	  		  	top: 31px;
-	  		  	right: 7%;
-	  		  }
-	  		}
-	  	}
-  	}
-  	#last_items_div {
-  		width: 50%;
-  		float: left;
-  		.item_div {
-  			width: 33.3%;
-  		}
-  	}
-  }
+ }
+  
+#list_div {
+	float: left;
+	width: 90%;
+	height: 100%;
 }
+
+#reading_div {
+	width: 50%;
+	float: left;
+}
+
+#read_item_div {
+	width: 30%;
+	p {
+		left: 20px;
+	}
+}
+
+#currently_reading_div {
+	position: relative;
+	width: 70%;
+	height: 76px;
+}
+
+#posts_menu_dropdown {
+	position: absolute;
+	width: 100%;
+	height: 380px;
+	top: -310px;
+  background: #F8F8F8; //background: #CFE2EE;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .3);
+  border-radius: 0 0 5px 5px;
+  overflow: scroll;
+  opacity: 0;
+	#posts_list {
+		list-style: none;
+		padding: 0 5px;
+		margin: 10px 0;
+		li {
+			padding: 20px 0;
+			border-bottom: 1px solid #D5D5D5;
+			line-height: 1.2em;
+			#title {
+				font-family: Matol-M-Round;
+				font-size: 12px;
+				color: #457A9D;
+				margin: 0;
+				transform: none;
+			}
+			&:hover {
+				background: #EEEEEE;
+				a {
+					text-decoration: none;
+				}
+				#date {
+					text-decoration: none;
+				}
+				#title {
+					color: #8BC0E3;
+				}
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+		.current_post {
+			background: #DDDDDD;
+			border: 1px solid #BBBBBB;
+			margin-top: -1px;
+			border-radius: 2px;
+			a {
+				text-decoration: none;
+				color: #7b1f21;
+			}
+			#title {
+				color: #8c090d;
+			}
+			&:last-child {
+				border: 1px solid #bbb;
+			}
+			&:hover {
+				background: #CCCCCC;
+				#title {
+					color: #7b1f21;
+				}
+				&:first-child {
+					padding: 15px;
+				}
+				&:last-child {
+					padding: 15px;
+				}
+			}
+		}
+	}
+}
+
+#dropdown_shadow_mask {
+	position: absolute;
+	width: 102%;
+	left: -1%;
+	height: 75px;
+	background: #F8F8F8;
+}
+
+#shadow {
+	position: relative;
+	background: #F8F8F8;
+	height: 76px;
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .3);
+}
+
+#point {
+	position: relative;
+  background: #F8F8F8;
+	height: 15px;
+	width: 16px;
+	top: 28px;
+	left: -8px;
+	transform: rotate(45deg);
+	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, .3);
+}
+
+#mask {
+	position: relative;
+	top: -16;
+	height: 76px;
+  background: #F8F8F8;
+ }
+
+.post_image {
+	float: left;
+	height: 35px;
+	margin: 20px;
+}
+
+#post_cover {
+	border: 1px solid #A3A3A3;
+}
+
+#labels_div {
+	float: left;
+	width: 150px;
+	padding: 20 0 0;
+}
+
+#continue_label {
+	position: relative;
+	text-align: left;
+	font-size: 8px;
+	color: #555555;
+	transform: none;
+	margin: 0;
+}
+
+#current_reading_title {
+	text-align: left;
+	font-family: Matol-M-Round;
+	font-size: 10;
+	line-height: 12px;
+	color: #8C090D;
+	transform: none;
+	margin: 1px 0 0;
+}
+
+#posts_menu_icon {
+	float: right;
+	position: relative;
+	top: 31px;
+	right: 7%;
+}
+
+#last_items_div {
+	width: 50%;
+	float: left;
+	.item_div {
+		width: 33.3%;
+	}
+}
+
+
+
+
 
 
 

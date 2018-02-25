@@ -59,6 +59,24 @@ $(document).ready(function(){
 	  $(".profile_menu_user_name").animate({"opacity": "0"}, 100);
 	});
 
+	//posts menu
+	$("#posts_menu_icon").click(function(){
+		if ($("#posts_menu_dropdown").hasClass("closed")) {
+			$("#posts_menu_dropdown").css("opacity", "1");		//(closed dropdown div hidden so not visible on overscroll bounce; this makes visible when opened)
+			AnimateRotate("#posts_menu_icon", 0, 180, 600);
+		  $("#posts_menu_dropdown").animate({top: "76px" }, 600);
+		  $("#posts_menu_dropdown").removeClass("closed");
+		  $("#posts_menu_dropdown").addClass("open");
+		} else {
+			AnimateRotate("#posts_menu_icon", 180, 0, 600);
+		  $("#posts_menu_dropdown").animate({top: "-310px" }, 600, function(){
+				$("#posts_menu_dropdown").css("opacity", "0");
+		  });
+		  $("#posts_menu_dropdown").removeClass("open");
+		  $("#posts_menu_dropdown").addClass("closed");
+		}
+	});
+
 });
 
 function AnimateRotate(element,start_degree,end_degree,duration){

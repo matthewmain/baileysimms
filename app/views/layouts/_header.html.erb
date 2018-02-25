@@ -1,47 +1,65 @@
 
 
-<div class="header_div">
-
-  <div class="header_left">
-    <div id="logo_div"><%= link_to image_tag('header_logo.png'), root_path %></div>
+<div id="header_div">
+  <div id="header_left">
+    <div id="logo_div"><%= link_to image_tag('header_logo.png'), root_path %>
+    </div>
     <div id="list_div">
-
       <div id="reading_div">
-        <div class="item_div" id="read_div">
-
+        <div id="read_item_div" class="item_div">
           <p <%="class=current" if params[:controller] == "posts"%> ><%= link_to 'Read', logged_in? || params[:controller] != "posts" ? current_reading_location : @post.id != 1 ? post_path(@post.id) : posts_path %></p>
         </div>
-        <div class="item_div" id="currently_reading_div">
-        <div id="point"></div>
-          <div id="mask">
-            <a href=<%= logged_in? || params[:controller] != "posts" ? current_reading_location : @post.id != 1 ? post_path(@post.id) : posts_path %>>
-              <% if current_reading_post_title =~ /DEAD IN BED/ %>
-                <%= image_tag(cover_image_of(current_reading_post_title), alt: "Part #{current_reading_post_title.split('')[18]} Cover", class: "post_image", id: "post_cover") %>
-              <% else %>
-                <%= image_tag("Bailey Simms pic.jpg", alt: "Bailey Simms", class: "post_image", id: "post_portrait") %>
+        <div id="currently_reading_div" class="item_div">
+          <div id="posts_menu_dropdown" class="closed">
+            <ul id="posts_list">
+              <% Post.all.each do |post| %>
+                <% if post.id > 1 %>
+                  <% if post.id == current_reading_post_id %>
+                    <li class = "current_post">
+                  <% else %>
+                    <li>
+                  <% end %>
+                    <%= link_to post do %>
+                    <p id="title"><%= post.title %></p>
+                    <% end %>
+                  </li>
+                <% end %>
               <% end %>
-              <div id="labels_div">
-                <p id="continue_label">
-                  <% if params[:controller] == "posts" %>
-                    Currently reading
-                  <% elsif current_reading_post_id != 1 && logged_in? %>
-                    Continue Reading
-                  <% else %>
-                    Start Reading
-                  <% end %>
-                </p>
-                <p id="current_reading_title">
-
-                  <% if logged_in? || params[:controller] != "posts"%>
-                    <%= current_reading_post_title %>
-                  <% else %>
-                    <%= @post.title %>
-                  <% end %>
-
-                </p>
-              </div>
-            </a>
-            <%= image_tag("posts menu icon.svg", id: "posts_menu_icon") %>
+            </ul>
+          </div>
+          <div id="dropdown_shadow_mask">
+          </div>
+          <div id="shadow">
+            <div id="point">
+            </div>
+            <div id="mask">
+              <a href=<%= logged_in? || params[:controller] != "posts" ? current_reading_location : @post.id != 1 ? post_path(@post.id) : posts_path %>>
+                <% if current_reading_post_title =~ /DEAD IN BED/ %>
+                  <%= image_tag(cover_image_of(current_reading_post_title), alt: "Part #{current_reading_post_title.split('')[18]} Cover", class: "post_image", id: "post_cover") %>
+                <% else %>
+                  <%= image_tag("Bailey Simms pic.jpg", alt: "Bailey Simms", class: "post_image", id: "post_portrait") %>
+                <% end %>
+                <div id="labels_div">
+                  <p id="continue_label">
+                    <% if params[:controller] == "posts" %>
+                      Currently reading
+                    <% elsif current_reading_post_id != 1 && logged_in? %>
+                      Continue Reading
+                    <% else %>
+                      Start Reading
+                    <% end %>
+                  </p>
+                  <p id="current_reading_title">
+                    <% if logged_in? || params[:controller] != "posts"%>
+                      <%= current_reading_post_title %>
+                    <% else %>
+                      <%= @post.title %>
+                    <% end %>
+                  </p>
+                </div>
+              </a>
+              <%= image_tag("posts menu icon.svg", id: "posts_menu_icon") %>
+            </div>
           </div>
         </div>
       </div>
@@ -58,6 +76,5 @@
       </div>
     </div> 
   </div>  
-
 </div>
 
