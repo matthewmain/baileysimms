@@ -40,7 +40,7 @@
                   <%= image_tag("Bailey Simms pic.jpg", alt: "Bailey Simms", class: "post_image", id: "post_portrait") %>
                 <% end %>
                 <div id="labels_div">
-                  <p id="continue_label">
+                  <p id="context_label">
                     <% if params[:controller] == "posts" %>
                       Currently reading
                     <% elsif current_reading_post_id != 1 && logged_in? %>
@@ -77,4 +77,8 @@
     </div> 
   </div>  
 </div>
+
+<div id="posts_menu_dropdown_clickaway_skin" class="clickaway_skin"></div>
+
+
 

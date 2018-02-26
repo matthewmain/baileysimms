@@ -3,72 +3,15 @@
 
 
 
-/*** Navigation Menu Drawer ***/
-
-
-.nav_menu_icon {
-	width: 32px;
-	height: 24px;
-	top: 26px;
-}
-
-#nav_menu_icon_open {
-  position: fixed;
-	left: 30px;
-	z-index: 1;
-}
-
-#nav_menu_div {
-  position: fixed;
-  left: -426px;
-  background: #000000;
-  width: 426px;
-  height: 100%;
-  z-index: 4;
-  #nav_menu_icon_close {
-    position: absolute;
-  	float: right;
-	  right: 35px;
-	  opacity: 0;
-	  z-index: 3;
-	}
-  #blue_feather_logo_img {
-  	position: relative;
-  	top: 57px;
-  	left: 160px;
-  	width: 100px;
-  }
-  ul {
-  	list-style-type: none;
-  	font-family: Matol-M-Round, Avenir, Courier;
-  	font-size: 30px;
-  	padding: 0 0 0 50px;
-  	margin: 80px 0 0 0;
-  	li {
-  		line-height: 100px;
-			a {
-				text-decoration: none;
-				color: #457A9D;
-				&:hover {
-					text-shadow: 0 0 30px #457A9D;
-				}
-			}	
-		}
-	  #emphasize {
-			font-family: Matol-B-Round;
-		}
-  }
-}
 
 
 
 
-/*** HEADER ***/
+/************ HEADER **************/
 
 
 #header_div {
 	position: fixed;
-	float: left;
 	top: 0;
 	width: 100%;
 	height: 75px;
@@ -150,7 +93,7 @@
 	#posts_list {
 		list-style: none;
 		padding: 0 5px;
-		margin: 10px 0;
+		margin: 5px 0 0;
 		li {
 			padding: 20px 0;
 			border-bottom: 1px solid #D5D5D5;
@@ -258,11 +201,11 @@
 	padding: 20 0 0;
 }
 
-#continue_label {
+#context_label {
 	position: relative;
 	text-align: left;
 	font-size: 8px;
-	color: #555555;
+	color: #898989;
 	transform: none;
 	margin: 0;
 }
@@ -297,8 +240,93 @@
 
 
 
+/************** NAV MENU DRAWER *************/
 
-/*** Profile Menu Drawer ***/
+.nav_menu_icon {
+	width: 32px;
+	height: 24px;
+	top: 26px;
+}
+
+#nav_menu_icon_open {
+  position: fixed;
+	left: 30px;
+	z-index: 1;
+}
+
+#nav_menu_div {
+  position: fixed;
+  left: -426px;
+  background: #000000;
+  width: 426px;
+  height: 100%;
+  z-index: 5;
+  #nav_menu_icon_close {
+    position: absolute;
+  	float: right;
+	  right: 35px;
+	  opacity: 0;
+	  z-index: 3;
+	}
+  #blue_feather_logo_img {
+  	position: relative;
+  	top: 57px;
+  	left: 160px;
+  	width: 100px;
+  }
+  ul {
+  	list-style-type: none;
+  	font-family: Matol-M-Round, Avenir, Courier;
+  	font-size: 30px;
+  	padding: 0 0 0 50px;
+  	margin: 80px 0 0 0;
+  	li {
+  		line-height: 100px;
+			a {
+				text-decoration: none;
+				color: #457A9D;
+				&:hover {
+					text-shadow: 0 0 30px #457A9D;
+				}
+			}	
+		}
+	  #emphasize {
+			font-family: Matol-B-Round;
+		}
+  }
+}
+
+
+
+
+
+
+
+/************** CLICKAWAY SKINS **************/
+
+
+.clickaway_skin {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+	z-index: 4;
+}
+
+#posts_menu_dropdown_clickaway_skin {
+	top: 75;
+	z-index: 1;
+}
+
+
+
+
+
+
+
+/********* PROFILE MENU DRAWER *********/
 
 
 .profile_menu_icon {
@@ -310,7 +338,7 @@
 
 #profile_menu_user_image_div {
 	position: fixed;
-	z-index: 5;
+	z-index: 6;
 	.user_image {
 		position: fixed;
 		float: right;
@@ -338,7 +366,7 @@
   background: #000000;
   width: 426px;
   height: 100%;
-  z-index: 4;
+  z-index: 5;
   #profile_menu_icon_close {
     position: absolute;
   	float: left;
@@ -387,7 +415,9 @@
 
 
 
-/*** FOOTER ***/
+
+/************** FOOTER **************/
+
 
 footer {
 	width: 100%;
@@ -424,3 +454,7 @@ footer {
  float: right;
  padding-left: 1em;
 }
+
+
+
+
