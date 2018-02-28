@@ -15,7 +15,7 @@
 
 // INDEX COLUMN //
 #blog_posts_index_column {
-	z-index: 1000;
+	z-index: 1;
 	position: fixed;
 	width: 22%;
 	max-width: 211.2px;
@@ -105,9 +105,6 @@
 				p {
 					margin: 0;
 				}
-				#date {
-					margin-bottom: 5px;
-				}
 				#title {
 					font-weight: bold;
 					font-style: italic;
@@ -178,7 +175,7 @@
 		position: relative;
 		left: 87%;
 		top: -25px;
-		z-index: 0000;
+		z-index: 0;
 	}
 	// INTRO STATEMENT NOTICE //
 	#blog_intro_statement {

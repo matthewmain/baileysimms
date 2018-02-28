@@ -23,13 +23,14 @@
       
 </head>
 
-
 <body>
 
   <!--facebook SDK script-->
   <%= render 'layouts/facebook' %>
   
-	<%= render 'layouts/header' unless @omit_header %>
+  <%= render 'layouts/nav_menu'%>
+  <%= render 'layouts/header' unless @omit_header %>
+  <%= render 'layouts/profile_menu'%>
 
 	<div>
 		<% flash.each do |message_type, message| %>

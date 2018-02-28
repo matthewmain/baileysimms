@@ -16,19 +16,6 @@
 
 <body id="home_body">
 
-<%= image_tag("menu icon open.svg", id: "menu_icon_open", class: "menu_icon") %>
-
-<div id="menu_div"> 
-  <%= image_tag("menu icon close.svg", id: "menu_icon_close", class: "menu_icon") %>
-  <%= image_tag("blue feather logo.png", id: "blue_feather_logo_img") %>
-  <ul>
-    <li><%= link_to 'Read the Book', current_reading_location %></li> 
-    <li><%= link_to 'Shop', books_path %></li>
-    <li><%= link_to 'Community', users_path %></li>
-    <li><%= link_to 'About', about_path %></li>
-  </ul>
-</div>
-
 <div id="DEAD_IN_BED_div">
   <div id="DIB_div_c_shadows" class="DIB_image_div">
     <%= image_tag("logo text (c shadows).png", alt: "logo text (c shadows)", class: "DIB_img") %>
@@ -71,7 +58,7 @@
 
   <div id="intro_button_div">
     <%= link_to 'posts/2' do %>
-      <p id="read_button">READ</p>
+      <p>READ</p>
     <% end %>
   </div>
 

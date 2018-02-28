@@ -16,7 +16,7 @@
 
 module PostsHelper
 
-	def extract_part_number(post_title)
+	def cover_image_of(post_title)
 		if post_title.split('')[19] == ":"
 			"DiB#{post_title.split('')[18]} cover.jpg"
 		else

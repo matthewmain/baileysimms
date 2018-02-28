@@ -1,43 +1,84 @@
-	<header class="navbar navbar-fixed-top">
 
-      <nav class="nav">
-          <%= link_to image_tag('favicon.png'), root_path, id: "logo" %>
-          <%= link_to '☰', root_path, class: "navbar_icon phone_only" %>
-        <ul class="nav navbar-nav navbar-left">
-          <li><%= link_to 'BLOG', posts_path %></li>
-          <li><%= link_to 'COMMUNITY', users_path %></li>
-          <li><%= link_to 'BOOKS', books_path %></li>
-          <li><%= link_to 'ABOUT', about_path %></li>
-          <li><%= mail_to 'baileysimms96@yahoo.com', 'CONTACT' %></li>
-        </ul>  
-        <% if logged_in? %>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <div href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <div class="header_user_image">
-                <%= user_image_for current_user %>
-              </div>
-              <div class="header_user_name_dropdown_div">
-                <div class="caret_div"><b class="caret"></b></div>
-                <div class="header_user_name_div"><%= current_user.user_name.gsub(/_/, ' ') %></div>
-              </div>
-            </div>
-            <ul class="dropdown-menu">
-              <li class="dropdown_li"><%= link_to "PROFILE", current_user %></li>
-              <li class="dropdown_li"><%= link_to "SETTINGS", edit_user_path(current_user) %></li>
-              <li class="divider"></li>
-              <li class="dropdown_li"><%= link_to "LOG OUT", logout_path, method: "delete" %></li>
+
+<div id="header_div">
+  <div id="header_left">
+    <div id="logo_div"><%= link_to image_tag('header_logo.png'), root_path %>
+    </div>
+    <div id="list_div">
+      <div id="reading_div">
+        <div id="read_item_div" class="item_div">
+          <p <%="class=current" if params[:controller] == "posts"%> ><%= link_to 'Read', logged_in? || params[:controller] != "posts" ? current_reading_location : @post.id != 1 ? post_path(@post.id) : posts_path %></p>
+        </div>
+        <div id="currently_reading_div" class="item_div">
+          <div id="posts_menu_dropdown" class="closed">
+            <ul id="posts_list">
+              <% Post.all.each do |post| %>
+                <% if post.id > 1 %>
+                  <% if post.id == current_reading_post_id %>
+                    <li class = "current_post">
+                  <% else %>
+                    <li>
+                  <% end %>
+                    <%= link_to post do %>
+                    <p id="title"><%= post.title %></p>
+                    <% end %>
+                  </li>
+                <% end %>
+              <% end %>
             </ul>
-          </li>
-         </ul> 
-          
-        <% else %>
-        <ul class="nav navbar-nav navbar-right">
-          <li class="not_logged_in"><%= link_to "LOG IN", login_path %></li>
-          <li class="not_logged_in"><%= link_to 'SIGN UP', new_user_path %></li>
-				</ul>
-        <% end %>
+          </div>
+          <div id="dropdown_shadow_mask">
+          </div>
+          <div id="shadow">
+            <div id="point">
+            </div>
+            <div id="mask">
+              <a href=<%= logged_in? || params[:controller] != "posts" ? current_reading_location : @post.id != 1 ? post_path(@post.id) : posts_path %>>
+                <% if current_reading_post_title =~ /DEAD IN BED/ %>
+                  <%= image_tag(cover_image_of(current_reading_post_title), alt: "Part #{current_reading_post_title.split('')[18]} Cover", class: "post_image", id: "post_cover") %>
+                <% else %>
+                  <%= image_tag("Bailey Simms pic.jpg", alt: "Bailey Simms", class: "post_image", id: "post_portrait") %>
+                <% end %>
+                <div id="labels_div">
+                  <p id="context_label">
+                    <% if params[:controller] == "posts" %>
+                      Currently reading
+                    <% elsif current_reading_post_id != 1 && logged_in? %>
+                      Continue Reading
+                    <% else %>
+                      Start Reading
+                    <% end %>
+                  </p>
+                  <p id="current_reading_title">
+                    <% if logged_in? || params[:controller] != "posts"%>
+                      <%= current_reading_post_title %>
+                    <% else %>
+                      <%= @post.title %>
+                    <% end %>
+                  </p>
+                </div>
+              </a>
+              <%= image_tag("posts menu icon.svg", id: "posts_menu_icon") %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="last_items_div">
+        <div class="item_div" id="shop_div">
+          <p <%="class=current" if params[:controller] == "books"%> ><%= link_to 'Shop', books_path %></p>
+        </div>
+        <div class="item_div" id="community_div">
+          <p <%="class=current" if params[:controller] == "users"%> ><%= link_to 'Community', users_path %></p>
+        </div>
+        <div class="item_div" id="about_div">
+          <p <%="class=current" if params[:controller] == "about"%> ><%= link_to 'About', about_path %></p>
+        </div>
+      </div>
+    </div> 
+  </div>  
+</div>
+
+<div id="posts_menu_dropdown_clickaway_skin" class="clickaway_skin"></div>
 
 
-		</div>
-	</header>	
+

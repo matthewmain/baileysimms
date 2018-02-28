@@ -1,0 +1,32 @@
+
+<% if logged_in? %>
+
+	<%= image_tag("profile menu icon open.svg", id: "profile_menu_icon_open", class: "profile_menu_icon logged_in") %>
+ 	<div id="profile_menu_user_image_div"><%= user_image_for current_user %></div>
+
+	<div id="profile_menu_div"> 
+	  <%= image_tag("profile menu icon close.svg", id: "profile_menu_icon_close", class: "profile_menu_icon logged_in") %>
+	  <p class="profile_menu_user_name"><%= current_user.user_name.gsub(/_/, ' ') %></p>
+	  <ul class="logged_in">
+	    <li><%= link_to "Profile", current_user %></li> 
+	    <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+	    <li class="profile_menu_divider"></li>
+	    <li id="log_out_text"><%= link_to "log out", logout_path, method: "delete" %></li>
+	  </ul>
+	</div>
+
+<% else %>
+
+	<%= image_tag("profile menu icon open.svg", id: "profile_menu_icon_open", class: "profile_menu_icon logged_out") %>
+
+	<div id="profile_menu_div"> 
+	  <%= image_tag("profile menu icon close.svg", id: "profile_menu_icon_close", class: "profile_menu_icon logged_out") %>
+	  <ul class="logged_out">
+	    <li id="log_in_text"><%= link_to "Log In", login_path %></li>
+	    <li id="sign_up_text"><%= link_to 'Sign Up', new_user_path %></li>
+	  </ul>
+	</div>
+
+<% end %>
+
+<div id="profile_menu_clickaway_skin" class="clickaway_skin"></div>
