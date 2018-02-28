@@ -109,7 +109,7 @@
 		top: 75px;
 		margin: 0 auto;
 		padding-bottom: 125px;
-		#read_button {
+		p {
 			width: 165px;
 			height: 40px;
 			font-family: Matol-B-Round, Avenir, Courier;
@@ -129,22 +129,6 @@
 	}
 }
 
-
-
-@font-face {
-  font-family: Matol-R-Round;
-  src: asset_url("Matol-R-Round.otf");
-}
-
-@font-face {
-  font-family: Matol-M-Round;
-  src: asset_url("Matol-M-Round.otf");
-}
-
-@font-face {
-  font-family: Matol-B-Round;
-  src: asset_url("Matol-B-Round.otf");
-}
 
 
 @keyframes DIB_c_shadows_appear {

@@ -17,20 +17,35 @@
 
 
 
+* {
+  box-sizing: border-box;
+}
+
 html {
 	height: 100%;
 }
 
 body {
-	background: #525659;
+	display: flex;
+  flex-direction: column;
+  height: 100vh; /*units here are percentage of view height, necessary for flex box scaling and footer positioning*/ 
+	background: #FFFFFF;
 	height: 100%;
-	padding-top: 50px;
-	font-family: Avenir, Helvetica, sans-serif;
+	padding-top: 75px;
+	font-family: Matol-R-Round, Avenir, sans-serif;
 }
 
 h1 {
-	text-align: center;
-	margin: 1.5em auto;
+	font-family: Matol-M-Round, Avenir, sans-serif;
+	font-size: 34px;
+	letter-spacing: .5px;
+	color: #457A9D;
+	text-align: left;
+	margin: 75px 0 50px;
+}
+
+p {
+	font-family: Matol-R-Round, Avenir, sans-serif;
 }
 
 a:hover {
@@ -40,6 +55,8 @@ a:hover {
 a:focus {
 	outline: none;
 }
+
+
 
 
 

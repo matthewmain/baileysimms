@@ -1,58 +1,36 @@
 
-#about_body {
-	font-family: "Avenir", Helvetica, sans-serif;
-	background: #0e1215;
-	color: #428bca;
-}
 
 .about_div {
-	width: 455px;
-	margin: 35px auto 20px; 
+	width: 500px;
+	margin: 0 auto auto;
 }
 
-.about_div h1 {
-	display: block;
-	text-align: center;
-	font-size: 64px;
-	font-weight: bold;
-	margin: 0 0 15px;
-	padding: 0;
-} 
-
-	h1.bailey_head {
-		letter-spacing: .74em;
-	}
-
-	h1.simms_head {
-		letter-spacing: .97em;
-	}
-
-.about_div p {
+#about_content p {
 	text-align: justify;
-	font-size: 14px;
-	margin: 0 0 18px;
+	color: #133247;
+	letter-spacing: .7px;
+	line-height: 23px;
+	margin: 0;
+	padding: 0 0 22px;
 }
 
-.about_div a {
-	color: #428bca;
-	text-decoration: underline;
+#about_read_button {
+	width: 82px;
+	height: 20px;
+	font-family: Matol-M-Round, Avenir, Courier;
+	font-size: 12px;
+	letter-spacing: .8px;
+	text-align: center;
+	color: #FFFFFF;
+	background: #CC544A;
+	border-radius: 1.5px;
+	padding-top: 3px;
+	margin: 40px auto 62px;
 	&:hover {
-		text-decoration: underline;
+		background: #BA3C32;
 	}
 }
 
-.about_div .fiction_notice {
-	margin-top: 85px;
-	padding: 0 25px;
-	p {
-		font-size: 10px;
-		color: gray;
-	}
-	a {
-		color: lightgray;
-		text-decoration: none;	
-	}
-}
 
 
 
