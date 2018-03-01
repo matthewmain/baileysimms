@@ -40,8 +40,38 @@ h1 {
 	font-size: 34px;
 	letter-spacing: .5px;
 	color: #457A9D;
-	text-align: left;
 	margin: 75px 0 50px;
+}
+
+h2 {
+	font-family: Matol-M-Round, Avenir, sans-serif;
+	font-size: 20px;
+	letter-spacing: .6px;
+	color: #457A9D;
+	margin: 0;
+}
+
+h3 {
+	font-family: Matol-M-Round, Avenir, sans-serif;
+	font-size: 16px;
+	letter-spacing: .55px;
+	color: #457A9D;
+	margin: 0;
+}
+
+h4 {
+	font-family: Matol-R-Round, Avenir, sans-serif;
+	font-size: 13px;
+	letter-spacing: .5px;
+	color: #E4B4B0;
+	margin: 0;
+}
+
+h5 {
+	font-family: Matol-R-Round, Avenir, sans-serif;
+	font-size: 9px;
+	color: #E5BDC7;
+	margin: 0;
 }
 
 p {

@@ -1,19 +1,20 @@
-<h3 class="top_contributors_heading"><i>TOP CONTRIBUTORS THIS MONTH SO FAR</i></h3>
-<h4 class="top_contributors_heading"><%= Time.now.strftime("%^B %Y") %></h4>
+
+<h3 class="top_contributors_heading">Top Contributors This Month So Far</h3>
+<h4 class="top_contributors_heading"><%= Time.now.strftime("%B %Y") %></h4>
+
 <ol id="top_contributors_list">
   <% rank = 0 %>
   <% @top_five_contributors_this_month.each do |name, participation| %>
     <% if participation[:shares] > 0 || participation[:comments] > 0 %>
       <% rank += 1%>
       <li>
-        <div class="rank">#<%=rank%></div>
-        <%= user_image_for User.find_by_user_name(name)%>
-        <div class="contributor_name"><%= link_to name.gsub(/_/, ' '), User.find_by_user_name(name) %></div>
-        <%= image_tag("DiBC1 cover.jpg", alt: "Dead In Bed 1", class: "winner") if book_1_giveaway_winner(name)%>
-        <%= image_tag("DiBC2 cover.jpg", alt: "Dead In Bed 2", class: "winner") if book_2_giveaway_winner(name) %>
-        <div class="share_count"><% if participation[:shares] == 1 %>share<% else %>shares<% end %></div>   
-        <div class="number"><%= participation[:shares] %></div>
-        <div class="comment_count"><span class="comment_count_number"><%= participation[:comments]%></span>&nbsp;&nbsp;<%= "comment".pluralize(participation[:comments]) %></div>
+        <div class="rank_div">#<%=rank%></div>
+        <div class="upper_div_right">
+          <%= user_image_for User.find_by_user_name(name)%>
+          <div class="contributor_name"><%= link_to name.gsub(/_/, ' '), User.find_by_user_name(name) %></div>
+          <div class="share_count"><%= participation[:shares] %><% if participation[:shares] == 1 %> share<% else %> shares<% end %></div> 
+        </div>
+        <div class="comment_count_div"><%= participation[:comments]%><%= " comment".pluralize(participation[:comments]) %></div>
       </li>
     <% end %>  
   <% end %>

@@ -1,5 +1,7 @@
-<h2>MEMBERS</h2>
-<h4><i><%= @users.where(:activated => true).count %> of us and counting</i></h4>
+
+<h2>Newest Members</h2>
+<h5><%= @users.where(:activated => true).count %> of us and counting</h5>
+
 <ul id="members_list">
   <% @users.each do |user| %>
 
@@ -9,11 +11,10 @@
         <div class="users_index_user_name"><%= link_to user.user_name.gsub(/_/, ' '), user %></div>
         <div class="users_index_date">Member since <%= user.activated_at.strftime("%B #{user.activated_at.day.ordinalize}, %Y") %>
           <% if logged_in? && current_user.admin? && !current_user?(user) %>
-          	<span> | </span><%= link_to "×", user, method: :delete, data: { confirm: "You sure you want to do this?" }%>
+          	<%= link_to "×", user, method: :delete, data: { confirm: "You sure you want to do this?" }%>
       		<% end %>
         </div>
       </li>
     <% end %>
-
   <% end %>
 </ul>

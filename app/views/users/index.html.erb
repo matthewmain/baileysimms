@@ -6,6 +6,7 @@
 
 <div id="community_container">
 
+  <h1>Community</h1>
 
   <div class="members_div web_view">
     <%= render 'members' %>
@@ -31,11 +32,7 @@
 
 
   <div id="recent_comments_div">   
-  <h2>RECENT COMMENTS</h2>
-  <h4><i><%= Comment.count %> comments total so far</i></h4>
-    <ol id="recent_comments_list">
-      <%= render 'recent_comments' %>
-    </ol>
+    <%= render 'recent_comments' %>
   </div>  
 
   <div class="members_div mobile_view">
