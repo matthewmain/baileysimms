@@ -6,35 +6,42 @@
 
 	<div id="profile_feature_div">
 		<%= user_image_for(@user) %>
-
-    <div id="fb_connection_div">
-	    <% if @user == current_user && !current_user.is_connected_to_facebook %>
-	      <p><%= link_to "connect to Facebook to use your Facebook profile picture", "/auth/facebook", id: "fb_connect" %></p>
-	    <% elsif @user == current_user && current_user.is_connected_to_facebook %>
-	      <p>Connected to Facebook as <b><i><%= current_user.facebook_name %></i></b>&nbsp;&nbsp;
-	      <%= link_to "disconnect", fb_disconnect_path, id: "fb_disconnect" %></p>
-	    <% end %>
-  	</div>
-
-		<h1><%= @user.user_name.gsub(/_/, ' ') %></h1>
-		<% if @user.vip? %><h4 style="color:gold;font-size:12px">✨<i style="font-size:16px">VIP</i> ✨</h4><% end %>
-
-		<h4><%= mail_to @user.email if logged_in? && current_user.admin? %></h4>
+		<h1 class="profile_name"><%= @user.user_name.gsub(/_/, ' ') %></h1>
+		<% if @user.vip? %><h4 style="color:#ff8c00;font-size:13px"><i>VIP<i></h4><% end %>
+		<h4 class="email"><%= mail_to @user.email if logged_in? && current_user.admin %></h4>
 	</div>
 
+	<!-- parts access panel (visible only on users' own accounts or to admins) -->
+  <% if logged_in? && ( current_user.user_name == params[:id] || current_user.admin ) %>
+		<div id="parts_access_div">
+			<% 14.times do |i| %>
+				<% num = i+1 %>
+				<div class="part_div">
+					<%= link_to post_path(first_post_of_part(num)) do %>
+						<%= image_tag("DiB#{num} cover thumb.jpg", class: "part_cover_img") %>
+						<% if num > 1 && !@user.send("can_access_part_#{num}") && !@user.admin %>
+							<%= image_tag("tint and lock.png", class: "tint_and_lock_img") %>
+						<% end %>
+					<% end %>	
+				</div>
+			<% end %>
+		</div> 
+	<% end %>
+
+	<!-- admin actions section (visible only on admin accounts) -->
 	<%= render 'admin_user' if logged_in? && current_user.admin? && @user.admin? %>
 
 	<div id="profile_comments_div">		
-	<h3>COMMENTS <%= @user.comments.any? ? ( "("+@user.comments.count.to_s+")" unless @user.admin?) : "(0)" %></h3>
+		<h1>Comments</h1>
 	  <% if @user.comments.any? %>
 	    <ol class="profile_comments_list">
 		    <%= render 'user_comments' %>
 	    </ol>
 		<% elsif @user == current_user %>
-			<p><i>Looks like you haven't commented yet. What's the deal? <u><%= link_to 'Start reading Bailey\'s blog ', posts_path %></u>and get on it!</i></p>
+			<p class="no_comments_notice"><i>Looks like you haven't commented yet. What's the deal? <u><%= link_to 'Start reading Bailey\'s blog ', posts_path %></u>and get on it.</i></p>
 		<% else %>
-			<p><i>Looks like <%= @user.user_name.gsub(/_/, ' ') %> hasn't commented yet...</i></p>
+			<p class="no_comments_notice"><i>Looks like <%= @user.user_name.gsub(/_/, ' ') %> hasn't commented yet...</i></p>
 	  <% end %>
 	</div>	
 
-</div>			
+</div>

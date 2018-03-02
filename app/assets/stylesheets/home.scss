@@ -5,6 +5,7 @@
 
 
 #home_body {
+	display: block;  //necessary to cancel site-wide flex display set in application.css
 	background: #ffffff;
 	padding: 0;
 }
@@ -62,7 +63,7 @@
 
 #feather_div {
   position: relative;
-  top: -37px;
+  top: -100px;
   width: 300px;
   margin: auto;
   left: 0px;
@@ -72,7 +73,7 @@
   animation-timing-function: ease-in-out;
 	#feather_img {
 	  width: 300px;
-	  transform: scaleX(-1); /*(flips image horizontally) */ 
+	  transform: scaleX(-1); //(flips image horizontally) 
 	}
 }
 
@@ -81,7 +82,7 @@
   height: 50px;
   margin: auto;
   position: relative;
-  top: -75px;
+  top: -138px;
   left: 0px;
   transform: rotate(0deg);
   animation-name: feather_shadow_appear;
@@ -225,19 +226,19 @@
 @keyframes feather_fall {
   0% { 
     transform: rotate(-80deg);
-    top: -615px;
+    top: -675px;
     left: 250px }
   38% {
     transform: rotate(40deg); 
-    top: -375px;   
+    top: -450px;   
     left: -250px } 
   80% {
     transform: rotate(-385deg); 
-    top: -75px; 
+    top: -135px; 
     left: 175px }
   100% { 
     transform: rotate(-355deg); 
-    top: -37px;
+    top: -100px;
     left: 0px }
 }  
 

@@ -28,133 +28,141 @@
 /************* PROFILE *************/
 
 #profile_container {
-	min-height: 100%;
-	color: black;
+	width: 70%;
+	margin: 0 auto auto;
+	max-width: 900px;
 	h3 {
 		border-bottom: solid 1px;
-	}
-	a:hover {
-		color: #ffffff;
 	}
 }
 
 // feature //
+
 #profile_feature_div {
-	margin: 66px 0 50px;
+	margin: 75px 0 0;
 	text-align: center;
-	color: black;
-	font-weight: bold;
 	letter-spacing: 2px;
 	img {
-		height: 150px;
-		width: 150px;
+		height: 158px;
+		width: 158px;
 	}
-	h1 {
-		margin: 15px auto 10px;
+	.profile_name {
+		font-family: Matol-B-Round, Avenir, sans-serif;
+		margin: 15px auto 0;
 	} 
-	h4 {
-		margin-bottom: 20px;
-		color: black;
-	}
-}
-
-// FACEBOOK LOGIN //
-#fb_connection_div {
-	display: block;
-	width: 100%;
-	margin: 7px 0 0;
-	letter-spacing: 0;
-	p {
-		text-align: center;
-		font-size: 9px;
-		font-weight: normal;
-	}
-	a {
-		position: relative;
-		top: -1px;
-		background: #337ab7;;
-		color: white;
-		font-size: 7px;
-		padding: 1px 5px;
-		border-radius: 6px;
+	.email a {
+		display: block;
+		padding: 3px 0 0;
+		color: #8BC0E3;
 		&:hover {
-			background: white;
-			color: #337ab7;
+			color: #457A9D;
 		}
 	}
 }
 
+// Parts Access //
+
+#parts_access_div {
+	display: flex;
+	margin: 80px 0 0;
+	.part_div {
+		position: relative;
+		margin: 0 1.5% 0 0;
+		.part_cover_img {
+			width: 100%;
+			border: 1px solid #2D2D2D;
+			box-shadow: 0 0 1px 0 rgba(0, 0, 0, .4);
+		}
+		.tint_and_lock_img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			border: 1px solid rgba(0, 0, 0, 0);; //transparent border to match part cover image dimensions
+		}
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+
 // admin //
 #admin_div {
-	width: 66%;
-	margin: 0 auto 45px;
+	margin: 75px auto auto;
+	h1 {
+		font-size: 28px;
+		border-bottom: solid 1px #555555; 
+		margin: 0;
+	}
 	a {
-		padding-left: 5px;
+		display: block;
+		margin: 30px 0 0;
+		color: #BA3C32;
+		font-size: 16px;
+		&:hover {
+			color: #8C090D;
+		}
 	}
 }
 
 // comments //
 #profile_comments_div {
-	width: 66%;
-	margin: auto;
-	h3 {
-		margin-bottom: 10px;
+	margin: 75px auto 125px;
+	h1 {
+		font-size: 28px;
+		margin: 0;
 	}
 	.profile_comments_list {
 		list-style: none;
 		padding: 0;
-		margin-bottom: 50px;
+		margin: 35px 0 0;
 		#comment_div {
-			min-height: 90px;
-			display: flex;
-			flex-direction: column;
-			padding: 12px 0 35px;
-			border-top: solid 1px black;
-			&:first-child {
-				border: none;
-			}
+			margin: 0 auto 45px;
 			li {
-				height: auto;
-				#user_image {
-					width: 8%;
+				#user_image_div {
 					float: left;
 					img {
-						height: 50px;
-						width: 50px;
-						box-shadow: none;
+						width: 55px;
 					}	
 				}
 				#post_name {
-					padding-left: 1%;
+					padding: 0 0 0 15px;
 					a {
-						color: #2b90c4;
-						font-weight: bold;
+						font-family: Matol-M-Round, Avenir, sans-serif;
+						color: #BA3C32;
+						font-size: 20px;
 						&:hover {
-							color: #ffffff;
+							color: #8C090D;
 						}
 					}
 				}
 				#timestamp {
 					float: right;
-					padding-right: 5px;
-					color: #1b252b;
-					font-size: .8em;
+					color: #E4B4B0;
+					font-size: 10px;
+					margin: 8px 0 0;
 					#delete_x {
-						margin: 0 0 0 5px;
+						margin: 0 0 0 3px;
 						a {
-							color: #2b90c4;
+							color: #CC544A;
+							font-size: 8px;
 						} 
 					}
 				}
 				#content {
-					clear: right;
-					width: 90%;
-					padding-left: 1%;
-					margin-top: 12px;
-					float: left;
+					margin: 10px 0 0 55px;
+					padding: 0 0 0 15px;
+					color: #24475D;
+					line-height: 24px;
 				}
 			}
 		}
+	}
+	.no_comments_notice {
+		color: #24475D;
+		margin: 25px 0 0;
+		letter-spacing: .4px;
 	}
 }
 
@@ -185,6 +193,30 @@
 			font-weight: bold;
 		}
 	}
+	#fb_connection_div {
+		display: block;
+		width: 100%;
+		margin: 7px 0 0;
+		letter-spacing: 0;
+		p {
+			text-align: center;
+			font-size: 9px;
+			font-weight: normal;
+		}
+		a {
+			position: relative;
+			top: -1px;
+			background: #337ab7;;
+			color: white;
+			font-size: 7px;
+			padding: 1px 5px;
+			border-radius: 6px;
+			&:hover {
+				background: white;
+				color: #337ab7;
+			}
+		}
+	}
 	.form-button {
 		background: #337ab7;;
 		color: white;
@@ -208,7 +240,8 @@
 
 
 #community_container {
-	max-width: 960px;
+	width: 70%;
+	max-width: 900px;
 	margin: 0 auto auto;
 	a:hover {
 		color: #0f4b7e;
@@ -217,9 +250,10 @@
 
 // Members //
 .members_div {
-	width: 30%;
-	min-height: 600px;
 	float: left;
+	width: 35%;
+	min-height: 600px;
+	margin: 0 0 125px;
 	h5 {
 		margin: 4px 0 0;
 	}
@@ -284,7 +318,7 @@
 
 #community_container { 
 	.top_contributors_div {
-		width: 57%;
+		width: 53%;
 		float: right;
 		h5 {
 			margin: 4px 0 0;
@@ -420,24 +454,25 @@
 
 #recent_comments_div {
 	float: right;
-	width: 57%;
+	width: 53%;
 	padding: 110px 0 0;
+	margin: 0 0 125px 0;
 	h5 {
 		margin: 4px 0 0;
 	}
 	#recent_comments_list {
 		list-style: none;
 		padding: 0;
-		margin: 50px 0 0;
+		margin: 30px 0 0;
 		#comment_div {
 			min-height: 90px;
 			display: flex;
 			flex-direction: column;
-			padding: 12px 0 0;
+			padding: 25px 0 0;
 			.comment_li {
 				height: auto;
 				#user_image {
-					width: 10%;
+					width: 48px;
 					float: left;
 					.user_image {
 						height: 48px;
@@ -447,7 +482,7 @@
 				}
 				#user_name {
 					display: inline-block;
-					padding: 10px 0 0 1%;
+					padding: 10px 0 0 10px;
 					font-family: Matol-M-Round, Avenir, sans-serif;
 					font-size: 15px;
 					a {
@@ -489,9 +524,9 @@
 					}
 				}
 				#post_name {
-					float: right;
-					width: 89%;
-					margin: 0 0 0 1%;
+					display: block;
+					width: 100%;
+					margin: 0 0 0 58px;
 					font-size: 13px;
 					a {
 						color: #8BC0E3;
@@ -501,10 +536,8 @@
 					}
 				}
 				#content {
-					clear: right;
-					float: right;
-					width: 89%;
-					margin: 12px 0 0 1%;
+					width: 100%;
+					margin: 12px 0 0;
 					font-size: 12px;
 					letter-spacing: .6px;
 					line-height: 19px;
@@ -513,8 +546,9 @@
 			}
 
 			#replies_div {
-				clear: both;
-				margin: 25px 0 10px 11%;
+				width: 100%;
+				padding: 0 0 0 15px;
+				margin: 20px 0 0;
 				#replies_feed {
 					padding: 0;
 					.reply_li {
@@ -768,9 +802,9 @@ p.pagination {
 		}
 
 		.members_div {
+			float: none;
 			width: 92%;
 			margin: auto;
-			float: none;
 			#members_list li {
 				.users_index_user_image {
 					display: block;
