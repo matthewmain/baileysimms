@@ -5,8 +5,9 @@
 
 
 #home_body {
+	display: block;  //necessary to cancel site-wide flex display set in application.css
 	background: #ffffff;
-	padding: 0 0 0 0;
+	padding: 0;
 }
 
 #DEAD_IN_BED_div {
@@ -62,7 +63,7 @@
 
 #feather_div {
   position: relative;
-  top: -92px;
+  top: -100px;
   width: 300px;
   margin: auto;
   left: 0px;
@@ -72,7 +73,7 @@
   animation-timing-function: ease-in-out;
 	#feather_img {
 	  width: 300px;
-	  transform: scaleX(-1); /*(flips image horizontally) */ 
+	  transform: scaleX(-1); //(flips image horizontally) 
 	}
 }
 
@@ -81,7 +82,7 @@
   height: 50px;
   margin: auto;
   position: relative;
-  top: -130px;
+  top: -138px;
   left: 0px;
   transform: rotate(0deg);
   animation-name: feather_shadow_appear;
@@ -90,9 +91,10 @@
 }
 
 #intro_div {
-	display: none; //(revealed via jQuery after logo animation completes)
+	display: none;  //(placed via jQuery after logo animation completes)
+	opacity: 0;			//(fades in via jQuery upon scroll down)
 	position: relative;
-	top: 60px;
+	top: 115px;
 	width: 500px;
 	margin: auto;
 	p {
@@ -224,19 +226,19 @@
 @keyframes feather_fall {
   0% { 
     transform: rotate(-80deg);
-    top: -670px;
+    top: -675px;
     left: 250px }
   38% {
     transform: rotate(40deg); 
-    top: -430px;   
+    top: -450px;   
     left: -250px } 
   80% {
     transform: rotate(-385deg); 
-    top: -130px; 
+    top: -135px; 
     left: 175px }
   100% { 
     transform: rotate(-355deg); 
-    top: -92px;
+    top: -100px;
     left: 0px }
 }  
 

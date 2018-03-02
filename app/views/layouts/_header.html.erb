@@ -65,10 +65,10 @@
       </div>
       <div id="last_items_div">
         <div class="item_div" id="shop_div">
-          <p <%="class=current" if params[:controller] == "books"%> ><%= link_to 'Shop', books_path %></p>
+          <p <%="class=current" if params[:controller] == "books" || params[:controller] == "parts"%> ><%= link_to 'Shop', books_path %></p>
         </div>
         <div class="item_div" id="community_div">
-          <p <%="class=current" if params[:controller] == "users"%> ><%= link_to 'Community', users_path %></p>
+          <p <%="class=current" if params[:controller] == "users" && params[:action] == "index"%> ><%= link_to 'Community', users_path %></p>
         </div>
         <div class="item_div" id="about_div">
           <p <%="class=current" if params[:controller] == "about"%> ><%= link_to 'About', about_path %></p>

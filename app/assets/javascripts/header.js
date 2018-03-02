@@ -1,7 +1,5 @@
 $(document).ready(function(){
 
-  $("#intro_div").delay(11300).fadeIn(3000);
-
   //nav menu
 	$("#nav_menu_icon_open").click(function(){
 		AnimateRotate("#nav_menu_icon_open", 0, 180, 600);
