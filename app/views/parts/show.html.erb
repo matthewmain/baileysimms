@@ -14,11 +14,24 @@
     
       <div id="part_content_div">
         <%= raw @part.content %>
-      </div>
 
-      <div class="end_links">
-        <p class="amazon_link"><a href="https://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B00I7UE2RW/ref=la_B00HI7AR9W_1_1_twi_kin_2?s=books&ie=UTF8&qid=1479685052&sr=1-1"><%= image_tag("amazon icon.png", width: "19px", class: "amazon_icon") %> Buy the complete novel at Amazon</a></p>
-        <p class="goodreads_link"><a href="https://www.goodreads.com/book/show/<%= @part.goodreads_id %>"><%= image_tag("goodreads icon.png", width: "19px", class: "goodreads_icon") %> Add to Goodreads</a></p>
+        <div id="end_links_div">
+          <h2>Want to keep reading?</h2>
+          <p>You can buy the ebook or audiobook at any<br>major online bookseller.</p>
+          <a href="/books"><p class="end_links_button">BUY</p></a>
+          <p>Or, read right here, right now, on the app.</p>
+
+          <%= link_to post_path(first_post_of_part(@part.id)) do %>
+            <p class="end_links_button">READ HERE</p>
+          <% end %>
+
+        </div>
+        <div id="goodreads_div">
+          <a href="https://www.goodreads.com/book/show/<%= @part.goodreads_id %>">
+            <%= image_tag("goodreads icon.svg", width: "19px", class: "goodreads_icon") %>
+            <p id="goodreads_label">add to goodreads</p>
+          </a>
+        </div>
       </div>
 
     </div>

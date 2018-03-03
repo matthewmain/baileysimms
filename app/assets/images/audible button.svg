@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="162px" height="43px" viewBox="0 0 162 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>audible icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1,0 L136.5,0 C146.164983,-1.7754286e-15 154,7.83501688 154,17.5 L154,17.5 C154,27.1649831 146.164983,35 136.5,35 L1,35 C0.44771525,35 6.76353751e-17,34.5522847 0,34 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z" id="path-1"></path>
+        <filter x="-4.5%" y="-14.3%" width="109.1%" height="140.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="[Screens]" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="shop" transform="translate(-817.000000, -273.000000)">
+            <g id="book-1" transform="translate(182.000000, 129.000000)">
+                <g id="audio-venders" transform="translate(638.000000, 115.000000)">
+                    <g id="audible-icon" transform="translate(1.000000, 31.000000)">
+                        <g id="background">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#CFE2EE" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <text id="audible" font-family="AvenirNext-UltraLight, Avenir Next" font-size="12" font-weight="200" letter-spacing="0.359999985" fill="#BA3C32">
+                            <tspan x="54" y="22">audible</tspan>
+                        </text>
+                        <path d="M24.675,10.5 C29.0117187,10.5 32.7754831,12.9186131 34.6939206,16.5215669 L32.6132319,17.4184419 C30.679483,14.3100112 27.2691355,12.2312275 23.3633542,12.2312275 C19.7255419,12.2312275 16.5120703,14.031497 14.5236328,16.7889052 C16.3961328,13.041347 20.2321875,10.5 24.675,10.5 Z M24.675,13.8115385 C27.6270312,13.8115385 30.1954811,15.4535615 31.5429811,17.8798153 L29.4473386,18.7853136 C28.1064011,16.8513751 25.8991458,15.5772607 23.3889895,15.5772607 C20.9477392,15.5772607 18.7892749,16.7790909 17.4395874,18.6236178 C18.6459936,15.7944601 21.4298437,13.8115385 24.675,13.8115385 Z M11.55,16.9829403 L24.675,22.6423077 L37.8,16.9829403 L37.8,19.3307692 L24.675,24.85 L11.55,19.3307692 L11.55,16.9829403 Z M24.4143802,17.1230769 C26.0254739,17.1230769 27.4162787,18.0192962 28.1698725,19.3350809 L26.0528691,20.2470476 C25.3364628,19.4257861 24.3103536,18.8887992 23.1433223,18.8887992 C22.0211353,18.8887992 21.0153125,19.3731812 20.3,20.1392504 C20.8796875,18.3907581 22.4926614,17.1230769 24.4143802,17.1230769 Z" id="Combined-Shape" fill="#BA3C32"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

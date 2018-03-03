@@ -2,31 +2,38 @@
   <title>Bailey Simms | New Post</title>  
 </head>
 
-<h1 id="post_title">New Blog Post</h1>
 
-<div class="form" id="post_form">
-	<%= form_for(@post) do |f| %>
+<div class="post_form_div">
 
-		<%= render 'shared/error_messages', object: f.object %>	
-		
-		<%= f.label :title, "Title: " %><br>
-		<%= f.text_field :title, autofocus: true %><br>
-		
-		<%= f.label :date, "Date: (mon day year hour:minute a/pm)" %><br> 
-		<%= f.datetime_field :date %><br>
+	<h1 id="post_headline">New Blog Post</h1>
+
+	<div class="form" id="post_form">
+		<%= form_for(@post) do |f| %>
+
+			<%= render 'shared/error_messages', object: f.object %>	
+
+			<%= f.label :book_part, "Belongs to Part \#: " %><br>
+			<%= f.text_field :book_part, autofocus: true %><br>
 			
-		<%= f.label :content, "Content: " %><br>
-		<%= f.text_area :content, value: '<div class="blog/novel_text"></div>'  %><br>
-		
-		<div class="checkboxes">
-			<%= f.check_box :visible_to_public %>
-			<%= f.label :visible_to_public, "VISIBLE TO PUBLIC" %>
-			<br>
-			<%= f.check_box :visible_to_users %>
-			<%= f.label :visible_to_users, "VISIBLE TO USERS" %>
-		</div>
+			<%= f.label :title, "Title: " %><br>
+			<%= f.text_field :title %><br>
+			
+			<%= f.label :date, "Date: (mon day year hour:minute a/pm)" %><br> 
+			<%= f.datetime_field :date %><br>
+				
+			<%= f.label :content, "Content: " %><br>
+			<%= f.text_area :content, value: '<div class="blog/novel_text"></div>'  %><br>
+			
+			<div class="checkboxes">
+				<%= f.check_box :visible_to_public %>
+				<%= f.label :visible_to_public, "VISIBLE TO PUBLIC" %>
+				<br>
+				<%= f.check_box :visible_to_users %>
+				<%= f.label :visible_to_users, "VISIBLE TO USERS" %>
+			</div>
 
-		<%= f.submit "ADD POST", class: "form-button" %>
-		
-	<% end %>
+			<%= f.submit "ADD POST", class: "form_button" %>
+			
+		<% end %>
+	</div>
 </div>

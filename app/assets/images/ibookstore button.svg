@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="162px" height="43px" viewBox="0 0 162 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>apple button</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1,0 L136.5,0 C146.164983,-1.7754286e-15 154,7.83501688 154,17.5 L154,17.5 C154,27.1649831 146.164983,35 136.5,35 L1,35 C0.44771525,35 6.76353751e-17,34.5522847 0,34 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z" id="path-1"></path>
+        <filter x="-4.5%" y="-14.3%" width="109.1%" height="140.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="[Screens]" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="shop" transform="translate(-597.000000, -377.000000)">
+            <g id="book-1" transform="translate(182.000000, 129.000000)">
+                <g id="book-venders" transform="translate(419.000000, 114.000000)">
+                    <g id="apple-button" transform="translate(0.000000, 136.000000)">
+                        <g id="background">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#CFE2EE" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <text id="iBookstore" font-family="AvenirNext-UltraLight, Avenir Next" font-size="12" font-weight="200" letter-spacing="0.359999985" fill="#BA3C32">
+                            <tspan x="53.5" y="22">iBookstore</tspan>
+                        </text>
+                        <path d="M25.3785714,4.48571429 C22.4928571,4.6 20.1392857,7.62857143 20.4678571,10.1321429 C23.1357143,10.3392857 25.6928571,7.35 25.3785714,4.48571429 Z M25.0285714,28.9535714 C23.3857143,28.9857143 22.8607143,27.9821429 20.9821429,27.9821429 C19.1071429,27.9821429 18.5214286,28.925 16.9678571,28.9857143 C14.3428571,29.0857143 10.5214286,23.0357143 10.5214286,17.7607143 C10.5214286,12.9142857 13.6642857,10.5107143 16.6142857,10.4678571 C18.1964286,10.4392857 19.6892857,11.5357143 20.6571429,11.5357143 C21.625,11.5357143 23.4392857,10.2178571 25.35,10.4107143 C26.1464286,10.4428571 28.3892857,10.7321429 29.8321429,12.8357143 C26.0142857,15.3285714 26.375,20.5428571 30.475,22.4571429 C29.675,24.7857143 27.5035714,28.9071429 25.0285714,28.9535714 Z" id="Combined-Shape" fill="#BA3C32"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -3,123 +3,140 @@
 </head>
 
 <body id="books_body">
-<div id="books_container">
-
-    <div id="complete_first_book_image_container">
-      <%= image_tag("DiBC1 cover.jpg", alt: "Complete First Book", class: "complete_first_book_image") %>
-    </div> 
-
-    <div id="complete_first_book_text_container">
-      <p class="complete_first_book_text_container_heading"><i>DEAD IN BED, The Complete First Book</p>
-      <ul class="complete_first_book_text_container_links"> 
-        <li class="complete_first_book_text_container_links_amazon"><a href="https://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B00I7UE2RW" class="books_page_button">Buy at Amazon</a></li>
-        <li class="complete_first_book_text_container_links_goodreads"><a href="https://www.goodreads.com/book/show/26024978-dead-in-bed" class="books_page_button">Add to Goodreads</a></li>
-      </ul>
-    </div> 
-
-
-    <div class="horizontal_line">
-    </div>
-
-    <div id="parts_container">
-      <div class="books_page_part p1">
-        <%= link_to image_tag("DiB1 cover.jpg", alt: "Part 1", height: "156px", class: "part_image1"), 'books/1/parts/1' %>
-        <p class="read_now"><i>READ NOW</i></p>
-      </div>
-
-      <div class="books_page_part p2">
-        <%= link_to image_tag("DiB2 cover.jpg", alt: "Part 2", class: "part_image"), 'books/1/parts/2' %>
-        <p class="sample"><i>SAMPLE</i></p>
-      </div>
-
-      <div class="books_page_part p3">
-        <%= link_to image_tag("DiB3 cover.jpg", alt: "Part 3", class: "part_image"), 'books/1/parts/3' %>
-        <p class="sample"><i>SAMPLE</i></p>
-      </div>
-
-      <div class="books_page_part p4">
-        <%= link_to image_tag("DiB4 cover.jpg", alt: "Part 4", class: "part_image"), 'books/1/parts/4' %>
-        <p class="sample"><i>SAMPLE</i></p>
-      </div>
-
-      <div id="last_three">
-        <div class="books_page_part p5">
-          <%= link_to image_tag("DiB5 cover.jpg", alt: "Part 5", class: "part_image"), 'books/1/parts/5' %>
-          <p class="sample"><i>SAMPLE</i></p>
-        </div>
-
-        <div class="books_page_part p6">
-          <%= link_to image_tag("DiB6 cover.jpg", alt: "Part 6", class: "part_image"), 'books/1/parts/6' %>
-          <p class="sample"><i>SAMPLE</i></p>
-        </div>
-
-        <div class="books_page_part p7">
-          <%= link_to image_tag("DiB7 cover.jpg", alt: "Part 7", class: "part_image"), 'books/1/parts/7' %>
-          <p class="sample"><i>SAMPLE</i></p>
-        </div>
-      </div>
-    </div>
-
-
-</div>
-
-
-
 
 <div id="books_container">
 
-    <div id="complete_first_book_image_container">
-      <%= image_tag("DiBC2 cover.jpg", alt: "Complete Second Book", class: "complete_first_book_image") %>
+  <!-- Book One -->
+
+  <div id="complete_book_div">
+    <div id="complete_book_image_div">
+      <%= image_tag("DiBC1 cover.jpg", alt: "Complete First Book", class: "complete_book_image") %>
     </div> 
-
-    <div id="complete_first_book_text_container">
-      <p class="complete_first_book_text_container_heading"><i>DEAD IN BED, The Complete Second Book</i><br>is now available.</p>
-      <ul class="complete_first_book_text_container_links"> 
-        <li class="complete_first_book_text_container_links_amazon"><a href="https://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B01N9754FT" class="books_page_button">Buy at Amazon</a></li>
-        <li class="complete_first_book_text_container_links_goodreads"><a href="https://www.goodreads.com/book/show/33120723-dead-in-bed-by-bailey-simms" class="books_page_button">Add to Goodreads</a></li>
-      </ul>
+    <div id="complete_book_text_div">
+      <h1 class="shop_book_header">DEAD IN BED By Bailey Simms</h1>
+      <h2 class="shop_book_subheader">The Complete First Book</h2>
+      <div class="buy_books_div">
+        <%= image_tag("buy books icon.svg", class: "buy_icon") %>
+        <p class="buy_label">buy books</p>
+        <%= link_to image_tag("amazon button.svg", class: "vendor_button"), "https://www.amazon.com/DEAD-BED-Bailey-Simms-Complete-ebook/dp/B00I7UE2RW" %>
+        <%= link_to image_tag("barnes and noble button.svg", class: "vendor_button"), "https://www.barnesandnoble.com/w/dead-in-bed-by-bailey-simms-adrian-birch/1122772864" %>
+        <%= link_to image_tag("ibookstore button.svg", class: "vendor_button"), "https://itunes.apple.com/us/book/dead-in-bed-by-bailey-simms-the-complete-first-book/id875421160" %>
+      </div>
+      <div class="buy_audio_div">
+        <%= image_tag("buy audio icon.svg", class: "buy_icon") %>
+        <p class="buy_label">buy audio</p>
+        <%= link_to image_tag("audible button.svg", class: "vendor_button"), "https://www.audible.com/pd/Teens/Dead-in-Bed-by-Bailey-Simms-Audiobook/B071GD2QCH" %>
+        <%= link_to image_tag("downpour button.svg", class: "vendor_button"), "https://www.downpour.com/catalog/product/view/id/201548" %>
+        <%= link_to image_tag("bandcamp button.svg", class: "vendor_button"), "https://wattpad.bandcamp.com/album/dead-in-bed-by-bailey-simms-the-complete-first-book" %>
+      </div>
     </div> 
+  </div> 
 
+  <div class="horizontal_line">
+  </div>
 
-    <div class="horizontal_line">
+  <div id="parts_container">
+    <div class="books_page_part p1">
+      <%= link_to image_tag("DiB1 cover thumb.jpg", alt: "Part 1", height: "156px", class: "part_image1"), 'books/1/parts/1' %>
+      <p class="read_now"><i>SAMPLE</i></p>
     </div>
-
-    <div id="parts_container">
-      <div class="books_page_part">
-        <%= image_tag("DiB8 cover.jpg", alt: "Part 8", class: "part_image") %>
+    <div class="books_page_part p2">
+      <%= link_to image_tag("DiB2 cover thumb.jpg", alt: "Part 2", class: "part_image"), 'books/1/parts/2' %>
+      <p class="sample"><i>SAMPLE</i></p>
+    </div>
+    <div class="books_page_part p3">
+      <%= link_to image_tag("DiB3 cover thumb.jpg", alt: "Part 3", class: "part_image"), 'books/1/parts/3' %>
+      <p class="sample"><i>SAMPLE</i></p>
+    </div>
+    <div class="books_page_part p4">
+      <%= link_to image_tag("DiB4 cover thumb.jpg", alt: "Part 4", class: "part_image"), 'books/1/parts/4' %>
+      <p class="sample"><i>SAMPLE</i></p>
+    </div>
+    <div id="last_three">
+      <div class="books_page_part p5">
+        <%= link_to image_tag("DiB5 cover thumb.jpg", alt: "Part 5", class: "part_image"), 'books/1/parts/5' %>
+        <p class="sample"><i>SAMPLE</i></p>
       </div>
-
-      <div class="books_page_part p2">
-        <%= image_tag("DiB9 cover.jpg", alt: "Part 9", class: "part_image") %>
+      <div class="books_page_part p6">
+        <%= link_to image_tag("DiB6 cover thumb.jpg", alt: "Part 6", class: "part_image"), 'books/1/parts/6' %>
+        <p class="sample"><i>SAMPLE</i></p>
       </div>
-
-      <div class="books_page_part p3">
-        <%= image_tag("DiB10 cover.jpg", alt: "Part 10", class: "part_image") %>
-      </div>
-
-      <div class="books_page_part p4">
-        <%= image_tag("DiB11 cover.jpg", alt: "Part 11", class: "part_image") %>
-      </div>
-
-      <div id="last_three">
-        <div class="books_page_part p5">
-          <%= image_tag("DiB12 cover.jpg", alt: "Part 12", class: "part_image") %>
-        </div>
-
-        <div class="books_page_part p6">
-          <%= image_tag("DiB13 cover.jpg", alt: "Part 13", class: "part_image") %>
-        </div>
-
-        <div class="books_page_part p7">
-          <%= image_tag("DiB14 cover.jpg", alt: "Part 14", class: "part_image") %>
-        </div>
+      <div class="books_page_part p7">
+        <%= link_to image_tag("DiB7 cover thumb.jpg", alt: "Part 7", class: "part_image"), 'books/1/parts/7' %>
+        <p class="sample"><i>SAMPLE</i></p>
       </div>
     </div>
+  </div>
+
+
+  <!-- Book Two -->
+  
+  <div id="complete_book_div">
+    <div id="complete_book_image_div">
+      <%= image_tag("DiBC2 cover.jpg", alt: "Complete Second Book", class: "complete_book_image") %>
+    </div> 
+    <div id="complete_book_text_div">
+      <h1 class="shop_book_header">DEAD IN BED By Bailey Simms</h1>
+      <h2 class="shop_book_subheader">The Complete Second Book</h2>
+      <div class="buy_books_div">
+        <%= image_tag("buy books icon.svg", class: "buy_icon") %>
+        <p class="buy_label">buy books</p>
+        <%= link_to image_tag("amazon button.svg", class: "vendor_button"), "https://www.amazon.com/gp/product/B01N9754FT" %>
+        <%= link_to image_tag("barnes and noble button.svg", class: "vendor_button"), "https://www.barnesandnoble.com/w/dead-in-bed-by-bailey-simms-adrian-birch/1125594762" %>
+        <%= link_to image_tag("ibookstore button.svg", class: "vendor_button"), "https://itunes.apple.com/us/book/dead-in-bed-by-bailey-simms-the-complete-second-book/id1200991849" %>
+      </div>
+      <div class="buy_audio_div">
+        <%= image_tag("buy audio icon.svg", class: "buy_icon") %>
+        <p class="buy_label">buy audio</p>
+        <%= link_to image_tag("audible button.svg", class: "vendor_button"), "https://www.audible.com/pd/Teens/Dead-in-Bed-by-Bailey-Simms-The-Complete-Second-Book-Audiobook/B074MDM9S9" %>
+        <%= link_to image_tag("downpour button.svg", class: "vendor_button"), "https://www.downpour.com/dead-in-bed-by-bailey-simms-208239" %>
+        <%= link_to image_tag("bandcamp button.svg", class: "vendor_button"), "https://wattpad.bandcamp.com/album/dead-in-bed-by-bailey-simms-the-complete-second-book" %>
+      </div>
+    </div> 
+  </div> 
+
+  <div class="horizontal_line">
+  </div>
+
+  <div id="parts_container">
+    <div class="books_page_part p8">
+      <%= link_to image_tag("DiB8 cover thumb.jpg", alt: "Part 8", class: "part_image"), 'books/2/parts/8' %>
+      <p class="read_now"><i>SAMPLE</i></p>
+    </div>
+    <div class="books_page_part p9">
+      <%= link_to image_tag("DiB9 cover thumb.jpg", alt: "Part 9", class: "part_image"), 'books/2/parts/9' %>
+      <p class="sample"><i>SAMPLE</i></p>
+    </div>
+    <div class="books_page_part p10">
+      <%= link_to image_tag("DiB10 cover thumb.jpg", alt: "Part 10", class: "part_image"), 'books/2/parts/10' %>
+      <p class="sample"><i>SAMPLE</i></p>
+    </div>
+    <div class="books_page_part p11">
+      <%= link_to image_tag("DiB11 cover thumb.jpg", alt: "Part 11", class: "part_image"), 'books/2/parts/11' %>
+      <p class="sample"><i>SAMPLE</i></p>
+    </div>
+    <div id="last_three">
+      <div class="books_page_part p12">
+        <%= link_to image_tag("DiB12 cover thumb.jpg", alt: "Part 12", class: "part_image"), 'books/2/parts/12' %>
+        <p class="sample"><i>SAMPLE</i></p>
+      </div>
+      <div class="books_page_part p13">
+        <%= link_to image_tag("DiB13 cover thumb.jpg", alt: "Part 13", class: "part_image"), 'books/2/parts/13' %>
+        <p class="sample"><i>SAMPLE</i></p>
+      </div>
+      <div class="books_page_part p14">
+        <%= link_to image_tag("DiB14 cover thumb.jpg", alt: "Part 14", class: "part_image"), 'books/2/parts/14' %>
+        <p class="sample"><i>SAMPLE</i></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
 
 
 </div>
-
-
 
 </body>
 
