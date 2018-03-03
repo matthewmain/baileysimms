@@ -9,7 +9,7 @@ $(document).ready(function(){
       var bottom_of_object = $(this).position().top + $(this).outerHeight();		// Store position coordinates.
       var bottom_of_window = $(window).scrollTop() + $(window).height();
       if ( bottom_of_window > bottom_of_object-$(this).outerHeight()*.66 ) {	  // If the intro div is half visible in the window, fade it in.
-        $(this).animate( {'opacity': '1'}, 4000 );
+        $(this).animate( {'opacity': '1'}, 3000 );
       } 
     });
   });

@@ -70,7 +70,7 @@
 		margin: 0 1.5% 0 0;
 		.part_cover_img {
 			width: 100%;
-			border: 1px solid #2D2D2D;
+			border: 1px solid #777777;
 			box-shadow: 0 0 1px 0 rgba(0, 0, 0, .4);
 		}
 		.tint_and_lock_img {
@@ -78,7 +78,7 @@
 			top: 0;
 			left: 0;
 			width: 100%;
-			border: 1px solid rgba(0, 0, 0, 0);; //transparent border to match part cover image dimensions
+			border: 1px solid #404040; //border necessary to match part cover image dimensions
 		}
 		&:last-child {
 			margin: 0;
@@ -504,7 +504,9 @@
 					#delete_x {
 						margin: 0 0 0 2px;
 						font-style: normal;
-						a { color: #CC544A; } 
+						a { 
+							color: #E4B4B0; 
+						} 
 					}
 					.edit_comment {
 						margin: 0;
@@ -513,13 +515,10 @@
 						width: auto;
 						font-style: normal;	
 						.hide_comment_button {
-					    text-align: center;
-					    color: #3278b4;
-					    font-weight: 500;
-					    font-size: 102%;
-					    background-color: inherit;
-					    padding: 0;
+					    font-family: Matol-M-Round, Avenir, sans-serif;
+					    padding: 0 0 0 2px;
 					    border-style: none;
+					    color: #E4B4B0;
 						}
 					}
 				}

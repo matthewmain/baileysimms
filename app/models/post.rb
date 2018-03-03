@@ -19,6 +19,7 @@ class Post < ActiveRecord::Base
 
 	default_scope -> { order(date: :asc) }
 
+	validates :book_part, presence: true
 	validates :title, presence: true
 	validates :date, presence: true, timeliness: {type: :datetime}
 	validates :content, presence: true

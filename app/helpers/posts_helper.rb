@@ -18,9 +18,9 @@ module PostsHelper
 
 	def cover_image_of(post_title)
 		if post_title.split('')[19] == ":"
-			"DiB#{post_title.split('')[18]} cover.jpg"
+			"DiB#{post_title.split('')[18]} cover thumb.jpg"
 		else
-			"DiB#{post_title.split('')[18]+post_title.split('')[19]} cover.jpg"
+			"DiB#{post_title.split('')[18]+post_title.split('')[19]} cover thumb.jpg"
 		end
 	end
 	

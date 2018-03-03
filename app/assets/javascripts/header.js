@@ -30,7 +30,7 @@ $(document).ready(function(){
 	});
 
 	//posts menu
-	$("#posts_menu_icon, #posts_menu_dropdown_clickaway_skin").click(function(){
+	$(".posts_menu_icon_div, #posts_menu_dropdown_clickaway_skin").click(function(){
 		if ($("#posts_menu_dropdown").hasClass("closed")) {
 			$("#posts_menu_dropdown").css("opacity", "1");		//(closed dropdown div is hidden so not visible on overscroll bounce; this makes visible when opened)
 			AnimateRotate("#posts_menu_icon", 0, 180, 600);

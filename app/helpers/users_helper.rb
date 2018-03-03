@@ -83,9 +83,9 @@ module UsersHelper
 	end
 
 	#returns first post id of a part
-	def first_post_of_part(number)
-		index = {1=>2,2=>5,3=>7,4=>9,5=>11,6=>13,7=>15,8=>17,9=>26,10=>35,11=>41,12=>45,13=>52,14=>62}
-		index[number]		
+	def first_post_of_part(part_number)
+		index = {1=>3,2=>5,3=>7,4=>9,5=>11,6=>13,7=>15,8=>25,9=>34,10=>40,11=>44,12=>47,13=>61,14=>67}
+		index[part_number]		
 	end
 
 	def book_1_giveaway_winner(name)
