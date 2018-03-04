@@ -2,28 +2,27 @@
   <title>Bailey Simms | Sign Up</title>  
 </head>
 
-<div id="signup_container">
+<div id="form_container">
 
-	<h1>Sign Up</h1>
+	<div class="form_header_div">
+		<h1 class="form_header_left">Sign Up</h1>
+		<p class="form_header_right">Already a member? <u><%= link_to "Log in", login_path %></u>.</p>
+	</div>
 
-	<div class="form">
+	<div class="form_div">
 		<%= form_for(@user) do |f| %>
 
 			<%= render 'shared/error_messages', object: f.object %>	
 			
-			<%= f.label :user_name, "User Name: " %>
-			<%= f.text_field :user_name, :value => (@user.user_name.gsub(/_/, ' ') if @user.user_name), autofocus: true %> 
+			<%= f.text_field :user_name, :value => (@user.user_name.gsub(/_/, ' ') if @user.user_name), autofocus: true, placeholder: "User Name", class: "form_field"  %> 
 			
-			<%= f.label :email, "Email: " %> 
-			<%= f.email_field :email %>
+			<%= f.email_field :email, placeholder: "Email", class: "form_field" %>
 				
-			<%= f.label :password, "Password: " %>
-			<%= f.password_field :password %>
+			<%= f.password_field :password, placeholder: "Password", class: "form_field"  %>
 				
-			<%= f.label :password_confirmation, "Confirm Password: " %> 
-			<%= f.password_field :password_confirmation %>
+			<%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form_field"  %>
 			
-			<%= f.submit "JOIN", class: "form-button" %>
+			<%= f.submit "JOIN", class: "form_button_primary" %>
 			
 		<% end %>
 	</div>

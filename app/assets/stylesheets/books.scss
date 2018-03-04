@@ -87,62 +87,68 @@
 }
 
 
-#parts_container {
+.parts_container {
 	clear: both;
 	display: block;
 	margin: 0 auto;
 	height: 300px;
-	.books_page_part {
-		float: left;
-		display: block;
-		width: 11.28%;
-		height: 200px;
-		margin: 0 1.5%;
-		text-align: center;
-		color: #FBFDFC;
-		font-size: 1em;
+}
+
+.parts_container.b2 {
+	height: 183px;
+}
+
+.books_page_part {
+	float: left;
+	display: block;
+	width: 11.28%;
+	height: 200px;
+	margin: 0 1.5%;
+	text-align: center;
+	color: #FBFDFC;
+	font-size: 1em;
+}
+.part_image {
+	height: 150px;
+  box-shadow: 0 0 10px 0px gray;
+  margin: 2px 0 3px;
+}
+.books_page_part {
+	p {
+		font-family: Avenir Next, sans-serif;
+		padding: 1px 0 0;
 	}
-	.part_image {
-		height: 150px;
-	  box-shadow: 0 0 10px 0px gray;
-	  margin: 2px 0 3px;
-	}
-	.books_page_part {
-		p {
-			font-family: Avenir Next, sans-serif;
-			padding: 1px 0 0;
-		}
-		&:hover {
-		  color: #2b90c4;
-		  margin-bottom: -2px;
-	  }
-	}
-	.part_image:hover {
+	&:hover {
+	  color: #2b90c4;
+	  margin-bottom: -2px;
+  }
+}
+.part_image:hover {
+	height: 160px;
+	margin-top: 0;
+}
+.p1 {
+  color: #AD0000;
+  p {
+  	padding: 5px 0 0;
+  }
+}
+.part_image1 {
+	height: 156px;
+	box-shadow: 0 0 10px 0px gray;
+}
+.p1:hover {
+  font-weight: 600;
+  color: #AD0000;
+}
+.part_image1 {
+	margin: 2px 0 3px;
+	&:hover {
 		height: 160px;
 		margin-top: 0;
 	}
-	.p1 {
-	  color: #AD0000;
-	  p {
-	  	padding: 5px 0 0;
-	  }
-	}
-	.part_image1 {
-		height: 156px;
-		box-shadow: 0 0 10px 0px gray;
-	}
-	.p1:hover {
-	  font-weight: 600;
-	  color: #AD0000;
-	}
-	.part_image1 {
-		margin: 2px 0 3px;
-		&:hover {
-			height: 160px;
-			margin-top: 0;
-		}
-	}
 }
+
 
 #parts_container.b2 {
 	height: 100px;

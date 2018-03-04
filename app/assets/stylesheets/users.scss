@@ -4,15 +4,8 @@
 
 
 
-/************* SIGNUP *************/
 
-#signup_container {
-	min-height: 510px;
-	color: black;
-	h1 {
-		margin-top: 70px;
-	}
-}
+
 
 
 /************* USER IMAGE *************/
@@ -85,7 +78,6 @@
 		}
 	}
 }
-
 
 // admin //
 #admin_div {
@@ -162,77 +154,18 @@
 	.no_comments_notice {
 		color: #24475D;
 		margin: 25px 0 0;
-		letter-spacing: .4px;
+		letter-spacing: .2px;
 	}
 }
 
 
 /************* SETTINGS *************/
 
-#settings_container {
-	color: black;
-	h1 {
-		font-style: italic;
-		font-weight: bold;
-		letter-spacing: 2px;
-	}
-	#user_edit_image_div {
-		margin: 10px 0 50px;
-		text-align: center;
-		color: black;
-		font-weight: bold;
-		letter-spacing: 2px;
-		img {
-			height: 150px;
-			width: 150px;
-		}
-		p, a {
-			font-size: 10px;
-		}
-		p {
-			font-weight: bold;
-		}
-	}
-	#fb_connection_div {
-		display: block;
-		width: 100%;
-		margin: 7px 0 0;
-		letter-spacing: 0;
-		p {
-			text-align: center;
-			font-size: 9px;
-			font-weight: normal;
-		}
-		a {
-			position: relative;
-			top: -1px;
-			background: #337ab7;;
-			color: white;
-			font-size: 7px;
-			padding: 1px 5px;
-			border-radius: 6px;
-			&:hover {
-				background: white;
-				color: #337ab7;
-			}
-		}
-	}
-	.form-button {
-		background: #337ab7;;
-		color: white;
-		font-size: 8px;
-		padding: 1px 5px;
-		min-width: 0;
-		height: auto;
-		border: none;
-		margin: 8px auto 25px;
-		border-radius: 6px;
-		&:hover {
-			background: white;
-			color: #337ab7;
-		}
-	}
-
+#user_edit_image_div img {
+	display: block;
+	height: 164px;
+	width: 164px;
+	margin: auto;
 }
 
 

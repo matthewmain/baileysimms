@@ -2,20 +2,19 @@
   <title>Bailey Simms | <%=@user.user_name.gsub(/_/, ' ')%> | Settings</title>  
 </head>
 
-<div id="settings_container">
+<div id="form_container">
 
-	<h1>SETTINGS</h1>
+	<h1>Settings</h1>
 
 	<div id="user_edit_image_div">
 	 	<%= user_image_for(@user) %>
 
     <div id="fb_connection_div">
 	    <% if @user == current_user && !current_user.is_connected_to_facebook %>
-	      <p><%= link_to "change to your Facebook profile picture", "/auth/facebook", id: "fb_connect" %></p>
-	      <p><a href="http://gravatar.com/emails" target="_blank">use Gravatar to change your profile picture</a></p>
+	      <%= link_to "use facebook pic", "/auth/facebook", id: "fb_connect", class: "form_button_secondary image_button"%>
+	      <a href="http://gravatar.com/emails" target="_blank" class="form_button_secondary image_button">use gravatar pic</a>
 	    <% elsif @user == current_user && current_user.is_connected_to_facebook %>
-	      <p>You're currently using a Facebook connection for your profile picture.</p>
-	      <p><%= link_to "disconnect from Facebook to change your image", fb_disconnect_path, id: "fb_disconnect" %></p>
+	      <%= link_to "stop using facebook pic", fb_disconnect_path, id: "fb_disconnect", class: "form_button_secondary image_button" %>
 	    <% end %>
   	</div>
 	</div>
@@ -25,25 +24,25 @@
 
 		  <%= render 'shared/error_messages', object: f.object %>	
 
-			<%= f.label :user_name, "Update Your User Name" %>
-			<%= f.text_field :user_name, autofocus: true %> 
+			<%= f.label :user_name, "Change Your User Name", class: "form_label" %>
+			<%= f.text_field :user_name, :value => (@user.user_name.gsub(/_/, ' ') if @user.user_name), placeholder: "User Name", class: "form_field"  %>  
 
-			<%= f.submit "SAVE CHANGES", class: "form-button" %>
+			<%= f.submit "update name", class: "form_button_secondary" %>
 
 			
-			<%= f.label :email, "Update Your Email" %> 
-			<%= f.email_field :email %>
+			<%= f.label :email, "Update Your Email", class: "form_label" %> 
+			<%= f.email_field :email, placeholder: "Email", class: "form_field" %>
 
-			<%= f.submit "SAVE CHANGES", class: "form-button" %>
+			<%= f.submit "update email", class: "form_button_secondary" %>
 
 				
-			<%= f.label :password, "Change Your Password" %>
-			<%= f.password_field :password %>
+			<%= f.label :password, "Change Your Password", class: "form_label" %>
+			<%= f.password_field :password, placeholder: "Password", class: "form_field"  %>
 				
-			<%= f.label :password_confirmation, "Confirm Your New Password" %> 
-			<%= f.password_field :password_confirmation %>
+			<%= f.label :password_confirmation, "Confirm Your New Password", class: "form_label" %> 
+			<%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form_field"  %>
 
-		  <%= f.submit "SAVE CHANGES", class: "form-button" %>
+		  <%= f.submit "update password", class: "form_button_secondary", id: "last_div" %>
 
 		<% end %>	
 		</div>	
