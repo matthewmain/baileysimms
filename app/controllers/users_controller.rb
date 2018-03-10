@@ -57,6 +57,7 @@ class UsersController < ApplicationController
     @top_five_contributors_this_month = Ranking.find_by_name("top_five_this_month").data_hash
     @top_five_contributors_last_month = Ranking.find_by_name("top_five_last_month").data_hash
     @recent_comments = Comment.limit(100)
+    store_location
   end
 
   def new
@@ -78,7 +79,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_user_name(params[:id])
-    @comments = @user.comments           
+    @comments = @user.comments         
   end
 
   def edit

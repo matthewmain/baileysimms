@@ -16,6 +16,7 @@ class PartsController < ApplicationController
 
   def show
     @part = Part.find(params[:id])
+    store_location
   end
   
 end
