@@ -32,12 +32,12 @@
   <%= render 'layouts/header' unless @omit_header %>
   <%= render 'layouts/profile_menu'%>
 
-	<div>
-		<% flash.each do |message_type, message| %>
-      <% message = raw message %>
-    	<%= content_tag(:div, message, class: "flash-alert flash-alert-#{message_type}") %>
-    <% end %>
-	</div>
+
+	<% flash.each do |message_type, message| %>
+    <% message = raw message %>
+  	<%= content_tag(:div, message, class: "flash-alert flash-alert-#{message_type}") %>
+  <% end %>
+
 
 	<%= yield %>
 

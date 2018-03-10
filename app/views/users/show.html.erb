@@ -38,7 +38,7 @@
 		    <%= render 'user_comments' %>
 	    </ol>
 		<% elsif @user == current_user %>
-			<p class="no_comments_notice">Looks like you haven't commented yet. What's the deal? <u><%= link_to 'Start reading Bailey\'s blog ', posts_path %></u>and get on it.</p>
+			<p class="no_comments_notice">Looks like you haven't commented yet. What's the deal? <u><%= link_to 'Start reading Bailey\'s blog', posts_path %></u> and get on it.</p>
 		<% else %>
 			<p class="no_comments_notice">Looks like <%= @user.user_name.gsub(/_/, ' ') %> hasn't commented yet...</p>
 	  <% end %>

@@ -18,11 +18,14 @@ class RepliesController < ApplicationController
     @reply = current_user.replies.build(reply_params)
     if @reply.save
       redirect_to request.referrer + "#comments"
-    end              
+    else
+      redirect_to request.referrer + "#comments"
+    end               
   end
 
   def destroy
-    @reply.destroy                       
+    @reply.destroy              
+    flash[:success] = "Reply deleted"         
     redirect_to request.referrer + "#comments"                       
   end
 
