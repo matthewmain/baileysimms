@@ -87,6 +87,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    user_params[:user_name].gsub!(/\s/, '_')
     @user = User.find_by_user_name(params[:id])
     if @user.update_attributes(user_params)
       flash[:success] = "Your settings have been successfully updated"

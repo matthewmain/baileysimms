@@ -25,8 +25,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to request.referrer + "#comments"
     else
-      #to use comment errors, render :partial => "shared/comment_form"
-      redirect_to request.referrer
+      redirect_to request.referrer + "#comments"
     end              
   end
 

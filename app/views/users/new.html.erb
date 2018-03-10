@@ -14,7 +14,7 @@
 
 			<%= render 'shared/error_messages', object: f.object %>	
 			
-			<%= f.text_field :user_name, :value => (@user.user_name.gsub(/_/, ' ') if @user.user_name), autofocus: true, placeholder: "User Name", class: "form_field"  %> 
+			<%= f.text_field :user_name, autofocus: true, placeholder: "User Name", class: "form_field"  %> 
 			
 			<%= f.email_field :email, placeholder: "Email", class: "form_field" %>
 				

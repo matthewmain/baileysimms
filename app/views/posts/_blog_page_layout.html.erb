@@ -51,13 +51,13 @@
             </div>
 
             <div class="post_end_card_right_div">
-              <!-- if the current post is the content of part 1, show login or share action on right -->
+              <!-- if the current post is the content of part 1, show login, read next, or share action on right -->
               <% if @post.title == "DEAD IN BED, Part 1: Fifty Shades of Gangrene" %>
                   <% if !logged_in? %>
                     <p class="post_end_card_p">Or, log in to start reading the next chapter right here. New user? <u><%= link_to "Sign up", new_user_path %></u>.</p>
                     <%= link_to image_tag("log in button hover.svg", alt: "log in button", class: "end_card_button_back"), login_path %>
                     <%= link_to image_tag("log in button.svg", alt: "log in button", class: "end_card_button_front"), login_path %>
-                  <% elsif logged_in? && current_user.has_shared_website %>
+                  <% elsif current_user.has_shared_website || current_user.vip? || current_user.admin? %>
                     <p class="post_end_card_p">Thanks for sharing! You're good to read on right here on the website.</p>
                     <%= link_to image_tag("read next arrow button hover.svg", alt: "read next arrow button", class: "end_card_button_back"), post_path(@post.id+1) %>
                     <%= link_to image_tag("read next arrow button.svg", alt: "read next arrow button", class: "end_card_button_front"), post_path(@post.id+1) %>
@@ -89,7 +89,7 @@
                 <%= link_to image_tag("read next arrow button hover.svg", alt: "read next arrow button", class: "end_card_button_back"), post_path(@post.id+1) %>
                 <%= link_to image_tag("read next arrow button.svg", alt: "read next arrow button", class: "end_card_button_front"), post_path(@post.id+1) %>
 
-              <!-- if the current post is the last post of the part, show share or read next actions-->
+              <!-- if the current post is the last post of the part, show share or read next actions on right-->
               <% elsif Post.find(@post.id+1).book_part > @post.book_part %> 
                 <% if logged_in? && (current_user.send("can_access_part_#{Post.find(@post.id+1).book_part}") || current_user.vip? || current_user.admin? ) %>
                   <p class="post_end_card_p">Thanks for sharing! You're good to read on right here on the website.</p>
