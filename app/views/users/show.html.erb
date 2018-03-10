@@ -7,7 +7,7 @@
 	<div id="profile_feature_div">
 		<%= user_image_for(@user) %>
 		<h1 class="profile_name"><%= @user.user_name.gsub(/_/, ' ') %></h1>
-		<% if @user.vip? %><h4 style="color:#ff8c00;font-size:13px"><i>VIP<i></h4><% end %>
+		<% if @user.vip? %><h4 style="color:#ff8c00;font-size:13px">VIP</h4><% end %>
 		<h4 class="email"><%= mail_to @user.email if logged_in? && current_user.admin %></h4>
 	</div>
 
@@ -19,7 +19,7 @@
 				<div class="part_div">
 					<%= link_to post_path(first_post_of_part(num)) do %>
 						<%= image_tag("DiB#{num} cover thumb.jpg", class: "part_cover_img") %>
-						<% if num > 1 && !@user.send("can_access_part_#{num}") && !@user.admin %>
+						<% if num > 1 && !@user.send("can_access_part_#{num}") && !@user.admin && !@user.vip %>
 							<%= image_tag("tint and lock.png", class: "tint_and_lock_img") %>
 						<% end %>
 					<% end %>	

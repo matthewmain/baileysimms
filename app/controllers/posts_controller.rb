@@ -25,6 +25,7 @@ class PostsController < ApplicationController
     @comment = current_user.comments.build if logged_in?
     @feed_items = @post.feed.paginate(page: params[:page]).per_page(250)
     @reply = current_user.replies.build if logged_in?
+    store_location
   end
 
   def new
