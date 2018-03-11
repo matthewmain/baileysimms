@@ -94,7 +94,7 @@
 	display: none;  //(placed via jQuery after logo animation completes)
 	opacity: 0;			//(fades in via jQuery upon scroll down)
 	position: relative;
-	top: 115px;
+	top: 10vh;
 	width: 500px;
 	margin: auto;
 	p {
@@ -266,65 +266,23 @@
 
 
 
-/*** Tablet ***/
 
-@media screen and (max-width: 768px) {
-
-	#menu_div {
-	  left: -250px;
-	  width: 250px;
-	  #blue_feather_logo_img {
-	  	top: 100px;
-	  	left: 87px;
-	  	width: 78px;
-	  }
-	  ul {
-	  	font-size: 22px;
-	  	padding: 0 0 0 50px;
-	  	margin: 125px 0 0 0;
-	  	li {
-	  		line-height: 75px;
-			}
-	  }
-	}
+@media screen and (max-width: 800px) {
 
 	#DEAD_IN_BED_div {
-	  width: 400px;
-	}
-
-	.DIB_image_div {
-	  top: 30px;
-	  width: 400px;
-		.DIB_img {
-		  width: 400px;
-		}
-	}
-
-	#subheading_div {
-	  top: 260px;
-	  right: 70px;
-		.subheading_text_div p {
-		  font-size: 10px;
-		 	line-height: 14px;
-		}
+	  top: 165px;
 	}
 
 	#feather_div {
-		top: -142px;
-	  width: 200px;
-		#feather_img {
-		  width: 200px;
-		}
+		top: 70px;
 	}
 
 	#feather_shadow_div { 
-	  top: -165px;
-	  width: 250px;
-	  height: 40px;
+	  top: 32px;
 	}
 
 	#intro_div {
-		top: -85px;
+		top: 40vh;
 		width: 355px;
 		p {
 		  font-size: 12px;
@@ -332,8 +290,8 @@
 		  margin-bottom: 10px;
 		}
 		#intro_button_div {
-			top: 40px;
-			padding-bottom: 80px;
+			top: 30px;
+			padding-bottom: 320px;
 		}
 	}
 
@@ -341,27 +299,27 @@
 	  0% { 
 	    transform: rotate(-80deg);
 	    top: -670px;	    
-	    left: 165px }
+	    left: 25vh }
 	  38% {
 	    transform: rotate(40deg); 
-	    top: -430px;   
-	    left: -90px } 
+	    top: -400px;   
+	    left: -25vw } 
 	  80% {
 	    transform: rotate(-385deg); 
-	    top: -200px;
-	    left: 110px }
+	    top: 15px;
+	    left: 25vw }
 	  100% { 
 	    transform: rotate(-355deg);
-	    top: -142px; 
+	    top: 70px; 
 		  left: 0px }
 	}  
 
 	@keyframes feather_shadow_appear {
 	  0% {
-	    left: 115px; 
+	    left: 25vw; 
 	    opacity: 0; }
 	  80% {
-	    left: 115px;
+	    left: 25vw;
 	    opacity: 0; }
 	  100% {
 	    left: 0px;
@@ -373,10 +331,7 @@
 
 
 
-
-/*** Phone ***/
-
-@media screen and (max-width: 414px) {
+@media screen and (max-width: 650px) {
 
 	.menu_icon {
 		width: 25px;
@@ -395,20 +350,21 @@
 	}
 
 	#DEAD_IN_BED_div {
-	  width: 350px;
+		top: 120px;
+	  width: 320px;
+	  height: 200px;
 	}
 
 	.DIB_image_div {
-	  top: 100px;
-	  width: 350px;
+	  width: 320px;
 		.DIB_img {
-		  width: 350px;
+		  width: 320px;
 		}
 	}
 
 	#subheading_div {
-	  top: 300px;
-	  right: 60px;
+	  top: 215px;
+	  right: 55px;
 		.subheading_text_div p {
 		  font-size: 9px;
 		 	line-height: 13px;
@@ -416,7 +372,7 @@
 	}
 
 	#feather_div {
-		top: -100px;
+		top: 75px;
 	  width: 175px;
 		#feather_img {
 		  width: 175px;
@@ -424,13 +380,13 @@
 	}
 
 	#feather_shadow_div { 
+	  top: 53px;
 	  width: 240px;
 	  height: 30px;
-	  top: -123px;
 	}
 
 	#intro_div {
-		top: 155px;
+		top: 40vh;
 		width: 228px;
 		p {
 		  font-size: 10px;
@@ -446,28 +402,28 @@
 	@keyframes feather_fall {
 	  0% { 
 	    transform: rotate(-80deg);
-      top: -550px;	    
-	    left: 100px }
+      top: -400px;	    
+	    left: 25vw }
 	  38% {
 	    transform: rotate(40deg); 
-	    top: -350px;   
-	    left: -85px } 
+	    top: -200px;   
+	    left: -25vw } 
 	  80% {
 	    transform: rotate(-385deg); 
-	    top: -130px;
-	    left: 90px }
+	    top: 35px;
+	    left: 25vw }
 	  100% { 
 	    transform: rotate(-355deg);
-	    top: -100px; 
+	    top: 75px; 
 	    left: 0px }
 	}  
 
 	@keyframes feather_shadow_appear {
 	  0% {
-	    left: 115px; 
+	    left: 25vw; 
 	    opacity: 0; }
 	  80% {
-	    left: 115px;
+	    left: 25vw;
 	    opacity: 0; }
 	  100% {
 	    left: 0px;

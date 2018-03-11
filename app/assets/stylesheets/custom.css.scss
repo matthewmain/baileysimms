@@ -465,3 +465,140 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+/************************ RESPONSIVE STYLING *************************/
+
+
+
+
+@media screen and (max-width: 550px) {
+
+	.nav_menu_icon {
+		width: 25px;
+		height: 18px;
+	}
+
+	#nav_menu_div {
+	  left: -250px;
+	  width: 250px;
+	  #blue_feather_logo_img {
+	  	position: relative;
+	  	top: 100px;
+	  	left: 86px;
+	  	width: 78px;
+	  }
+	  ul {
+	  	font-size: 22px;
+	  	padding: 0 0 0 35px;
+	  	margin: 125px 0 0 0;
+	  	li {
+  			line-height: 85px;
+  		}
+	  }
+	}
+
+	.profile_menu_icon {
+		width: 12px;
+		top: 22px;
+	}
+
+	#profile_menu_user_image_div {
+		.user_image {
+			width: 25px;
+			top: 21px;
+		}
+	}
+
+	#profile_menu_icon_open {
+	  right: 60px;
+	}
+
+	#profile_menu_icon_open.logged_out {
+		right: 30px;
+	}
+
+	#profile_menu_div {
+	  right: -250px;
+	  width: 250px;
+	  #profile_menu_icon_close {
+	  	left: 30px;
+		}
+		.profile_menu_user_name {
+			font-size: 15;
+			top: 25px;
+			right: 55px;
+		}
+	  ul {
+	  	font-size: 22px;
+	  	padding: 0 35px;
+	  	&.logged_in { margin: 210px 0 0 0; }
+	  	&.logged_out { margin: 388px 0 0 0; }
+			.profile_menu_divider {
+				padding: 0 35px;
+			}
+			li {
+  			line-height: 85px;
+  		}
+			#log_out_text {
+				font-size: 20px;
+			}
+	  }
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
