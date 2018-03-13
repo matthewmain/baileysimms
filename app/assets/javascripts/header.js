@@ -29,7 +29,7 @@ $(document).ready(function(){
 		(!$("#profile_menu_div").hasClass("open")) ? OpenProfileMenu() : CloseProfileMenu();
 	});
 
-	//posts menu
+	//posts menu desktop
 	$(".posts_menu_icon_div, #posts_menu_dropdown_clickaway_skin").click(function(){
 		if ($("#posts_menu_dropdown").hasClass("closed")) {
 			$("#posts_menu_dropdown").css("opacity", "1");		//(closed dropdown div is hidden so not visible on overscroll bounce; this makes visible when opened)
@@ -46,6 +46,32 @@ $(document).ready(function(){
 		  $("#posts_menu_dropdown").removeClass("open");
 		  $("#posts_menu_dropdown").addClass("closed");
 		  $("#posts_menu_dropdown_clickaway_skin").hide();
+		}
+	});
+
+	//posts menu mobile
+	$(".posts_menu_icon_div_mobile, #posts_menu_dropdown_clickaway_skin_mobile").click(function(){
+
+		var menu_height = parseInt($("#posts_menu_dropdown_mobile").css("height"));
+		var panel_height = parseInt($("#currently_reading_div").css("height"));
+		var original_position = panel_height + "px";
+		var retraction_distance = (panel_height - menu_height) + "px";
+
+		if ($("#posts_menu_dropdown_mobile").hasClass("closed")) {
+			$("#posts_menu_dropdown_mobile").css("opacity", "1");		//(closed dropdown div is hidden so not visible on overscroll bounce; this makes visible when opened)
+			AnimateRotate("#posts_menu_icon_mobile", 0, 180, 600);
+		  $("#posts_menu_dropdown_mobile").animate({top: original_position }, 600);
+		  $("#posts_menu_dropdown_mobile").removeClass("closed");
+		  $("#posts_menu_dropdown_mobile").addClass("open");
+		  $("#posts_menu_dropdown_clickaway_skin_mobile").show();
+		} else {
+			AnimateRotate("#posts_menu_icon_mobile", 180, 0, 600);
+		  $("#posts_menu_dropdown_mobile").animate({top: retraction_distance }, 600, function(){
+				$("#posts_menu_dropdown_mobile").css("opacity", "0");
+		  });
+		  $("#posts_menu_dropdown_mobile").removeClass("open");
+		  $("#posts_menu_dropdown_mobile").addClass("closed");
+		  $("#posts_menu_dropdown_clickaway_skin_mobile").hide();
 		}
 	});
 

@@ -354,10 +354,20 @@ input:focus, textarea:focus {
 
 /******* RESPONSIVE STYLING *******/
 
-/** <=500px **/
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
 
+	body {
+		padding-top: 125px;
+	}
+
+}
+
+@media screen and (max-width: 550px) {
+
+	body {
+		padding-top: 110px;
+	}
 
 }
 

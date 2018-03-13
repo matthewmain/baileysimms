@@ -2,15 +2,15 @@
 
   <%= render 'shared/error_messages', object: f.object %>
 
-  <div id="post_comment_form">
-  	<div id="user_image">
+  <div id="post_comment_form_div">
+  	<div id="post_comment_user_image">
   		<%= link_to user_image_for(current_user), current_user %>
   	</div>
     <div id="post_comment_form_field"><%= f.text_area :content, placeholder: "say something..." %>
 	    <%= f.hidden_field :post_id, value: @post_id %>
 	    <%= f.hidden_field :date, value: Time.now %>
     </div>
-  	<%= f.submit "comment", class: "comment_button" %>
   </div>
+  <%= f.submit "comment", class: "comment_button" %>
 
 <% end %>
