@@ -9,10 +9,10 @@
 #books_container {
 	display: block;
 	margin: auto;
-	width: 900px;
+	max-width: 900px;
 }
 
-#complete_book_div {
+.complete_book_div {
 	width: 650px;
 	height: 300px;
 	margin: 35px auto 0;
@@ -79,10 +79,9 @@
 
 
 .horizontal_line {
-	float: left;
 	display: block;
-	width: 100%;
-	margin: 40px 0 30px; 
+	width: 98%;
+	margin: 40px auto 30px; 
 	border-top: 1px solid #555555;
 }
 
@@ -150,11 +149,6 @@
 }
 
 
-#parts_container.b2 {
-	height: 100px;
-}
-
-
 
 
 
@@ -170,111 +164,140 @@
 /** <=900px **/
 
 @media screen and (max-width: 900px) {
-	#books_body {
 
-		#parts_container {
-			max-width: 700px;
-			.books_page_part {
-				width: 22%;
-			}
-			#last_three {	
-				float: left;
-				width: 75%;
-				margin: 20px 12.5% 50px;			
-				.books_page_part {
-					width: 30.3333%;
-				}
-			}
-		}
-
+	.complete_book_div {
+		margin: 75px auto 0;
 	}
+
+	.horizontal_line {
+		width: 85%;
+	}
+
+	.parts_container.b1 {
+		max-width: 700px;
+		height: 450px;
+	}
+
+	.parts_container.b2 {
+		max-width: 700px;
+		height: 500px;
+	}
+
+	.books_page_part {
+		width: 22%;
+	}
+
+	#last_three {	
+		float: left;
+		width: 75%;
+		margin: 20px 12.5% 50px;			
+		.books_page_part {
+			width: 30.3333%;
+		}
+	}
+
 }
+
 
 
 
 /** <=700px **/
 
 @media screen and (max-width: 700px) {
-	#books_body {
 
-		#complete_first_book_image_container {
-			width: 100%;
-			img {
-				float: none;
-				display: block;
-				margin: auto;
-			}
-		}
-
-		#complete_first_book_text_container {
-			clear: left;
-			width: 100%;
-			margin: 0;
-			height: auto;
-			p {
-				margin-top: 35px;
-			}
-			ul {
-				margin-bottom: 0;
-			}
-		}
-
-		.horizontal_line {
-			width: 84%;
-			margin: 35px 7%;
-		}
-
+	.complete_book_div {
+		width: 350px;
 	}
+
+	.complete_book_div.b2 {
+		margin: 150px auto 0;
+	}
+
+	#complete_book_image_div {
+		width: 100%;
+		img {
+			float: none;
+			display: block;
+			margin: auto;
+		}
+	}
+
+	#complete_book_text_div {
+		clear: left;
+		width: 100%;
+		margin: 50px 0 0;
+		height: auto;
+	}
+
+	.shop_book_header {
+		text-align: center;
+	}
+
+	.shop_book_subheader {
+		text-align: center;
+		margin: 13px 0 0;
+	}
+
+	.horizontal_line {
+		display: none;
+	}
+
+	.parts_container	{
+		padding: 80px 0 0;
+	}
+
 }
+
 
 
 
 /** <=500px **/
 
 @media screen and (max-width: 500px) {
-	#books_body {
-		p.complete_first_book_text_container_heading {
-			max-width: 350px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		#parts_container {
-			max-width: 350px;
-			.books_page_part {
-				width: 47%;
-				margin-bottom: 17px;
-				color: #2b90c4;
-				.part_image {
-					margin-left: auto;
-					margin-right: auto;									
-				}
-			}
-			.p1 {
-				color: #AD0000;
-				font-weight: 600;
-			}
-			.p3 {
-				clear: left;
-			}
-			#last_three {	
-				max-width: 350px;
-				width: 100%;		
-				margin: 0;
-				.books_page_part {
-					width: 47%;
-					margin-bottom: 25px;		
-				}
-				.p7 {
-					clear: left;
-					width: 97%;
-					img {
-						display: block;
-					}
-				}
-			}
-		}	
 
+	.parts_container.b1 {
+		max-width: 350px;
+		height: 925px;
 	}
+
+	.parts_container.b2 {
+		max-width: 350px;
+		height: 925px;
+	}
+
+	.books_page_part {
+		width: 47%;
+		margin-bottom: 17px;
+		color: #2b90c4;
+	}
+
+	.part_image {
+		margin-left: auto;
+		margin-right: auto;									
+	}
+		
+	.p1 {
+		color: #AD0000;
+		font-weight: 600;
+	}
+
+	#last_three {	
+		max-width: 350px;
+		width: 100%;		
+		margin: 0;
+		.books_page_part {
+			width: 47%;
+			margin-bottom: 25px;		
+		}
+		.p7, .p14 {
+			clear: left;
+			width: 97%;
+			img {
+				display: block;
+			}
+		}
+	}
+
 }
 
 
@@ -282,30 +305,21 @@
 /** <=375px **/
 
 @media screen and (max-width: 375px) {
-	#books_body {
 
-		#parts_container {
-			max-width: 320px;
-		}	
+	#parts_container {
+		max-width: 300px;
+	}	
 
+	.complete_book_div {
+		max-width: 300;
 	}
+
+	.vendor_button {
+		width: 130px;
+		margin: 9px 0 0;
+	}
+
 }	
 
 
-
-/** <=350px **/
-
-@media screen and (max-width: 350px) {
-	#books_body {
-
-		p.complete_first_book_text_container_heading {
-			max-width: 285px;
-		}
-
-		#parts_container {
-			max-width: 280px;
-		}	
-
-	}
-}	
 
