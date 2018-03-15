@@ -56,7 +56,7 @@ class User < ActiveRecord::Base
 	attr_accessor :remember_token, :activation_token, :reset_token
 
 	validates :user_name, presence: true, 
-												length:	{ maximum: 20 },
+												length:	{ minimum: 2, maximum: 20 },
 												format: { with: /\A[a-zA-Z0-9_ ]+\z/,
 																	message: "must include only letters, numbers, or spaces" },
 												uniqueness: { case_sensitive: false } 					
