@@ -25,7 +25,7 @@
 		  <%= render 'shared/error_messages', object: f.object %>	
 
 			<%= f.label :user_name, "Change Your User Name", class: "form_label" %>
-			<%= f.text_field :user_name, :value => (@user.user_name.gsub(/_/, ' ') if @user.user_name), placeholder: "User Name", class: "form_field"  %>  
+			<%= f.text_field :user_name, :value => (@user.user_name.gsub(/_/, ' ') if @user.user_name), placeholder: "User Name", class: "form_field"  %>
 
 			<%= f.submit "update name", class: "form_button_secondary" %>
 
