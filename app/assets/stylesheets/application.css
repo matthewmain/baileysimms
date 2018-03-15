@@ -92,7 +92,7 @@ a, a:hover, a:active, a:visited, a:focus {
 
 #form_container {
 	position: relative;
-	width: 85%;
+	width: 80%;
 	max-width: 500px;
 	margin: 0 auto auto;
 }

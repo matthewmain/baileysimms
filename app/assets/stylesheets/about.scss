@@ -1,7 +1,8 @@
 
 
 #about_container {
-	width: 500px;
+	width: 80%;
+	max-width: 500px;
 	margin: 0 auto auto;
 }
 
@@ -30,42 +31,4 @@
 		background: #BA3C32;
 	}
 }
-
-
-
-
-
-
-
-
-
-/******* RESPONSIVE STYLING *******/
-
-
-/** <=500px **/
-
-@media screen and (max-width: 500px) {
-	#about_body {
-
-		.about_div {
-			width: 300px;
-			margin: 35px auto; 
-		}
-
-		h1 {
-			font-size: 45px;
-		}
-
-		h1.bailey_head {
-			letter-spacing: .65em;
-		}
-
-		h1.simms_head {
-			letter-spacing: .85em;
-			margin-bottom: 30px;
-		}
-
-	}
-}
-
 
