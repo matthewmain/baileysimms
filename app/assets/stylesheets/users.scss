@@ -181,7 +181,7 @@
 
 
 #community_container {
-	width: 70%;
+	width: 80%;
 	max-width: 900px;
 	margin: 0 auto auto;
 	a:hover {
@@ -441,7 +441,7 @@
 					float: right;
 					font-size: 9px;
 					color: #E4B4B0;
-					padding: 16px 0 5px;
+					padding: 16px 0 0;
 					#delete_x {
 						margin: 0 0 0 2px;
 						font-style: normal;
@@ -457,6 +457,7 @@
 						font-style: normal;	
 						.hide_comment_button {
 					    font-family: Matol-M-Round, Avenir, sans-serif;
+					    background: none;
 					    padding: 0 0 0 2px;
 					    border-style: none;
 					    color: #E4B4B0;
@@ -467,7 +468,7 @@
 					display: block;
 					width: 100%;
 					margin: 0 0 0 58px;
-					font-size: 13px;
+					font-size: 12px;
 					a {
 						color: #8BC0E3;
 						&:hover {
@@ -512,6 +513,11 @@
 							.reply_header_text {
 								color: #457A9D;
     						font-size: 8.5px;
+    						#reply_timestamp {
+									#delete_x a {
+										color: #E4B4B0;
+									}
+								}
 							}
 						}
 						#reply_content {
@@ -614,6 +620,7 @@ p.pagination {
 /** <=900px **/
 
 @media screen and (max-width: 900px) {
+
 	#community_body {
 
 		.web_view {
@@ -624,28 +631,44 @@ p.pagination {
 		}
 
 		.top_contributors_div {
-			width: 97%;
-			margin: 0 1.5% 20px;
+			width: 100%;
+			margin: 0 0 20px;
+		}
+
+		.members_div {
+			padding: 110px 0 0;
+			margin: 0;
+			h2 {
+				margin: 35px 0 0;
+			}
+		}
+
+		#members_list {
+			margin: 56px 0 0;
 		}
 
 		#members_list li {
 			display: block;
 			height: 45px;
-			.users_index_user_image img {
-				height: 35px;
-				width: 35px;
+			.users_index_user_image {
+				padding: 5px 10px 5px 5px;
+				img {
+					height: 35px;
+					width: 35px;
+				}
 			}
 			.users_index_user_name {
-				padding-top: 0;
-				padding-bottom: 2px;
+				padding: 11px 0 0 0;
+				a { font-size: 14px; }
 			}
 			.users_index_date {
 				font-size: 9px;
+				padding: 0 0 0 3px;
 				span {
 					font-size: 10px;
 				}
 				a {
-					font-size: 15px;
+					font-size: 12px;
 					line-height: 10px;
 				}
 			}
@@ -661,17 +684,26 @@ p.pagination {
 		#recent_comments_list #comment_div li {
 			#user_image {
 				width: 12%;
+				height: 48px;
 				float: left;
 			}
 			#comment_header {
+				position: relative;
 				#user_name {
-					padding-left: 4%;
+					padding: 13px 0 0 8px;
 				}
 				#post_name {
 					clear: right;
-					width: 88%;
-					padding-left: 2%;
+					padding-left: 56px;
 					margin: 0;
+					a { font-size: 10px; }
+				}
+				#timestamp {
+					position: absolute;
+					padding: 0;
+					top: 0;
+					right: 0;
+					font-size: 8px;
 				}
 				#content {
 					clear: right;
@@ -681,6 +713,7 @@ p.pagination {
 				}
 			}	
 		}
+
 	}
 
 }
@@ -743,7 +776,7 @@ p.pagination {
 
 		.top_contributors_div {
 			float: none;
-			width: 92%;
+			width: 100%;
 			margin: 0 auto 20px;
 			#top_contributors_list li {
 				.contributor_name {
@@ -758,33 +791,36 @@ p.pagination {
 		#recent_comments_div {
 			float: none;
 			clear: both;
-			width: 85%;
-			padding-top: 10px;
-			margin: auto;
+			width: 100%;
+			margin: 0 auto 0;
 			h2 {
 				margin: 35px auto 0;
 			}
 			#recent_comments_list #comment_div li {
 				#user_image {
-					width: 12%;
+					width: 60px;
 					float: left;
 				}
-				#user_name {
-					padding-left: 2%;
-				}
-				#post_name {
-					clear: right;
-					width: 88%;
-					padding-left: 2%;
-					margin: 0;
+				#comment_header {			
+					#user_name {
+						padding-left: 0;
+					}
+					#post_name {
+						clear: right;
+						padding-left: 2%;
+						margin: 0;
+					}
 				}
 				#content {
 					clear: both;
 					width: 100%;
-					padding-left: 11%;
 					margin: 12px 0 0;
 				}
 			}
+		}
+
+		#reply_content {
+			margin: 0;
 		}
 
 		.members_div {
@@ -836,172 +872,73 @@ p.pagination {
 /** <=500px **/
 
 @media screen and (max-width: 500px) {
-	#community_body {
-
-		.top_contributors_div {
-			#top_contributors_list {
-				padding: 5px 17px;
-				li {
-					height: 25px;
-					padding: 0;
-					margin: 0 0 5px;
-					&:first-child {
-						.contributor_name a {
-							font-size: 12px;
-						}
-					}
-					.rank {
-						font-size: 15px;
-						width: 25px;
-						line-height: 19px;
-					}
-					.user_image {
-						height: 17px;
-						width: 17px;
-					}
-					.contributor_name {
-						max-width: 140px;
-						font-size: 11px;
-						line-height: 18px;
-					}
-					img.winner {
-						height: 12px;
-						top: 1px;
-					}
-					.number {
-						font-size: 15px;
-						line-height: 23px;
-					}
-					.share_count {
-						font-size: 10px;
-						line-height: 13px;
-						padding: 0;
-					}
-					.comment_count {
-						font-size: 6px;
-						top: -12px;
-						.comment_count_number {
-							font-weight: bold;
-							font-size: 8px;
-						}
-					}
-				}
-			}
-		}
-		.top_contributors_div.secondary {
-			h3.top_contributors_heading {
-				font-size: 12px;
-			}
-			#top_contributors_list {
-				padding: 4px 16px;
-				li {
-					height: 20px;
-					padding: 0;
-					margin: 0 0 4px;
-					&:first-child {
-						.contributor_name a {
-							font-size: 11px;
-						}
-					}
-					.rank {
-						font-size: 14px;
-						width: 25px;
-						line-height: 18px;
-					}
-					.user_image {
-						height: 14px;
-						width: 14px;
-					}
-					.contributor_name {
-						max-width: 150px;
-						font-size: 10px;
-						line-height: 17px;
-					}
-					img.winner {
-						height: 11px;
-						top: -3px;
-					}
-					.number {
-						font-size: 14px;
-						line-height: 22px;
-					}
-					.share_count {
-						font-size: 9px;
-						line-height: 12px;
-						padding: 0;
-					}
-					.comment_count {
-						font-size: 5px;
-						top: -12px;
-						.comment_count_number {
-							font-weight: bold;
-							font-size: 7px;
-						}
-					}
-				}
-			}
-		}
-
-		#recent_comments_div {
-			float: none;
-			clear: both;
-			width: 85%;
-			padding-top: 10px;
-			margin: auto;
-			h2 {
-				margin: 35px auto 0;
-			}
-			#recent_comments_list #comment_div {
-				li {
-					#user_image .user_image {
-						height: 36px;
-						width: 36px;
-					}
-					#user_name {
-						padding-left: 6px;
-					}
-					#timestamp {
-						font-size: 9px;
-					}
-					#post_name {
-						clear: right;
-						width: 88%;
-						padding-left: 2%;
-						margin: 0;
-						font-size: 10px;
-					}
-					#content {
-						clear: both;
-						width: 100%;
-						padding-left: 1%;
-						margin: 12px 0 0;
-						font-size: 12px;
-					}
-				}
-				#replies_div #replies_feed .reply_li #reply_content {
-					font-size: 10px;	
-				}
-			}
-		}
-
-		.members_div {
-			#members_list li {
-				.users_index_date {
-					font-size: 12px;
-				}
-			}
-		}	
-
-	}
 
 	// PROFILE PAGE //
 	#profile_container {
 		width: 80%;
 	}
 
+	#community_container {
+
+		.top_contributors_div #top_contributors_list li {
+			.rank_div { width: 8%; }
+			.upper_div_right { 
+				width: 92%; 
+				.contributor_name {
+					font-size: 12px;
+					letter-spacing: 0px;
+					padding: 9px 0 0 9px;
+				}
+				.share_count {
+					font-size: 13px;
+	    		letter-spacing: 0px;
+	    		padding: 8px 0 0;
+				}
+			}
+		}
+
+		.top_contributors_div.secondary #top_contributors_list li .upper_div_right {
+			.contributor_name {
+				font-size: 11px;
+				letter-spacing: 0px;
+				padding: 6px 0 0 8px;
+			}
+			.share_count {
+				padding: 5px 0 0
+			}
+		}
+
+		h3.top_contributors_heading {
+				font-size: 14px;
+				letter-spacing: 0px;
+		}
+
+		h4.top_contributors_heading {
+			font-size: 12px;
+			letter-spacing: 0px;
+		}
+
+		#recent_comments_div {
+			#recent_comments_list #comment_div li {
+				#comment_header {			
+					#user_name {
+						font-size: 12px;
+						padding: 19px 0 0;
+					}
+					.comment_header_text {
+						font-size: 9px;
+					}
+					#post_name a {
+						font-size: 9px;
+					}
+				}
+			}
+		}
+
+	}
+
+
 }
-
-
 
 
 
@@ -1010,102 +947,6 @@ p.pagination {
 /** <=350px **/
 
 @media screen and (max-width: 350px) {
-	#community_body {
-
-		.top_contributors_div {
-			#top_contributors_list {
-				li {
-					.contributor_name {
-						max-width: 105px;
-					}
-				}
-			}
-		}
-		.top_contributors_div.secondary {
-			h3.top_contributors_heading {
-				margin-top: 8px;
-				font-size: 10px;
-			}
-			h4.top_contributors_heading {
-				font-size: 7px;
-			}
-			#top_contributors_list {
-				padding: 4px 16px;
-				li {
-					.contributor_name {
-						max-width: 120px
-					}
-				}
-			}
-		}
-
-		#recent_comments_div {
-			float: none;
-			clear: both;
-			width: 85%;
-			padding-top: 10px;
-			margin: auto;
-			h2 {
-				margin: 35px auto 0;
-			}
-			#recent_comments_list #comment_div {
-				li {
-					#user_image .user_image {
-						height: 36px;
-						width: 36px;
-					}
-					#user_name {
-						padding-left: 6px;
-						font-size: 10px;
-					}
-					.comment_header_text{
-						font-size: 8px;
-					}
-					#timestamp {
-						font-size: 8px;
-					}
-					#post_name {
-						clear: right;
-						width: 88%;
-						padding-left: 2%;
-						margin: 0;
-						font-size: 10px;
-					}
-					#content {
-						clear: both;
-						width: 100%;
-						padding-left: 1%;
-						margin: 12px 0 0;
-						font-size: 12px;
-					}
-				}
-				#replies_div #replies_feed .reply_li {
-					#reply_header {
-						#reply_user_name {
-							font-size: 10px;
-						}
-						.reply_header_text {
-							font-size: 8px;
-						}
-					}
-					#reply_content {
-						font-size: 10px;
-					}
-				}
-			}
-		}
-		.members_div {
-			#members_list li {
-				.users_index_user_name {
-					font-size: 14px;
-				}
-				.users_index_date {
-					font-size: 10.5px;
-				}
-			}
-		}	
-
-	}
 
 	// PROFILE PAGE //
 	#profile_comments_div .profile_comments_list #comment_div {
