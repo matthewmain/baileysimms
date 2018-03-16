@@ -52,11 +52,11 @@ class UsersController < ApplicationController
   before_action :admin_user, only: :destroy
 
   def index
-    @users = User.all
+    @users = User.where(:activated => true).limit(50)
     @top_ten_contributors_all_time = Ranking.find_by_name("top_ten_all_time").data_hash
     @top_five_contributors_this_month = Ranking.find_by_name("top_five_this_month").data_hash
     @top_five_contributors_last_month = Ranking.find_by_name("top_five_last_month").data_hash
-    @recent_comments = Comment.limit(100)
+    @recent_comments = Comment.limit(30)
     store_location
   end
 
