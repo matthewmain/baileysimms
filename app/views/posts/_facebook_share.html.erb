@@ -23,8 +23,8 @@
 
         <% if logged_in? && current_user.has_shared_website %>
           <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
-          <%=raw "picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB#{@post.book_part}_fb_share.jpg',"%>
-          <%=raw "caption: 'DEAD IN BED, Part #{@post.book_part}: #{Part.find_by_part_number(@post.book_part).title}',"%>
+
+
         <% else %>
           <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
         <% end %>
