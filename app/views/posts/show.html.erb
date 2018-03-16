@@ -6,9 +6,11 @@
     <meta property="fb:app_id"        content=<%=ENV['FACEBOOK_APP_ID']%> />
     <meta property="og:url"           content="https://baileysimms.herokuapp.com/posts/<%=@post.id%>," />
     <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="You've never, ever read anything like this." />
+    <meta property="og:title"         content="DEAD IN BED, Part <%=@post.book_part%>: <%=Part.find(@post.book_part).title%>" />
     <meta property="og:description"   content="An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing." />
-    <meta property="og:image"         content="https://baileysimms.herokuapp.com/assets/facebook/DiB<%=@post.book_part%> cover thumb.jpg" />
+    <meta property="og:image"         content="https://baileysimms.herokuapp.com/assets/facebook/DiB<%=@post.book_part%> cover.jpg" />
+    <meta property="og:image:width"   content="1563" />
+    <meta property="og:image:height"  content="2500" />
   <% end %>
 
 </head>
