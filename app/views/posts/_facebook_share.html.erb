@@ -17,15 +17,18 @@
 
       $('.facebook_share_this_part_button').click(function(){
       FB.ui({
-        method: 'feed',
-        name: "You've never, ever read anything like this.", 
-        description: "An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
+        //method: 'feed',
+        //name: "You've never, ever read anything like this.", 
+        //description: "An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
 
         <% if logged_in? && current_user.has_shared_website %>
-
-
-
-
+                  
+          <%=raw "method: 'feed',"%>
+          <%=raw "name: 'You've never, ever read anything like this.',"%>
+          <%=raw "description: 'An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.',"%>
+          <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
+          <%=raw "picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB#{@post.book_part}_fb_share.jpg',"%>
+          <%=raw "caption: 'DEAD IN BED, Part #{@post.book_part}: #{Part.find_by_part_number(@post.book_part).title}',"%>
 
         <% else %>
           <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
