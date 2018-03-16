@@ -245,7 +245,7 @@ input:focus, textarea:focus {
 
 .flash-alert {
   position: fixed;
-  max-width: 500px;
+  width: 500px;
   left: 50%;
   transform: translate(-50%);
   background: #FFFFFF;
@@ -272,8 +272,9 @@ input:focus, textarea:focus {
 	color: #CC544A;
 	border: 2px solid #CC544A;
   box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, .4);
-  animation-name: flash-alert-stay;
-  animation-duration: 2s;
+  opacity: 0;	
+	animation-name: flash-alert-fade-out;
+  animation-duration: 8s;
 }
 
 .flash-alert-warning {
@@ -385,7 +386,7 @@ input:focus, textarea:focus {
 	}
 
 	.flash-alert {
-  	max-width: 300px;
+  	width: 95%;
 	}
 
 }
