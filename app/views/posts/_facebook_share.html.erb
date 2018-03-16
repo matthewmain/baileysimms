@@ -20,7 +20,7 @@
         method: 'feed',
 
         <% if logged_in? && current_user.has_shared_website %>
-          <%=raw "link: 'https://baileysimms.herokuapp.com/posts/#{first_post_of_part(@post.id)}',"%>
+          <%=raw "link: 'https://baileysimms.herokuapp.com/posts/#{first_post_of_part(@post.book_part)}',"%>
         <% else %>
           <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
         <% end %>
