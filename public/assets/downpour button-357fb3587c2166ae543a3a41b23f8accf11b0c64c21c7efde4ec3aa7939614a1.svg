@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="162px" height="43px" viewBox="0 0 162 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49 (51002) - http://www.bohemiancoding.com/sketch -->
+    <title>downpour icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M1.5,0 L137,0 C146.664983,-1.7754286e-15 154.5,7.83501688 154.5,17.5 L154.5,17.5 C154.5,27.1649831 146.664983,35 137,35 L1.5,35 C0.94771525,35 0.5,34.5522847 0.5,34 L0.5,1 C0.5,0.44771525 0.94771525,1.01453063e-16 1.5,0 Z" id="path-1"></path>
+        <filter x="-4.5%" y="-14.3%" width="109.1%" height="140.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="[Screens]" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="shop" transform="translate(-816.000000, -325.000000)">
+            <g id="book-1" transform="translate(182.000000, 129.000000)">
+                <g id="audio-venders" transform="translate(638.000000, 115.000000)">
+                    <g id="downpour-icon" transform="translate(0.000000, 83.000000)">
+                        <g id="background">
+                            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                            <use fill="#CFE2EE" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        </g>
+                        <path d="M24.5539065,5.21276596 L24.5539065,29.5192588 L12.0957447,17.0514892 L14.995977,14.2139747 L20.6539254,19.7536933 L20.6539254,5.21276596 L24.5539065,5.21276596 Z M26.3706797,5.21276596 L30.5113533,5.21276596 L30.5113533,19.7536933 L35.9286092,14.2139747 L38.8288415,17.0514892 L26.3706797,29.5192588 L26.3706797,5.21276596 Z" id="Combined-Shape" fill="#BA3C32"></path>
+                        <text id="downpour" font-family="AvenirNext-UltraLight, Avenir Next" font-size="12" font-weight="200" letter-spacing="0.359999985" fill="#BA3C32">
+                            <tspan x="54.5" y="21">downpour</tspan>
+                        </text>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
