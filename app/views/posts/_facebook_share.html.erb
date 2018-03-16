@@ -22,7 +22,7 @@
         description: "An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
 
         <% if logged_in? && current_user.has_shared_website %>
-          <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
+          <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
           <%=raw "picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB#{@post.book_part}_fb_share.jpg',"%>
           <%=raw "caption: 'DEAD IN BED, Part #{@post.book_part}: #{Part.find_by_part_number(@post.book_part).title}',"%>
         <% else %>
@@ -65,7 +65,7 @@
         description: "An abandoned blog hosted by a teen under the name “Bailey Simms” was recently discovered. The author's whereabouts are now unknown. Her blog, however, has been preserved here in full. None of the original material has been altered. The contents are disturbing.",
 
         <% if logged_in? && current_user.has_shared_website && @post.book_part > 1 %>
-          <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
+          <%=raw "link: 'https://baileysimms.herokuapp.com/posts',"%>
           <%=raw "picture: 'https://baileysimms.herokuapp.com/assets/facebook/DiB#{@post.book_part-1}_fb_share.jpg',"%>
           <%=raw "caption: 'DEAD IN BED, Part #{@post.book_part-1}: #{Part.find_by_part_number(@post.book_part-1).title}',"%>
         <% else %>
