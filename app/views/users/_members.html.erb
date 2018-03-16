@@ -1,6 +1,6 @@
 
 <h2>Newest Members</h2>
-<h5><%= @users.where(:activated => true).count %> of us and counting</h5>
+<h5><%= @active_user_count %> of us and counting</h5>
 
 <ul id="members_list">
   <% @users.each do |user| %>

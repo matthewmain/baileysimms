@@ -53,6 +53,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.where(:activated => true).limit(50)
+    @active_user_count = User.where(:activated => true).count
     @rankings = Ranking.all
     @top_ten_contributors_all_time = @rankings.find_by_name("top_ten_all_time").data_hash
     @top_five_contributors_this_month = @rankings.find_by_name("top_five_this_month").data_hash
