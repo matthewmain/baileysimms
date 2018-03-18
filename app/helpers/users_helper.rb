@@ -50,7 +50,8 @@ module UsersHelper
 
 	def user_image_for(user)
 		if user.is_connected_to_facebook
-			image_tag(user.facebook_image, alt: user.user_name, class: "user_image")
+			secure_fb_img = user.facebook_image =~ /http:/ ? user.facebook_image.gsub(/http:/,"https:") : user.facebook_image
+			image_tag(secure_fb_img, alt: user.user_name, class: "user_image")
 		else
 	    gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
 	    gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=150&d=identicon"
