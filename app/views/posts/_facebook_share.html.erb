@@ -19,9 +19,9 @@
       FB.ui({
         method: 'feed',
         <% if logged_in? && current_user.has_shared_website %>
-          <%=raw "link: 'https://baileysimms.herokuapp.com/posts/#{first_post_of_part(@post.book_part)}',"%>
+          <%=raw "link: 'https://deadinbed.online/posts/#{first_post_of_part(@post.book_part)}',"%>
         <% else %>
-          <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
+          <%=raw "link: 'https://deadinbed.online/',"%>
         <% end %>
         
         }, function(response){
@@ -40,7 +40,7 @@
                        current_post: '<%="#{@post.id}"%>', }
             });
             //refreshes page with now-unlocked material
-            location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>#next_unlocked';
+            location.href = 'https://deadinbed.online/posts/<%=@post.id%>#next_unlocked';
             location.reload();
             alert("Thanks for sharing!");
           } else {
@@ -57,9 +57,9 @@
       FB.ui({
         method: 'feed',
         <% if logged_in? && current_user.has_shared_website && @post.book_part > 1 %>
-          <%=raw "link: 'https://baileysimms.herokuapp.com/posts/#{first_post_of_part(@post.book_part-1)}',"%>
+          <%=raw "link: 'https://deadinbed.online/posts/#{first_post_of_part(@post.book_part-1)}',"%>
         <% else %>
-          <%=raw "link: 'https://baileysimms.herokuapp.com/',"%>
+          <%=raw "link: 'https://deadinbed.online/',"%>
         <% end %>
         
         }, function(response){
@@ -78,7 +78,7 @@
                        current_post: '<%="#{@post.id}"%>', }
             });
             //refreshes page with now-unlocked material
-            location.href = 'https://baileysimms.herokuapp.com/posts/<%=@post.id%>';
+            location.href = 'https://deadinbed.online/posts/<%=@post.id%>';
             alert("Thanks for sharing!");
           } else {
             alert("Sorry. Looks like your share didn't go through.");
