@@ -110,7 +110,7 @@ class UsersController < ApplicationController
     #logs share into user's share record
     current_user.update_attribute(:share_record, (current_user.share_record << { shared: params[:shared], date: Time.zone.now } ))
     #updates user's share count 
-    current_user.update_attribute(:share_count, current_user.share_count+1 )
+    current_user.update_attribute(:share_count, current_user.share_count+1 ) if current_user.share_count < 15
     #if website is shared, logs it so that it's only shared on user's first share
     current_user.update_attribute(:has_shared_website, true) if params[:shared] == "website"
     #unlocks any segment that the AJAX call tells it to
