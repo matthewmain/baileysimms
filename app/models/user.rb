@@ -346,6 +346,12 @@ class User < ActiveRecord::Base
 		end[0..(limit-1)].to_h
 	end	
 
+	def self.top_non_admin_users_by_share_plus_comment_counts(limit)
+		User.all_non_admin_users_with_share_and_comment_counts.sort_by do |user, participation| 
+			-(participation[:shares]+participation[:comments])
+		end[0..(limit-1)].to_h
+	end	
+
 
 	#Hashes of Non-Admin Users With Share Counts and Comment Counts, By Month
 
@@ -356,6 +362,12 @@ class User < ActiveRecord::Base
 	def self.top_non_admin_users_by_share_then_comment_counts_by_month(month, year, limit)
 		User.all_non_admin_users_with_share_and_comment_counts_by_month(month,year).sort_by do |user, participation| 
 			[-(participation[:shares]), -(participation[:comments])]
+		end[0..(limit-1)].to_h
+	end
+
+	def self.top_non_admin_users_by_share_plus_comment_counts_by_month(month, year, limit)
+		User.all_non_admin_users_with_share_and_comment_counts_by_month(month,year).sort_by do |user, participation| 
+			-(participation[:shares]+participation[:comments])
 		end[0..(limit-1)].to_h
 	end
 
