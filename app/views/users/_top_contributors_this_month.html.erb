@@ -14,7 +14,7 @@
           <div class="contributor_name"><%= link_to name.gsub(/_/, ' '), User.find_by_user_name(name) %></div>
           <div class="share_count"><%= participation[:shares] %><% if participation[:shares] == 1 %> share<% else %> shares<% end %></div> 
         </div>
-        <div class="comment_count_div"><%= participation[:comments]%><%= " comment".pluralize(participation[:comments]) %></div>
+        <div class="comment_count_div"><%= participation[:comments]%><%= " +comment".pluralize(participation[:comments]) %></div>
       </li>
     <% end %>  
   <% end %>
