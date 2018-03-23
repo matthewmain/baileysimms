@@ -882,9 +882,11 @@ p.pagination {
 	#community_container {
 
 		.top_contributors_div #top_contributors_list li {
-			.rank_div { width: 8%; }
+			.rank_div { 
+				width: 10%; 
+			}
 			.upper_div_right { 
-				width: 92%; 
+				width: 90%; 
 				.contributor_name {
 					font-size: 12px;
 					letter-spacing: 0px;
