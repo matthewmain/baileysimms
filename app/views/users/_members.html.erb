@@ -9,7 +9,7 @@
       <div class="users_index_user_name"><%= link_to user.user_name.gsub(/_/, ' '), user %></div>
       <div class="users_index_date">Member since <%= user.activated_at.strftime("%B #{user.activated_at.day.ordinalize}, %Y") %>
         <% if logged_in? && current_user.admin? && !current_user?(user) %>
-        	<%= link_to "×", user, method: :delete, data: { confirm: "You sure you want to do this?" }%>
+        	<%= link_to "×", user, method: :delete, data: { confirm: "You sure you want to permanently delete this user?" }%>
     		<% end %>
       </div>
     </li>
