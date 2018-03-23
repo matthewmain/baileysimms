@@ -238,7 +238,7 @@
 			.users_index_date {
 				display: block;
 				position: relative;
-				top: -3px;
+				top: 1px;
 				margin: 0;
 				padding: 0;
 				font-family: Matol-R-Round, Avenir, sans-serif;
@@ -664,7 +664,6 @@ p.pagination {
 				a { font-size: 14px; }
 			}
 			.users_index_date {
-				top: 0;
 				font-size: 9px;
 				padding: 0 0 0 3px;
 				span {
@@ -844,9 +843,7 @@ p.pagination {
 				}
 				.users_index_date {
 					display: block;
-					top: -2px;
-					float: none;
-					font-size: 10px;
+					top: 0;
 				}
 			}
 		}	
