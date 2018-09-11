@@ -1,5 +1,7 @@
 
-#configure at https://scheduler.heroku.com/dashboard'
+# configure at https://scheduler.heroku.com/dashboard
+
+# (For scheduled tasks in development, see 'config/schedule.rb')
 
 desc "This task is called by the Heroku scheduler add-on"
 
