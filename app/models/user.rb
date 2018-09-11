@@ -245,7 +245,15 @@ class User < ActiveRecord::Base
 	end
 
 
-	#Comment/Word Count, All-Time
+	#Unique Share Counts and Comment/Word Counts, All
+
+	def unique_share_count
+		self.share_record.each_with_object([]) { |share,unique_shares_array|
+			if unique_shares_array.select {|unique_share| share[:shared] == unique_share[:shared] }.count == 0
+				unique_shares_array << share
+			end
+		}.count
+	end
 
 	def comment_count
 		self.comments.count
@@ -260,10 +268,16 @@ class User < ActiveRecord::Base
 	end
 
 
-	#Share/Comment/Word Count, By Month
+	#Unique Share Counts and Comment/Word Counts, By Month
 
-	def share_count_by_month(month,year)
-		self.share_record.count {|share| share[:date].strftime("%-m") == month.to_s && share[:date].strftime("%-Y") == year.to_s}
+	def unique_share_count_by_month(month,year)
+		self.share_record.each_with_object([]) { |share,unique_shares_array|
+			if  share[:date].strftime("%-m") == month.to_s &&
+				  share[:date].strftime("%-Y") == year.to_s &&
+				  unique_shares_array.select {|unique_share| share[:shared] == unique_share[:shared] }.count == 0
+				unique_shares_array << share
+			end
+		}.count
 	end
 
 	def comment_count_by_month(month,year)
@@ -334,29 +348,29 @@ class User < ActiveRecord::Base
 	end
 
 
-	#Hashes of Non-Admin Users With Share Counts and Comment Counts, All
+	#Hashes of Non-Admin Users With Unique Share Counts and Comment Counts, All
 
-	def self.all_non_admin_users_with_share_and_comment_counts
-		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = {shares: user.share_count, comments: user.comment_count + user.reply_count} }
+	def self.all_non_admin_users_with_unique_share_and_comment_counts
+		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = {shares: user.unique_share_count, comments: user.comment_count + user.reply_count} }
 	end
 
-	def self.top_non_admin_users_by_share_then_comment_counts(limit)
-		User.all_non_admin_users_with_share_and_comment_counts.sort_by do |user, participation| 
+	def self.top_non_admin_users_by_unique_share_then_comment_counts(limit)
+		User.all_non_admin_users_with_unique_share_and_comment_counts.sort_by do |user, participation| 
 			[-(participation[:shares]), -(participation[:comments])]
 		end[0..(limit-1)].to_h
 	end	
 
-	def self.top_non_admin_users_by_share_plus_comment_counts(limit)
-		User.all_non_admin_users_with_share_and_comment_counts.sort_by do |user, participation| 
+	def self.top_non_admin_users_by_unique_share_plus_comment_counts(limit)
+		User.all_non_admin_users_with_unique_share_and_comment_counts.sort_by do |user, participation| 
 			-(participation[:shares]+participation[:comments])
 		end[0..(limit-1)].to_h
 	end	
 
 
-	#Hashes of Non-Admin Users With Share Counts and Comment Counts, By Month
+	#Hashes of Non-Admin Users With Unique Share Counts and Comment Counts, By Month
 
 	def self.all_non_admin_users_with_share_and_comment_counts_by_month(month, year)
-		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = {shares: user.share_count_by_month(month,year), comments: user.comment_count_by_month(month,year)} }
+		User.all_non_admin_users.each_with_object({}) {|user, hash| hash[user.user_name] = {shares: user.unique_share_count_by_month(month,year), comments: user.comment_count_by_month(month,year)} }
 	end
 
 	def self.top_non_admin_users_by_share_then_comment_counts_by_month(month, year, limit)
@@ -365,7 +379,7 @@ class User < ActiveRecord::Base
 		end[0..(limit-1)].to_h
 	end
 
-	def self.top_non_admin_users_by_share_plus_comment_counts_by_month(month, year, limit)
+	def self.top_non_admin_users_by_unique_share_plus_comment_counts_by_month(month, year, limit)
 		User.all_non_admin_users_with_share_and_comment_counts_by_month(month,year).sort_by do |user, participation| 
 			-(participation[:shares]+participation[:comments])
 		end[0..(limit-1)].to_h
