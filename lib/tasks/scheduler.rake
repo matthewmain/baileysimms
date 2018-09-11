@@ -1,4 +1,6 @@
 
+#configure at https://scheduler.heroku.com/dashboard'
+
 desc "This task is called by the Heroku scheduler add-on"
 
 task :update_rankings => :environment do
