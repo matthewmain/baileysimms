@@ -1,1 +1,3 @@
+Dead in Bed By Bailey Simms is a novel presented online as a social reading web app. As the novel's story unfolds, readers can interact with each other chapter by chapter and unlock additional content by sharing their reading experience on social media. 
+
 live site: <b>https://deadinbed.online</b>
