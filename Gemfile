@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 
 gem 'bootstrap-sass'
-
 gem 'annotate'
 gem 'awesome_print'
 gem 'will_paginate'
