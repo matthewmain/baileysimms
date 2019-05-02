@@ -6,12 +6,11 @@ gem 'bootstrap-sass'
 gem 'annotate'
 gem 'awesome_print'
 gem 'will_paginate'
-  gem 'bootstrap-will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'yaml_db'
 gem 'validates_timeliness', '~> 4.0'
 gem 'jquery-turbolinks'
-gem 'ahoy_matey'
-  gem 'activeuuid', '>= 0.5.0'
+gem 'activeuuid', '>= 0.5.0'
 gem 'whenever', :require => false
 gem 'omniauth-facebook'
 gem 'figaro'
@@ -58,7 +57,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug',      '3.4.0'
   # Use sqlite3 as the database for Active Record
-	gem 'sqlite3'
+	gem 'sqlite3', '~> 1.3.11'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
